@@ -1,5 +1,5 @@
-![Stihia Logo](./assets/stihia_logo_chrome.png)
+# Stihia | Security for AI Agents
 
-# STIHIA
+<img src="./assets/stihia_logo_chrome.png" alt="Stihia Logo" width="128" height="128"/>
 
-Security for AI Agents
+*We protect your AI agents so you can focus on their purpose.*
