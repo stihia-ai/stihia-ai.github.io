@@ -1,2 +1,5 @@
-# stihia-ai.github.io
-Stihia Website
+![Stihia Logo](./assets/stihia_logo_chrome.png)
+
+# STIHIA
+
+Security for AI Agents
