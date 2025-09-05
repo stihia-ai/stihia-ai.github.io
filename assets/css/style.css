@@ -24,3 +24,15 @@ h1 {
 section {
     margin-top: 64px;
 }
+
+.btn-outline-light.rounded-pill {
+  border-width: 1px;
+  letter-spacing: .5px;
+  transition: all .2s ease;
+}
+
+.btn-outline-light.rounded-pill:hover {
+  color: #111;
+  background: #e6e6e6;
+  text-decoration: none;
+}

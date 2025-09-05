@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://stihia.ai/</loc>
+    <lastmod>2025-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://stihia.ai/privacy.html</loc>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Images (optional, helps with Google Discover and SERP thumbnails) -->
+  <url>
+    <loc>https://stihia.ai/</loc>
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://stihia.ai/assets/stihia_cover_1200x630.png</image:loc>
+      <image:caption>Stihia — Security for AI Agents</image:caption>
+    </image:image>
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://stihia.ai/assets/stihia_logo_chrome.png</image:loc>
+      <image:caption>Stihia Logo</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

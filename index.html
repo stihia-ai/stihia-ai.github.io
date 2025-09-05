@@ -14,25 +14,29 @@
     <meta name="robots" content="index,follow,max-image-preview:large">
     <meta name="description" content="Stihia is a European Union based company that provides products and services in the field of AI security. Some of them include - prompt injection protection, red teaming, penetration testing, corporate trainings, and more. The company aims to empower builders of AI agents to create secure and reliable systems. The company's mission is to ensure the sustainable use of AI agents for the long-term benefit of humanity. The company's core values include integrity, freedom, privacy, and curiosity.">
     <meta name="keywords" content="AI, security, agents, agentic, Stihia, Stihiya, Стихия, изкуствен интелект, защита, сигурност, агенти">
+
     <!-- Social previews (Open Graph) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Stihia | Security for AI Agents">
     <meta property="og:description" content="Holistic protection for AI agents: prompt injection prevention, API scanning, red teaming, and training.">
     <meta property="og:url" content="https://stihia.ai/">
-    <meta property="og:image" content="https://stihia.ai/assets/stihia_logo_chrome.png"><!-- 1200x630 -->
+    <meta property="og:image" content="https://stihia.ai/assets/stihia_cover_1200x630.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Stihia | Security for AI Agents">
     <meta name="twitter:description" content="Protect AI agents from prompt injections and other threats without slowing development.">
-    <meta name="twitter:image" content="https://stihia.ai/assets/stihia_logo_chrome.png">
+    <meta name="twitter:image" content="https://stihia.ai/assets/stihia_cover_1200x630.png">
+    <meta name="twitter:image:alt" content="Stihia - Security for AI Agents">
 
     <!-- Performance niceties (helps CWV) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <!-- Structured data: Organization + Service (+ optional FAQ) -->
+    <!-- Structured data: Organization (with Logo) + Service -->
     <script type="application/ld+json">
     {
     "@context": "https://schema.org",
@@ -41,7 +45,18 @@
         "@type": "Organization",
         "name": "Stihia",
         "url": "https://stihia.ai/",
-        "logo": "https://stihia.ai/assets/stihia_logo_chrome.png",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://stihia.ai/assets/stihia_logo_chrome.png",
+            "width": 815,
+            "height": 815
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://stihia.ai/assets/stihia_cover_1200x630.png",
+            "width": 1200,
+            "height": 630
+        },
         "foundingLocation": "Bulgaria",
         "description": "Security for AI agents: prompt injection prevention, API scanning, red teaming, and training.",
         "sameAs": [
@@ -60,12 +75,18 @@
     ]
     }
     </script>
+
+    <!-- Favicons that Google uses for site icons (esp. mobile SERP) -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
     <!-- / SEO -->
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
     <title>Stihia | Security for AI Agents</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
   </head>
   <body>
     <div class="container">
@@ -89,13 +110,27 @@
         <section>
             <div class="container text-center">
                 <p>We protect your AI agents so you can focus on their purpose.</p>
-                <p>More information coming soon...</p>
+                
+                <br />
+                <br />
+                <a class="btn btn-outline-light btn-lg px-4 rounded-pill"
+                    href="https://tally.so/r/wzk4pk"
+                    target="_blank" rel="noopener noreferrer">
+                    Join the waitlist →
+                </a>
+                <div class="text-muted small mt-2">Early access & launch updates. No spam.</div>
+                
                 <br />
                 <a href="https://www.linkedin.com/company/stihia" target="_blank" rel="noopener noreferrer">
                     <i class="fa fa-linkedin-square" style="font-size:36px;color:gray"></i>
                 </a>
+                <br />
             </div>
         </section>
+        <footer class="container text-center mt-5">
+            <p><a href="/privacy.html" class="text-muted">Privacy Policy</a></p>
+            <br />
+        </footer>
     </div>
   </body>
 </html>
