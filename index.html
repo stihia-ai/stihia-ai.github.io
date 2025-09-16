@@ -86,6 +86,12 @@
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+    <script>
+        // Redirect to the canonical URL if the current URL is not the canonical URL
+        if (document.location.pathname === '/' && !document.location.href.endsWith('/')) {
+            document.location.href = document.location.href + '/';
+        }
+    </script>
     <title>Stihia | Security for AI Agents</title>
   </head>
   <body>
