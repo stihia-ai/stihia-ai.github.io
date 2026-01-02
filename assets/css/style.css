@@ -8,6 +8,26 @@ body {
   font-family: "Goldman", serif;
 }
 
+/* Desktop: Global centering for nav items */
+@media (min-width: 992px) {
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .nav-container .navbar-brand {
+    position: absolute;
+    left: 0;
+  }
+
+  .nav-container .btn-nav-cta {
+    position: absolute;
+    right: 0;
+  }
+}
+
 #header-container {
   max-width: 700px;
   margin-top: 48px;
