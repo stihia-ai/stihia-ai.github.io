@@ -8,6 +8,44 @@ body {
   font-family: "Goldman", serif;
 }
 
+/* Mobile: Global centering for hamburger menu */
+@media (max-width: 991.98px) {
+  .nav-container {
+    position: relative;
+    /* Keep a stable top bar height so items don't shift when the collapse opens */
+    min-height: 32px;
+  }
+
+  .nav-container .navbar-toggler {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .nav-container .btn-nav-cta {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Take the collapsible menu out of normal flow so it doesn't push the top bar down */
+  .nav-container .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #000;
+    padding: 16px 0;
+    z-index: 1000;
+  }
+
+  .nav-container .navbar-collapse .navbar-nav {
+    align-items: center;
+  }
+}
+
 /* Desktop: Global centering for nav items */
 @media (min-width: 992px) {
   .nav-container {
