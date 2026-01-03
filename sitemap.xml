@@ -21,11 +21,11 @@
   <url>
     <loc>https://stihia.ai/</loc>
     <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-      <image:loc>https://stihia.ai/assets/stihia_cover_1200x630.png</image:loc>
+      <image:loc>https://stihia.ai/assets/img/stihia-cover-1200x630.png</image:loc>
       <image:caption>Stihia — Security for AI Agents</image:caption>
     </image:image>
     <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-      <image:loc>https://stihia.ai/assets/stihia_logo_chrome.png</image:loc>
+      <image:loc>https://stihia.ai/assets/logo/stihia-logo-chrome.png</image:loc>
       <image:caption>Stihia Logo</image:caption>
     </image:image>
   </url>
