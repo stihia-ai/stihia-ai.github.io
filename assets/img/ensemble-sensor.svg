@@ -1,0 +1,50 @@
+<svg width="410" height="250" viewBox="100 10 410 250" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    /* Internal styles for standalone usage */
+    .fc-box {
+      fill: none;
+      stroke: #e0e0e0;
+      stroke-width: 1;
+      rx: 5px; /* Rounded corners */
+    }
+    .fc-text {
+      fill: #e0e0e0;
+      font-family: sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    .fc-line {
+      stroke: #e0e0e0;
+      stroke-width: 1.5;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff" />
+    </marker>
+  </defs>
+
+  <rect x="110" y="100" width="160" height="50" class="fc-box" />
+  <text x="195" y="125" class="fc-text">gpt-oss-safeguard</text>
+
+  <rect x="220" y="20" width="160" height="50" class="fc-box" />
+  <text x="300" y="45" class="fc-text">stihia-pi-1</text>
+
+  <rect x="330" y="100" width="160" height="50" class="fc-box" />
+  <text x="410" y="125" class="fc-text">llama-prompt-guard</text>
+
+  <rect x="220" y="200" width="160" height="50" class="fc-box" />
+  <text x="300" y="226" class="fc-text">ENSEMBLE SENSOR</text>
+
+  <path d="M 190 150 C 190 180, 300 170, 300 200" class="fc-line" />
+  
+  <path d="M 300 70 L 300 200" class="fc-line" />
+  
+  <path d="M 410 150 C 410 180, 300 170, 300 200" class="fc-line" />
+
+</svg>
