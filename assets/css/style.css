@@ -9,6 +9,14 @@ body {
   background-color: #121212 !important;
 }
 
+div .spacer {
+  height: 64px;
+}
+
+.font-family-goldman {
+  font-family: "Goldman", serif;
+}
+
 /* Mobile: Global centering for hamburger menu */
 @media (max-width: 991.98px) {
   .nav-container {
