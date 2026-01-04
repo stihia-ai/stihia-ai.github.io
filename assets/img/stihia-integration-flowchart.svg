@@ -7,7 +7,7 @@
       <path d="M0,0 L0,6 L9,3 z" fill="#BD00FF" />
     </marker>
     <marker id="dot-accent" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
-      <circle cx="6" cy="6" r="4" fill="black" stroke="#BD00FF" stroke-width="2"/>
+      <circle cx="6" cy="6" r="4" fill="#121212" stroke="#BD00FF" stroke-width="2"/>
     </marker>
     <filter id="glow-accent" x="-100%" y="-100%" width="300%" height="300%">
       <feGaussianBlur stdDeviation="6" result="coloredBlur"/>

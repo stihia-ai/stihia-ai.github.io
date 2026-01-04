@@ -395,11 +395,427 @@
         <div class="container panel rounded">
           <div class="row">
             <div class="col-sm p-4">
-              <img
-                src="./assets/img/stihia-integration-flowchart.svg"
-                alt="Stihia Integration Flowchart"
+              <!-- SVG inlined to allow custom fonts to render correctly -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="100 0 600 585"
                 class="img-fluid rounded"
-              />
+                role="img"
+                aria-label="Stihia Integration Flowchart"
+              >
+                <defs>
+                  <marker
+                    id="arrow"
+                    markerWidth="10"
+                    fill="#e0e0e0"
+                    markerHeight="10"
+                    refX="9"
+                    refY="3"
+                    orient="auto"
+                    markerUnits="strokeWidth"
+                  >
+                    <path d="M0,0 L0,6 L9,3 z" />
+                  </marker>
+                  <marker
+                    id="arrow-accent"
+                    markerWidth="10"
+                    markerHeight="10"
+                    refX="9"
+                    refY="3"
+                    orient="auto"
+                    markerUnits="strokeWidth"
+                  >
+                    <path d="M0,0 L0,6 L9,3 z" fill="#BD00FF" />
+                  </marker>
+                  <marker
+                    id="dot-accent"
+                    markerWidth="12"
+                    markerHeight="12"
+                    refX="6"
+                    refY="6"
+                    orient="auto"
+                  >
+                    <circle
+                      cx="6"
+                      cy="6"
+                      r="4"
+                      fill="#121212"
+                      stroke="#BD00FF"
+                      stroke-width="2"
+                    />
+                  </marker>
+                  <filter
+                    id="glow-accent"
+                    x="-100%"
+                    y="-100%"
+                    width="300%"
+                    height="300%"
+                  >
+                    <feGaussianBlur stdDeviation="6" result="coloredBlur" />
+                    <feMerge>
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                <style>
+                  .flowchart-text {
+                    fill: #e0e0e0;
+                    font-family: "Goldman", sans-serif;
+                    text-anchor: middle;
+                    dominant-baseline: middle;
+                  }
+                  .flowchart-box {
+                    fill: none;
+                    stroke: #e0e0e0;
+                    stroke-width: 2;
+                  }
+                  .flowchart-sensor-box {
+                    fill: none;
+                    stroke: #bd00ff;
+                    stroke-width: 2;
+                    filter: url(#glow-accent);
+                  }
+                  .flowchart-line {
+                    stroke: #e0e0e0;
+                    stroke-width: 2;
+                    fill: none;
+                    marker-end: url(#arrow);
+                  }
+                  .flowchart-sensor-line {
+                    stroke: #bd00ff;
+                    stroke-width: 1.5;
+                    fill: none;
+                    marker-start: url(#dot-accent);
+                    marker-end: url(#arrow-accent);
+                    filter: url(#glow-accent);
+                  }
+                  .flowchart-label {
+                    font-size: 16px;
+                  }
+                  .flowchart-sensor-label {
+                    font-size: 12px;
+                    fill: #e0e0e0;
+                    font-weight: bold;
+                  }
+                  .flowchart-stihia-label {
+                    font-size: 20px;
+                    text-anchor: start;
+                    fill: #e0e0e0;
+                    font-weight: bold;
+                  }
+                </style>
+
+                <rect
+                  x="100"
+                  y="0"
+                  width="600"
+                  height="405"
+                  fill="#121212"
+                  stroke="none"
+                  stroke-width="2"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="349"
+                  y="25"
+                  class="flowchart-text flowchart-stihia-label"
+                >
+                  AI AGENT
+                </text>
+
+                <circle cx="195" cy="85" r="35" class="flowchart-box" />
+                <text x="195" y="86" class="flowchart-text flowchart-label">
+                  START
+                </text>
+
+                <rect
+                  x="330"
+                  y="55"
+                  width="140"
+                  height="60"
+                  class="flowchart-box"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="400"
+                  y="85"
+                  class="flowchart-text flowchart-label"
+                  font-size="20"
+                >
+                  REASON
+                </text>
+
+                <rect
+                  x="330"
+                  y="185"
+                  width="140"
+                  height="60"
+                  class="flowchart-box"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="400"
+                  y="215"
+                  class="flowchart-text flowchart-label"
+                  font-size="20"
+                >
+                  ACTION
+                </text>
+
+                <rect
+                  x="340"
+                  y="325"
+                  width="140"
+                  height="50"
+                  class="flowchart-box"
+                  fill="none"
+                  rx="5"
+                  ry="5"
+                />
+                <rect
+                  x="335"
+                  y="320"
+                  width="140"
+                  height="50"
+                  class="flowchart-box"
+                  fill="none"
+                  rx="5"
+                  ry="5"
+                />
+                <rect
+                  x="330"
+                  y="315"
+                  width="140"
+                  height="50"
+                  class="flowchart-box"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="400"
+                  y="345"
+                  class="flowchart-text flowchart-label"
+                  font-size="20"
+                >
+                  TOOLS
+                </text>
+
+                <circle cx="605" cy="85" r="35" class="flowchart-box" />
+                <text x="605" y="86" class="flowchart-text flowchart-label">
+                  END
+                </text>
+
+                <path d="M 230 85 L 330 85" class="flowchart-line" />
+                <path d="M 400 115 L 400 185" class="flowchart-line" />
+                <path d="M 400 245 L 400 315" class="flowchart-line" />
+                <path
+                  d="M 330 340 L 300 340 L 300 100 L 330 100"
+                  class="flowchart-line"
+                  fill="none"
+                />
+                <path d="M 470 85 L 570 85" class="flowchart-line" />
+
+                <rect
+                  x="100"
+                  y="420"
+                  width="600"
+                  height="165"
+                  fill="#121212"
+                  stroke="none"
+                  stroke-width="2"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="300"
+                  y="560"
+                  class="flowchart-text flowchart-stihia-label"
+                >
+                  STIHIA PROCESS
+                </text>
+
+                <rect
+                  x="120"
+                  y="450"
+                  width="100"
+                  height="80"
+                  class="flowchart-sensor-box"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="170"
+                  y="475"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  REASON
+                </text>
+                <text
+                  x="170"
+                  y="490"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  INPUT
+                </text>
+                <text
+                  x="170"
+                  y="505"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  SENSOR
+                </text>
+
+                <rect
+                  x="235"
+                  y="450"
+                  width="100"
+                  height="80"
+                  class="flowchart-sensor-box"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="285"
+                  y="475"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  ACTION
+                </text>
+                <text
+                  x="285"
+                  y="490"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  INPUT
+                </text>
+                <text
+                  x="285"
+                  y="505"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  SENSOR
+                </text>
+
+                <rect
+                  x="350"
+                  y="450"
+                  width="100"
+                  height="80"
+                  class="flowchart-sensor-box"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="400"
+                  y="475"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  TOOL
+                </text>
+                <text
+                  x="400"
+                  y="490"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  OUTPUT
+                </text>
+                <text
+                  x="400"
+                  y="505"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  SENSOR
+                </text>
+
+                <rect
+                  x="465"
+                  y="450"
+                  width="100"
+                  height="80"
+                  class="flowchart-sensor-box"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="515"
+                  y="475"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  TOOL
+                </text>
+                <text
+                  x="515"
+                  y="490"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  INPUT
+                </text>
+                <text
+                  x="515"
+                  y="505"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  SENSOR
+                </text>
+
+                <rect
+                  x="580"
+                  y="450"
+                  width="100"
+                  height="80"
+                  class="flowchart-sensor-box"
+                  rx="5"
+                  ry="5"
+                />
+                <text
+                  x="630"
+                  y="475"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  REASON
+                </text>
+                <text
+                  x="630"
+                  y="490"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  OUTPUT
+                </text>
+                <text
+                  x="630"
+                  y="505"
+                  class="flowchart-text flowchart-sensor-label"
+                >
+                  SENSOR
+                </text>
+
+                <path
+                  d="M 275 85 Q 170 250 170 450"
+                  class="flowchart-sensor-line"
+                />
+                <path
+                  d="M 400 140 Q 200 180 285 450"
+                  class="flowchart-sensor-line"
+                />
+                <path
+                  d="M 400 275 Q 600 280 515 450"
+                  class="flowchart-sensor-line"
+                />
+                <path
+                  d="M 315 340 Q 320 420 400 450"
+                  class="flowchart-sensor-line"
+                />
+                <path
+                  d="M 515 85 Q 630 250 630 450"
+                  class="flowchart-sensor-line"
+                />
+              </svg>
             </div>
             <div class="col-sm my-auto text-start p-5">
               <h2>Seamless integration, invisible to users</h2>
