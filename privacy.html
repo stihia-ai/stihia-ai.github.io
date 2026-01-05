@@ -13,9 +13,16 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Michroma"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500"
     />
     <link
       rel="stylesheet"
@@ -32,7 +39,7 @@
     <meta name="description" content="Privacy Policy for Stihia." />
     <meta
       name="keywords"
-      content="AI, security, agents, agentic, Stihia, Stihiya, Стихия, изкуствен интелект, защита, сигурност, агенти, privacy, policy"
+      content="Stihia, Stihia Sense, Privacy Policy, AI security, AI agent observability, prompt injection detection, data leakage prevention, LLM monitoring, toxic content detection, OpenTelemetry, AI firewall, AI red teaming, secure AI agents, Stihiya, Stichia, Стихия, Изкуствен интелект, сигурност, наблюдение, мониторинг, защита от изтичане на данни, промпт инжекции, засичане на токсично съдържание"
     />
     <!-- Social previews (Open Graph) -->
     <meta property="og:type" content="website" />
@@ -41,8 +48,10 @@
     <meta property="og:url" content="https://stihia.ai/privacy.html" />
     <meta
       property="og:image"
-      content="https://stihia.ai/assets/logo/stihia-logo-chrome.png"
+      content="https://stihia.ai/assets/img/stihia-cover-1200x630.png"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
@@ -51,18 +60,65 @@
     <meta name="twitter:description" content="Privacy Policy for Stihia." />
     <meta
       name="twitter:image"
-      content="https://stihia.ai/assets/logo/stihia-logo-chrome.png"
+      content="https://stihia.ai/assets/img/stihia-cover-1200x630.png"
     />
+    <meta name="twitter:image:alt" content="Stihia - Security for AI Agents" />
 
     <!-- Performance niceties (helps CWV) -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
+    <!-- Structured data: Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Stihia",
+            "url": "https://stihia.ai/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://stihia.ai/assets/logo/stihia-logo-chrome.png",
+              "width": 815,
+              "height": 815
+            },
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://stihia.ai/assets/img/stihia-cover-1200x630.png",
+              "width": 1200,
+              "height": 630
+            },
+            "foundingLocation": "Bulgaria",
+            "description": "Stihia provides security and observability solutions for AI agents, including prompt injection detection, red teaming, and AI security trainings.",
+            "sameAs": ["https://www.linkedin.com/company/stihia"]
+          }
+        ]
+      }
+    </script>
+
     <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
     <title>Privacy Policy | Stihia</title>
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/logo/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/logo/apple-touch-icon.png"
+    />
   </head>
   <body>
     <div class="container">
@@ -83,7 +139,7 @@
             class="row h-100 justify-content-center align-items-center"
           ></div>
           <div class="col-sm text-center">
-            <span class="align-middle">
+            <span class="align-middle font-family-goldman">
               <h1>STIHIA</h1>
               <p id="subtitle">Security for AI Agents</p>
             </span>
@@ -357,7 +413,9 @@
 
           <br />
           <div class="text-center">
-            <a href="/" class="btn btn-outline-light btn-sm">← Back to home</a>
+            <a href="/" class="btn btn-outline-light btn-lg px-4 rounded-pill">
+              ← BACK TO HOME
+            </a>
           </div>
           <br />
         </div>
