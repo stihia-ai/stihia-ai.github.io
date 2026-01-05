@@ -4,6 +4,16 @@ body {
   background-color: #121212;
 }
 
+a {
+  color: #e0e0e0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
 .navbar {
   font-family: "Goldman", serif;
   background-color: #121212 !important;
