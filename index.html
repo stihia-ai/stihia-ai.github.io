@@ -259,7 +259,7 @@
       </header>
 
       <!-- Section: Features -->
-      <section id="features" class="container mt-5 text-center">
+      <section id="features" class="container pt-5 text-center">
         <!-- Feature 1 -->
         <div class="spacer"></div>
         <div class="container">
@@ -851,7 +851,7 @@
       </section>
 
       <!-- Section: Pricing -->
-      <section id="pricing" class="container mt-5 text-center">
+      <section id="pricing" class="container pt-5 text-center">
         <div class="spacer"></div>
         <div class="container mb-4">
           <div class="row">
@@ -882,7 +882,7 @@
       </section>
 
       <!-- Section: Zmey -->
-      <section id="zmey" class="container mt-5 text-center">
+      <section id="zmey" class="container pt-5 text-center">
         <div class="spacer"></div>
         <div class="container mb-4">
           <div class="row">
@@ -926,7 +926,7 @@
       </section>
 
       <!-- Section: Contact -->
-      <section id="contact" class="container mt-5 text-center">
+      <section id="contact" class="container pt-5 text-center">
         <div class="spacer"></div>
         <div class="container mb-4">
           <div class="row">
@@ -949,7 +949,7 @@
       </section>
 
       <!-- Footer -->
-      <footer id="footer" class="container text-center mt-5">
+      <footer id="footer" class="container text-center pt-5">
         <div class="row">
           <div class="col">
             <a
@@ -990,6 +990,19 @@
     <script>
       document.getElementById("copyright-year").textContent =
         new Date().getFullYear();
+
+      // Close mobile navbar when a nav link is clicked
+      document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
+        link.addEventListener("click", function () {
+          const navbarCollapse = document.querySelector("#navbarNav");
+          if (navbarCollapse.classList.contains("show")) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+              toggle: false,
+            });
+            bsCollapse.hide();
+          }
+        });
+      });
     </script>
   </body>
 </html>
