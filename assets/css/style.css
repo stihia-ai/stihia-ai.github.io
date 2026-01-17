@@ -47,6 +47,8 @@ div .spacer {
     right: 16px;
     top: 50%;
     transform: translateY(-50%);
+    font-size: 0.7rem;
+    padding: 0.35rem 0.75rem;
   }
 
   /* Take the collapsible menu out of normal flow so it doesn't push the top bar down */
@@ -82,6 +84,14 @@ div .spacer {
   .nav-container .btn-nav-cta {
     position: absolute;
     right: 0;
+  }
+}
+
+/* Very narrow screens: further reduce CTA button */
+@media (max-width: 400px) {
+  .nav-container .btn-nav-cta {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
   }
 }
 
