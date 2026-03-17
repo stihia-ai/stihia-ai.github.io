@@ -19,6 +19,16 @@ a:hover {
   background-color: #121212 !important;
 }
 
+.nav-link-login {
+  color: #f1d6ff;
+  text-shadow: 0 0 10px rgba(226, 147, 255, 0.22);
+}
+
+.nav-link-login:hover,
+.nav-link-login:focus {
+  color: #ffffff;
+}
+
 div .spacer {
   height: 64px;
 }
