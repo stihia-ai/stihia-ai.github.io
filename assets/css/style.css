@@ -15,13 +15,11 @@ a:hover {
 }
 
 .navbar {
-  font-family: "Goldman", serif;
   background-color: #121212 !important;
 }
 
 .nav-link-login {
-  color: #f1d6ff;
-  text-shadow: 0 0 10px rgba(226, 147, 255, 0.22);
+  color: #d7d7d7;
 }
 
 .nav-link-login:hover,
@@ -31,10 +29,6 @@ a:hover {
 
 div .spacer {
   height: 64px;
-}
-
-.font-family-goldman {
-  font-family: "Goldman", serif;
 }
 
 /* Mobile: Global centering for hamburger menu */
@@ -111,37 +105,11 @@ h1 {
 }
 
 /* Hero Section Styling */
-.hero-eyebrow {
-  display: inline-block;
-  font-family: "Goldman", serif;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #c8b8d0;
-  margin-bottom: 1.5rem;
-  padding: 0.5rem 1.25rem;
-  border-radius: 999px;
-  background: linear-gradient(
-    135deg,
-    rgba(226, 147, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.04) 100%
-  );
-  border: 1px solid rgba(226, 147, 255, 0.25);
-  backdrop-filter: blur(4px);
-}
-
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #e293ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .hero-subtitle {
@@ -154,10 +122,6 @@ h1 {
 
 a {
   text-decoration: none;
-}
-
-.btn {
-  font-family: "Goldman", serif;
 }
 
 .btn-primary.rounded-pill {
