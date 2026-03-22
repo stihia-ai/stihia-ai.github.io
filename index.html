@@ -157,9 +157,11 @@
       // Redirect to the canonical URL if the current URL is not the canonical URL
       if (
         document.location.pathname === "/" &&
+        !document.location.search &&
+        !document.location.hash &&
         !document.location.href.endsWith("/")
       ) {
-        document.location.href = document.location.href + "/";
+        document.location.replace(document.location.origin + "/");
       }
     </script>
     <title>Stihia | Real-Time Threat Detection for AI Systems</title>
