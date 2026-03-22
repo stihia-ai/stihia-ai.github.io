@@ -839,6 +839,13 @@ async for chunk in guard.shield(llm.astream(prompt)):
 
       // Add scroll-triggered fade-in animations
       document.addEventListener("DOMContentLoaded", function () {
+        const fadeEls = document.querySelectorAll(".fade-in");
+
+        if (!("IntersectionObserver" in window)) {
+          fadeEls.forEach((el) => el.classList.add("visible"));
+          return;
+        }
+
         const observerOptions = {
           root: null,
           rootMargin: "0px",
@@ -854,7 +861,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
           });
         }, observerOptions);
 
-        document.querySelectorAll(".fade-in").forEach((el) => {
+        fadeEls.forEach((el) => {
           observer.observe(el);
         });
       });
