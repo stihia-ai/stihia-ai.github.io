@@ -175,7 +175,7 @@
             width="32"
             height="32"
           />
-          <font style="font-family: &quot;Goldman&quot;, serif">STIHIA</font>
+          <span class="brand-text">STIHIA</span>
         </a>
 
         <button
@@ -231,7 +231,7 @@
     <!-- Header: Home -->
     <header id="home" class="container pt-5 mt-5 text-center">
       <div class="row mt-5 mb-3">
-        <div class="col-sm" style="max-width: 1000px; margin: 0 auto">
+        <div class="col-sm hero-content">
           <h1 class="hero-title">Real-Time Threat Detection for AI Systems</h1>
           <p class="hero-subtitle">
             Get alerted when your AI agents go rogue, leak data, or get tricked
@@ -253,16 +253,7 @@
       </div>
       <div class="row mt-5">
         <div class="col-sm">
-          <div
-            class="rounded"
-            style="
-              background-image: url(&quot;./assets/img/albena.webp&quot;);
-              background-size: cover;
-              background-position: center;
-              width: 100%;
-              aspect-ratio: 16/9;
-            "
-          >
+          <div class="rounded hero-image-bg">
             <div class="overlay p-5">
               <img
                 src="./assets/img/stihia-console-screenshot.png"
@@ -294,7 +285,6 @@
               <div
                 id="image-placeholder-1"
                 class="image-placeholder text-muted small p-3 rounded"
-                style="background: rgba(0, 0, 0, 0.2); border: 1px dashed #333"
               >
                 A vertical layered architecture diagram on a dark background
                 (#121212) with three horizontal bands stacked top-to-bottom,
@@ -334,7 +324,6 @@
               <div
                 id="image-placeholder-2"
                 class="image-placeholder text-muted small p-3 rounded"
-                style="background: rgba(0, 0, 0, 0.2); border: 1px dashed #333"
               >
                 A split-panel integration diagram on a dark background
                 (#121212), divided vertically into two equal halves by a thin
@@ -380,7 +369,6 @@
               <div
                 id="image-placeholder-3"
                 class="image-placeholder text-muted small p-3 rounded"
-                style="background: rgba(0, 0, 0, 0.2); border: 1px dashed #333"
               >
                 A real-time alert notification mockup on a dark background
                 (#121212), composed of two visual elements connected by a
@@ -435,21 +423,14 @@
               detection pipeline.
             </p>
             <div class="code-block rounded p-3">
-              <pre
-                class="m-0 text-start"
-                style="
-                  color: #e0e0e0;
-                  font-family: monospace;
-                  font-size: 0.9rem;
-                "
-              >
-<span style="color: #a0a0a0;">from</span> stihia <span style="color: #a0a0a0;">import</span> StihiaClient, SenseGuard
+              <pre class="m-0 text-start">
+<span class="code-keyword">from</span> stihia <span class="code-keyword">import</span> StihiaClient, SenseGuard
 
 client = StihiaClient()
 guard = SenseGuard(client, messages)
 
 async for chunk in guard.shield(llm.astream(prompt)):
-    yield chunk  <span style="color: #a0a0a0;"># secured by Stihia</span>
+    yield chunk  <span class="code-keyword"># secured by Stihia</span>
 </pre>
             </div>
           </div>
@@ -461,46 +442,44 @@ async for chunk in guard.shield(llm.astream(prompt)):
               any integration method.
             </p>
             <div
-                id="image-placeholder-5"
-                class="image-placeholder text-muted small p-3 rounded"
-                style="background: rgba(0, 0, 0, 0.2); border: 1px dashed #333"
-              >
-                A horizontal three-column flow diagram on a dark background
-                (#121212), reading left-to-right, showing AI tools feeding into
-                Stihia and then out to security destinations. LEFT COLUMN —
-                labeled "AI Tools" in small white text above: Six rounded
-                rectangles arranged in a vertical stack, each containing an icon
-                and label for a well-known AI tool — "Claude", "ChatGPT",
-                "Copilot", "Gemini", "Cursor", and "OpenClaw". Each rectangle
-                has a dark panel background (#202121) with a thin border in
-                rgba(255,255,255,0.08). Thin horizontal lines extend from the
-                right edge of each tool rectangle, converging into a single
-                stream flowing rightward. CENTER COLUMN — a prominent rounded
-                rectangle, slightly larger than the others, with a subtle
-                elevated appearance (thin border in rgba(255,255,255,0.15) and
-                slightly lighter background #1a1a1a). Inside: the Stihia logo
-                glyph (a small shield icon) at the top, the label "Stihia
-                Sense" in white bold text below it, and a secondary line in
-                gray: "Detection Pipeline". The single converged stream from
-                the left enters this block on its left edge. From its right
-                edge, the stream fans out into multiple thin lines flowing
-                rightward. RIGHT COLUMN — labeled "Security Operations" in
-                small white text above: Four rounded rectangles in a vertical
-                stack representing output destinations — a bell icon with
-                "Real-Time Alerts", a dashboard/grid icon with "SIEM
-                Platforms", a chart icon with "SOC Dashboards", and a
-                checkmark-shield icon with "Compliance Reports". Each has the
-                same dark panel styling as the left column. The fan-out lines
-                from Stihia connect to the left edge of each destination
-                rectangle. The overall composition is balanced and symmetrical,
-                with the Stihia block visually dominant in the center. Color
-                palette: strictly monochromatic — white text, light gray
-                (#a0a0a0) secondary text, dark gray panels (#202121, #1a1a1a),
-                thin borders. No color accents, no purple, no gradients. The
-                connecting lines use rgba(255,255,255,0.12). Typography: Space
-                Grotesk for all labels. Dimensions: roughly 4:3 aspect ratio,
-                suitable for a half-width card display.
-              </div>
+              id="image-placeholder-5"
+              class="image-placeholder text-muted small p-3 rounded"
+            >
+              A horizontal three-column flow diagram on a dark background
+              (#121212), reading left-to-right, showing AI tools feeding into
+              Stihia and then out to security destinations. LEFT COLUMN —
+              labeled "AI Tools" in small white text above: Six rounded
+              rectangles arranged in a vertical stack, each containing an icon
+              and label for a well-known AI tool — "Claude", "ChatGPT",
+              "Copilot", "Gemini", "Cursor", and "OpenClaw". Each rectangle has
+              a dark panel background (#202121) with a thin border in
+              rgba(255,255,255,0.08). Thin horizontal lines extend from the
+              right edge of each tool rectangle, converging into a single stream
+              flowing rightward. CENTER COLUMN — a prominent rounded rectangle,
+              slightly larger than the others, with a subtle elevated appearance
+              (thin border in rgba(255,255,255,0.15) and slightly lighter
+              background #1a1a1a). Inside: the Stihia logo glyph (a small shield
+              icon) at the top, the label "Stihia Sense" in white bold text
+              below it, and a secondary line in gray: "Detection Pipeline". The
+              single converged stream from the left enters this block on its
+              left edge. From its right edge, the stream fans out into multiple
+              thin lines flowing rightward. RIGHT COLUMN — labeled "Security
+              Operations" in small white text above: Four rounded rectangles in
+              a vertical stack representing output destinations — a bell icon
+              with "Real-Time Alerts", a dashboard/grid icon with "SIEM
+              Platforms", a chart icon with "SOC Dashboards", and a
+              checkmark-shield icon with "Compliance Reports". Each has the same
+              dark panel styling as the left column. The fan-out lines from
+              Stihia connect to the left edge of each destination rectangle. The
+              overall composition is balanced and symmetrical, with the Stihia
+              block visually dominant in the center. Color palette: strictly
+              monochromatic — white text, light gray (#a0a0a0) secondary text,
+              dark gray panels (#202121, #1a1a1a), thin borders. No color
+              accents, no purple, no gradients. The connecting lines use
+              rgba(255,255,255,0.12). Typography: Space Grotesk for all labels.
+              Dimensions: roughly 4:3 aspect ratio, suitable for a half-width
+              card display.
+            </div>
           </div>
         </div>
         <div class="spacer"></div>
@@ -525,7 +504,6 @@ async for chunk in guard.shield(llm.astream(prompt)):
               <div
                 id="image-placeholder-4"
                 class="image-placeholder text-muted p-5 rounded text-center"
-                style="background: rgba(0, 0, 0, 0.2); border: 1px dashed #333"
               >
                 A wide horizontal pipeline diagram on a dark background
                 (#121212), reading left-to-right, showing the complete Stihia
@@ -696,10 +674,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
                 signals. Route alerts to any OTel-capable sink to enrich your
                 current security operations.
               </p>
-              <ul
-                class="list-unstyled text-secondary mb-0"
-                style="line-height: 2"
-              >
+              <ul class="list-unstyled text-secondary mb-0 list-spaced">
                 <li>
                   <i class="fa fa-long-arrow-right text-muted me-2"></i>
                   Compatible with any SIEM platform
@@ -731,15 +706,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
           <div class="row">
             <div class="col-sm my-auto p-5">
               <h2>Detect AI security threats before they cause damage</h2>
-              <p
-                class="mt-4 mb-5"
-                style="
-                  font-size: 1.1rem;
-                  max-width: 600px;
-                  margin-left: auto;
-                  margin-right: auto;
-                "
-              >
+              <p class="mt-4 mb-5 cta-description">
                 We support you at every step - from onboarding to long-term
                 maintenance - tailoring our solution to meet your specific
                 security requirements.
@@ -774,11 +741,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
             <img
               src="./assets/img/zmey.png"
               alt="Stihia Zmey"
-              class="img-fluid rounded-4"
-              style="
-                background-color: oklch(21% 0.034 264.665);
-                box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
-              "
+              class="img-fluid rounded-4 zmey-image"
             />
           </div>
           <div class="col-sm my-auto text-start p-5">
@@ -834,10 +797,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i
-              class="fa fa-linkedin-square"
-              style="font-size: 36px; color: gray"
-            ></i>
+            <i class="fa fa-linkedin-square social-icon"></i>
           </a>
           &nbsp;
           <a
@@ -845,10 +805,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i
-              class="fa fa-github-square"
-              style="font-size: 36px; color: gray"
-            ></i>
+            <i class="fa fa-github-square social-icon"></i>
           </a>
         </div>
       </div>

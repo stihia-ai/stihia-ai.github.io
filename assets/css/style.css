@@ -255,3 +255,66 @@ a {
 .section-band .section-divider {
   border-top: none;
 }
+
+/* Navbar brand text (Goldman font) */
+.brand-text {
+  font-family: "Goldman", serif;
+}
+
+/* Hero section content wrapper */
+.hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Hero background image container */
+.hero-image-bg {
+  background-image: url("../../assets/img/albena.webp");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* Image placeholder cards */
+.image-placeholder {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px dashed #333;
+}
+
+/* Code block pre formatting */
+.code-block pre {
+  color: #e0e0e0;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+/* Syntax highlighting keyword */
+.code-keyword {
+  color: #a0a0a0;
+}
+
+/* Spaced list items */
+.list-spaced {
+  line-height: 2;
+}
+
+/* CTA section description */
+.cta-description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Zmey game image */
+.zmey-image {
+  background-color: oklch(21% 0.034 264.665);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* Footer social icons */
+.social-icon {
+  font-size: 36px;
+  color: gray;
+}
