@@ -732,6 +732,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
 
       // Add scroll-triggered fade-in animations
       document.addEventListener("DOMContentLoaded", function () {
+        document.documentElement.classList.add("js-enabled");
         const fadeEls = document.querySelectorAll(".fade-in");
 
         if (!("IntersectionObserver" in window)) {
