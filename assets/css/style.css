@@ -1,42 +1,82 @@
+:root {
+  --font-family-base: "Space Grotesk", sans-serif;
+  --font-family-brand: "Goldman", serif;
+  --font-family-mono: monospace;
+
+  --color-bg: #121212;
+  --color-bg-darker: #1a1a1a;
+  --color-panel: #202121;
+  --color-band: #242424;
+
+  --color-text: #e0e0e0;
+  --color-text-strong: #ffffff;
+  --color-text-soft: #d7d7d7;
+  --color-text-muted: #a0a0a0;
+  --color-text-muted-utility: #7c7c7c;
+  --color-text-inverse: #121212;
+  --color-text-gray: gray;
+
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-soft: rgba(255, 255, 255, 0.08);
+  --color-border-medium: rgba(255, 255, 255, 0.1);
+  --color-border-image: #27272a;
+  --color-border-placeholder: #333;
+
+  --shadow-overlay: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-card-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-zmey-inset: inset 0 0 20px rgba(0, 0, 0, 0.8);
+
+  --transition-fast: all 0.2s ease;
+  --transition-fade: opacity 0.6s ease-out, transform 0.6s ease-out;
+  --transition-lift: transform 0.3s ease, box-shadow 0.3s ease;
+
+  --hero-content-max-width: 1000px;
+  --text-content-max-width: 600px;
+  --nav-mobile-stable-height: 32px;
+}
+
 body {
-  font-family: "Space Grotesk", sans-serif;
-  color: #e0e0e0;
-  background-color: #121212;
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 a {
-  color: #e0e0e0;
+  color: var(--color-text);
   font-weight: 600;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ffffff;
+  color: var(--color-text-strong);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
 }
 
 .navbar {
-  background-color: #121212 !important;
+  background-color: var(--color-bg) !important;
 }
 
 .nav-link-login {
-  color: #d7d7d7;
+  color: var(--color-text-soft);
 }
 
 .nav-link-login:hover,
 .nav-link-login:focus {
-  color: #ffffff;
+  color: var(--color-text-strong);
 }
 
 div .spacer {
   height: 64px;
 }
 
-/* Mobile: Global centering for hamburger menu */
 @media (max-width: 991.98px) {
   .nav-container {
     position: relative;
-    /* Keep a stable top bar height so items don't shift when the collapse opens */
-    min-height: 32px;
+    min-height: var(--nav-mobile-stable-height);
   }
 
   .nav-container .navbar-toggler {
@@ -55,15 +95,14 @@ div .spacer {
     padding: 0.35rem 0.75rem;
   }
 
-  /* Take the collapsible menu out of normal flow so it doesn't push the top bar down */
   .nav-container .navbar-collapse {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: #121212;
-    padding: 16px 0;
     z-index: 1000;
+    background: var(--color-bg);
+    padding: 16px 0;
   }
 
   .nav-container .navbar-collapse .navbar-nav {
@@ -71,13 +110,12 @@ div .spacer {
   }
 }
 
-/* Desktop: Global centering for nav items */
 @media (min-width: 992px) {
   .nav-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
   }
 
   .nav-container .navbar-brand {
@@ -91,7 +129,6 @@ div .spacer {
   }
 }
 
-/* Very narrow screens: further reduce CTA button */
 @media (max-width: 400px) {
   .nav-container .btn-nav-cta {
     font-size: 0.65rem;
@@ -99,12 +136,6 @@ div .spacer {
   }
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 600;
-}
-
-/* Hero Section Styling */
 .hero-title {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 600;
@@ -112,55 +143,84 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+.hero-subtitle,
+.section-subtitle,
+.code-keyword {
+  color: var(--color-text-muted);
+}
+
 .hero-subtitle {
   font-size: 1.25rem;
-  color: #a0a0a0;
-  max-width: 600px;
+  max-width: var(--text-content-max-width);
   margin: 0 auto;
   line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
+.section-title {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  max-width: var(--text-content-max-width);
+  margin: 0 auto;
+}
+
+.cta-description {
+  font-size: 1.1rem;
+  max-width: var(--text-content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-content {
+  max-width: var(--hero-content-max-width);
+  margin: 0 auto;
+}
+
+.brand-text {
+  font-family: var(--font-family-brand);
+}
+
+.btn-primary.rounded-pill,
+.btn-outline-light.rounded-pill {
+  letter-spacing: 0.5px;
+  transition: var(--transition-fast);
 }
 
 .btn-primary.rounded-pill {
-  background-color: #e0e0e0;
-  border-color: #e0e0e0;
-  color: #121212;
+  background-color: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-text-inverse);
   font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.2s ease;
 }
 
-.btn-primary.rounded-pill:hover {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  color: #121212;
+.btn-primary.rounded-pill:hover,
+.btn-primary.rounded-pill:focus {
+  background-color: var(--color-text-strong);
+  border-color: var(--color-text-strong);
+  color: var(--color-text-inverse);
   text-decoration: none;
 }
 
 .btn-primary.rounded-pill:focus {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  color: #121212;
   box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5);
 }
 
 .btn-outline-light.rounded-pill {
   border-width: 1px;
-  letter-spacing: 0.5px;
-  transition: all 0.2s ease;
 }
 
 .btn-outline-light.rounded-pill:hover {
-  color: #121212;
-  background: #ffffff;
+  color: var(--color-text-inverse);
+  background: var(--color-text-strong);
   text-decoration: none;
 }
 
 .text-muted {
-  color: #7c7c7c !important;
+  color: var(--color-text-muted-utility) !important;
 }
 
 .overlay {
@@ -172,20 +232,18 @@ a {
 }
 
 .overlay img {
-  border: 1px solid #27272a;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--color-border-image);
+  box-shadow: var(--shadow-overlay);
 }
 
 .panel {
-  background-color: #202121;
+  background-color: var(--color-panel);
 }
 
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition:
-    opacity 0.6s ease-out,
-    transform 0.6s ease-out;
+  transition: var(--transition-fade);
 }
 
 .fade-in.visible {
@@ -194,80 +252,58 @@ a {
 }
 
 .section-divider {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--color-border-subtle);
   padding-top: 4rem;
 }
 
-.section-title {
-  font-size: clamp(2rem, 3vw, 2.5rem);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.section-subtitle {
-  font-size: 1.15rem;
-  color: #a0a0a0;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .feature-card {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border-subtle);
+  transition: var(--transition-lift);
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-border-medium);
 }
 
 .bg-darker {
-  background-color: #1a1a1a;
+  background-color: var(--color-bg-darker);
 }
 
 .border-end-md {
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid var(--color-border-subtle);
 }
 
 @media (max-width: 767.98px) {
   .border-end-md {
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--color-border-subtle);
   }
 }
 
 .code-block {
-  background-color: #121212;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border-medium);
 }
 
-/* Full-width contrasting section bands */
+.code-block pre {
+  color: var(--color-text);
+  font-family: var(--font-family-mono);
+  font-size: 0.9rem;
+}
+
 .section-band {
-  background-color: #242424;
+  background-color: var(--color-band);
   padding-bottom: 3rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border-soft);
+  border-bottom: 1px solid var(--color-border-soft);
 }
 
 .section-band .section-divider {
   border-top: none;
 }
 
-/* Navbar brand text (Goldman font) */
-.brand-text {
-  font-family: "Goldman", serif;
-}
-
-/* Hero section content wrapper */
-.hero-content {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Hero background image container */
 .hero-image-bg {
   background-image: url("../../assets/img/albena.webp");
   background-size: cover;
@@ -276,45 +312,21 @@ a {
   aspect-ratio: 16 / 9;
 }
 
-/* Image placeholder cards */
 .image-placeholder {
   background: rgba(0, 0, 0, 0.2);
-  border: 1px dashed #333;
+  border: 1px dashed var(--color-border-placeholder);
 }
 
-/* Code block pre formatting */
-.code-block pre {
-  color: #e0e0e0;
-  font-family: monospace;
-  font-size: 0.9rem;
-}
-
-/* Syntax highlighting keyword */
-.code-keyword {
-  color: #a0a0a0;
-}
-
-/* Spaced list items */
 .list-spaced {
   line-height: 2;
 }
 
-/* CTA section description */
-.cta-description {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Zmey game image */
 .zmey-image {
   background-color: oklch(21% 0.034 264.665);
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+  box-shadow: var(--shadow-zmey-inset);
 }
 
-/* Footer social icons */
 .social-icon {
   font-size: 36px;
-  color: gray;
+  color: var(--color-text-gray);
 }
