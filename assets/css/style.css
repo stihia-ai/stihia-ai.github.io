@@ -37,33 +37,33 @@
   --lh-double: 2;
 
   /* Color — Backgrounds */
-  --color-bg: #121212;
-  --color-bg-darker: #1a1a1a;
-  --color-panel: #202121;
-  --color-band: #242424;
-  --color-card-surface: rgba(16, 17, 18, 0.92);
-  --color-zmey-bg: #121212;
+  --color-bg: #131211;
+  --color-bg-darker: #1b1a18;
+  --color-panel: #21201d;
+  --color-band: #272521;
+  --color-card-surface: rgba(16, 15, 13, 0.93);
+  --color-zmey-bg: #131211;
 
   /* Color — Text */
-  --color-text: #e0e0e0;
-  --color-text-strong: #ffffff;
-  --color-text-soft: #d7d7d7;
-  --color-text-muted: #a0a0a0;
-  --color-text-muted-utility: #7c7c7c;
-  --color-text-inverse: #121212;
-  --color-text-gray: gray;
-  --color-text-dim: #c7cbcf;
+  --color-text: #d9d5cf;
+  --color-text-strong: #f5f2ed;
+  --color-text-soft: #bfbab3;
+  --color-text-muted: #8a8580;
+  --color-text-muted-utility: #635f59;
+  --color-text-inverse: #131211;
+  --color-text-gray: #706b65;
+  --color-text-dim: #a19c96;
 
   /* Color — Borders */
-  --color-border-subtle: rgba(255, 255, 255, 0.05);
-  --color-border-soft: rgba(255, 255, 255, 0.08);
-  --color-border-medium: rgba(255, 255, 255, 0.1);
-  --color-border-image: #27272a;
+  --color-border-subtle: rgba(180, 168, 148, 0.06);
+  --color-border-soft: rgba(180, 168, 148, 0.09);
+  --color-border-medium: rgba(180, 168, 148, 0.13);
+  --color-border-image: #2a2825;
 
   /* Shadows */
-  --shadow-overlay: 0 8px 16px rgba(0, 0, 0, 0.5);
-  --shadow-card-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
-  --shadow-zmey-inset: inset 0 0 20px rgba(0, 0, 0, 0.8);
+  --shadow-overlay: 0 8px 20px rgba(10, 8, 4, 0.55);
+  --shadow-card-hover: 0 12px 36px rgba(10, 8, 4, 0.5);
+  --shadow-zmey-inset: inset 0 0 24px rgba(8, 6, 2, 0.8);
 
   /* Transitions */
   --transition-fast: all 0.2s ease;
@@ -90,9 +90,9 @@
   --z-dropdown: 1000;
 
   /* Detection Layer Accent Colors */
-  --accent-signature: oklch(74% 0.045 78);
-  --accent-semantic: oklch(74% 0.04 238);
-  --accent-anomaly: oklch(79% 0.05 168);
+  --accent-signature: oklch(76% 0.09 70);
+  --accent-semantic: oklch(72% 0.065 48);
+  --accent-anomaly: oklch(80% 0.08 88);
 }
 
 /* --------------------------------------------------------------------------
