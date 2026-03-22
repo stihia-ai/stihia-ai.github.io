@@ -282,27 +282,10 @@
           <div class="col-sm panel rounded p-4 m-3 feature-card">
             <h3>Multi-Layer Detection</h3>
             <div class="my-4">
-              <div
-                id="image-placeholder-1"
-                class="image-placeholder text-muted small p-3 rounded"
-              >
-                A refined layered composition on a deep charcoal background
-                (#121212): three slim horizontal panels floating with generous
-                spacing, each representing one detection layer. The panels
-                feel slightly translucent and softly separated, with thin
-                hairline borders rather than heavy blocks. Each panel contains
-                one short left-aligned label in white Space Grotesk, medium
-                weight: "Deterministic", "Probabilistic", "Anomaly". Beside
-                each label sits one very small, understated glyph: a precise
-                shield outline, a three-node cluster, and a subtle waveform.
-                A single fine vertical spine connects the three panels,
-                suggesting the layers work together without using thick arrows.
-                Add only two tiny muted amber markers along the spine as a
-                quiet accent. No extra captions, no large icons, no dense
-                detail. Palette: graphite, smoke gray, soft white, and a
-                restrained amber accent only. 4:3 aspect ratio, card-width,
-                fully legible at roughly 300 px wide.
-              </div>
+              <img
+                src="./assets/img/stihia-platform-1-multi-layer-detection.webp"
+                alt="Stihia Platform - Multi-Layer Detection"
+                class="img-fluid rounded">
             </div>
             <p class="text-secondary">
               Deterministic, probabilistic, and self-optimizing anomaly
@@ -313,26 +296,10 @@
           <div class="col-sm panel rounded p-4 m-3 feature-card">
             <h3>Full AI Coverage</h3>
             <div class="my-4">
-              <div
-                id="image-placeholder-2"
-                class="image-placeholder text-muted small p-3 rounded"
-              >
-                An elegant hub-and-spoke composition on a dark charcoal
-                background (#121212). The upper left features a compact
-                "Custom AI" label above one minimal code-bracket symbol inside
-                a soft-edged panel. The upper right features a matching panel
-                labeled "AI Tools" with three small pill-shaped chips reading
-                "ChatGPT", "Claude", and "Copilot". From both source panels,
-                two thin curved connector lines descend toward a single centered
-                destination panel near the bottom labeled "Stihia Sense" with
-                a subtle shield outline. The emphasis should be on graceful
-                convergence, not bold arrows or hard separation lines. Keep the
-                typography sparse and crisp, with only these labels visible.
-                Use layered graphite tones, soft white text, and optionally one
-                very faint warm-gray accent for depth, but no loud color. No
-                fine detail, no extra icons, no busy integration callouts. 4:3
-                aspect ratio, card-width, fully legible at roughly 300 px wide.
-              </div>
+              <img
+                src="./assets/img/stihia-platform-2-full-ai-coverage.webp"
+                alt="Stihia Platform - Full AI Coverage"
+                class="img-fluid rounded">
             </div>
             <p class="text-secondary">
               Monitor custom-built AI agents via SDK and well-known tools like
@@ -343,29 +310,10 @@
           <div class="col-sm panel rounded p-4 m-3 feature-card">
             <h3>Instant Alerts</h3>
             <div class="my-4">
-              <div
-                id="image-placeholder-3"
-                class="image-placeholder text-muted small p-3 rounded"
-              >
-                  A restrained left-to-right composition on a deep charcoal
-                  background (#121212). On the left, a compact alert panel with
-                  soft edges and a thin hairline border contains only two lines
-                  of crisp white type: "Critical" and "Data Leak". A single
-                  small amber marker sits at the panel edge as the only warm
-                  accent, signaling urgency without turning the panel into a
-                  loud warning tile. On the right, a larger receiving panel
-                  labeled "SIEM" holds three short horizontal log lines in soft
-                  gray, with the top line subtly echoed by a tiny amber dot.
-                  A fine connector line links the alert panel to the SIEM panel,
-                  with a small understated "OTel" label floating above the line
-                  to indicate transport. The emphasis should be on calm
-                  transmission and enterprise clarity, not bold arrows or heavy
-                  contrast. Keep the palette limited to graphite, smoke gray,
-                  soft white, and one restrained amber accent only. No extra
-                  captions, no dense metadata, no bright color, no fine detail.
-                  4:3 aspect ratio, card-width, fully legible at roughly 300 px
-                  wide.
-              </div>
+              <img
+                src="./assets/img/stihia-platform-3-instant-alerts.webp"
+                alt="Stihia Platform - Instant Alerts"
+                class="img-fluid rounded">
             </div>
             <p class="text-secondary">
               Real-time alerts with full context, feeding directly into your
@@ -435,48 +383,11 @@ async for chunk in guard.shield(llm.astream(prompt)):
           </div>
           <div class="row mt-4">
             <div class="col-sm-12 mb-5">
-              <div
-                id="image-placeholder-4"
-                class="image-placeholder text-muted p-5 rounded text-center"
-              >
-                A wide horizontal pipeline diagram on a dark background
-                (#121212), reading left-to-right, showing the complete Stihia
-                Sense detection flow. FAR LEFT: A cluster of incoming data
-                represented as a stream of small message bubbles or document
-                icons, labeled "AI Messages" in white text above — these
-                represent raw messages from all AI systems (both custom agents
-                and well-known tools). The stream flows right through a thin
-                connecting line into three parallel processing stages running
-                simultaneously. STAGE 1 (top lane): A rectangular block with
-                rounded corners, dark panel background (#202121), containing a
-                gear/rule icon at the top and the label "Deterministic
-                Classifiers" in white. Inside, tiny text examples: "rm -rf /",
-                "credential exposure", "destructive commands". STAGE 2 (middle
-                lane): Similar rectangular block, slightly different shade
-                (#1e1e1e), with a brain/ML icon at the top and label
-                "Probabilistic Classifiers". Inside, tiny examples: "prompt
-                injection", "social engineering", "semantic data extraction".
-                STAGE 3 (bottom lane): Similar block with a waveform/chart icon
-                at the top and label "Anomaly Detection". Inside, tiny examples:
-                "behavior drift", "scope creep", "goal hijacking", "rogue
-                agents". All three stages converge into a single "Severity
-                Aggregation" block on the right — a rounded panel containing
-                four severity dots (Critical, High, Medium, Low) stacked
-                vertically, showing that findings from any layer are classified
-                by severity uniformly. From the aggregation block, two output
-                paths emerge: one going to a shield icon labeled "Protected
-                Output" (clean messages), and one going down to a bell icon
-                labeled "SOC Alerts → SIEM" showing the alert pathway. Color
-                palette: strictly monochromatic with dark grays and white text
-                throughout. Only the severity dots use very desaturated warm
-                tones — no bright reds, no purple, no gradients. The three
-                stages are visually distinct through subtle background shade
-                differences, not color. Thin connecting lines in
-                rgba(255,255,255,0.15). Typography: Space Grotesk for all
-                labels, monospace for example threats. Dimensions: 16:5 or 3:1
-                wide aspect ratio to emphasize the horizontal flow, suitable for
-                full-width display spanning the content area.
-              </div>
+              <img
+                src="./assets/img/stihia-detection-layers.webp"
+                alt="Stihia Detection Layers"
+                class="img-fluid rounded"
+              />
             </div>
           </div>
           <div class="row g-4">

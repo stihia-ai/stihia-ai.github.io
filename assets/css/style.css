@@ -20,7 +20,6 @@
   --color-border-soft: rgba(255, 255, 255, 0.08);
   --color-border-medium: rgba(255, 255, 255, 0.1);
   --color-border-image: #27272a;
-  --color-border-placeholder: #333;
 
   --shadow-overlay: 0 8px 16px rgba(0, 0, 0, 0.5);
   --shadow-card-hover: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -310,11 +309,6 @@ div .spacer {
   background-position: center;
   width: 100%;
   aspect-ratio: 16 / 9;
-}
-
-.image-placeholder {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px dashed var(--color-border-placeholder);
 }
 
 .list-spaced {
