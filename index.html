@@ -442,12 +442,12 @@
                   font-size: 0.9rem;
                 "
               >
-<span style="color: #a0a0a0;">from</span> stihia <span style="color: #a0a0a0;">import</span> StihiaClient
+<span style="color: #a0a0a0;">from</span> stihia <span style="color: #a0a0a0;">import</span> StihiaClient, SenseGuard
 
-stihia = StihiaClient()
-async_stream = llm.astream(prompt)
+client = StihiaClient()
+guard = SenseGuard(client, messages)
 
-async for chunk in stihia.guard(async_stream):
+async for chunk in guard.shield(llm.astream(prompt)):
     yield chunk  <span style="color: #a0a0a0;"># secured by Stihia</span>
 </pre>
             </div>
