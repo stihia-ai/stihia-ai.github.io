@@ -10,7 +10,7 @@
   /* ── Typography — Families ───────────────────────────────────────────── */
   --font-family-base: "Space Grotesk", sans-serif;
   --font-family-brand: "Goldman", serif;
-  --font-family-mono: monospace;
+  --font-family-mono: "JetBrains Mono", "Fira Code", "SF Mono", monospace;
 
   /* ── Typography — Size Scale ─────────────────────────────────────────── */
   --fs-display: clamp(2.5rem, 5vw, 4rem);
@@ -55,8 +55,8 @@
   --color-text: oklch(86% 0.012 78);
   --color-text-strong: oklch(94% 0.01 80);
   --color-text-soft: oklch(78% 0.012 78);
-  --color-text-muted: oklch(66% 0.011 78);
-  --color-text-muted-utility: oklch(52% 0.01 78);
+  --color-text-muted: oklch(72% 0.011 78);
+  --color-text-muted-utility: oklch(64% 0.01 78);
   --color-text-inverse: oklch(17% 0.012 76);
   --color-text-gray: oklch(58% 0.011 78);
   --color-text-dim: oklch(72% 0.012 78);
@@ -98,7 +98,7 @@
   --nav-height-mobile: 32px;
 
   /* ── Spacing ─────────────────────────────────────────────────────────── */
-  --space-spacer: 64px;
+  --space-spacer: 40px;
   --space-section: 4rem;
   --space-band: 3rem;
 
@@ -367,7 +367,8 @@ h1 {
   transition: var(--transition-lift);
 }
 
-.feature-card:hover {
+.feature-card:hover,
+.feature-card:focus-within {
   transform: translateY(var(--lift-sm));
   box-shadow: var(--shadow-card-hover);
   border-color: var(--color-border-medium);
@@ -418,7 +419,7 @@ h1 {
   border-bottom: none;
 }
 
-.sdk-features li i {
+.sdk-features li svg {
   color: var(--color-text-muted);
   width: var(--_icon-size);
   text-align: center;
@@ -516,7 +517,8 @@ h1 {
   opacity: 0.75;
 }
 
-.detection-layer-card:hover {
+.detection-layer-card:hover,
+.detection-layer-card:focus-within {
   transform: translateY(var(--lift-md));
   border-color: color-mix(
     in srgb,
@@ -638,6 +640,23 @@ h1 {
 }
 
 /* --------------------------------------------------------------------------
+   Touch Target Sizing (WCAG 2.5.8)
+   -------------------------------------------------------------------------- */
+
+.navbar-toggler {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* --------------------------------------------------------------------------
    Responsive
    -------------------------------------------------------------------------- */
 
@@ -677,6 +696,8 @@ h1 {
     z-index: var(--z-dropdown);
     background: var(--color-bg);
     padding: var(--_collapse-py) 0;
+    border-bottom: 1px solid var(--color-border-soft);
+    box-shadow: 0 8px 24px oklch(9% 0.01 76 / 0.45);
   }
 
   .nav-container .navbar-collapse .navbar-nav {

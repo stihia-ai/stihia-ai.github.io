@@ -17,6 +17,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
+      defer
     ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,7 +31,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- SEO -->
@@ -170,7 +171,7 @@
     <!-- Top Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container nav-container">
-        <a class="navbar-brand" href="https://stihia.ai/">
+        <a class="navbar-brand" href="/">
           <img
             src="./assets/logo/stihia-logo.svg"
             alt="Logo"
@@ -233,121 +234,137 @@
       </div>
     </nav>
 
-    <!-- Header: Home -->
-    <header id="home" class="container pt-5 mt-5 text-center">
-      <div class="row mt-5 mb-3">
-        <div class="col-sm hero-content">
-          <h1 class="hero-title">Real-Time Threat Detection for AI Systems</h1>
-          <p class="hero-subtitle">
-            Get alerted when your AI agents go rogue, leak data, or get tricked
-            by prompt injections.
-          </p>
-        </div>
-      </div>
-      <div class="row mt-4 mb-5">
-        <div class="col-sm">
-          <a
-            class="btn btn-primary rounded-pill"
-            href="https://tally.so/r/Bzp59Q"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book a Demo
-          </a>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-sm">
-          <div class="rounded hero-image-bg">
-            <div class="overlay p-5">
-              <img
-                src="./assets/img/stihia-console-screenshot.png"
-                alt="Stihia Console Screenshot"
-                class="img-fluid rounded"
-              />
-            </div>
+    <main>
+      <!-- Header: Home -->
+      <header id="home" class="container pt-5 mt-5 text-center">
+        <div class="row mt-5 mb-3">
+          <div class="col-sm hero-content">
+            <h1 class="hero-title">
+              Real-Time Threat Detection for AI Systems
+            </h1>
+            <p class="hero-subtitle">
+              Get alerted when your AI agents go rogue, leak data, or get
+              tricked by prompt injections.
+            </p>
           </div>
         </div>
-      </div>
-    </header>
-
-    <!-- Section: Product -->
-    <section id="product" class="container pt-5">
-      <div class="spacer"></div>
-      <div class="container fade-in">
-        <div class="row mb-5 text-center">
+        <div class="row mt-4 mb-5">
           <div class="col-sm">
-            <h2 class="section-title">Security for your entire AI landscape</h2>
-            <p class="section-subtitle">
-              One platform. Every AI system. Real-time protection.
-            </p>
+            <a
+              class="btn btn-primary rounded-pill"
+              href="https://tally.so/r/Bzp59Q"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Demo
+            </a>
           </div>
         </div>
-        <div class="row mt-3 justify-content-center text-center">
-          <div class="col-sm panel rounded p-4 m-3 feature-card">
-            <h3>Multi-Layer Detection</h3>
-            <div class="my-4">
-              <img
-                src="./assets/img/stihia-platform-1-multi-layer-detection.webp"
-                alt="Stihia Platform - Multi-Layer Detection"
-                class="img-fluid rounded"
-              />
-            </div>
-            <p class="text-secondary">
-              Deterministic, probabilistic, and self-optimizing anomaly
-              detection models working together — catching what each layer alone
-              would miss.
-            </p>
-          </div>
-          <div class="col-sm panel rounded p-4 m-3 feature-card">
-            <h3>Full AI Coverage</h3>
-            <div class="my-4">
-              <img
-                src="./assets/img/stihia-platform-2-full-ai-coverage.webp"
-                alt="Stihia Platform - Full AI Coverage"
-                class="img-fluid rounded"
-              />
-            </div>
-            <p class="text-secondary">
-              Monitor custom-built AI agents via SDK and well-known tools like
-              ChatGPT, Claude Code, and Copilot — through daemon, webhook, or
-              direct provider integration.
-            </p>
-          </div>
-          <div class="col-sm panel rounded p-4 m-3 feature-card">
-            <h3>Instant Alerts</h3>
-            <div class="my-4">
-              <img
-                src="./assets/img/stihia-platform-3-instant-alerts.webp"
-                alt="Stihia Platform - Instant Alerts"
-                class="img-fluid rounded"
-              />
-            </div>
-            <p class="text-secondary">
-              Real-time alerts with full context, feeding directly into your
-              existing SIEM via OpenTelemetry signals.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="spacer"></div>
-      <div class="container fade-in section-divider">
-        <div class="row mb-5 text-center">
+        <div class="row mt-5">
           <div class="col-sm">
-            <h2 class="section-title">Two paths. One security layer.</h2>
+            <div class="rounded hero-image-bg">
+              <div class="overlay p-5">
+                <img
+                  src="./assets/img/stihia-console-screenshot.png"
+                  alt="Stihia Console Screenshot"
+                  class="img-fluid rounded"
+                  width="2030"
+                  height="994"
+                />
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row panel rounded overflow-hidden">
-          <div class="col-md-6 p-5 border-end-md">
-            <h3>SDK for Custom AI</h3>
-            <p class="text-secondary mb-4">
-              Drop-in Python SDK with additional LangChain/LangGraph support. A
-              few lines of code and every AI interaction flows into the
-              detection pipeline.
-            </p>
-            <div class="code-block rounded p-3">
-              <pre class="m-0 text-start">
+      </header>
+
+      <!-- Section: Product -->
+      <section id="product" class="container pt-5">
+        <div class="spacer"></div>
+        <div class="container fade-in">
+          <div class="row mb-5 text-center">
+            <div class="col-sm">
+              <h2 class="section-title">
+                Security for your entire AI landscape
+              </h2>
+              <p class="section-subtitle">
+                One platform. Every AI system. Real-time protection.
+              </p>
+            </div>
+          </div>
+          <div class="row mt-3 justify-content-center text-center">
+            <div class="col-sm panel rounded p-4 m-3 feature-card">
+              <h3>Multi-Layer Detection</h3>
+              <div class="my-4">
+                <img
+                  src="./assets/img/stihia-platform-1-multi-layer-detection.webp"
+                  alt="Stihia Platform - Multi-Layer Detection"
+                  class="img-fluid rounded"
+                  width="2400"
+                  height="1792"
+                  loading="lazy"
+                />
+              </div>
+              <p class="text-secondary">
+                Deterministic, probabilistic, and self-optimizing anomaly
+                detection models working together — catching what each layer
+                alone would miss.
+              </p>
+            </div>
+            <div class="col-sm panel rounded p-4 m-3 feature-card">
+              <h3>Full AI Coverage</h3>
+              <div class="my-4">
+                <img
+                  src="./assets/img/stihia-platform-2-full-ai-coverage.webp"
+                  alt="Stihia Platform - Full AI Coverage"
+                  class="img-fluid rounded"
+                  width="2400"
+                  height="1792"
+                  loading="lazy"
+                />
+              </div>
+              <p class="text-secondary">
+                Monitor custom-built AI agents via SDK and well-known tools like
+                ChatGPT, Claude Code, and Copilot — through daemon, webhook, or
+                direct provider integration.
+              </p>
+            </div>
+            <div class="col-sm panel rounded p-4 m-3 feature-card">
+              <h3>Instant Alerts</h3>
+              <div class="my-4">
+                <img
+                  src="./assets/img/stihia-platform-3-instant-alerts.webp"
+                  alt="Stihia Platform - Instant Alerts"
+                  class="img-fluid rounded"
+                  width="2400"
+                  height="1792"
+                  loading="lazy"
+                />
+              </div>
+              <p class="text-secondary">
+                Real-time alerts with full context, feeding directly into your
+                existing SIEM via OpenTelemetry signals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+        <div class="container fade-in section-divider">
+          <div class="row mb-5 text-center">
+            <div class="col-sm">
+              <h2 class="section-title">Two paths. One security layer.</h2>
+            </div>
+          </div>
+          <div class="row panel rounded overflow-hidden">
+            <div class="col-md-6 p-5 border-end-md">
+              <h3>SDK for Custom AI</h3>
+              <p class="text-secondary mb-4">
+                Drop-in Python SDK with additional LangChain/LangGraph support.
+                A few lines of code and every AI interaction flows into the
+                detection pipeline.
+              </p>
+              <div class="code-block rounded p-3">
+                <pre class="m-0 text-start">
 <span class="code-keyword">from</span> stihia <span class="code-keyword">import</span> StihiaClient, SenseGuard
 
 client = StihiaClient()
@@ -356,335 +373,355 @@ guard = SenseGuard(client, messages)
 async for chunk in guard.shield(llm.astream(prompt)):
     yield chunk  <span class="code-keyword"># secured by Stihia</span>
 </pre>
-            </div>
-            <ul class="sdk-features mt-4">
-              <li>
-                <i class="fa fa-bolt"></i>
-                <span
-                  ><strong>Streaming-native</strong> — protects token by token
-                  as they flow</span
-                >
-              </li>
-              <li>
-                <i class="fa fa-puzzle-piece"></i>
-                <span
-                  ><strong>LangChain & LangGraph</strong> — drop-in framework
-                  support</span
-                >
-              </li>
-              <li>
-                <i class="fa fa-comments-o"></i>
-                <span
-                  ><strong>Conversation context</strong> — full message history
-                  captured automatically</span
-                >
-              </li>
-              <li>
-                <i class="fa fa-code"></i>
-                <span
-                  ><strong>Zero restructuring</strong> — wrap your existing
-                  code, don't rewrite it</span
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-6 p-5 bg-darker">
-            <h3>Track Every AI Tool</h3>
-            <p class="text-secondary mb-4">
-              See every interaction across well-known AI systems whether via
-              local daemon, direct webhook, or provider API. One pane of glass,
-              any integration method.
-            </p>
-            <img
-              src="./assets/img/stihia-ai-tools.webp"
-              alt="Stihia AI Tools"
-              class="img-fluid rounded"
-            />
-          </div>
-        </div>
-        <div class="spacer"></div>
-      </div>
-    </section>
-
-    <div class="section-band mt-5">
-      <div class="container">
-        <div class="fade-in section-divider">
-          <div class="row mb-4 text-center">
-            <div class="col-sm">
-              <h2 class="section-title">Three layers. Zero blind spots.</h2>
-              <p class="section-subtitle">
-                The Stihia Sense engine analyzes every message in real-time
-                through three fundamentally different detection approaches —
-                with anomaly models that recursively self-optimize per project.
-              </p>
-            </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-sm-12 mb-5">
-              <img
-                src="./assets/img/stihia-detection-layers.webp"
-                alt="Stihia Detection Layers"
-                class="img-fluid rounded"
-              />
-            </div>
-          </div>
-          <div class="row g-4 detection-layer-grid">
-            <div
-              class="col-md-4 detection-layer-column detection-layer-column-1"
-            >
-              <article
-                class="detection-layer-card detection-layer-card-signature"
-              >
-                <div class="detection-layer-meta">
-                  <span class="detection-layer-index">Layer 01</span>
-                  <span class="detection-layer-pill">Signature rules</span>
-                </div>
-                <h4 class="detection-layer-title">Deterministic Classifiers</h4>
-                <p class="detection-layer-copy mb-0">
-                  Known threat signatures: destructive tool usage, credential
-                  exposure, dangerous commands. Fires instantly with zero
-                  ambiguity.
-                </p>
-              </article>
-            </div>
-            <div
-              class="col-md-4 detection-layer-column detection-layer-column-2"
-            >
-              <article
-                class="detection-layer-card detection-layer-card-semantic"
-              >
-                <div class="detection-layer-meta">
-                  <span class="detection-layer-index">Layer 02</span>
-                  <span class="detection-layer-pill">Semantic ML</span>
-                </div>
-                <h4 class="detection-layer-title">Probabilistic Classifiers</h4>
-                <p class="detection-layer-copy mb-0">
-                  ML models for semantic threats: prompt injections, social
-                  engineering, sophisticated data extraction that keyword
-                  matching cannot catch.
-                </p>
-              </article>
-            </div>
-            <div
-              class="col-md-4 detection-layer-column detection-layer-column-3"
-            >
-              <article
-                class="detection-layer-card detection-layer-card-anomaly"
-              >
-                <div class="detection-layer-meta">
-                  <span class="detection-layer-index">Layer 03</span>
-                  <span class="detection-layer-pill">Behavioral baselines</span>
-                </div>
-                <h4 class="detection-layer-title">Anomaly Detection</h4>
-                <p class="detection-layer-copy mb-0">
-                  Behavioral baselines catch scope creep, unexpected actions,
-                  and goal hijacking. Models adapt per project with no manual
-                  tuning.
-                </p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <section class="container pt-5">
-      <div class="spacer"></div>
-      <div class="fade-in section-divider">
-        <div class="row mb-4 text-center">
-          <div class="col-sm">
-            <h2 class="section-title">Deploy on your terms</h2>
-            <p class="section-subtitle">
-              Match hosting to your compliance requirements.
-            </p>
-          </div>
-        </div>
-        <div class="row mt-4 justify-content-center g-4">
-          <div class="col-md-4">
-            <div class="panel rounded p-4 h-100 feature-card">
-              <h4 class="mb-3">Cloud-Hosted</h4>
-              <p class="text-secondary mb-0">
-                EU data centers. Fully managed by Stihia. Zero infrastructure
-                work on your side.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="panel rounded p-4 h-100 feature-card">
-              <h4 class="mb-3">Isolated Cloud</h4>
-              <p class="text-secondary mb-0">
-                Dedicated single-tenant instance. Stronger isolation with Stihia
-                managing operations.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="panel rounded p-4 h-100 feature-card">
-              <h4 class="mb-3">Self-Hosted</h4>
-              <p class="text-secondary mb-0">
-                Full platform on your infrastructure. Air-gapped environments.
-                Complete data sovereignty.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="spacer"></div>
-      </div>
-    </section>
-
-    <section class="container pt-5">
-      <div class="spacer"></div>
-      <div class="fade-in section-divider">
-        <div class="row mb-4 text-center">
-          <div class="col-sm">
-            <h2 class="section-title">See threats. Route signals.</h2>
-            <p class="section-subtitle">
-              Native visibility out of the box, or integrate with your existing
-              SIEM.
-            </p>
-          </div>
-        </div>
-        <div class="row mt-5 g-5 align-items-center">
-          <div class="col-md-6">
-            <div
-              class="panel rounded p-2 mb-4 border border-secondary border-opacity-25"
-            >
-              <img
-                src="./assets/img/stihia-console-threads-screenshot.png"
-                alt="Stihia Console dashboard showing threads and severity"
-                class="img-fluid rounded"
-              />
-            </div>
-            <h4 class="mb-3">Built-in security console</h4>
-            <p class="text-secondary mb-0">
-              Immediate visibility into your AI traffic. Track active users,
-              view overall thread volume, and drill down into conversations
-              grouped by critical, high, medium, and low severity alerts.
-            </p>
-          </div>
-          <div class="col-md-6">
-            <div
-              class="panel rounded p-4 h-100 feature-card d-flex flex-column justify-content-center"
-            >
-              <h4 class="mb-3">SIEM & OTel Integration</h4>
-              <p class="text-secondary mb-4">
-                All detection data is exported as standard OpenTelemetry
-                signals. Route alerts to any OTel-capable sink to enrich your
-                current security operations.
-              </p>
-              <ul class="list-unstyled text-secondary mb-0 list-spaced">
+              </div>
+              <ul class="sdk-features mt-4">
                 <li>
-                  <i class="fa fa-long-arrow-right text-muted me-2"></i>
-                  Compatible with any SIEM platform
+                  <i class="fa fa-bolt"></i>
+                  <span
+                    ><strong>Streaming-native</strong> — protects token by token
+                    as they flow</span
+                  >
                 </li>
                 <li>
-                  <i class="fa fa-long-arrow-right text-muted me-2"></i> Export
-                  to observability tools
+                  <i class="fa fa-puzzle-piece"></i>
+                  <span
+                    ><strong>LangChain & LangGraph</strong> — drop-in framework
+                    support</span
+                  >
                 </li>
                 <li>
-                  <i class="fa fa-long-arrow-right text-muted me-2"></i> Forward
-                  to data lakes & custom dashboards
+                  <i class="fa fa-comments"></i>
+                  <span
+                    ><strong>Conversation context</strong> — full message
+                    history captured automatically</span
+                  >
                 </li>
                 <li>
-                  <i class="fa fa-long-arrow-right text-muted me-2"></i> Your
-                  existing security toolchain, not another silo
+                  <i class="fa fa-code"></i>
+                  <span
+                    ><strong>Zero restructuring</strong> — wrap your existing
+                    code, don't rewrite it</span
+                  >
                 </li>
               </ul>
             </div>
+            <div class="col-md-6 p-5 bg-darker">
+              <h3>Track Every AI Tool</h3>
+              <p class="text-secondary mb-4">
+                See every interaction across well-known AI systems whether via
+                local daemon, direct webhook, or provider API. One pane of
+                glass, any integration method.
+              </p>
+              <img
+                src="./assets/img/stihia-ai-tools.webp"
+                alt="Stihia AI Tools"
+                class="img-fluid rounded"
+                width="2400"
+                height="1792"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="spacer"></div>
+        </div>
+      </section>
+
+      <div class="section-band mt-5">
+        <div class="container">
+          <div class="fade-in section-divider">
+            <div class="row mb-4 text-center">
+              <div class="col-sm">
+                <h2 class="section-title">Three layers. Zero blind spots.</h2>
+                <p class="section-subtitle">
+                  The Stihia Sense engine analyzes every message in real-time
+                  through three fundamentally different detection approaches —
+                  with anomaly models that recursively self-optimize per
+                  project.
+                </p>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-sm-12 mb-5">
+                <img
+                  src="./assets/img/stihia-detection-layers.webp"
+                  alt="Stihia Detection Layers"
+                  class="img-fluid rounded"
+                  width="3712"
+                  height="1152"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+            <div class="row g-4 detection-layer-grid">
+              <div
+                class="col-md-4 detection-layer-column detection-layer-column-1"
+              >
+                <article
+                  class="detection-layer-card detection-layer-card-signature"
+                >
+                  <div class="detection-layer-meta">
+                    <span class="detection-layer-index">Layer 01</span>
+                    <span class="detection-layer-pill">Signature rules</span>
+                  </div>
+                  <h4 class="detection-layer-title">
+                    Deterministic Classifiers
+                  </h4>
+                  <p class="detection-layer-copy mb-0">
+                    Known threat signatures: destructive tool usage, credential
+                    exposure, dangerous commands. Fires instantly with zero
+                    ambiguity.
+                  </p>
+                </article>
+              </div>
+              <div
+                class="col-md-4 detection-layer-column detection-layer-column-2"
+              >
+                <article
+                  class="detection-layer-card detection-layer-card-semantic"
+                >
+                  <div class="detection-layer-meta">
+                    <span class="detection-layer-index">Layer 02</span>
+                    <span class="detection-layer-pill">Semantic ML</span>
+                  </div>
+                  <h4 class="detection-layer-title">
+                    Probabilistic Classifiers
+                  </h4>
+                  <p class="detection-layer-copy mb-0">
+                    ML models for semantic threats: prompt injections, social
+                    engineering, sophisticated data extraction that keyword
+                    matching cannot catch.
+                  </p>
+                </article>
+              </div>
+              <div
+                class="col-md-4 detection-layer-column detection-layer-column-3"
+              >
+                <article
+                  class="detection-layer-card detection-layer-card-anomaly"
+                >
+                  <div class="detection-layer-meta">
+                    <span class="detection-layer-index">Layer 03</span>
+                    <span class="detection-layer-pill">
+                      Behavioral baselines
+                    </span>
+                  </div>
+                  <h4 class="detection-layer-title">Anomaly Detection</h4>
+                  <p class="detection-layer-copy mb-0">
+                    Behavioral baselines catch scope creep, unexpected actions,
+                    and goal hijacking. Models adapt per project with no manual
+                    tuning.
+                  </p>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="spacer"></div>
       </div>
-    </section>
 
-    <div class="section-band mt-5">
-      <!-- Section: CTA -->
-      <section id="cta" class="container pt-5 text-center">
-        <div class="container fade-in">
+      <section class="container pt-5">
+        <div class="spacer"></div>
+        <div class="fade-in section-divider">
+          <div class="row mb-4 text-center">
+            <div class="col-sm">
+              <h2 class="section-title">Deploy on your terms</h2>
+              <p class="section-subtitle">
+                Match hosting to your compliance requirements.
+              </p>
+            </div>
+          </div>
+          <div class="row mt-4 justify-content-center g-4">
+            <div class="col-md-4">
+              <div class="panel rounded p-4 h-100 feature-card">
+                <h4 class="mb-3">Cloud-Hosted</h4>
+                <p class="text-secondary mb-0">
+                  EU data centers. Fully managed by Stihia. Zero infrastructure
+                  work on your side.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="panel rounded p-4 h-100 feature-card">
+                <h4 class="mb-3">Isolated Cloud</h4>
+                <p class="text-secondary mb-0">
+                  Dedicated single-tenant instance. Stronger isolation with
+                  Stihia managing operations.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="panel rounded p-4 h-100 feature-card">
+                <h4 class="mb-3">Self-Hosted</h4>
+                <p class="text-secondary mb-0">
+                  Full platform on your infrastructure. Air-gapped environments.
+                  Complete data sovereignty.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+        </div>
+      </section>
+
+      <section class="container pt-5">
+        <div class="spacer"></div>
+        <div class="fade-in section-divider">
+          <div class="row mb-4 text-center">
+            <div class="col-sm">
+              <h2 class="section-title">See threats. Route signals.</h2>
+              <p class="section-subtitle">
+                Native visibility out of the box, or integrate with your
+                existing SIEM.
+              </p>
+            </div>
+          </div>
+          <div class="row mt-5 g-5 align-items-center">
+            <div class="col-md-6">
+              <div
+                class="panel rounded p-2 mb-4 border border-secondary border-opacity-25"
+              >
+                <img
+                  src="./assets/img/stihia-console-threads-screenshot.png"
+                  alt="Stihia Console dashboard showing threads and severity"
+                  class="img-fluid rounded"
+                  width="2846"
+                  height="934"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="mb-3">Built-in security console</h4>
+              <p class="text-secondary mb-0">
+                Immediate visibility into your AI traffic. Track active users,
+                view overall thread volume, and drill down into conversations
+                grouped by critical, high, medium, and low severity alerts.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div
+                class="panel rounded p-4 h-100 feature-card d-flex flex-column justify-content-center"
+              >
+                <h4 class="mb-3">SIEM & OTel Integration</h4>
+                <p class="text-secondary mb-4">
+                  All detection data is exported as standard OpenTelemetry
+                  signals. Route alerts to any OTel-capable sink to enrich your
+                  current security operations.
+                </p>
+                <ul class="list-unstyled text-secondary mb-0 list-spaced">
+                  <li>
+                    <i class="fa fa-long-arrow-right text-muted me-2"></i>
+                    Compatible with any SIEM platform
+                  </li>
+                  <li>
+                    <i class="fa fa-long-arrow-right text-muted me-2"></i>
+                    Export to observability tools
+                  </li>
+                  <li>
+                    <i class="fa fa-long-arrow-right text-muted me-2"></i>
+                    Forward to data lakes & custom dashboards
+                  </li>
+                  <li>
+                    <i class="fa fa-long-arrow-right text-muted me-2"></i>
+                    Your existing security toolchain, not another silo
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+        </div>
+      </section>
+
+      <div class="section-band mt-5">
+        <!-- Section: CTA -->
+        <section id="cta" class="container pt-5 text-center">
+          <div class="container fade-in">
+            <div class="row">
+              <div class="col-sm my-auto p-5">
+                <h2>Detect AI security threats before they cause damage</h2>
+                <p class="mt-4 mb-5 cta-description">
+                  We support you at every step - from onboarding to long-term
+                  maintenance - tailoring our solution to meet your specific
+                  security requirements.
+                </p>
+                <a
+                  class="btn btn-primary rounded-pill"
+                  href="https://tally.so/r/Bzp59Q"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Section: Zmey -->
+      <section id="zmey" class="container pt-5 text-center">
+        <div class="spacer"></div>
+        <div class="container fade-in mb-4">
           <div class="row">
-            <div class="col-sm my-auto p-5">
-              <h2>Detect AI security threats before they cause damage</h2>
-              <p class="mt-4 mb-5 cta-description">
-                We support you at every step - from onboarding to long-term
-                maintenance - tailoring our solution to meet your specific
-                security requirements.
+            <div class="col-sm">
+              <h2>Stihia Zmey</h2>
+            </div>
+          </div>
+        </div>
+        <div class="container panel rounded">
+          <div class="row">
+            <div class="col-sm p-3">
+              <img
+                src="./assets/img/zmey.webp"
+                alt="Stihia Zmey"
+                class="img-fluid rounded-4 zmey-image"
+                width="1024"
+                height="1024"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-sm my-auto text-start p-5">
+              <h2>
+                Learn about AI agent vulnerabilities through an interactive game
+              </h2>
+              <p class="mt-4 mb-5">
+                Stihia Zmey allows you to test creative prompt techniques and
+                see how they affect an actual AI agent. Try it out!
               </p>
               <a
-                class="btn btn-primary rounded-pill"
-                href="https://tally.so/r/Bzp59Q"
+                class="btn btn-outline-light btn-lg px-4 rounded-pill"
+                href="https://zmey.stihia.ai"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a Demo
+                <span aria-hidden="true">🎮</span> Play Zmey
               </a>
             </div>
           </div>
         </div>
       </section>
-    </div>
 
-    <!-- Section: Zmey -->
-    <section id="zmey" class="container pt-5 text-center">
-      <div class="spacer"></div>
-      <div class="container fade-in mb-4">
-        <div class="row">
-          <div class="col-sm">
-            <h2>Stihia Zmey</h2>
+      <!-- Section: Contact -->
+      <section id="contact" class="container pt-5 text-center">
+        <div class="spacer"></div>
+        <div class="container fade-in mb-4">
+          <div class="row">
+            <div class="col-sm">
+              <h2>Contact</h2>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="container panel rounded">
-        <div class="row">
-          <div class="col-sm p-3">
-            <img
-              src="./assets/img/zmey.webp"
-              alt="Stihia Zmey"
-              class="img-fluid rounded-4 zmey-image"
-            />
-          </div>
-          <div class="col-sm my-auto text-start p-5">
-            <h2>
-              Learn about AI agent vulnerabilities through an interactive game
-            </h2>
-            <p class="mt-4 mb-5">
-              Stihia Zmey allows you to test creative prompt techniques and see
-              how they affect an actual AI agent. Try it out!
-            </p>
-            <a
-              class="btn btn-outline-light btn-lg px-4 rounded-pill"
-              href="https://zmey.stihia.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span aria-hidden="true">🎮</span> Play Zmey
-            </a>
+        <div class="container panel rounded">
+          <div class="row">
+            <div class="col-sm my-auto p-5">
+              <h3>Got any questions?</h3>
+              <p class="mt-4">
+                Feel free to reach out to us at
+                <a href="mailto:hello@stihia.ai">hello@stihia.ai</a>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Section: Contact -->
-    <section id="contact" class="container pt-5 text-center">
-      <div class="spacer"></div>
-      <div class="container fade-in mb-4">
-        <div class="row">
-          <div class="col-sm">
-            <h2>Contact</h2>
-          </div>
-        </div>
-      </div>
-      <div class="container panel rounded">
-        <div class="row">
-          <div class="col-sm my-auto p-5">
-            <h3>Got any questions?</h3>
-            <p class="mt-4">
-              Feel free to reach out to us at
-              <a href="mailto:hello@stihia.ai">hello@stihia.ai</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer id="footer" class="container text-center pt-5">
@@ -696,7 +733,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
             rel="noopener noreferrer"
             aria-label="Visit Stihia on LinkedIn"
           >
-            <i class="fa fa-linkedin-square social-icon"></i>
+            <i class="fa-brands fa-linkedin social-icon"></i>
           </a>
           &nbsp;
           <a
@@ -705,7 +742,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
             rel="noopener noreferrer"
             aria-label="Visit Stihia on GitHub"
           >
-            <i class="fa fa-github-square social-icon"></i>
+            <i class="fa-brands fa-github social-icon"></i>
           </a>
         </div>
       </div>
