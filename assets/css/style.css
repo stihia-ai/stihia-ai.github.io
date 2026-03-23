@@ -447,6 +447,7 @@ h1 {
 
 .detection-layer-column {
   position: relative;
+  display: flex;
 }
 
 .detection-layer-card {
@@ -467,9 +468,9 @@ h1 {
 
   position: relative;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   gap: var(--_gap);
-  min-height: 100%;
   padding: var(--_padding);
   border: 1px solid var(--color-border-soft);
   border-radius: var(--_radius);
@@ -725,14 +726,6 @@ footer a {
   .nav-container .btn-nav-cta {
     position: absolute;
     right: 0;
-  }
-
-  .detection-layer-column-2 {
-    margin-top: 2rem;
-  }
-
-  .detection-layer-column-3 {
-    margin-top: 0.9rem;
   }
 }
 
