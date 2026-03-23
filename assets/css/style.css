@@ -7,12 +7,12 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  /* Typography — Families */
+  /* ── Typography — Families ───────────────────────────────────────────── */
   --font-family-base: "Space Grotesk", sans-serif;
   --font-family-brand: "Goldman", serif;
   --font-family-mono: monospace;
 
-  /* Typography — Size Scale */
+  /* ── Typography — Size Scale ─────────────────────────────────────────── */
   --fs-display: clamp(2.5rem, 5vw, 4rem);
   --fs-h1: 3rem;
   --fs-h2: clamp(2rem, 3vw, 2.5rem);
@@ -25,18 +25,25 @@
   --fs-sm: 0.76rem;
   --fs-xs: 0.74rem;
   --fs-icon: 36px;
+  --fs-icon-sm: 0.85rem;
 
-  /* Typography — Weight & Line Height */
+  /* ── Typography — Weight ─────────────────────────────────────────────── */
   --fw-medium: 500;
   --fw-semibold: 600;
 
+  /* ── Typography — Line Height ────────────────────────────────────────── */
   --lh-tight: 1.1;
   --lh-snug: 1.25;
   --lh-normal: 1.6;
   --lh-relaxed: 1.75;
   --lh-double: 2;
 
-  /* Color — Backgrounds */
+  /* ── Typography — Letter Spacing ─────────────────────────────────────── */
+  --ls-tight: 0.04em;
+  --ls-wide: 0.18em;
+  --ls-button: 0.5px;
+
+  /* ── Color — Backgrounds ─────────────────────────────────────────────── */
   --color-bg: oklch(16% 0.012 76);
   --color-bg-darker: oklch(20% 0.013 76);
   --color-panel: oklch(24% 0.014 76);
@@ -44,7 +51,7 @@
   --color-card-surface: oklch(18% 0.012 76 / 0.93);
   --color-zmey-bg: oklch(16% 0.012 76);
 
-  /* Color — Text */
+  /* ── Color — Text ────────────────────────────────────────────────────── */
   --color-text: oklch(86% 0.012 78);
   --color-text-strong: oklch(94% 0.01 80);
   --color-text-soft: oklch(78% 0.012 78);
@@ -54,49 +61,64 @@
   --color-text-gray: oklch(58% 0.011 78);
   --color-text-dim: oklch(72% 0.012 78);
 
-  /* Color — Borders */
+  /* ── Color — Borders ─────────────────────────────────────────────────── */
   --color-border-subtle: oklch(74% 0.025 72 / 0.08);
   --color-border-soft: oklch(74% 0.025 72 / 0.12);
   --color-border-medium: oklch(74% 0.025 72 / 0.17);
   --color-border-image: oklch(31% 0.015 76);
 
-  /* Shadows */
-  --shadow-overlay: 0 8px 20px oklch(9% 0.01 76 / 0.55);
-  --shadow-card-hover: 0 12px 36px oklch(9% 0.01 76 / 0.5);
-  --shadow-zmey-inset: inset 0 0 24px oklch(8% 0.01 76 / 0.8);
+  /* ── Color — Card Decorative ─────────────────────────────────────────── */
+  --color-card-sheen: oklch(84% 0.015 78 / 0.05);
+  --color-card-sheen-faint: oklch(84% 0.015 78 / 0.02);
+  --color-card-deep-shadow: oklch(8% 0.01 76 / 0.24);
+  --color-card-deep-shadow-hover: oklch(8% 0.01 76 / 0.3);
 
-  /* Transitions */
-  --transition-fast: all 0.2s ease;
-  --transition-fade: opacity 0.6s ease-out, transform 0.6s ease-out;
-  --transition-lift: transform 0.3s ease, box-shadow 0.3s ease;
-  --transition-card-speed: 0.28s ease;
-
-  /* Layout */
-  --max-w-hero: 1000px;
-  --max-w-text: 600px;
-  --nav-height-mobile: 32px;
-
-  /* Spacing */
-  --space-spacer: 64px;
-  --space-section: 4rem;
-  --space-band: 3rem;
-
-  /* Radii */
-  --radius-card: 24px;
-  --radius-card-sm: 20px;
-  --radius-pill: 999px;
-
-  /* Z-index */
-  --z-dropdown: 1000;
-
-  /* Detection Layer Accent Colors */
+  /* ── Color — Accents ─────────────────────────────────────────────────── */
   --accent-signature: oklch(76% 0.09 70);
   --accent-semantic: oklch(72% 0.065 48);
   --accent-anomaly: oklch(80% 0.08 88);
   --accent-cool: oklch(64% 0.045 246);
   --accent-cool-soft: oklch(64% 0.045 246 / 0.26);
 
-  /* Bootstrap theme overrides — force dark-mode text on our dark surfaces */
+  /* ── Shadows ─────────────────────────────────────────────────────────── */
+  --shadow-overlay: 0 8px 20px oklch(9% 0.01 76 / 0.55);
+  --shadow-card-hover: 0 12px 36px oklch(9% 0.01 76 / 0.5);
+  --shadow-zmey-inset: inset 0 0 24px oklch(8% 0.01 76 / 0.8);
+
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  --transition-fast: all 0.2s ease;
+  --transition-fade: opacity 0.6s ease-out, transform 0.6s ease-out;
+  --transition-lift: transform 0.3s ease, box-shadow 0.3s ease;
+  --transition-card-speed: 0.28s ease;
+
+  /* ── Layout ──────────────────────────────────────────────────────────── */
+  --max-w-hero: 1000px;
+  --max-w-text: 600px;
+  --max-w-detection-copy: 31ch;
+  --nav-height-mobile: 32px;
+
+  /* ── Spacing ─────────────────────────────────────────────────────────── */
+  --space-spacer: 64px;
+  --space-section: 4rem;
+  --space-band: 3rem;
+
+  /* ── Radii ───────────────────────────────────────────────────────────── */
+  --radius-card: 24px;
+  --radius-card-sm: 20px;
+  --radius-pill: 999px;
+
+  /* ── Transforms ──────────────────────────────────────────────────────── */
+  --lift-sm: -5px;
+  --lift-md: -6px;
+  --fade-offset: 20px;
+
+  /* ── Focus ───────────────────────────────────────────────────────────── */
+  --focus-ring-size: 0.25rem;
+
+  /* ── Z-index ─────────────────────────────────────────────────────────── */
+  --z-dropdown: 1000;
+
+  /* ── Bootstrap Theme Overrides ───────────────────────────────────────── */
   --bs-body-color: var(--color-text);
   --bs-heading-color: var(--color-text-strong);
   --bs-secondary-color: var(--color-text-muted);
@@ -283,7 +305,7 @@ h1 {
 
 .btn-primary.rounded-pill,
 .btn-outline-light.rounded-pill {
-  letter-spacing: 0.5px;
+  letter-spacing: var(--ls-button);
   transition: var(--transition-fast);
 }
 
@@ -303,7 +325,7 @@ h1 {
 }
 
 .btn-primary.rounded-pill:focus {
-  box-shadow: 0 0 0 0.25rem var(--accent-cool-soft);
+  box-shadow: 0 0 0 var(--focus-ring-size) var(--accent-cool-soft);
 }
 
 .btn-outline-light.rounded-pill {
@@ -326,7 +348,7 @@ h1 {
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(var(--lift-sm));
   box-shadow: var(--shadow-card-hover);
   border-color: var(--color-border-medium);
 }
@@ -351,6 +373,11 @@ h1 {
    -------------------------------------------------------------------------- */
 
 .sdk-features {
+  --_gap: 0.75rem;
+  --_item-py: 0.7rem;
+  --_icon-size: 1.1rem;
+  --_icon-offset: 0.15rem;
+
   list-style: none;
   padding: 0;
   margin: 0;
@@ -359,8 +386,8 @@ h1 {
 .sdk-features li {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  padding: 0.7rem 0;
+  gap: var(--_gap);
+  padding: var(--_item-py) 0;
   color: var(--color-text-muted);
   font-size: var(--fs-card-body);
   line-height: var(--lh-snug);
@@ -373,11 +400,11 @@ h1 {
 
 .sdk-features li i {
   color: var(--color-text-muted);
-  width: 1.1rem;
+  width: var(--_icon-size);
   text-align: center;
   flex-shrink: 0;
-  margin-top: 0.15rem;
-  font-size: 0.85rem;
+  margin-top: var(--_icon-offset);
+  font-size: var(--fs-icon-sm);
 }
 
 .sdk-features li strong {
@@ -399,14 +426,28 @@ h1 {
 
 .detection-layer-card {
   --layer-accent: oklch(86% 0.02 78 / 0.16);
+
+  /* Component-scoped layout tokens (overridden in responsive) */
+  --_padding: 1.6rem;
+  --_gap: 1.2rem;
+  --_radius: var(--detection-card-radius);
+  --_meta-gap: 0.75rem;
+  --_meta-pb: 0.95rem;
+  --_indent: 1rem;
+  --_pill-py: 0.35rem;
+  --_pill-px: 0.8rem;
+  --_pill-min-h: 2rem;
+  --_sidebar-inset: 1rem;
+  --_sidebar-width: 2px;
+
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: var(--_gap);
   min-height: 100%;
-  padding: 1.6rem;
+  padding: var(--_padding);
   border: 1px solid var(--color-border-soft);
-  border-radius: var(--detection-card-radius);
+  border-radius: var(--_radius);
   background-color: var(--color-card-surface);
   background-image:
     radial-gradient(
@@ -416,12 +457,12 @@ h1 {
     ),
     linear-gradient(
       180deg,
-      oklch(84% 0.015 78 / 0.05) 0%,
-      oklch(84% 0.015 78 / 0.02) 100%
+      var(--color-card-sheen) 0%,
+      var(--color-card-sheen-faint) 100%
     );
   box-shadow:
-    inset 0 1px 0 oklch(84% 0.015 78 / 0.05),
-    0 18px 40px oklch(8% 0.01 76 / 0.24);
+    inset 0 1px 0 var(--color-card-sheen),
+    0 18px 40px var(--color-card-deep-shadow);
   overflow: hidden;
   transition:
     transform var(--transition-card-speed),
@@ -448,15 +489,15 @@ h1 {
 .detection-layer-card::after {
   content: "";
   position: absolute;
-  inset: 1rem auto 1rem 1rem;
-  width: 2px;
+  inset: var(--_sidebar-inset) auto var(--_sidebar-inset) var(--_sidebar-inset);
+  width: var(--_sidebar-width);
   border-radius: var(--radius-pill);
   background: linear-gradient(180deg, var(--layer-accent) 0%, transparent 78%);
   opacity: 0.75;
 }
 
 .detection-layer-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(var(--lift-md));
   border-color: color-mix(
     in srgb,
     var(--layer-accent) 40%,
@@ -464,7 +505,7 @@ h1 {
   );
   box-shadow:
     inset 0 1px 0 var(--color-border-subtle),
-    0 24px 44px oklch(8% 0.01 76 / 0.3);
+    0 24px 44px var(--color-card-deep-shadow-hover);
 }
 
 .detection-layer-meta {
@@ -473,14 +514,14 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
-  padding-bottom: 0.95rem;
+  gap: var(--_meta-gap);
+  padding-bottom: var(--_meta-pb);
   border-bottom: 1px solid var(--color-border-soft);
 }
 
 .detection-layer-index {
   font-size: var(--fs-xs);
-  letter-spacing: 0.18em;
+  letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: color-mix(in srgb, var(--layer-accent) 72%, var(--color-text-soft));
 }
@@ -488,20 +529,20 @@ h1 {
 .detection-layer-pill {
   display: inline-flex;
   align-items: center;
-  min-height: 2rem;
-  padding: 0.35rem 0.8rem;
+  min-height: var(--_pill-min-h);
+  padding: var(--_pill-py) var(--_pill-px);
   border: 1px solid
     color-mix(in srgb, var(--layer-accent) 52%, var(--color-border-medium));
   border-radius: var(--radius-pill);
   background: color-mix(
     in srgb,
     var(--layer-accent) 12%,
-    oklch(84% 0.015 78 / 0.02)
+    var(--color-card-sheen-faint)
   );
   color: color-mix(in srgb, var(--layer-accent) 78%, var(--color-text-soft));
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--ls-tight);
   white-space: nowrap;
 }
 
@@ -510,7 +551,7 @@ h1 {
   position: relative;
   z-index: 1;
   margin: 0;
-  padding-left: 1rem;
+  padding-left: var(--_indent);
 }
 
 .detection-layer-title {
@@ -523,7 +564,7 @@ h1 {
   color: var(--color-text-dim);
   font-size: var(--fs-card-body);
   line-height: var(--lh-relaxed);
-  max-width: 31ch;
+  max-width: var(--max-w-detection-copy);
 }
 
 .detection-layer-card-signature {
@@ -549,7 +590,7 @@ h1 {
 /* JS-enabled: apply hidden/animated state only when a JS hook is present */
 .js-enabled .fade-in {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(var(--fade-offset));
   transition: var(--transition-fade);
 }
 
@@ -582,6 +623,12 @@ h1 {
 
 @media (max-width: 991.98px) {
   .nav-container {
+    --_cta-fs: 0.7rem;
+    --_cta-py: 0.35rem;
+    --_cta-px: 0.75rem;
+    --_cta-right: 16px;
+    --_collapse-py: 16px;
+
     position: relative;
     min-height: var(--nav-height-mobile);
   }
@@ -595,11 +642,11 @@ h1 {
 
   .nav-container .btn-nav-cta {
     position: absolute;
-    right: 16px;
+    right: var(--_cta-right);
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.7rem;
-    padding: 0.35rem 0.75rem;
+    font-size: var(--_cta-fs);
+    padding: var(--_cta-py) var(--_cta-px);
   }
 
   .nav-container .navbar-collapse {
@@ -609,7 +656,7 @@ h1 {
     right: 0;
     z-index: var(--z-dropdown);
     background: var(--color-bg);
-    padding: 16px 0;
+    padding: var(--_collapse-py) 0;
   }
 
   .nav-container .navbar-collapse .navbar-nav {
@@ -651,8 +698,9 @@ h1 {
   }
 
   .detection-layer-card {
-    padding: 1.35rem;
-    border-radius: var(--radius-card-sm);
+    --_padding: 1.35rem;
+    --_radius: var(--radius-card-sm);
+    --_indent: 0.85rem;
   }
 
   .detection-layer-meta {
@@ -663,17 +711,13 @@ h1 {
   .detection-layer-pill {
     white-space: normal;
   }
-
-  .detection-layer-title,
-  .detection-layer-copy {
-    padding-left: 0.85rem;
-  }
 }
 
 @media (max-width: 400px) {
-  .nav-container .btn-nav-cta {
-    font-size: 0.65rem;
-    padding: 0.3rem 0.6rem;
+  .nav-container {
+    --_cta-fs: 0.65rem;
+    --_cta-py: 0.3rem;
+    --_cta-px: 0.6rem;
   }
 }
 
