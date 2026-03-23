@@ -156,6 +156,19 @@ h1 {
 }
 
 /* --------------------------------------------------------------------------
+   Focus States (WCAG 2.4.7 / 2.4.11)
+   -------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--accent-cool);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
    Navbar
    -------------------------------------------------------------------------- */
 
@@ -168,7 +181,7 @@ h1 {
 }
 
 .nav-link-login:hover,
-.nav-link-login:focus {
+.nav-link-login:focus-visible {
   color: color-mix(in srgb, var(--accent-cool) 62%, var(--color-text-strong));
 }
 
@@ -317,25 +330,32 @@ h1 {
 }
 
 .btn-primary.rounded-pill:hover,
-.btn-primary.rounded-pill:focus {
+.btn-primary.rounded-pill:focus-visible {
   background-color: var(--color-text-strong);
   border-color: var(--color-text-strong);
   color: var(--color-text-inverse);
   text-decoration: none;
 }
 
-.btn-primary.rounded-pill:focus {
+.btn-primary.rounded-pill:focus-visible {
   box-shadow: 0 0 0 var(--focus-ring-size) var(--accent-cool-soft);
+  outline: none;
 }
 
 .btn-outline-light.rounded-pill {
   border-width: 1px;
 }
 
-.btn-outline-light.rounded-pill:hover {
+.btn-outline-light.rounded-pill:hover,
+.btn-outline-light.rounded-pill:focus-visible {
   color: var(--color-text-inverse);
   background: var(--color-text-strong);
   text-decoration: none;
+}
+
+.btn-outline-light.rounded-pill:focus-visible {
+  box-shadow: 0 0 0 var(--focus-ring-size) var(--accent-cool-soft);
+  outline: none;
 }
 
 /* --------------------------------------------------------------------------
