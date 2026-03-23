@@ -737,6 +737,41 @@ async for chunk in guard.shield(llm.astream(prompt)):
         });
       });
 
+      // Focus trap for mobile menu (WCAG 2.4.3 Focus Order)
+      (function () {
+        const navCollapse = document.getElementById("navbarNav");
+        const toggler = document.querySelector(".navbar-toggler");
+        if (!navCollapse || !toggler) return;
+
+        function setBackgroundInert(inert) {
+          for (const el of document.body.children) {
+            if (el.tagName === "NAV" || el.tagName === "SCRIPT") continue;
+            if (inert) el.setAttribute("inert", "");
+            else el.removeAttribute("inert");
+          }
+        }
+
+        navCollapse.addEventListener("show.bs.collapse", function () {
+          setBackgroundInert(true);
+        });
+
+        navCollapse.addEventListener("shown.bs.collapse", function () {
+          const firstLink = navCollapse.querySelector(".nav-link");
+          if (firstLink) firstLink.focus();
+        });
+
+        navCollapse.addEventListener("hidden.bs.collapse", function () {
+          setBackgroundInert(false);
+          if (toggler.offsetParent !== null) toggler.focus();
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && navCollapse.classList.contains("show")) {
+            bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+          }
+        });
+      })();
+
       // Add scroll-triggered fade-in animations
       document.addEventListener("DOMContentLoaded", function () {
         document.documentElement.classList.add("js-enabled");
