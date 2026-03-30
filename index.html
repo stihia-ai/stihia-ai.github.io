@@ -205,6 +205,9 @@
               <a class="nav-link" href="#product">Product</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#zmey">Zmey</a>
             </li>
             <li class="nav-item">
@@ -358,13 +361,18 @@
             </div>
           </div>
           <div class="row panel rounded overflow-hidden">
-            <div class="col-md-6 p-5 border-end-md">
+            <div class="col-md-6 p-5 border-end-md d-flex flex-column">
               <h3>SDK for Custom AI</h3>
-              <p class="text-secondary mb-4">
+              <p class="text-secondary pt-3">
                 Drop-in Python SDK with additional LangChain/LangGraph support.
                 A few lines of code and every AI interaction flows into the
                 detection pipeline.
               </p>
+              <div class="mt-4 mb-5">
+                <div class="code-block rounded p-3">
+                  <pre class="m-0 text-start">pip install stihia</pre>
+                </div>
+              </div>
               <div class="code-block rounded p-3">
                 <pre class="m-0 text-start">
 <span class="code-keyword">from</span> stihia <span class="code-keyword">import</span> StihiaClient, SenseGuard
@@ -376,36 +384,18 @@ async for chunk in guard.shield(llm.astream(prompt)):
     yield chunk  <span class="code-keyword"># secured by Stihia</span>
 </pre>
               </div>
-              <ul class="sdk-features mt-4">
-                <li>
-                  <i class="fa fa-bolt"></i>
-                  <span
-                    ><strong>Streaming-native</strong> — protects token by token
-                    as they flow</span
-                  >
-                </li>
-                <li>
-                  <i class="fa fa-puzzle-piece"></i>
-                  <span
-                    ><strong>LangChain & LangGraph</strong> — drop-in framework
-                    support</span
-                  >
-                </li>
-                <li>
-                  <i class="fa fa-comments"></i>
-                  <span
-                    ><strong>Conversation context</strong> — full message
-                    history captured automatically</span
-                  >
-                </li>
-                <li>
-                  <i class="fa fa-code"></i>
-                  <span
-                    ><strong>Zero restructuring</strong> — wrap your existing
-                    code, don't rewrite it</span
-                  >
-                </li>
-              </ul>
+              <p class="mt-5">
+                <a
+                  href="https://github.com/stihia-ai/stihia-sdk-python"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-secondary"
+                >
+                  <i class="fa-brands fa-github me-1"></i>
+                  Documentation &amp; source
+                  <i class="fa fa-arrow-right ms-1 small"></i>
+                </a>
+              </p>
             </div>
             <div class="col-md-6 p-5 bg-darker">
               <h3>Track Every AI Tool</h3>
@@ -475,9 +465,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
                   </p>
                 </article>
               </div>
-              <div
-                class="col-md-4 detection-layer-column"
-              >
+              <div class="col-md-4 detection-layer-column">
                 <article
                   class="detection-layer-card detection-layer-card-semantic"
                 >
@@ -495,9 +483,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
                   </p>
                 </article>
               </div>
-              <div
-                class="col-md-4 detection-layer-column"
-              >
+              <div class="col-md-4 detection-layer-column">
                 <article
                   class="detection-layer-card detection-layer-card-anomaly"
                 >
@@ -625,6 +611,151 @@ async for chunk in guard.shield(llm.astream(prompt)):
                     Your existing security toolchain, not another silo
                   </li>
                 </ul>
+              </div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+        </div>
+      </section>
+
+      <!-- Section: Team -->
+      <section id="team" class="container mb-5">
+        <div class="fade-in section-divider">
+          <div class="row mb-5 text-center">
+            <div class="col-sm">
+              <h2 class="section-title">Team</h2>
+            </div>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-lg-3 col-md-6">
+              <div class="team-card h-100">
+                <div class="team-photo-wrapper">
+                  <img
+                    src="./assets/img/team/ivan_danielov_ivanov.webp"
+                    alt="Ivan Danielov Ivanov"
+                    class="team-photo"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                  />
+                  <div class="team-photo-overlay"></div>
+                  <div class="team-info">
+                    <h4 class="team-name">Ivan Danielov Ivanov</h4>
+                    <p class="team-role">Data Science & Product Engineering</p>
+                  </div>
+                </div>
+                <div class="team-socials">
+                  <a
+                    href="https://www.linkedin.com/in/ivandanielov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ivan Danielov Ivanov on LinkedIn"
+                    class="team-social-link"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                  <a
+                    href="https://github.com/idanivanov"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ivan Danielov Ivanov on GitHub"
+                    class="team-social-link"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="team-card h-100">
+                <div class="team-photo-wrapper">
+                  <img
+                    src="./assets/img/team/peter_kirkov.webp"
+                    alt="Peter Kirkov"
+                    class="team-photo"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                  />
+                  <div class="team-photo-overlay"></div>
+                  <div class="team-info">
+                    <h4 class="team-name">Peter Kirkov</h4>
+                    <p class="team-role">Cybersecurity & Compliance</p>
+                  </div>
+                </div>
+                <div class="team-socials">
+                  <a
+                    href="https://www.linkedin.com/in/pkirkov/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Peter Kirkov on LinkedIn"
+                    class="team-social-link"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="team-card h-100">
+                <div class="team-photo-wrapper">
+                  <img
+                    src="./assets/img/team/stilyan_mitrev.webp"
+                    alt="Stilyan Mitrev"
+                    class="team-photo"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                  />
+                  <div class="team-photo-overlay"></div>
+                  <div class="team-info">
+                    <h4 class="team-name">Stilyan Mitrev</h4>
+                    <p class="team-role">Product & Growth</p>
+                  </div>
+                </div>
+                <div class="team-socials">
+                  <a
+                    href="https://www.linkedin.com/in/stilyanmitrev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Stilyan Mitrev on LinkedIn"
+                    class="team-social-link"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="team-card h-100">
+                <div class="team-photo-wrapper">
+                  <img
+                    src="./assets/img/team/stoyan_simov.webp"
+                    alt="Stoyan Simov"
+                    class="team-photo"
+                    width="400"
+                    height="500"
+                    loading="lazy"
+                  />
+                  <div class="team-photo-overlay"></div>
+                  <div class="team-info">
+                    <h4 class="team-name">Stoyan Simov</h4>
+                    <p class="team-role">
+                      Business Development & Customer Success
+                    </p>
+                  </div>
+                </div>
+                <div class="team-socials">
+                  <a
+                    href="https://www.linkedin.com/in/stoyan-simov-a93217a6/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Stoyan Simov on LinkedIn"
+                    class="team-social-link"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
