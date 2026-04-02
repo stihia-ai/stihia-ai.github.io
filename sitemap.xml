@@ -11,10 +11,10 @@
 
   <!-- API Reference -->
   <url>
-    <loc>https://stihia.ai/api/reference</loc>
+    <loc>https://stihia.ai/api/reference/</loc>
     <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.7</priority>
   </url>
 
   <!-- Privacy Policy -->
@@ -36,15 +36,6 @@
       <image:loc>https://stihia.ai/assets/logo/stihia-logo-chrome.png</image:loc>
       <image:caption>Stihia Logo</image:caption>
     </image:image>
-  </url>
-
-
-  <!-- API Reference -->
-  <url>
-    <loc>https://stihia.ai/api/reference/</loc>
-    <lastmod>2026-04-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
 
 </urlset>

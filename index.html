@@ -252,14 +252,22 @@
           </div>
         </div>
         <div class="row mt-4 mb-5">
-          <div class="col-sm">
+          <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
             <a
-              class="btn btn-primary rounded-pill"
+              class="btn btn-primary rounded-pill px-4"
               href="https://tally.so/r/Bzp59Q"
               target="_blank"
               rel="noopener noreferrer"
             >
               Book a Demo
+            </a>
+            <a
+              class="btn btn-outline-light rounded-pill px-4"
+              href="/api/reference/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              API Reference
             </a>
           </div>
         </div>
@@ -857,37 +865,110 @@ async for chunk in guard.shield(llm.astream(prompt)):
     </main>
 
     <!-- Footer -->
-    <footer id="footer" class="container text-center pt-5">
-      <div class="row">
-        <div class="col">
+    <footer id="footer" class="container pt-5 pb-4 footer-redesign">
+      <div class="row gy-4 mb-5">
+        <div class="col-lg-5 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
           <a
-            href="https://www.linkedin.com/company/stihia"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Stihia on LinkedIn"
+            class="footer-brand d-inline-flex align-items-center mb-3"
+            href="/"
           >
-            <i class="fa-brands fa-linkedin social-icon"></i>
+            <img
+              src="./assets/logo/stihia-logo.svg"
+              alt="Logo"
+              width="32"
+              height="32"
+              class="me-2"
+            />
+            <span class="brand-text fs-5">STIHIA</span>
           </a>
-          &nbsp;
-          <a
-            href="https://www.github.com/stihia-ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit Stihia on GitHub"
+          <p class="text-secondary footer-desc mx-auto mx-lg-0">
+            Real-Time Threat Detection for AI Systems. Self-optimizing ML models
+            securing your entire AI landscape.
+          </p>
+          <div
+            class="footer-socials mt-4 justify-content-center justify-content-lg-start"
           >
-            <i class="fa-brands fa-github social-icon"></i>
-          </a>
+            <a
+              href="https://www.linkedin.com/company/stihia"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Stihia on LinkedIn"
+              class="social-link"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="https://www.github.com/stihia-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Stihia on GitHub"
+              class="social-link"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <h5 class="footer-heading">Product</h5>
+          <ul class="list-unstyled footer-links">
+            <li>
+              <a
+                href="https://app.stihia.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Log in to the Stihia Console"
+              >
+                Log In
+              </a>
+            </li>
+            <li><a href="#product">Features</a></li>
+            <li><a href="#zmey">Zmey</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <h5 class="footer-heading">Company</h5>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-4 col-6">
+          <h5 class="footer-heading">Developers</h5>
+          <ul class="list-unstyled footer-links">
+            <li>
+              <a
+                href="/api/reference/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                API Reference
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/stihia-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="row mt-3 mb-3">
-        <p>
-          <a href="/privacy.html" class="text-muted">Privacy Policy</a>
-        </p>
-      </div>
-      <div class="row mb-5">
-        <p class="text-muted">
-          &copy; <span id="copyright-year">2026</span> Stihia Ltd.
-        </p>
+
+      <div
+        class="row pt-4 border-top border-secondary border-opacity-25 text-center text-lg-start"
+      >
+        <div class="col-12">
+          <p class="text-muted mb-0 small">
+            &copy; <span id="copyright-year">2026</span> Stihia Ltd.
+          </p>
+        </div>
       </div>
     </footer>
     <script>

@@ -748,6 +748,77 @@ h1 {
 }
 
 /* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.footer-redesign {
+  margin-top: var(--space-section);
+}
+
+.footer-brand .brand-text {
+  color: var(--color-text-strong);
+}
+
+.footer-desc {
+  max-width: 320px;
+  font-size: var(--fs-card-body);
+  line-height: var(--lh-relaxed);
+}
+
+.footer-heading {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-strong);
+  margin-bottom: 1.2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+  font-size: var(--fs-card-body);
+  font-weight: var(--fw-medium);
+  transition: var(--transition-fast);
+  padding: 0.25rem 0;
+  justify-content: flex-start;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--color-text-strong);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-socials .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg-darker);
+  border: 1px solid var(--color-border-soft);
+  color: var(--color-text-gray);
+  font-size: 1.2rem;
+  transition: var(--transition-fast);
+}
+
+.footer-socials .social-link:hover,
+.footer-socials .social-link:focus-visible {
+  color: var(--color-text-strong);
+  border-color: var(--color-border-medium);
+  background-color: var(--color-panel);
+}
+
+/* --------------------------------------------------------------------------
    Touch Target Sizing (WCAG 2.5.8)
    -------------------------------------------------------------------------- */
 
@@ -759,7 +830,6 @@ h1 {
 footer a {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   min-width: 44px;
   min-height: 44px;
 }
