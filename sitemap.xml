@@ -9,6 +9,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- API Reference -->
+  <url>
+    <loc>https://stihia.ai/api/reference</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- Privacy Policy -->
   <url>
     <loc>https://stihia.ai/privacy.html</loc>
