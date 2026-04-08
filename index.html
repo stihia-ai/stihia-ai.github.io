@@ -205,6 +205,9 @@
               <a class="nav-link" href="#product">Product</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#team">Team</a>
             </li>
             <li class="nav-item">
@@ -365,7 +368,8 @@
             <div class="col-sm">
               <h2 class="section-title">Try it yourself</h2>
               <p class="section-subtitle">
-                Setup for <strong>free</strong> in <strong>10 minutes</strong>.<br />
+                Setup for <strong>free</strong> in
+                <strong>10 minutes</strong>.<br />
                 Spin up a self-hosted LibreChat instance with Stihia threat
                 detection built in. One <code>docker compose up</code> to
                 experience Stihia.
@@ -646,6 +650,143 @@ async for chunk in guard.shield(llm.astream(prompt)):
                     Your existing security toolchain, not another silo
                   </li>
                 </ul>
+              </div>
+            </div>
+          </div>
+          <div class="spacer"></div>
+        </div>
+      </section>
+
+      <!-- Section: Pricing -->
+      <section id="pricing" class="container pt-5">
+        <div class="spacer"></div>
+        <div class="fade-in section-divider">
+          <div class="row mb-4 text-center">
+            <div class="col-sm">
+              <h2 class="section-title">Pricing</h2>
+              <p class="section-subtitle">
+                Start protecting your AI systems today. Scale when you're ready.
+              </p>
+            </div>
+          </div>
+          <div class="row mt-4 justify-content-center g-4">
+            <div class="col-md-6">
+              <div class="panel rounded p-4 h-100 pricing-card feature-card">
+                <div class="d-flex flex-column h-100">
+                  <h3 class="pricing-title">Free</h3>
+                  <div class="pricing-price mb-2">
+                    $0<span class="pricing-period text-muted small"
+                      >/month</span
+                    >
+                  </div>
+                  <p class="pricing-subtitle text-secondary mb-4">
+                    For teams evaluating AI security
+                  </p>
+
+                  <ul class="list-unstyled pricing-features mb-5">
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span
+                        >Prompt injection and toxic content detection
+                        (open-source classifiers - GPT OSS Safeguard, Llama
+                        Prompt Guard)</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>PII & credential leak detection</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Destructive pattern recognition</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Dashboard and real-time alerts</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Generous API limits</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Cloud-hosted SaaS (EU data centers)</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i> <span>Community support</span>
+                    </li>
+                  </ul>
+
+                  <a
+                    class="btn btn-outline-light rounded-pill w-100 mt-auto"
+                    href="https://app.stihia.ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Get Started</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div
+                class="panel rounded p-4 h-100 pricing-card pricing-card-business feature-card"
+              >
+                <div class="d-flex flex-column h-100">
+                  <h3 class="pricing-title">Business</h3>
+                  <div class="pricing-price mb-2">Custom</div>
+                  <p class="pricing-subtitle text-secondary mb-4">
+                    For organizations securing production AI
+                  </p>
+
+                  <ul class="list-unstyled pricing-features mb-5">
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Everything in Free, plus:</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Domain-specialized sensors</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Custom classifier pipelines</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i> <span>Anomaly detection</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Higher API rate limits</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Full trace hierarchy & forensic audit trail</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span
+                        >Self-hosted or isolated cloud deployment options</span
+                      >
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>SIEM integration via OpenTelemetry</span>
+                    </li>
+                    <li>
+                      <i class="fa fa-check"></i>
+                      <span>Priority support & onboarding</span>
+                    </li>
+                  </ul>
+
+                  <a
+                    class="btn btn-primary rounded-pill w-100 mt-auto"
+                    href="https://tally.so/r/Bzp59Q"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Contact Us</a
+                  >
+                </div>
               </div>
             </div>
           </div>
@@ -950,6 +1091,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
               </a>
             </li>
             <li><a href="#product">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li>
               <a
                 href="https://github.com/stihia-ai/stihia-librechat"
