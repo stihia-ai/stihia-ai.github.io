@@ -705,6 +705,66 @@ data-styled.g138[id="sc-iJQrDi"]{content:"eDMXIo,"}/*!sc*/
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    !(function (t, e) {
+      var o, n, p, r;
+      e.__SV ||
+        (window.posthog && window.posthog.__loaded) ||
+        ((window.posthog = e),
+        (e._i = []),
+        (e.init = function (i, s, a) {
+          function g(t, e) {
+            var o = e.split(".");
+            (2 == o.length && ((t = t[o[0]]), (e = o[1])),
+              (t[e] = function () {
+                t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+              }));
+          }
+          (((p = t.createElement("script")).type = "text/javascript"),
+            (p.crossOrigin = "anonymous"),
+            (p.async = !0),
+            (p.src =
+              s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+              "/static/array.js"),
+            (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+              p,
+              r,
+            ));
+          var u = e;
+          for (
+            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+              u.people = u.people || [],
+              u.toString = function (t) {
+                var e = "posthog";
+                return (
+                  "posthog" !== a && (e += "." + a),
+                  t || (e += " (stub)"),
+                  e
+                );
+              },
+              u.people.toString = function () {
+                return u.toString(1) + ".people (stub)";
+              },
+              o =
+                "Ii init Di qi Sr Bi Zi Pi capture calculateEventProperties Yi register register_once register_for_session unregister unregister_for_session Xi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ji identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Wi Vi createPersonProfile setInternalOrTestUser Gi Fi Ki opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing $i debug Tr Ui getPageViewId captureTraceFeedback captureTraceMetric Ri".split(
+                  " ",
+                ),
+              n = 0;
+            n < o.length;
+            n++
+          )
+            g(u, o[n]);
+          e._i.push([i, s, a]);
+        }),
+        (e.__SV = 1));
+    })(document, window.posthog || []);
+    posthog.init("phc_woaTiZRYZRWa79bGU7UpwFfgxsUvuoT5JuUkNXoa3LCj", {
+      cookieless_mode: "always",
+      api_host: "https://eu.i.posthog.com",
+      defaults: "2026-01-30",
+      person_profiles: "identified_only",
+    });
+  </script>
 </head>
 <body>
   
@@ -766,7 +826,7 @@ timeline of all detections and drill into individual traces.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;6. Need custom sensors?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Default sensors cover general threats. For specialized detection — industry-specific
 compliance, custom threat categories, or fine-tuned sensitivity — contact
-&lt;strong&gt;&lt;a href=&quot;mailto:&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#x72;&amp;#116;&amp;#64;&amp;#x73;&amp;#116;&amp;#x69;&amp;#104;&amp;#105;&amp;#97;&amp;#46;&amp;#x61;&amp;#105;&quot;&gt;&amp;#115;&amp;#117;&amp;#112;&amp;#112;&amp;#111;&amp;#x72;&amp;#116;&amp;#64;&amp;#x73;&amp;#116;&amp;#x69;&amp;#104;&amp;#105;&amp;#97;&amp;#46;&amp;#x61;&amp;#105;&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;strong&gt;&lt;a href=&quot;mailto:&amp;#115;&amp;#x75;&amp;#112;&amp;#112;&amp;#111;&amp;#x72;&amp;#x74;&amp;#x40;&amp;#x73;&amp;#116;&amp;#x69;&amp;#x68;&amp;#105;&amp;#97;&amp;#x2e;&amp;#x61;&amp;#105;&quot;&gt;&amp;#115;&amp;#x75;&amp;#112;&amp;#112;&amp;#111;&amp;#x72;&amp;#x74;&amp;#x40;&amp;#x73;&amp;#116;&amp;#x69;&amp;#x68;&amp;#105;&amp;#97;&amp;#x2e;&amp;#x61;&amp;#105;&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Trace Hierarchy:&lt;/strong&gt;
 Each &lt;code&gt;POST /v1/sense&lt;/code&gt; call creates one &lt;strong&gt;operation&lt;/strong&gt; inside this hierarchy:
 &lt;code&gt;project_key&lt;/code&gt; → &lt;code&gt;user_key&lt;/code&gt; → &lt;code&gt;process_key&lt;/code&gt; → &lt;code&gt;thread_key&lt;/code&gt; → &lt;code&gt;run_key&lt;/code&gt; → operation.&lt;/p&gt;
@@ -806,7 +866,7 @@ The &lt;code&gt;sensor&lt;/code&gt; field accepts three formats:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Built-in presets cover basic threat-detection scenarios. We offer more powerful
 and specialized sensors to our business users. If you need better sensors,
-contact &lt;strong&gt;&lt;a href=&quot;mailto:&amp;#x73;&amp;#x75;&amp;#x70;&amp;#112;&amp;#111;&amp;#x72;&amp;#116;&amp;#64;&amp;#115;&amp;#116;&amp;#105;&amp;#x68;&amp;#x69;&amp;#x61;&amp;#x2e;&amp;#97;&amp;#105;&quot;&gt;&amp;#x73;&amp;#x75;&amp;#x70;&amp;#112;&amp;#111;&amp;#x72;&amp;#116;&amp;#64;&amp;#115;&amp;#116;&amp;#105;&amp;#x68;&amp;#x69;&amp;#x61;&amp;#x2e;&amp;#97;&amp;#105;&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
+contact &lt;strong&gt;&lt;a href=&quot;mailto:&amp;#x73;&amp;#117;&amp;#112;&amp;#x70;&amp;#111;&amp;#114;&amp;#116;&amp;#64;&amp;#115;&amp;#116;&amp;#105;&amp;#x68;&amp;#105;&amp;#x61;&amp;#x2e;&amp;#97;&amp;#x69;&quot;&gt;&amp;#x73;&amp;#117;&amp;#112;&amp;#x70;&amp;#111;&amp;#114;&amp;#116;&amp;#64;&amp;#115;&amp;#116;&amp;#105;&amp;#x68;&amp;#105;&amp;#x61;&amp;#x2e;&amp;#97;&amp;#x69;&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;What you get back:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;One operation record with trace metadata and timing&lt;/li&gt;
@@ -858,7 +918,7 @@ timeline of all detections and drill into individual traces.</p>
 <p><strong>6. Need custom sensors?</strong></p>
 <p>Default sensors cover general threats. For specialized detection — industry-specific
 compliance, custom threat categories, or fine-tuned sensitivity — contact
-<strong><a href="mailto:&#115;&#117;&#112;&#112;&#111;&#x72;&#116;&#64;&#x73;&#116;&#x69;&#104;&#105;&#97;&#46;&#x61;&#105;">&#115;&#117;&#112;&#112;&#111;&#x72;&#116;&#64;&#x73;&#116;&#x69;&#104;&#105;&#97;&#46;&#x61;&#105;</a></strong>.</p>
+<strong><a href="mailto:&#115;&#x75;&#112;&#112;&#111;&#x72;&#x74;&#x40;&#x73;&#116;&#x69;&#x68;&#105;&#97;&#x2e;&#x61;&#105;">&#115;&#x75;&#112;&#112;&#111;&#x72;&#x74;&#x40;&#x73;&#116;&#x69;&#x68;&#105;&#97;&#x2e;&#x61;&#105;</a></strong>.</p>
 <p><strong>Trace Hierarchy:</strong>
 Each <code>POST /v1/sense</code> call creates one <strong>operation</strong> inside this hierarchy:
 <code>project_key</code> → <code>user_key</code> → <code>process_key</code> → <code>thread_key</code> → <code>run_key</code> → operation.</p>
@@ -898,7 +958,7 @@ The <code>sensor</code> field accepts three formats:</p>
 </ul>
 <p>Built-in presets cover basic threat-detection scenarios. We offer more powerful
 and specialized sensors to our business users. If you need better sensors,
-contact <strong><a href="mailto:&#x73;&#x75;&#x70;&#112;&#111;&#x72;&#116;&#64;&#115;&#116;&#105;&#x68;&#x69;&#x61;&#x2e;&#97;&#105;">&#x73;&#x75;&#x70;&#112;&#111;&#x72;&#116;&#64;&#115;&#116;&#105;&#x68;&#x69;&#x61;&#x2e;&#97;&#105;</a></strong>.</p>
+contact <strong><a href="mailto:&#x73;&#117;&#112;&#x70;&#111;&#114;&#116;&#64;&#115;&#116;&#105;&#x68;&#105;&#x61;&#x2e;&#97;&#x69;">&#x73;&#117;&#112;&#x70;&#111;&#114;&#116;&#64;&#115;&#116;&#105;&#x68;&#105;&#x61;&#x2e;&#97;&#x69;</a></strong>.</p>
 <p><strong>What you get back:</strong></p>
 <ul>
 <li>One operation record with trace metadata and timing</li>
