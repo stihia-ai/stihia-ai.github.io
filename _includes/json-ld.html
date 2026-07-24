@@ -1,0 +1,70 @@
+{% if page.json_ld == "full" %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Stihia",
+        "url": "https://stihia.ai/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://stihia.ai/assets/logo/stihia-logo-chrome.png",
+          "width": 815,
+          "height": 815
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://stihia.ai/assets/img/stihia-cover-1200x630.png",
+          "width": 1200,
+          "height": 630
+        },
+        "foundingLocation": "Bulgaria",
+        "description": "Stihia is a real-time threat and anomaly detection platform purpose-built for securing the entire AI landscape of modern enterprises — both custom AI agents and well-known tools like ChatGPT, Claude Code, and Copilot. Self-optimizing ML models with recursive meta-optimization adapt detection to each customer's unique AI behavior patterns.",
+        "sameAs": ["https://www.linkedin.com/company/stihia"]
+      },
+      {
+        "@type": "Service",
+        "name": "Stihia Sense",
+        "serviceType": "Real-Time Threat Detection for AI Systems",
+        "provider": {
+          "@type": "Organization",
+          "name": "Stihia",
+          "url": "https://stihia.ai/"
+        },
+        "areaServed": ["EU", "UK", "US", "Worldwide"],
+        "url": "https://stihia.ai/",
+        "description": "Stihia provides real-time AI threat detection for enterprises. Self-optimizing ML models detect prompt injections, data leakage, and rogue AI agents across your entire AI landscape."
+      }
+    ]
+  }
+</script>
+{% elsif page.json_ld == "organization" %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Stihia",
+        "url": "https://stihia.ai/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://stihia.ai/assets/logo/stihia-logo-chrome.png",
+          "width": 815,
+          "height": 815
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://stihia.ai/assets/img/stihia-cover-1200x630.png",
+          "width": 1200,
+          "height": 630
+        },
+        "foundingLocation": "Bulgaria",
+        "description": "Stihia provides security and observability solutions for AI agents, including prompt injection detection, red teaming, and AI security trainings.",
+        "sameAs": ["https://www.linkedin.com/company/stihia"]
+      }
+    ]
+  }
+</script>
+{% endif %}

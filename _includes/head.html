@@ -1,0 +1,117 @@
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+  crossorigin="anonymous"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+  crossorigin="anonymous"
+  defer
+></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Goldman"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+/>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+
+{% assign page_title = page.title | default: site.title %}
+{% assign page_description = page.description | default: site.description %}
+{% if page.canonical %}
+  {% assign page_canonical = page.canonical %}
+{% else %}
+  {% assign page_canonical = page.url | absolute_url %}
+{% endif %}
+{% if page.og_image %}
+  {% assign og_image = page.og_image | absolute_url %}
+{% else %}
+  {% assign og_image = '/assets/img/stihia-cover-1200x630.png' | absolute_url %}
+{% endif %}
+
+<link rel="canonical" href="{{ page_canonical }}" />
+<meta name="robots" content="{{ page.robots | default: 'index,follow,max-image-preview:large' }}" />
+<meta name="description" content="{{ page_description }}" />
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.keywords }}" />
+{% endif %}
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="{{ page_title }}" />
+<meta property="og:description" content="{{ page_description }}" />
+<meta property="og:url" content="{{ page_canonical }}" />
+<meta property="og:image" content="{{ og_image }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ page_title }}" />
+<meta name="twitter:description" content="{{ page_description }}" />
+<meta name="twitter:image" content="{{ og_image }}" />
+<meta
+  name="twitter:image:alt"
+  content="{{ page.og_image_alt | default: page_title }}"
+/>
+
+{% if page.json_ld %}
+{% include json-ld.html %}
+{% endif %}
+
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="{{ '/assets/logo/favicon-32x32.png' | relative_url }}"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="{{ '/assets/logo/favicon-16x16.png' | relative_url }}"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="{{ '/assets/logo/apple-touch-icon.png' | relative_url }}"
+/>
+
+<!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<![endif]-->
+
+{% if page.canonical_redirect %}
+<script>
+  if (
+    document.location.pathname === "/" &&
+    !document.location.search &&
+    !document.location.hash &&
+    !document.location.href.endsWith("/")
+  ) {
+    document.location.replace(document.location.origin + "/");
+  }
+</script>
+{% endif %}
+
+{% unless page.analytics == false %}
+{% include posthog.html %}
+{% endunless %}
+
+<title>{{ page_title }}</title>

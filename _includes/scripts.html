@@ -1,0 +1,82 @@
+<script>
+  document.getElementById("copyright-year").textContent =
+    new Date().getFullYear();
+
+  // Close mobile navbar when a nav link is clicked
+  document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
+    link.addEventListener("click", function () {
+      const navbarCollapse = document.querySelector("#navbarNav");
+      if (navbarCollapse.classList.contains("show")) {
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false,
+        });
+        bsCollapse.hide();
+      }
+    });
+  });
+
+  // Focus trap for mobile menu (WCAG 2.4.3 Focus Order)
+  (function () {
+    const navCollapse = document.getElementById("navbarNav");
+    const toggler = document.querySelector(".navbar-toggler");
+    if (!navCollapse || !toggler) return;
+
+    function setBackgroundInert(inert) {
+      for (const el of document.body.children) {
+        if (el.tagName === "NAV" || el.tagName === "SCRIPT") continue;
+        if (inert) el.setAttribute("inert", "");
+        else el.removeAttribute("inert");
+      }
+    }
+
+    navCollapse.addEventListener("show.bs.collapse", function () {
+      setBackgroundInert(true);
+    });
+
+    navCollapse.addEventListener("shown.bs.collapse", function () {
+      const firstLink = navCollapse.querySelector(".nav-link");
+      if (firstLink) firstLink.focus();
+    });
+
+    navCollapse.addEventListener("hidden.bs.collapse", function () {
+      setBackgroundInert(false);
+      if (toggler.offsetParent !== null) toggler.focus();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navCollapse.classList.contains("show")) {
+        bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+      }
+    });
+  })();
+
+  // Add scroll-triggered fade-in animations
+  document.addEventListener("DOMContentLoaded", function () {
+    document.documentElement.classList.add("js-enabled");
+    const fadeEls = document.querySelectorAll(".fade-in");
+
+    if (!("IntersectionObserver" in window)) {
+      fadeEls.forEach((el) => el.classList.add("visible"));
+      return;
+    }
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.15,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    fadeEls.forEach((el) => {
+      observer.observe(el);
+    });
+  });
+</script>

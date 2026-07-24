@@ -1,0 +1,33 @@
+title: Stihia
+description: >-
+  Stihia provides real-time AI threat detection for enterprises. Self-optimizing
+  ML models detect prompt injections, data leakage, and rogue AI agents across
+  your entire AI landscape.
+url: https://stihia.ai
+baseurl: ""
+lang: en-US
+
+# Plain Jekyll — no theme
+# theme: (unset)
+# remote_theme: (unset)
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - .impeccable.md
+  - plans/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .ruff_cache/
+  - .venv/
+  - .git/
+  - .gitignore
+  - .DS_Store
+
+include:
+  - CNAME
+  - robots.txt

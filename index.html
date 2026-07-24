@@ -1,306 +1,14 @@
-<!doctype html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Goldman"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- SEO -->
-    <link rel="canonical" href="https://stihia.ai/" />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
-    <meta
-      name="description"
-      content="Stihia provides real-time AI threat detection for enterprises. Self-optimizing ML models detect prompt injections, data leakage, and rogue AI agents across your entire AI landscape — custom-built and well-known tools like ChatGPT, Claude Code, and Copilot. Recursive meta-optimization adapts detection to your unique AI behavior patterns. SIEM integration via OpenTelemetry. ISO 27001, SOC 2, ISO 42001, EU AI Act compliance."
-    />
-    <meta
-      name="keywords"
-      content="AI Security, AI Agent Security, Prompt Injection Detection, Data Leakage Prevention, Anomaly Detection, Self-Optimizing AI Security, Recursive Meta-Optimization, Agent Goal Hijacking, Rogue Agents, Real-time Threat Detection, SIEM Integration, OpenTelemetry, ISO 27001, SOC 2, ISO 42001, EU AI Act, Sovereign AI, OWASP Top 10 Agentic AI, AI Compliance, AI Forensics, AI Threat Detection"
-    />
-
-    <!-- Social previews (Open Graph) -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Stihia | Real-Time Threat Detection for AI Systems"
-    />
-    <meta
-      property="og:description"
-      content="Stihia provides real-time AI threat detection for enterprises. Self-optimizing ML models detect prompt injections, data leakage, and rogue AI agents across your entire AI landscape — custom-built and well-known tools like ChatGPT, Claude Code, and Copilot. Recursive meta-optimization adapts detection to your unique AI behavior patterns. SIEM integration via OpenTelemetry. ISO 27001, SOC 2, ISO 42001, EU AI Act compliance."
-    />
-    <meta property="og:url" content="https://stihia.ai/" />
-    <meta
-      property="og:image"
-      content="https://stihia.ai/assets/img/stihia-cover-1200x630.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Stihia | Real-Time Threat Detection for AI Systems"
-    />
-    <meta
-      name="twitter:description"
-      content="Stihia provides real-time AI threat detection for enterprises. Self-optimizing ML models detect prompt injections, data leakage, and rogue AI agents across your entire AI landscape — custom-built and well-known tools like ChatGPT, Claude Code, and Copilot. Recursive meta-optimization adapts detection to your unique AI behavior patterns. SIEM integration via OpenTelemetry. ISO 27001, SOC 2, ISO 42001, EU AI Act compliance."
-    />
-    <meta
-      name="twitter:image"
-      content="https://stihia.ai/assets/img/stihia-cover-1200x630.png"
-    />
-    <meta
-      name="twitter:image:alt"
-      content="Stihia | Real-Time Threat Detection for AI Systems"
-    />
-
-    <!-- Performance niceties (helps CWV) -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <!-- Structured data: Organization (with Logo) + Service -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "Organization",
-            "name": "Stihia",
-            "url": "https://stihia.ai/",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://stihia.ai/assets/logo/stihia-logo-chrome.png",
-              "width": 815,
-              "height": 815
-            },
-            "image": {
-              "@type": "ImageObject",
-              "url": "https://stihia.ai/assets/img/stihia-cover-1200x630.png",
-              "width": 1200,
-              "height": 630
-            },
-            "foundingLocation": "Bulgaria",
-            "description": "Stihia is a real-time threat and anomaly detection platform purpose-built for securing the entire AI landscape of modern enterprises — both custom AI agents and well-known tools like ChatGPT, Claude Code, and Copilot. Self-optimizing ML models with recursive meta-optimization adapt detection to each customer's unique AI behavior patterns.",
-            "sameAs": ["https://www.linkedin.com/company/stihia"]
-          },
-          {
-            "@type": "Service",
-            "name": "Stihia Sense",
-            "serviceType": "Real-Time Threat Detection for AI Systems",
-            "provider": {
-              "@type": "Organization",
-              "name": "Stihia",
-              "url": "https://stihia.ai/"
-            },
-            "areaServed": ["EU", "UK", "US", "Worldwide"],
-            "url": "https://stihia.ai/",
-            "description": "Stihia provides real-time AI threat detection for enterprises. Self-optimizing ML models detect prompt injections, data leakage, and rogue AI agents across your entire AI landscape."
-          }
-        ]
-      }
-    </script>
-
-    <!-- Favicons that Google uses for site icons (esp. mobile SERP) -->
-    <link rel="icon" href="/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/logo/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/logo/favicon-16x16.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/logo/apple-touch-icon.png"
-    />
-
-    <!-- / SEO -->
-    <!--[if lt IE 9]>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
-    <script>
-      // Redirect to the canonical URL if the current URL is not the canonical URL
-      if (
-        document.location.pathname === "/" &&
-        !document.location.search &&
-        !document.location.hash &&
-        !document.location.href.endsWith("/")
-      ) {
-        document.location.replace(document.location.origin + "/");
-      }
-    </script>
-    <script>
-      !(function (t, e) {
-        var o, n, p, r;
-        e.__SV ||
-          (window.posthog && window.posthog.__loaded) ||
-          ((window.posthog = e),
-          (e._i = []),
-          (e.init = function (i, s, a) {
-            function g(t, e) {
-              var o = e.split(".");
-              (2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                (t[e] = function () {
-                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
-                }));
-            }
-            (((p = t.createElement("script")).type = "text/javascript"),
-              (p.crossOrigin = "anonymous"),
-              (p.async = !0),
-              (p.src =
-                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
-                "/static/array.js"),
-              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
-                p,
-                r,
-              ));
-            var u = e;
-            for (
-              void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                u.people = u.people || [],
-                u.toString = function (t) {
-                  var e = "posthog";
-                  return (
-                    "posthog" !== a && (e += "." + a),
-                    t || (e += " (stub)"),
-                    e
-                  );
-                },
-                u.people.toString = function () {
-                  return u.toString(1) + ".people (stub)";
-                },
-                o =
-                  "Ii init Di qi Sr Bi Zi Pi capture calculateEventProperties Yi register register_once register_for_session unregister unregister_for_session Xi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ji identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Wi Vi createPersonProfile setInternalOrTestUser Gi Fi Ki opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing $i debug Tr Ui getPageViewId captureTraceFeedback captureTraceMetric Ri".split(
-                    " ",
-                  ),
-                n = 0;
-              n < o.length;
-              n++
-            )
-              g(u, o[n]);
-            e._i.push([i, s, a]);
-          }),
-          (e.__SV = 1));
-      })(document, window.posthog || []);
-      posthog.init("phc_woaTiZRYZRWa79bGU7UpwFfgxsUvuoT5JuUkNXoa3LCj", {
-        cookieless_mode: "always",
-        api_host: "https://m.stihia.ai",
-        ui_host: "https://eu.posthog.com",
-        defaults: "2026-01-30",
-        person_profiles: "identified_only",
-      });
-    </script>
-    <title>Stihia | Real-Time Threat Detection for AI Systems</title>
-  </head>
-  <body>
-    <!-- Top Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container nav-container">
-        <a class="navbar-brand" href="/">
-          <img
-            src="./assets/logo/stihia-logo.svg"
-            alt="Logo"
-            width="32"
-            height="32"
-          />
-          <span class="brand-text">STIHIA</span>
-        </a>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div
-          class="collapse navbar-collapse justify-content-center"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#product">Product</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pricing">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#team">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#zmey">Zmey</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link nav-link-login"
-                href="https://app.stihia.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Log in to the Stihia Console"
-              >
-                Log In
-              </a>
-            </li>
-          </ul>
-        </div>
-        <a
-          class="btn btn-primary rounded-pill btn-nav-cta"
-          href="https://app.stihia.ai"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get Started
-        </a>
-      </div>
-    </nav>
-
+---
+layout: default
+title: Stihia | Real-Time Threat Detection for AI Systems
+description: >-
+  Stihia provides real-time AI threat detection for enterprises. Self-optimizing ML models detect prompt injections, data leakage, and rogue AI agents across your entire AI landscape — custom-built and well-known tools like ChatGPT, Claude Code, and Copilot. Recursive meta-optimization adapts detection to your unique AI behavior patterns. SIEM integration via OpenTelemetry. ISO 27001, SOC 2, ISO 42001, EU AI Act compliance.
+keywords: >-
+  AI Security, AI Agent Security, Prompt Injection Detection, Data Leakage Prevention, Anomaly Detection, Self-Optimizing AI Security, Recursive Meta-Optimization, Agent Goal Hijacking, Rogue Agents, Real-time Threat Detection, SIEM Integration, OpenTelemetry, ISO 27001, SOC 2, ISO 42001, EU AI Act, Sovereign AI, OWASP Top 10 Agentic AI, AI Compliance, AI Forensics, AI Threat Detection
+canonical: https://stihia.ai/
+json_ld: full
+canonical_redirect: true
+---
     <main>
       <!-- Header: Home -->
       <header id="home" class="container pt-5 mt-5 text-center">
@@ -340,7 +48,7 @@
             <div class="rounded hero-image-bg">
               <div class="overlay p-5">
                 <img
-                  src="./assets/img/stihia-console-screenshot.png"
+                  src="/assets/img/stihia-console-screenshot.png"
                   alt="Stihia Console Screenshot"
                   class="img-fluid rounded"
                   width="2030"
@@ -371,7 +79,7 @@
               <h3>Multi-Layer Detection</h3>
               <div class="my-4">
                 <img
-                  src="./assets/img/stihia-platform-1-multi-layer-detection.webp"
+                  src="/assets/img/stihia-platform-1-multi-layer-detection.webp"
                   alt="Stihia Platform - Multi-Layer Detection"
                   class="img-fluid rounded"
                   width="2400"
@@ -389,7 +97,7 @@
               <h3>Full AI Coverage</h3>
               <div class="my-4">
                 <img
-                  src="./assets/img/stihia-platform-2-full-ai-coverage.webp"
+                  src="/assets/img/stihia-platform-2-full-ai-coverage.webp"
                   alt="Stihia Platform - Full AI Coverage"
                   class="img-fluid rounded"
                   width="2400"
@@ -407,7 +115,7 @@
               <h3>Instant Alerts</h3>
               <div class="my-4">
                 <img
-                  src="./assets/img/stihia-platform-3-instant-alerts.webp"
+                  src="/assets/img/stihia-platform-3-instant-alerts.webp"
                   alt="Stihia Platform - Instant Alerts"
                   class="img-fluid rounded"
                   width="2400"
@@ -505,7 +213,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
                 glass, any integration method.
               </p>
               <img
-                src="./assets/img/stihia-ai-tools.webp"
+                src="/assets/img/stihia-ai-tools.webp"
                 alt="Stihia AI Tools"
                 class="img-fluid rounded"
                 width="2400"
@@ -535,7 +243,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
             <div class="row mt-4">
               <div class="col-sm-12 mb-5">
                 <img
-                  src="./assets/img/stihia-detection-layers.webp"
+                  src="/assets/img/stihia-detection-layers.webp"
                   alt="Stihia Detection Layers"
                   class="img-fluid rounded"
                   width="3712"
@@ -668,7 +376,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
                 class="panel rounded p-2 mb-4 border border-secondary border-opacity-25"
               >
                 <img
-                  src="./assets/img/stihia-console-threads-screenshot.png"
+                  src="/assets/img/stihia-console-threads-screenshot.png"
                   alt="Stihia Console dashboard showing threads and severity"
                   class="img-fluid rounded"
                   width="2846"
@@ -868,7 +576,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
               <div class="team-card h-100">
                 <div class="team-photo-wrapper">
                   <img
-                    src="./assets/img/team/ivan_danielov_ivanov.webp"
+                    src="/assets/img/team/ivan_danielov_ivanov.webp"
                     alt="Ivan Danielov Ivanov"
                     class="team-photo"
                     width="400"
@@ -907,7 +615,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
               <div class="team-card h-100">
                 <div class="team-photo-wrapper">
                   <img
-                    src="./assets/img/team/peter_kirkov.webp"
+                    src="/assets/img/team/peter_kirkov.webp"
                     alt="Peter Kirkov"
                     class="team-photo"
                     width="400"
@@ -937,7 +645,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
               <div class="team-card h-100">
                 <div class="team-photo-wrapper">
                   <img
-                    src="./assets/img/team/stilyan_mitrev.webp"
+                    src="/assets/img/team/stilyan_mitrev.webp"
                     alt="Stilyan Mitrev"
                     class="team-photo"
                     width="400"
@@ -967,7 +675,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
               <div class="team-card h-100">
                 <div class="team-photo-wrapper">
                   <img
-                    src="./assets/img/team/stoyan_simov.webp"
+                    src="/assets/img/team/stoyan_simov.webp"
                     alt="Stoyan Simov"
                     class="team-photo"
                     width="400"
@@ -1040,7 +748,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
           <div class="row">
             <div class="col-sm p-3">
               <img
-                src="./assets/img/zmey.webp"
+                src="/assets/img/zmey.webp"
                 alt="Stihia Zmey"
                 class="img-fluid rounded-4 zmey-image"
                 width="1024"
@@ -1092,216 +800,3 @@ async for chunk in guard.shield(llm.astream(prompt)):
         </div>
       </section>
     </main>
-
-    <!-- Footer -->
-    <footer id="footer" class="container pt-5 pb-4 footer-redesign">
-      <div class="row gy-4 mb-5">
-        <div class="col-lg-5 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
-          <a
-            class="footer-brand d-inline-flex align-items-center mb-3"
-            href="/"
-          >
-            <img
-              src="./assets/logo/stihia-logo.svg"
-              alt="Logo"
-              width="32"
-              height="32"
-              class="me-2"
-            />
-            <span class="brand-text fs-5">STIHIA</span>
-          </a>
-          <p class="text-secondary footer-desc mx-auto mx-lg-0">
-            Real-Time Threat Detection for AI Systems. Self-optimizing ML models
-            securing your entire AI landscape.
-          </p>
-          <div
-            class="footer-socials mt-4 justify-content-center justify-content-lg-start"
-          >
-            <a
-              href="https://www.linkedin.com/company/stihia"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Stihia on LinkedIn"
-              class="social-link"
-            >
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a
-              href="https://www.github.com/stihia-ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Stihia on GitHub"
-              class="social-link"
-            >
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-          <h5 class="footer-heading">Product</h5>
-          <ul class="list-unstyled footer-links">
-            <li>
-              <a
-                href="https://app.stihia.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Log in to the Stihia Console"
-              >
-                Log In
-              </a>
-            </li>
-            <li><a href="#product">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li>
-              <a
-                href="https://github.com/stihia-ai/stihia-librechat"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View the Stihia+LibreChat Bundle on GitHub"
-              >
-                Stihia+LibreChat
-              </a>
-            </li>
-            <li><a href="#zmey">Zmey</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-          <h5 class="footer-heading">Company</h5>
-          <ul class="list-unstyled footer-links">
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="/privacy.html">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-          <h5 class="footer-heading">Developers</h5>
-          <ul class="list-unstyled footer-links">
-            <li>
-              <a
-                href="/api/reference/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                API Reference
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/stihia-ai/stihia-sdk-python"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View the Stihia Python SDK on GitHub"
-              >
-                Python SDK
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/stihia-ai"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div
-        class="row pt-4 border-top border-secondary border-opacity-25 text-center text-lg-start"
-      >
-        <div class="col-12">
-          <p class="text-muted mb-0 small">
-            &copy; <span id="copyright-year">2026</span> Stihia Ltd.
-          </p>
-        </div>
-      </div>
-    </footer>
-    <script>
-      document.getElementById("copyright-year").textContent =
-        new Date().getFullYear();
-
-      // Close mobile navbar when a nav link is clicked
-      document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
-        link.addEventListener("click", function () {
-          const navbarCollapse = document.querySelector("#navbarNav");
-          if (navbarCollapse.classList.contains("show")) {
-            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-              toggle: false,
-            });
-            bsCollapse.hide();
-          }
-        });
-      });
-
-      // Focus trap for mobile menu (WCAG 2.4.3 Focus Order)
-      (function () {
-        const navCollapse = document.getElementById("navbarNav");
-        const toggler = document.querySelector(".navbar-toggler");
-        if (!navCollapse || !toggler) return;
-
-        function setBackgroundInert(inert) {
-          for (const el of document.body.children) {
-            if (el.tagName === "NAV" || el.tagName === "SCRIPT") continue;
-            if (inert) el.setAttribute("inert", "");
-            else el.removeAttribute("inert");
-          }
-        }
-
-        navCollapse.addEventListener("show.bs.collapse", function () {
-          setBackgroundInert(true);
-        });
-
-        navCollapse.addEventListener("shown.bs.collapse", function () {
-          const firstLink = navCollapse.querySelector(".nav-link");
-          if (firstLink) firstLink.focus();
-        });
-
-        navCollapse.addEventListener("hidden.bs.collapse", function () {
-          setBackgroundInert(false);
-          if (toggler.offsetParent !== null) toggler.focus();
-        });
-
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && navCollapse.classList.contains("show")) {
-            bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
-          }
-        });
-      })();
-
-      // Add scroll-triggered fade-in animations
-      document.addEventListener("DOMContentLoaded", function () {
-        document.documentElement.classList.add("js-enabled");
-        const fadeEls = document.querySelectorAll(".fade-in");
-
-        if (!("IntersectionObserver" in window)) {
-          fadeEls.forEach((el) => el.classList.add("visible"));
-          return;
-        }
-
-        const observerOptions = {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.15,
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, observerOptions);
-
-        fadeEls.forEach((el) => {
-          observer.observe(el);
-        });
-      });
-    </script>
-  </body>
-</html>
