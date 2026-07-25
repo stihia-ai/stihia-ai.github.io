@@ -258,17 +258,19 @@ h1 {
 }
 
 .navbar .mega-menu-title {
-  margin: 0 0 0.4rem;
-  font-size: clamp(1.25rem, 1.4vw, 1.5rem);
-  font-weight: var(--fw-semibold);
+  margin: 0 0 0.55rem;
+  font-size: 0.75rem;
+  font-weight: var(--fw-medium);
   line-height: var(--lh-snug);
-  color: var(--color-text-strong);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted-utility);
 }
 
 .navbar .mega-menu-tagline {
   margin: 0;
-  max-width: 24ch;
-  font-size: 0.95rem;
+  max-width: 22ch;
+  font-size: 0.88rem;
   font-weight: 400;
   line-height: var(--lh-normal);
   color: var(--color-text-muted);
@@ -289,16 +291,20 @@ h1 {
   gap: 0.2rem;
   padding: 0.7rem 0.85rem;
   border-radius: 8px;
+  border-inline-start: 2px solid transparent;
   font-weight: var(--fw-medium);
   line-height: var(--lh-snug);
   white-space: normal;
   color: var(--color-text-soft);
-  transition: background-color 0.15s ease;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .navbar .mega-link:hover,
 .navbar .mega-link:focus-visible {
-  background-color: var(--color-panel);
+  background-color: var(--color-band);
   color: var(--color-text-strong);
 }
 
@@ -1179,18 +1185,28 @@ footer a {
   .navbar .mega-menu-inner {
     --mega-cols: 3;
     grid-template-columns: minmax(12rem, 1fr) 3.5fr;
-    gap: 2rem;
+    gap: 1.75rem;
     align-items: stretch;
   }
 
   .navbar .mega-menu-intro {
     display: block;
+    padding-block: 0.35rem;
+    padding-inline-end: 0.5rem;
   }
 
   .navbar .mega-menu-list {
     grid-template-columns: repeat(var(--mega-cols), minmax(0, 1fr));
-    border-inline-start: 1px solid var(--color-border-soft);
-    padding-inline-start: 1.25rem;
+    gap: 0.2rem;
+    padding: 0.55rem;
+    border-inline-start: none;
+    border-radius: 12px;
+    background: var(--color-panel);
+  }
+
+  .navbar .mega-link:hover,
+  .navbar .mega-link:focus-visible {
+    background-color: var(--color-band);
   }
 }
 
