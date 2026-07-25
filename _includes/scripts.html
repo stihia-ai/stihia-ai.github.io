@@ -2,18 +2,79 @@
   document.getElementById("copyright-year").textContent =
     new Date().getFullYear();
 
-  // Close mobile navbar when a nav link is clicked
-  document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
-    link.addEventListener("click", function () {
-      const navbarCollapse = document.querySelector("#navbarNav");
-      if (navbarCollapse.classList.contains("show")) {
-        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-          toggle: false,
-        });
-        bsCollapse.hide();
-      }
+  // Close mobile navbar when a destination link is clicked (not dropdown toggles)
+  document
+    .querySelectorAll(".navbar-nav .nav-link:not(.dropdown-toggle), .mega-link")
+    .forEach((link) => {
+      link.addEventListener("click", function () {
+        const navbarCollapse = document.querySelector("#navbarNav");
+        if (navbarCollapse.classList.contains("show")) {
+          const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+            toggle: false,
+          });
+          bsCollapse.hide();
+        }
+      });
     });
-  });
+
+  // Desktop mega menu: open on hover with a short grace delay on leave
+  (function () {
+    const hoverMq = window.matchMedia(
+      "(min-width: 992px) and (hover: hover)",
+    );
+    const nav = document.querySelector(".navbar-nav");
+    if (!nav) return;
+
+    const CLOSE_DELAY_MS = 180;
+    let closeTimer = null;
+    let openItem = null;
+
+    function getDropdown(item) {
+      const toggle = item.querySelector(".dropdown-toggle");
+      if (!toggle) return null;
+      return bootstrap.Dropdown.getOrCreateInstance(toggle);
+    }
+
+    function showItem(item) {
+      if (openItem && openItem !== item) {
+        const prev = getDropdown(openItem);
+        if (prev) prev.hide();
+      }
+      openItem = item;
+      const dropdown = getDropdown(item);
+      if (dropdown) dropdown.show();
+    }
+
+    function hideItem(item) {
+      const dropdown = getDropdown(item);
+      if (dropdown) dropdown.hide();
+      if (openItem === item) openItem = null;
+    }
+
+    nav.addEventListener("mouseover", function (e) {
+      if (!hoverMq.matches) return;
+      const item = e.target.closest(".nav-item.dropdown");
+      if (!item || !nav.contains(item)) return;
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+        closeTimer = null;
+      }
+      showItem(item);
+    });
+
+    nav.addEventListener("mouseout", function (e) {
+      if (!hoverMq.matches) return;
+      const item = e.target.closest(".nav-item.dropdown");
+      if (!item || !nav.contains(item)) return;
+      const related = e.relatedTarget;
+      if (related && item.contains(related)) return;
+      if (closeTimer) clearTimeout(closeTimer);
+      closeTimer = setTimeout(function () {
+        hideItem(item);
+        closeTimer = null;
+      }, CLOSE_DELAY_MS);
+    });
+  })();
 
   // Focus trap for mobile menu (WCAG 2.4.3 Focus Order)
   (function () {

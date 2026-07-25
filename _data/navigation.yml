@@ -1,0 +1,55 @@
+sections:
+  - label: Services
+    tagline: One partner from AI confusion to AI control.
+    items:
+      - title: Corporate Trainings on AI Security
+        desc: Hands-on workshops on secure, effective AI use
+        url: /#services-trainings
+      - title: AI Policy Preparation
+        desc: Policies aligned with the EU AI Act, ISO 27001, SOC 2, and more
+        url: /#services-policy
+      - title: "Fractional AI Security & Compliance Officer"
+        desc: Ongoing ownership without a full-time hire
+        url: /#services-fractional-officer
+
+  - label: Solutions
+    tagline: From scattered AI use to governed, AI-first delivery.
+    items:
+      - title: Secure AI-first SDLC Transition
+        desc: Educate, govern, and prove — the whole journey
+        url: /#solutions-sdlc
+      - title: Real-Time Threat Detection
+        desc: Catch prompt injections, leaks, and rogue agents live
+        url: /#product
+
+  - label: Products
+    tagline: Working tools, not slideware.
+    items:
+      - title: Stihia Sense
+        desc: Real-Time Threat Detection API Platform
+        url: /#product
+      - title: Stihia Zmey
+        desc: Educational AI Hacking Game
+        url: /#zmey
+
+  - label: Company
+    tagline: The people behind Stihia.
+    items:
+      - title: About
+        desc: The team and why we do this
+        url: /#team
+      - title: Case Studies
+        desc: How companies deploy AI safely with us
+        url: /#case-studies
+      - title: Contact
+        desc: Talk to us
+        url: /#contact
+
+links:
+  - label: Log In
+    url: https://app.stihia.ai
+    aria: Log in to the Stihia Console
+
+cta:
+  label: Get Started
+  url: https://app.stihia.ai
