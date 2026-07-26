@@ -404,6 +404,28 @@ h1 {
   margin: 0 auto;
 }
 
+.hero-product {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid
+    color-mix(in srgb, var(--accent-signature) 45%, var(--color-border-medium));
+  border-radius: var(--radius-pill);
+  background: color-mix(
+    in srgb,
+    var(--accent-signature) 12%,
+    var(--color-card-sheen-faint)
+  );
+  color: var(--accent-signature);
+  font-family: var(--font-family-brand);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-tight);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .hero-title {
   font-size: var(--fs-display);
   font-weight: var(--fw-semibold);
