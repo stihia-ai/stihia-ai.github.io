@@ -18,9 +18,9 @@ sections:
       - title: Secure AI-First Transition
         desc: TODO
         url: /solutions/ai-first-transition
-      - title: Real-Time Threat Detection
+      - title: AI Product Security
         desc: TODO
-        url: /solutions/real-time-threat-detection
+        url: /solutions/ai-product-security
 
   - label: Products
     tagline: TODO
