@@ -407,7 +407,7 @@ h1 {
 .hero-product {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.5rem;
   padding: 0.45rem 1.15rem;
   margin-bottom: 1.5rem;
   border: 1px solid
@@ -420,23 +420,32 @@ h1 {
     ),
     var(--color-card-surface);
   box-shadow: inset 0 1px 0 var(--color-card-sheen);
+  font-family: var(--font-family-brand);
   font-size: var(--fs-card-body);
   font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-tight);
   text-transform: uppercase;
   white-space: nowrap;
 }
 
+.hero-product-logo {
+  flex: none;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: var(--color-text-soft);
+  mask: url("../logo/stihia-logo.svg") center / contain no-repeat;
+  -webkit-mask: url("../logo/stihia-logo.svg") center / contain no-repeat;
+}
+
 .hero-product .brand-text {
   color: var(--color-text-soft);
-  letter-spacing: var(--ls-tight);
 }
 
 .hero-product-name {
+  margin-left: 0.2rem;
   padding-left: 0.7rem;
   border-left: 1px solid var(--color-border-medium);
   color: var(--accent-signature);
-  letter-spacing: var(--ls-wide);
-  margin-right: calc(var(--ls-wide) * -1);
 }
 
 .hero-title {
