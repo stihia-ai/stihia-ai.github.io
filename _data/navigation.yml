@@ -17,7 +17,7 @@ sections:
     items:
       - title: Secure AI-First Transition
         desc: TODO
-        url: /solutions/ai-first
+        url: /solutions/ai-first-transition
       - title: Real-Time Threat Detection
         desc: TODO
         url: /solutions/real-time-threat-detection
@@ -27,10 +27,10 @@ sections:
     items:
       - title: Stihia Sense
         desc: Real-Time Threat Detection API Platform
-        url: /products/stihia-sense
+        url: /products/sense
       - title: Stihia Zmey
         desc: Educational AI Hacking Game
-        url: /products/stihia-zmey
+        url: /products/zmey
 
   - label: Company
     tagline: TODO
