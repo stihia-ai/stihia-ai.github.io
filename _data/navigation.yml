@@ -5,12 +5,12 @@ sections:
       - title: AI Security Workshop
         desc: TODO
         url: /services/workshop
-      - title: AI Policy Preparation & Audit
+      - title: AI Policy Consulting
         desc: TODO
         url: /services/ai-policy
       - title: "Fractional Security & Compliance Officer"
         desc: TODO
-        url: /services/fractional-ciso
+        url: /services/fractional-ciso-cco
 
   - label: Solutions
     tagline: TODO
