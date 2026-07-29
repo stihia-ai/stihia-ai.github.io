@@ -353,6 +353,11 @@ h1 {
   height: var(--space-spacer);
 }
 
+/* Keep in-page anchor targets clear of the fixed navbar */
+main [id] {
+  scroll-margin-top: 5rem;
+}
+
 .panel {
   background-color: var(--color-panel);
 }
@@ -448,6 +453,31 @@ h1 {
   color: var(--accent-signature);
 }
 
+/* Service-page counterpart of .hero-product — no brand wordmark font */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 1.1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-pill);
+  background: var(--color-card-surface);
+  box-shadow: inset 0 1px 0 var(--color-card-sheen);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.hero-eyebrow-accent {
+  padding-left: 0.65rem;
+  border-left: 1px solid var(--color-border-medium);
+  color: var(--accent-signature);
+}
+
 .hero-title {
   font-size: var(--fs-display);
   font-weight: var(--fw-semibold);
@@ -461,6 +491,37 @@ h1 {
   background-position: center;
   width: 100%;
   aspect-ratio: 16 / 9;
+}
+
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-facts > li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.95rem;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-card-surface);
+  color: var(--color-text-muted);
+  font-size: var(--fs-card-body);
+}
+
+.hero-facts > li > i {
+  color: color-mix(
+    in srgb,
+    var(--accent-signature) 70%,
+    var(--color-text-muted-utility)
+  );
+  font-size: var(--fs-icon-sm);
 }
 
 /* --------------------------------------------------------------------------
@@ -619,21 +680,21 @@ pre code {
 }
 
 /* --------------------------------------------------------------------------
-   SDK Feature List
+   Hairline List — icon + text rows separated by hairline rules
    -------------------------------------------------------------------------- */
 
-.sdk-features {
+.hairline-list {
   --_gap: 0.75rem;
   --_item-py: 0.7rem;
   --_icon-size: 1.1rem;
-  --_icon-offset: 0.15rem;
+  --_icon-offset: 0.22rem;
 
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sdk-features li {
+.hairline-list > li {
   display: flex;
   align-items: flex-start;
   gap: var(--_gap);
@@ -644,22 +705,33 @@ pre code {
   border-bottom: 1px solid var(--color-border-subtle);
 }
 
-.sdk-features li:last-child {
+.hairline-list > li:last-child {
   border-bottom: none;
 }
 
-.sdk-features li svg {
-  color: var(--color-text-muted);
+.hairline-list > li > i,
+.hairline-list > li > svg {
   width: var(--_icon-size);
   text-align: center;
   flex-shrink: 0;
   margin-top: var(--_icon-offset);
   font-size: var(--fs-icon-sm);
+  color: color-mix(
+    in srgb,
+    var(--accent-signature) 68%,
+    var(--color-text-muted-utility)
+  );
 }
 
-.sdk-features li strong {
+.hairline-list > li strong {
   color: var(--color-text-soft);
   font-weight: var(--fw-medium);
+}
+
+/* Muted icon variant for neutral, non-emphasised rows */
+.hairline-list-muted > li > i,
+.hairline-list-muted > li > svg {
+  color: var(--color-text-muted-utility);
 }
 
 /* --------------------------------------------------------------------------
@@ -830,6 +902,173 @@ pre code {
 }
 
 /* --------------------------------------------------------------------------
+   Stage Cards — ordered steps in a sequence (workshop stages, engagement flow)
+   -------------------------------------------------------------------------- */
+
+.stage-card {
+  --stage-accent: var(--color-layer-accent-default);
+
+  --_padding: 1.7rem;
+  --_gap: 1.1rem;
+  --_radius: var(--radius-card);
+  --_numeral-size: 5.5rem;
+
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--_gap);
+  height: 100%;
+  padding: var(--_padding);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--_radius);
+  background-color: var(--color-card-surface);
+  background-image: linear-gradient(
+    180deg,
+    var(--color-card-sheen) 0%,
+    var(--color-card-sheen-faint) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 var(--color-card-sheen),
+    0 18px 40px var(--color-card-deep-shadow);
+  overflow: hidden;
+  transition:
+    transform var(--transition-card-speed),
+    border-color var(--transition-card-speed),
+    box-shadow var(--transition-card-speed);
+}
+
+/* Top hairline in the stage accent */
+.stage-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--stage-accent) 0%,
+    transparent 68%
+  );
+  opacity: 0.9;
+}
+
+/* Oversized ghost numeral marking the position in the sequence */
+.stage-card::after {
+  content: attr(data-stage);
+  position: absolute;
+  top: -0.35em;
+  right: 0.15em;
+  z-index: 0;
+  font-size: var(--_numeral-size);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--stage-accent);
+  opacity: 0.09;
+  pointer-events: none;
+  user-select: none;
+}
+
+.stage-card:hover,
+.stage-card:focus-within {
+  transform: translateY(var(--lift-md));
+  border-color: color-mix(
+    in srgb,
+    var(--stage-accent) 40%,
+    var(--color-border-soft)
+  );
+  box-shadow:
+    inset 0 1px 0 var(--color-border-subtle),
+    0 24px 44px var(--color-card-deep-shadow-hover);
+}
+
+.stage-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.stage-index {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--stage-accent) 72%, var(--color-text-soft));
+}
+
+.stage-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid
+    color-mix(in srgb, var(--stage-accent) 52%, var(--color-border-medium));
+  border-radius: var(--radius-pill);
+  background: color-mix(
+    in srgb,
+    var(--stage-accent) 12%,
+    var(--color-card-sheen-faint)
+  );
+  color: color-mix(in srgb, var(--stage-accent) 78%, var(--color-text-soft));
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-tight);
+  white-space: nowrap;
+}
+
+.stage-title,
+.stage-copy,
+.stage-card > .hairline-list,
+.stage-card > .media-placeholder {
+  position: relative;
+  z-index: 1;
+}
+
+.stage-title {
+  margin: 0;
+  color: var(--color-text-strong);
+  font-size: var(--fs-card-title);
+  line-height: var(--lh-snug);
+}
+
+.stage-copy {
+  margin: 0;
+  color: var(--color-text-dim);
+  font-size: var(--fs-card-body);
+  line-height: var(--lh-relaxed);
+}
+
+.stage-card-theory {
+  --stage-accent: var(--accent-signature);
+}
+.stage-card-demos {
+  --stage-accent: var(--accent-semantic);
+}
+.stage-card-practice {
+  --stage-accent: var(--accent-anomaly);
+}
+
+/* Standalone ordinal label for lighter step lists */
+.step-index {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: color-mix(
+    in srgb,
+    var(--accent-signature) 76%,
+    var(--color-text-soft)
+  );
+}
+
+/* --------------------------------------------------------------------------
    Pricing Cards
    -------------------------------------------------------------------------- */
 
@@ -895,6 +1134,138 @@ pre code {
   color: var(--accent-signature);
   font-size: var(--fs-icon-sm);
   margin-top: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Media Placeholder
+   Temporary stand-in describing artwork that is not produced yet.
+   Replace the whole element with the real <img> when assets land.
+   -------------------------------------------------------------------------- */
+
+/* Sized with min-height rather than aspect-ratio so the description text can
+   never overflow the box in a narrow column. Intended ratio is stated in the
+   meta line and applies to the real asset. */
+.media-placeholder {
+  --_min-h: 15rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: var(--_min-h);
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+  border: 1px dashed
+    color-mix(in srgb, var(--accent-signature) 32%, var(--color-border-medium));
+  border-radius: var(--radius-card-sm);
+  background-color: var(--color-bg-darker);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--color-card-sheen-faint) 0 10px,
+    transparent 10px 20px
+  );
+}
+
+.media-placeholder-wide {
+  --_min-h: 22rem;
+}
+.media-placeholder-4x3 {
+  --_min-h: 17rem;
+}
+.media-placeholder-square {
+  --_min-h: 15rem;
+}
+.media-placeholder-auto {
+  --_min-h: 8rem;
+}
+
+.media-placeholder-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: color-mix(
+    in srgb,
+    var(--accent-signature) 78%,
+    var(--color-text-soft)
+  );
+}
+
+.media-placeholder-text {
+  margin: 0;
+  max-width: 54ch;
+  font-size: var(--fs-card-body);
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+}
+
+.media-placeholder-meta {
+  margin: 0;
+  font-family: var(--font-family-mono);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-snug);
+  color: var(--color-text-muted-utility);
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Disclosures
+   -------------------------------------------------------------------------- */
+
+.faq-list {
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.faq-item > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 44px;
+  padding: 1rem 0;
+  cursor: pointer;
+  list-style: none;
+  color: var(--color-text-strong);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+}
+
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item > summary::after {
+  content: "";
+  flex: none;
+  width: 0.45em;
+  height: 0.45em;
+  border: solid currentColor;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.faq-answer {
+  margin: 0;
+  padding: 0 0 1.3rem;
+  max-width: 72ch;
+  color: var(--color-text-muted);
+  font-size: var(--fs-card-body);
+  line-height: var(--lh-relaxed);
 }
 
 /* --------------------------------------------------------------------------
@@ -1020,6 +1391,19 @@ pre code {
   color: var(--color-text-strong);
   border-color: var(--color-border-medium);
   background-color: var(--color-bg-darker);
+}
+
+/* Headshot-scale portrait for presenter/author bios, where the person is a
+   credibility signal rather than the subject of the section. Square because the
+   team source assets are square; height is pinned so the intrinsic height
+   attribute cannot win over aspect-ratio. */
+.presenter-photo {
+  flex: none;
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-card-sm);
 }
 
 /* --------------------------------------------------------------------------
@@ -1285,6 +1669,21 @@ footer a {
   .detection-layer-pill {
     white-space: normal;
   }
+
+  .stage-card {
+    --_padding: 1.35rem;
+    --_radius: var(--radius-card-sm);
+    --_numeral-size: 4.5rem;
+  }
+
+  .stage-meta {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .stage-pill {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1295,12 +1694,18 @@ footer a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .detection-layer-card {
+  .detection-layer-card,
+  .stage-card {
     transition: none;
   }
 
-  .detection-layer-card:hover {
+  .detection-layer-card:hover,
+  .stage-card:hover {
     transform: none;
+  }
+
+  .faq-item > summary::after {
+    transition: none;
   }
 
   .navbar .dropdown-toggle::after,

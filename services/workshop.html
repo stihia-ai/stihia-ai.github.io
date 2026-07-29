@@ -2,15 +2,1210 @@
 layout: default
 title: AI Security Workshop | Stihia | AI Security Partner for Your Business
 description: >-
-  TODO
+  Hands-on AI security training for your whole team. We explain how AI agents fail, hack the tools your people use every
+  day — Cursor, Claude, Codex, Copilot, ChatGPT — live in the room, then let everyone attack a real AI agent themselves.
+  On-site or remote, two hours to multi-day, in English or Bulgarian.
 keywords: >-
-  TODO
+  AI Security Workshop, AI Security Training, Corporate AI Training, AI Awareness Training, Prompt Injection Training,
+  AI Agent Security, OWASP Top 10 Agentic Applications, Secure AI Usage, Shadow AI, Live Hacking Demo, Stihia Zmey,
+  Developer Security Training, EU AI Act Training, AI Security Bulgaria, AI Security CEE
 canonical: https://stihia.ai/services/workshop
 json_ld: full
 canonical_redirect: true
+# TODO: add a workshop-specific social share image once photos are selected.
+# og_image: /assets/img/workshop/stihia-workshop-1200x630.png
 ---
 <main>
-    <header class="container pt-5 mt-5 text-center">
-        TODO
-    </header>
+  <!-- ===================================================================
+       Hero
+       =================================================================== -->
+  <header class="container pt-5 mt-5 text-center">
+    <div class="row mt-5 mb-3">
+      <div class="col-sm hero-content">
+        <p class="hero-eyebrow">
+          AI SECURITY
+          <span class="hero-eyebrow-accent">WORKSHOP</span>
+        </p>
+        <h1 class="hero-title">
+          Your team already uses AI.<br />Teach them to use it safely.
+        </h1>
+        <p class="hero-subtitle">
+          A hands-on workshop built around the AI tools your people open
+          every morning. We show real attacks, explain what actually
+          protects you, and let everyone try breaking an AI agent
+          themselves.
+        </p>
+      </div>
+    </div>
+    <div class="row mt-4 mb-4">
+      <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
+        <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
+          rel="noopener noreferrer">
+          Book a Workshop
+        </a>
+        <a class="btn btn-outline-light rounded-pill px-4" href="#agenda">
+          See how a workshop runs
+        </a>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-sm">
+        <ul class="hero-facts">
+          <li>
+            <i class="fa fa-clock" aria-hidden="true"></i>
+            Two hours to multi-day
+          </li>
+          <li>
+            <i class="fa fa-location-dot" aria-hidden="true"></i>
+            On-site or remote
+          </li>
+          <li>
+            <i class="fa fa-language" aria-hidden="true"></i>
+            English or Bulgarian
+          </li>
+          <li>
+            <i class="fa fa-users" aria-hidden="true"></i>
+            Engineers or non-technical staff
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-sm">
+        <!-- REPLACE: hero photo -->
+        <div class="media-placeholder media-placeholder-wide">
+          <span class="media-placeholder-label">
+            <i class="fa fa-image" aria-hidden="true"></i>
+            Photo — hero
+          </span>
+          <p class="media-placeholder-text">
+            Wide shot of a real Stihia workshop in progress: participants
+            around a table with laptops open, presenter standing beside a
+            large screen showing a live terminal demo. Warm room light,
+            engaged faces, nothing posed. Needs enough headroom and empty
+            floor at the bottom edge to survive a wide crop.
+          </p>
+          <p class="media-placeholder-meta">
+            /assets/img/workshop/workshop-room-wide.webp &middot; 21:9
+            &middot; 2400px wide or more
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       What the team walks away with
+       =================================================================== -->
+  <section id="outcomes" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">What your team walks away with</h2>
+          <p class="section-subtitle">
+            Not a slide deck nobody opens again. Habits, and evidence you
+            can point at.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Awareness that sticks</h3>
+            <p class="text-secondary mb-0">
+              Your team watches a prompt injection walk data out of a tool
+              they used that same morning. After that, the rules stop
+              sounding theoretical and start sounding obvious.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Habits for daily work</h3>
+            <p class="text-secondary mb-0">
+              Concrete practices they can apply the next day: what never
+              goes into a prompt, which tools and MCP servers to trust,
+              least privilege for agents, sandboxing, and secret handling.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Evidence you can show clients</h3>
+            <p class="text-secondary mb-0">
+              An attendance record, the materials we leave behind, and a
+              topic list you can map to your AI policy — useful the next
+              time a client security questionnaire lands on your desk.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       How a workshop runs — three stages
+       =================================================================== -->
+  <section id="agenda" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">Theory, live demos, hands-on practice</h2>
+          <p class="section-subtitle">
+            Every workshop moves through these three stages. How much time
+            each one gets depends on who is in the room and how long we
+            have.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 d-flex">
+          <article class="stage-card stage-card-theory" data-stage="01">
+            <div class="stage-meta">
+              <span class="stage-index">Stage 01</span>
+              <span class="stage-pill">Grounding</span>
+            </div>
+            <h3 class="stage-title">Theory</h3>
+            <p class="stage-copy">
+              What an AI agent actually is, how agents fail, and what has
+              already gone wrong in the real world — with documented
+              incidents rather than hypotheticals.
+            </p>
+            <ul class="hairline-list">
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Agents, autonomy levels, tools, and memory
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                OWASP Top 10 for Agentic Applications
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Prompt injection, direct and indirect
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Real incidents, real losses
+              </li>
+            </ul>
+            <!-- REPLACE: theory-stage photo -->
+            <div class="media-placeholder media-placeholder-4x3 mt-auto">
+              <span class="media-placeholder-label">
+                <i class="fa fa-image" aria-hidden="true"></i>
+                Photo — theory
+              </span>
+              <p class="media-placeholder-text">
+                Presenter at the screen during the theory segment, a slide
+                visible behind them. Audience heads softly out of focus in
+                the foreground.
+              </p>
+              <p class="media-placeholder-meta">
+                /assets/img/workshop/workshop-theory.webp &middot; 4:3
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 d-flex">
+          <article class="stage-card stage-card-demos" data-stage="02">
+            <div class="stage-meta">
+              <span class="stage-index">Stage 02</span>
+              <span class="stage-pill">Watch it break</span>
+            </div>
+            <h3 class="stage-title">Live demos</h3>
+            <p class="stage-copy">
+              We attack real, current AI tools live in the room. Nothing is
+              pre-recorded, and nothing is a mock-up — that is the part
+              people remember.
+            </p>
+            <ul class="hairline-list">
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                System prompt leaks
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Agent goal hijacking
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Memory and context poisoning
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Data exfiltration from a coding agent
+              </li>
+            </ul>
+            <!-- REPLACE: demo-stage photo -->
+            <div class="media-placeholder media-placeholder-4x3 mt-auto">
+              <span class="media-placeholder-label">
+                <i class="fa fa-image" aria-hidden="true"></i>
+                Photo — live demo
+              </span>
+              <p class="media-placeholder-text">
+                The projected screen mid-demo with the room reacting, or a
+                close shot over the presenter's shoulder. Screen content
+                should read as real; redact anything customer-specific.
+              </p>
+              <p class="media-placeholder-meta">
+                /assets/img/workshop/workshop-demo.webp &middot; 4:3
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 d-flex">
+          <article class="stage-card stage-card-practice" data-stage="03">
+            <div class="stage-meta">
+              <span class="stage-index">Stage 03</span>
+              <span class="stage-pill">Hands-on</span>
+            </div>
+            <h3 class="stage-title">Practice</h3>
+            <p class="stage-copy">
+              Participants stop watching and start attacking. Everyone gets
+              time on <span class="brand-text">Stihia</span> Zmey, a real
+              AI agent built to be broken.
+            </p>
+            <ul class="hairline-list">
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Attack a live agent, not a simulation
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Progressively harder defences
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Group debrief on what worked
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                A medal for whoever gets furthest
+              </li>
+            </ul>
+            <!-- REPLACE: practice-stage photo -->
+            <div class="media-placeholder media-placeholder-4x3 mt-auto">
+              <span class="media-placeholder-label">
+                <i class="fa fa-image" aria-hidden="true"></i>
+                Photo — practice
+              </span>
+              <p class="media-placeholder-text">
+                Participants leaning into their laptops during the Zmey
+                round, one pointing at a neighbour's screen. Competitive,
+                informal energy.
+              </p>
+              <p class="media-placeholder-meta">
+                /assets/img/workshop/workshop-practice.webp &middot; 4:3
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Live demos — the differentiator
+       =================================================================== -->
+  <div class="section-band mt-5">
+    <div class="container">
+      <div id="demos" class="fade-in section-divider">
+        <div class="row mb-5 text-center">
+          <div class="col-sm">
+            <h2 class="section-title">
+              We hack the tools your team opens every morning
+            </h2>
+            <p class="section-subtitle">
+              Demos run against current versions of real products. The point
+              is not to scare anyone — it is to make the failure mode
+              concrete enough to act on.
+            </p>
+          </div>
+        </div>
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <ul class="hairline-list">
+              <li>
+                <i class="fa fa-terminal" aria-hidden="true"></i>
+                <span>
+                  <strong>System prompt leak</strong> — coax an assistant
+                  into revealing the instructions it was told to keep
+                  private.
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-terminal" aria-hidden="true"></i>
+                <span>
+                  <strong>Agent goal hijack</strong> — hide instructions in
+                  content a coding agent reads, and watch its objective
+                  change.
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-terminal" aria-hidden="true"></i>
+                <span>
+                  <strong>Memory poisoning</strong> — plant something in
+                  persistent memory that keeps influencing later, unrelated
+                  sessions.
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-terminal" aria-hidden="true"></i>
+                <span>
+                  <strong>Data exfiltration</strong> — move source code or
+                  secrets out of a developer's environment through the
+                  agent's own tools.
+                </span>
+              </li>
+            </ul>
+            <p class="text-secondary mt-4 mb-0">
+              The demo set is refreshed as new vulnerabilities appear, so a
+              workshop run this quarter is not the one we ran last quarter.
+              We can also target the specific tools your team has adopted,
+              or your own AI product, on request.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <!-- REPLACE: demo evidence visual -->
+            <div class="media-placeholder">
+              <span class="media-placeholder-label">
+                <i class="fa fa-image" aria-hidden="true"></i>
+                Screenshot or photo
+              </span>
+              <p class="media-placeholder-text">
+                Evidence of one attack landing. Either a clean screenshot
+                composite — an injected instruction on one side, the agent
+                complying on the other — or a photo of the projected screen
+                at the moment the room realises what happened. Keep any
+                customer or credential data redacted.
+              </p>
+              <p class="media-placeholder-meta">
+                /assets/img/workshop/workshop-demo-evidence.webp &middot;
+                16:9
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       Practice — Stihia Zmey and the medal
+       =================================================================== -->
+  <section id="practice" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">
+            The part they talk about afterwards
+          </h2>
+          <p class="section-subtitle">
+            Watching an attack is useful. Landing one yourself is what
+            changes behaviour.
+          </p>
+        </div>
+      </div>
+      <div class="row panel rounded overflow-hidden align-items-center">
+        <div class="col-lg-6 p-5 border-end-md">
+          <h3>Everyone gets a turn on the agent</h3>
+          <p class="text-secondary pt-3">
+            <span class="brand-text">Stihia</span> Zmey is a deployed AI
+            agent with real defences and a real goal to protect.
+            Participants have to talk their way past it. Attempts get
+            shared, the room starts collaborating, and the concepts from the
+            theory stage land without anyone needing to take notes.
+          </p>
+          <p class="text-secondary">
+            Whoever gets furthest takes home a 3D-printed
+            <strong>Stihia Zmey Slayer</strong> medal. It is a small thing
+            that turns out to matter — medals end up on desks, and the
+            conversation about AI security keeps going after we leave.
+          </p>
+          <p class="mt-4 mb-0 d-flex gap-3 flex-wrap">
+            <a class="btn btn-outline-light rounded-pill px-4" href="https://zmey.stihia.ai" target="_blank"
+              rel="noopener noreferrer">
+              Play Zmey
+              <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-outline-light rounded-pill px-4" href="/products/zmey">
+              About Zmey
+            </a>
+          </p>
+        </div>
+        <div class="col-lg-6 p-5 bg-darker">
+          <div class="row g-3">
+            <div class="col-12 col-sm-7">
+              <!-- REPLACE: winners photo -->
+              <div class="media-placeholder media-placeholder-4x3">
+                <span class="media-placeholder-label">
+                  <i class="fa fa-image" aria-hidden="true"></i>
+                  Photo — winner
+                </span>
+                <p class="media-placeholder-text">
+                  A workshop winner holding or wearing the Zmey Slayer
+                  medal, workshop room behind them. Two or three winners
+                  together from different sessions would be even better.
+                </p>
+                <p class="media-placeholder-meta">
+                  /assets/img/workshop/zmey-slayer-winner.webp &middot; 4:3
+                </p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-5">
+              <!-- REPLACE: medal product shot -->
+              <div class="media-placeholder media-placeholder-square">
+                <span class="media-placeholder-label">
+                  <i class="fa fa-image" aria-hidden="true"></i>
+                  Photo — medal
+                </span>
+                <p class="media-placeholder-text">
+                  Product-style shot of the 3D-printed Zmey Slayer medal on
+                  a dark surface, raking light so the print layers and the
+                  Zmey relief read clearly.
+                </p>
+                <p class="media-placeholder-meta">
+                  /assets/img/workshop/zmey-slayer-medal.webp &middot; 1:1
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Topics we cover — modular curriculum
+       =================================================================== -->
+  <section id="topics" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">Topics we cover</h2>
+          <p class="section-subtitle">
+            We assemble each workshop from these modules. Shorter formats
+            take the essentials, longer ones go deep, and we add modules
+            specific to your stack or industry when it helps.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">AI agents, explained</h3>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                What separates an agent from a chatbot
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Reasoning, tools, memory, and autonomy levels
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Where agents already sit inside your delivery process
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">The threat landscape</h3>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                OWASP Top 10 for Agentic Applications
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Direct and indirect prompt injection
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                The lethal trifecta: private data, untrusted content,
+                outbound communication
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">What has already happened</h3>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Documented breaches, thefts, and destroyed data
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                The specific mistake behind each one
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Which of them your setup is currently exposed to
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Safe AI use for everyone</h3>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                What never belongs in a prompt
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Vetting tools, MCP servers, and skills
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Least privilege, sandboxing, and secret storage
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Provider settings worth changing today
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Secure AI development</h3>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Treating model inputs and outputs as untrusted
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Input and output guardrails, and their limits
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Logging, observability, and real-time detection
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Design patterns that contain a compromised agent
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Regulation and policy context</h3>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                EU AI Act, NIS2, and DORA in plain language
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                Where ISO 27001, ISO 42001, and SOC 2 touch AI use
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                How the workshop connects to your internal AI policy
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="text-secondary text-center mt-5 mb-0">
+        Sovereignty, privacy, and local-model questions come up in almost
+        every session — we cover them wherever they fit best for your team.
+      </p>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Formats, audiences, and logistics
+       =================================================================== -->
+  <section id="formats" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">Formats</h2>
+          <p class="section-subtitle">
+            Same substance, sized to your calendar. If none of these fits,
+            tell us the constraint and we will shape something that does.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <span class="step-index">Two hours</span>
+            <h3 class="mb-3">Intro session</h3>
+            <p class="text-secondary mb-0">
+              One sitting, mixed audience, the full arc: theory, a set of
+              live demos, and a short Zmey round with a medal at the end.
+              Enough to shift how people work the following week.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <span class="step-index">Half or full day</span>
+            <h3 class="mb-3">Deep dive</h3>
+            <p class="text-secondary mb-0">
+              More demos, far more hands-on time, and room to split into
+              role-specific tracks — engineers going into secure design
+              while everyone else works on daily practice.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <span class="step-index">Recurring</span>
+            <h3 class="mb-3">Ongoing programme</h3>
+            <p class="text-secondary mb-0">
+              A series across several weeks, or a standing module in your
+              onboarding. Sensible when AI practice inside your team is
+              changing faster than a single session can cover.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5 g-4">
+        <div class="col-lg-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-4">Who it is for</h3>
+            <ul class="hairline-list">
+              <li>
+                <i class="fa fa-user-group" aria-hidden="true"></i>
+                <span>
+                  <strong>Everyone who touches AI</strong> — including
+                  non-technical staff. No prior security knowledge assumed,
+                  and no jargon left unexplained.
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-code" aria-hidden="true"></i>
+                <span>
+                  <strong>Engineers and AI builders</strong> — deeper into
+                  agent architecture, guardrails, and the design decisions
+                  that contain a compromise.
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-clipboard-check" aria-hidden="true"></i>
+                <span>
+                  <strong>Leadership and compliance</strong> — the risk,
+                  regulatory, and client-trust picture, and what it implies
+                  for policy.
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-4">Practical details</h3>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-location-dot" aria-hidden="true"></i>
+                On-site at your office, fully remote, or hybrid
+              </li>
+              <li>
+                <i class="fa fa-language" aria-hidden="true"></i>
+                Delivered in English or Bulgarian
+              </li>
+              <li>
+                <i class="fa fa-users" aria-hidden="true"></i>
+                A single team up to a full-company session
+              </li>
+              <li>
+                <i class="fa fa-laptop" aria-hidden="true"></i>
+                Participants bring a laptop for the hands-on stage
+              </li>
+              <li>
+                <i class="fa fa-file-lines" aria-hidden="true"></i>
+                Slides, checklists, and links shared with all attendees
+                afterwards
+              </li>
+              <li>
+                <i class="fa fa-shield-halved" aria-hidden="true"></i>
+                Demos never run against your production systems
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Who delivers it
+       =================================================================== -->
+  <section id="instructor" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">
+            Delivered by practitioners, not trainers
+          </h2>
+          <p class="section-subtitle">
+            Sessions are led by the people who build Stihia's AI threat
+            detection and run its security and compliance work — not by a
+            training vendor working from someone else's material.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <img src="/assets/img/team/ivan_danielov_ivanov.webp" alt="Ivan Danielov Ivanov"
+                class="presenter-photo" width="1024" height="1024" loading="lazy" />
+              <div>
+                <h3 class="mb-2">Ivan Danielov Ivanov</h3>
+                <p class="team-role">Data Science &amp; Product Engineering</p>
+              </div>
+            </div>
+            <p class="text-secondary">
+              Ivan builds the detection models behind
+              <span class="brand-text">Stihia</span> Sense and runs the
+              vulnerability research the live demos come from — which is why
+              the demos are current rather than recycled. He leads the theory
+              and live hacking stages.
+            </p>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                MSc in Computer Science, University of Bonn &middot; BEng in
+                Computing, TU Varna
+              </li>
+              <li>
+                <i class="fa fa-chart-line" aria-hidden="true"></i>
+                Data science and ML consulting at Progress Software and
+                SoftServe
+              </li>
+              <li>
+                <i class="fa fa-people-group" aria-hidden="true"></i>
+                Data for Good Bulgaria, Humans in the Loop, and other
+                non-profit and startup work
+              </li>
+            </ul>
+            <div class="d-flex gap-2 mt-4">
+              <a class="team-social-link" href="https://www.linkedin.com/in/ivandanielov/" target="_blank"
+                rel="noopener noreferrer" aria-label="Ivan Danielov Ivanov on LinkedIn">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a class="team-social-link" href="https://github.com/idanivanov" target="_blank"
+                rel="noopener noreferrer" aria-label="Ivan Danielov Ivanov on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <img src="/assets/img/team/peter_kirkov.webp" alt="Peter Kirkov" class="presenter-photo" width="1024"
+                height="1024" loading="lazy" />
+              <div>
+                <h3 class="mb-2">Peter Kirkov</h3>
+                <p class="team-role">Cybersecurity &amp; Compliance</p>
+              </div>
+            </div>
+            <p class="text-secondary">
+              Peter works across IT security, data privacy, and IT governance,
+              and has spent years running security awareness programmes. He
+              covers the regulatory and governance parts of the workshop — what
+              the rules actually require of you, and how AI use changes your
+              risk and audit position.
+            </p>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-award" aria-hidden="true"></i>
+                Certified Information Systems Auditor (CISA) &middot; Lead ISO
+                27001 Auditor
+              </li>
+              <li>
+                <i class="fa fa-scale-balanced" aria-hidden="true"></i>
+                Compliance, audit, and IT risk programmes across GDPR, NIS2,
+                and ISO 27001
+              </li>
+              <li>
+                <i class="fa fa-chalkboard-user" aria-hidden="true"></i>
+                Security training and awareness programmes across finance,
+                government, and multinational organisations
+              </li>
+            </ul>
+            <div class="d-flex gap-2 mt-4">
+              <a class="team-social-link" href="https://www.linkedin.com/in/pkirkov/" target="_blank"
+                rel="noopener noreferrer" aria-label="Peter Kirkov on LinkedIn">
+                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-sm">
+          <p class="text-secondary mb-0">
+            Which of them runs your session depends on the format and the room.
+            Technical audiences lean on the research and demo side, leadership
+            and compliance audiences on the regulatory side, and longer
+            formats usually bring both.
+            <a href="/company/about"><u>Meet the full team</u></a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-5 g-4">
+        <div class="col-md-4">
+          <!-- REPLACE: workshop photo 1 -->
+          <div class="media-placeholder media-placeholder-4x3">
+            <span class="media-placeholder-label">
+              <i class="fa fa-image" aria-hidden="true"></i>
+              Photo — room
+            </span>
+            <p class="media-placeholder-text">
+              The room from the back, showing the size of the audience and
+              the screen at the front.
+            </p>
+            <p class="media-placeholder-meta">
+              /assets/img/workshop/workshop-audience.webp &middot; 4:3
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- REPLACE: workshop photo 2 -->
+          <div class="media-placeholder media-placeholder-4x3">
+            <span class="media-placeholder-label">
+              <i class="fa fa-image" aria-hidden="true"></i>
+              Photo — presenting
+            </span>
+            <p class="media-placeholder-text">
+              Presenter mid-explanation with hands in motion. Candid, not a
+              posed portrait.
+            </p>
+            <p class="media-placeholder-meta">
+              /assets/img/workshop/workshop-presenter.webp &middot; 4:3
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- REPLACE: workshop photo 3 -->
+          <div class="media-placeholder media-placeholder-4x3">
+            <span class="media-placeholder-label">
+              <i class="fa fa-image" aria-hidden="true"></i>
+              Photo — discussion
+            </span>
+            <p class="media-placeholder-text">
+              Informal discussion during a break: laptops, coffee, people
+              talking across the table.
+            </p>
+            <p class="media-placeholder-meta">
+              /assets/img/workshop/workshop-discussion.webp &middot; 4:3
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO: replace with a real customer quote once you have written
+           approval to publish it, plus name, role, and company. Drop this
+           block entirely if no quote is cleared for use. -->
+      <div class="row mt-4">
+        <div class="col-sm">
+          <div class="media-placeholder media-placeholder-auto">
+            <span class="media-placeholder-label">
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+              Testimonial slot
+            </span>
+            <p class="media-placeholder-text">
+              One or two sentences from a customer who has run the workshop,
+              with name, role, and company. Best quote to aim for: something
+              that names a behaviour that changed afterwards, not a
+              compliment about the delivery.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       How we get to the room
+       =================================================================== -->
+  <div class="section-band mt-5">
+    <div class="container">
+      <div id="process" class="fade-in section-divider">
+        <div class="row mb-5 text-center">
+          <div class="col-sm">
+            <h2 class="section-title">How we get from here to the room</h2>
+            <p class="section-subtitle">
+              Four steps, and the first one costs you half an hour.
+            </p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card">
+              <span class="step-index">Step 01</span>
+              <h3 class="mb-3">Intro call</h3>
+              <p class="text-secondary mb-0">
+                Thirty minutes. We find out which AI tools your team
+                actually uses, who should be in the room, and what worries
+                you most.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card">
+              <span class="step-index">Step 02</span>
+              <h3 class="mb-3">Tailoring</h3>
+              <p class="text-secondary mb-0">
+                We pick the modules and demo targets, then agree format,
+                length, language, and date. You see the outline before
+                anything is locked.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card">
+              <span class="step-index">Step 03</span>
+              <h3 class="mb-3">Delivery</h3>
+              <p class="text-secondary mb-0">
+                We run the session on-site or remotely, hands-on stage
+                included. Questions are the point, so we leave room for
+                them.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card">
+              <span class="step-index">Step 04</span>
+              <h3 class="mb-3">Follow-up</h3>
+              <p class="text-secondary mb-0">
+                Materials and checklists go out to attendees, along with a
+                short summary for you of what your team should change first.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       Where it leads next
+       =================================================================== -->
+  <section id="next" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">Awareness is step one</h2>
+          <p class="section-subtitle">
+            A workshop changes how people behave. Written rules and a named
+            owner are what keep it that way.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card d-flex flex-column">
+            <span class="step-index">Govern</span>
+            <h3 class="mb-3">AI Policy Consulting</h3>
+            <p class="text-secondary">
+              Internal AI policies written and actually implemented, aligned
+              with the EU AI Act, NIST, NIS2, DORA, ISO 27001, SOC 2, and
+              ISO 42001.
+            </p>
+            <p class="mt-auto mb-0">
+              <a class="btn btn-outline-light rounded-pill px-4" href="/services/ai-policy">
+                Learn more
+                <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card d-flex flex-column">
+            <span class="step-index">Sustain</span>
+            <h3 class="mb-3">Fractional Security &amp; Compliance Officer</h3>
+            <p class="text-secondary">
+              A named owner for AI security and compliance who keeps policy
+              applied and answers client security reviews — without a
+              full-time hire.
+            </p>
+            <p class="mt-auto mb-0">
+              <a class="btn btn-outline-light rounded-pill px-4" href="/services/fractional-ciso-cco">
+                Learn more
+                <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card d-flex flex-column">
+            <span class="step-index">All three</span>
+            <h3 class="mb-3">Secure AI-First Transition</h3>
+            <p class="text-secondary">
+              The whole path in one engagement, for teams moving to an
+              AI-first delivery process and wanting it governed from the
+              start.
+            </p>
+            <p class="mt-auto mb-0">
+              <a class="btn btn-outline-light rounded-pill px-4" href="/solutions/ai-first-transition">
+                Learn more
+                <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FAQ
+       =================================================================== -->
+  <section id="faq" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">Questions we get asked</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="faq-list">
+            <details class="faq-item" name="workshop-faq">
+              <summary>Is this too technical for non-engineers?</summary>
+              <p class="faq-answer">
+                No. The default session is built for a mixed room and
+                assumes no security background — every term gets explained
+                before it gets used. Depth is available when the audience is
+                purely technical, and we agree that in advance rather than
+                guessing on the day.
+              </p>
+            </details>
+            <details class="faq-item" name="workshop-faq">
+              <summary>How long should we book?</summary>
+              <p class="faq-answer">
+                Two hours covers theory, live demos, and a short hands-on
+                round, and is enough to change behaviour. Half a day or more
+                is worth it when you want role-specific tracks, a longer
+                Zmey tournament, or discussion time about your own
+                architecture.
+              </p>
+            </details>
+            <details class="faq-item" name="workshop-faq">
+              <summary>Do you attack anything of ours?</summary>
+              <p class="faq-answer">
+                Not unless you explicitly ask us to and we agree scope in
+                writing first. By default, demos run against our own
+                sandboxed setups and publicly available tools, never your
+                production systems or client data.
+              </p>
+            </details>
+            <details class="faq-item" name="workshop-faq">
+              <summary>Can you use our own AI product as a demo target?</summary>
+              <p class="faq-answer">
+                Often, yes, and it tends to be the most valuable version of
+                the session. It needs a scoping conversation first, and
+                depending on what we find it may make more sense as a
+                separate piece of work than as part of a workshop.
+              </p>
+            </details>
+            <details class="faq-item" name="workshop-faq">
+              <summary>Does remote delivery lose anything?</summary>
+              <p class="faq-answer">
+                The demos and the hands-on stage work the same remotely. On
+                site you get better side conversations and a livelier
+                competition, so we suggest it when travel is practical — but
+                remote is a real option, not a downgrade.
+              </p>
+            </details>
+            <details class="faq-item" name="workshop-faq">
+              <summary>What do participants need to prepare?</summary>
+              <p class="faq-answer">
+                Nothing beforehand. They need a laptop and a browser for the
+                hands-on stage. No installs, no accounts, no pre-reading.
+              </p>
+            </details>
+            <details class="faq-item" name="workshop-faq">
+              <summary>
+                Does this help with client security questionnaires?
+              </summary>
+              <p class="faq-answer">
+                It gives you part of the answer: evidence that staff have
+                been trained, on what, and when. Questionnaires usually also
+                ask for written policy and a responsible owner, which is
+                where
+                <a href="/services/ai-policy"><u>policy work</u></a> and a
+                <a href="/services/fractional-ciso-cco"><u>fractional
+                    officer</u></a>
+                come in.
+              </p>
+            </details>
+            <details class="faq-item" name="workshop-faq">
+              <summary>What does it cost?</summary>
+              <p class="faq-answer">
+                It depends on format, length, group size, and whether we
+                travel. Tell us roughly what you have in mind on the intro
+                call and you will get a fixed price before you commit to
+                anything.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CTA
+       =================================================================== -->
+  <div class="section-band mt-5">
+    <section id="cta" class="container pt-5 text-center">
+      <div class="container fade-in">
+        <div class="row">
+          <div class="col-sm my-auto p-5">
+            <h2>Give your team a reason to care about AI security</h2>
+            <p class="mt-4 mb-5 cta-description">
+              Start with a half-hour call. We will tell you honestly whether
+              a workshop is the right first step for your situation, or
+              whether something else should come first.
+            </p>
+            <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
+              <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
+                rel="noopener noreferrer">
+                Book a Workshop
+              </a>
+              <a class="btn btn-outline-light rounded-pill px-4" href="mailto:info@stihia.ai">
+                info@stihia.ai
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
