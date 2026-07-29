@@ -387,6 +387,18 @@ main [id] {
   box-shadow: var(--shadow-overlay);
 }
 
+/* Amber-gold monochrome — luminance ramp to stage-card / pill gold */
+.img-monochrome {
+  filter: url(#img-monochrome);
+}
+
+.svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 .section-divider {
   border-top: 1px solid var(--color-border-subtle);
   padding-top: var(--space-section);

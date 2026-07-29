@@ -15,10 +15,10 @@ sections:
   - label: Solutions
     tagline: TODO
     items:
-      - title: Secure AI-First Transition
+      - title: Enable Safe AI Development
         desc: TODO
         url: /solutions/ai-first-transition
-      - title: AI Product Security
+      - title: AI Product Security & Compliance
         desc: TODO
         url: /solutions/ai-product-security
 

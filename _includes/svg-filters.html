@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="svg-filters" aria-hidden="true" focusable="false">
+  <defs>
+    <!--
+      Amber-gold monochrome: luminance ramp keyed to stage-card surfaces
+      and the muted Grounding-pill gold. Highlights cap at pill gold so the
+      image sits in the dark warm field instead of bleaching to cream.
+    -->
+    <filter id="img-monochrome" color-interpolation-filters="sRGB">
+      <feColorMatrix
+        type="matrix"
+        values="
+          0.2126 0.7152 0.0722 0 0
+          0.2126 0.7152 0.0722 0 0
+          0.2126 0.7152 0.0722 0 0
+          0      0      0      1 0"
+      />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.0627 0.28 0.55 0.8157" />
+        <feFuncG type="table" tableValues="0.0510 0.22 0.44 0.6706" />
+        <feFuncB type="table" tableValues="0.0314 0.155 0.32 0.4941" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
