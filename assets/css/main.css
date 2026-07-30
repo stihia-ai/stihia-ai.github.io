@@ -1099,7 +1099,7 @@ pre code {
 /* Frame around an image placed inside a stage-card */
 .stage-card-frame {
   position: relative;
-  margin-top: 1.25rem;
+  margin-top: auto;
   padding: 0.75rem;
   border: 1px solid var(--color-border-soft);
   border-radius: var(--_radius, var(--radius-card));
