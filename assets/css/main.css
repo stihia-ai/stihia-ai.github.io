@@ -505,6 +505,37 @@ main [id] {
   aspect-ratio: 16 / 9;
 }
 
+/* Hero photo — a cinematic plate rather than a card: no padding, panel,
+   or accent chrome (that "bubble" recipe stays on the stage cards).
+   Just the photo itself, a moderate radius, and a deep soft shadow,
+   with the bottom edge dissolving into the page background so the image
+   grounds the hero instead of floating in a frame below it. */
+.hero-image-frame {
+  position: relative;
+  border-radius: var(--radius-card-sm);
+  box-shadow: 0 24px 48px var(--color-card-deep-shadow);
+  overflow: hidden;
+}
+
+.hero-image-frame img {
+  display: block;
+  width: 100%;
+}
+
+/* Bottom fade into the page background */
+.hero-image-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    color-mix(in srgb, var(--color-bg) 55%, transparent) 72%,
+    var(--color-bg) 96%
+  );
+  pointer-events: none;
+}
+
 .hero-facts {
   display: flex;
   flex-wrap: wrap;
