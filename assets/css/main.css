@@ -1263,6 +1263,28 @@ pre code {
   --_min-h: 8rem;
 }
 
+/* Practice section media grid — true aspect ratios. The ratio yields to
+   content if a placeholder's description text needs more room, so the
+   boxes never clip their copy. */
+#practice .media-placeholder-4x3 {
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+}
+#practice .media-placeholder-square {
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+}
+
+/* Zmey logo tile — square geometry to match the medal placeholder beside
+   it, framed like the Zmey product shot. */
+#practice .practice-logo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-card-sm);
+}
+
 .media-placeholder-label {
   display: inline-flex;
   align-items: center;
