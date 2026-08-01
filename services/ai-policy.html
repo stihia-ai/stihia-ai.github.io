@@ -2,15 +2,704 @@
 layout: default
 title: AI Policy Preparation & Audit | Stihia | AI Security Partner for Your Business
 description: >-
-  TODO
+  Custom internal AI policies for software companies. We audit your team's real AI usage, prepare and
+  implement a tailored AI policy aligned with the EU AI Act, GDPR, NIS2, ISO 27001 and ISO 42001, and
+  embed the rules into daily work. English or Bulgarian.
 keywords: >-
-  TODO
+  AI Policy Consulting, Internal AI Policy, AI Usage Policy, AI Policy Preparation, EU AI Act Compliance,
+  NIS2, GDPR, ISO 42001, ISO 27001, SOC 2, Shadow AI, AI Governance, Client Security Questionnaire,
+  AI Policy Bulgaria, политика за изкуствен интелект, вътрешна AI политика
 canonical: https://stihia.ai/services/ai-policy
 json_ld: full
 canonical_redirect: true
+# TODO: add a policy-specific social share image once artwork is produced.
+# og_image: /assets/img/policy/stihia-ai-policy-1200x630.png
 ---
 <main>
-    <header class="container pt-5 mt-5 text-center">
-        TODO
-    </header>
+  <!-- ===================================================================
+       Hero
+       =================================================================== -->
+  <header class="container pt-5 mt-5 text-center">
+    <div class="row mt-5 mb-3">
+      <div class="col-sm hero-content">
+        <p class="hero-eyebrow">
+          AI POLICY
+          <span class="hero-eyebrow-accent">CONSULTING</span>
+        </p>
+        <h1 class="hero-title">
+          An AI policy your team<br />actually works by.
+        </h1>
+        <p class="hero-subtitle">
+          We audit how your company really uses AI, write an internal AI
+          policy built for your tools, your clients, and your contracts,
+          and embed the rules into daily work &mdash; not a PDF nobody
+          reads.
+        </p>
+      </div>
+    </div>
+    <div class="row mt-4 mb-4">
+      <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
+        <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
+          rel="noopener noreferrer">
+          Book an Intro Call
+        </a>
+        <a class="btn btn-outline-light rounded-pill px-4" href="#anatomy">
+          See what a policy contains
+        </a>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-sm">
+        <ul class="hero-facts">
+          <li>
+            <i class="fa fa-magnifying-glass-chart" aria-hidden="true"></i>
+            Built on an audit of your real AI usage
+          </li>
+          <li>
+            <i class="fa fa-scale-balanced" aria-hidden="true"></i>
+            EU AI Act, NIS2, GDPR, ISO 27001 &amp; 42001, SOC 2
+          </li>
+          <li>
+            <i class="fa fa-language" aria-hidden="true"></i>
+            English or Bulgarian
+          </li>
+          <li>
+            <i class="fa fa-gears" aria-hidden="true"></i>
+            Implemented, not just written
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+      <div class="col-lg-9 col-xl-8">
+        <div class="panel rounded p-4 p-md-5 text-start">
+          <div class="d-flex justify-content-between align-items-baseline flex-wrap gap-2 mb-4">
+            <span class="text-uppercase small fw-semibold">Internal AI Usage Policy</span>
+            <span class="text-muted small">Effective date &middot; Review every 6 months</span>
+          </div>
+          <ul class="hairline-list hairline-list-muted mb-0">
+            <li>
+              <i class="fa fa-minus" aria-hidden="true"></i>
+              <span><strong>&sect;1</strong> Purpose &amp; scope</span>
+            </li>
+            <li>
+              <i class="fa fa-minus" aria-hidden="true"></i>
+              <span><strong>&sect;2</strong> Approved tools &amp; the approval flow</span>
+            </li>
+            <li>
+              <i class="fa fa-minus" aria-hidden="true"></i>
+              <span><strong>&sect;3</strong> Prohibited practices</span>
+            </li>
+            <li>
+              <i class="fa fa-minus" aria-hidden="true"></i>
+              <span><strong>&sect;4</strong> Employee responsibilities</span>
+            </li>
+            <li>
+              <i class="fa fa-minus" aria-hidden="true"></i>
+              <span><strong>&sect;5</strong> Data handling &amp; retention</span>
+            </li>
+            <li>
+              <i class="fa fa-minus" aria-hidden="true"></i>
+              <span><strong>&sect;6</strong> Enforcement &amp; periodic review</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       Why most AI policies fail
+       =================================================================== -->
+  <section id="why-policy" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">A policy nobody reads changes nothing</h2>
+          <p class="section-subtitle">
+            Three ways companies usually get an AI policy. Three ways it
+            fails.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Templates fail client reviews</h3>
+            <p class="text-secondary mb-0">
+              Security questionnaires ask how the rules apply to your tools
+              and your client data. A template downloaded from the
+              internet has no answer to give them.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Unclear rules slow AI down</h3>
+            <p class="text-secondary mb-0">
+              When no one knows what is allowed, people either stop using
+              AI or start hiding it. You lose the speed or you lose the
+              control &mdash; sometimes both at once.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Paper without enforcement is not evidence</h3>
+            <p class="text-secondary mb-0">
+              Clients and regulators increasingly want proof that
+              controls operate &mdash; approvals, briefings, review logs.
+              A signed PDF on its own produces none of it.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       The engagement — three stages
+       =================================================================== -->
+  <section id="journey" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">Audit, policy, implementation</h2>
+          <p class="section-subtitle">
+            Three stages, one outcome: rules that match reality and hold
+            in daily work.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 d-flex">
+          <article class="stage-card stage-card-theory" data-stage="01">
+            <div class="stage-meta">
+              <span class="stage-index">Stage 01</span>
+              <span class="stage-pill">Map reality</span>
+            </div>
+            <h3 class="stage-title">Audit</h3>
+            <p class="stage-copy">
+              We map how your company actually uses AI today &mdash;
+              before a single rule is written. Guesswork gets replaced
+              with a clear picture of what is really happening.
+            </p>
+            <ul class="hairline-list">
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Inventory of AI tools, accounts, and subscriptions in use
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Shadow AI: personal accounts and unapproved tools
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Client contracts: confidentiality, IP, and data clauses AI
+                use has to respect
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Existing policies and processes the new rules must fit
+              </li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-4 d-flex">
+          <article class="stage-card stage-card-demos" data-stage="02">
+            <div class="stage-meta">
+              <span class="stage-index">Stage 02</span>
+              <span class="stage-pill">Write</span>
+            </div>
+            <h3 class="stage-title">Policy</h3>
+            <p class="stage-copy">
+              We draft a policy built for your company &mdash; your tools,
+              your clients, your contracts &mdash; not a template with your
+              logo on the cover.
+            </p>
+            <ul class="hairline-list">
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Aligned with the EU AI Act, GDPR, NIS2, DORA, ISO 27001,
+                SOC 2, and ISO 42001
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                An approved-tools registry and a fast approval flow for new
+                tools
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Clear rules: what never goes into a prompt, when AI output
+                needs a human review
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Client-policy handling: whose rules win and how conflicts
+                get escalated
+              </li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-4 d-flex">
+          <article class="stage-card stage-card-practice" data-stage="03">
+            <div class="stage-meta">
+              <span class="stage-index">Stage 03</span>
+              <span class="stage-pill">Embed</span>
+            </div>
+            <h3 class="stage-title">Implementation</h3>
+            <p class="stage-copy">
+              Rules only matter where the work happens. We integrate the
+              policy into your processes and stay until it holds on its
+              own.
+            </p>
+            <ul class="hairline-list">
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Rules embedded into onboarding, project kickoffs, and code
+                review
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Tool configuration guidance &mdash; retention and training
+                switches off
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                Employee briefing so the team knows what is allowed and why
+              </li>
+              <li>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                A review schedule so the policy keeps pace with the tools
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Framework alignment
+       =================================================================== -->
+  <section id="frameworks" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">
+            Aligned with what your clients and regulators ask about
+          </h2>
+          <p class="section-subtitle">
+            The policy maps to these so security reviews and tenders get
+            direct answers. We write them in plain language, not legalese.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">EU regulation</h3>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                <span>
+                  <strong>EU AI Act</strong> &mdash; documented usage
+                  rules and the AI-literacy duty for your team
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                <span>
+                  <strong>GDPR</strong> &mdash; personal data stays out of
+                  tools without the right terms
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                <span>
+                  <strong>NIS2</strong> &mdash; risk-management measures
+                  covering AI tooling, if you are in scope
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                <span>
+                  <strong>DORA</strong> &mdash; ICT requirements from
+                  financial-sector clients that land in your contracts
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Frameworks &amp; standards</h3>
+            <ul class="hairline-list hairline-list-muted">
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                <span>
+                  <strong>ISO 27001</strong> &mdash; AI rules slotted into
+                  your ISMS controls
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                <span>
+                  <strong>ISO 42001</strong> &mdash; the policy as anchor
+                  of an AI management system
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                <span>
+                  <strong>SOC 2</strong> &mdash; written controls and the
+                  evidence trail auditors expect
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-minus" aria-hidden="true"></i>
+                <span>
+                  <strong>NIST AI RMF</strong> &mdash; a governance mapping
+                  US clients may ask for
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="text-secondary text-center mt-5 mb-0">
+        Not every framework applies to every company. The audit identifies
+        which ones actually touch your business.
+      </p>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Process — from intro call to a working policy
+       =================================================================== -->
+  <div class="section-band mt-5">
+    <div class="container">
+      <div id="process" class="fade-in section-divider">
+        <div class="row mb-5 text-center">
+          <div class="col-sm">
+            <h2 class="section-title">From intro call to a working policy</h2>
+            <p class="section-subtitle">
+              Four steps. The first costs you half an hour.
+            </p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card">
+              <span class="step-index">Step 01</span>
+              <h3 class="mb-3">Intro call</h3>
+              <p class="text-secondary mb-0">
+                Thirty minutes. Which AI tools are in play, what your
+                clients are asking of you, and whether a policy is the
+                right next step at all.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card">
+              <span class="step-index">Step 02</span>
+              <h3 class="mb-3">Usage audit</h3>
+              <p class="text-secondary mb-0">
+                We map tools, accounts, workflows, and client contracts,
+                then summarize findings and gaps before any drafting
+                starts.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card">
+              <span class="step-index">Step 03</span>
+              <h3 class="mb-3">Drafting &amp; review</h3>
+              <p class="text-secondary mb-0">
+                We write the policy, your leadership reviews in short
+                iterations, and we adjust until the rules match how you
+                actually deliver.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card">
+              <span class="step-index">Step 04</span>
+              <h3 class="mb-3">Implementation &amp; handover</h3>
+              <p class="text-secondary mb-0">
+                We embed the rules into your processes, brief the team, and
+                leave you the policy with its review schedule.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       Testimonials
+       =================================================================== -->
+  <section id="testimonials" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">What clients say about the result</h2>
+          <p class="section-subtitle">
+            In their own words &mdash; what changed once the rules were
+            real.
+          </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <figure class="panel rounded p-4 h-100 feature-card testimonial">
+            <i class="fa fa-quote-left testimonial-mark" aria-hidden="true"></i>
+            <blockquote class="testimonial-quote">
+              TODO
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <span class="testimonial-name">Stoyan Simov</span>
+              <span class="testimonial-role">CEO, App Streams</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Where it leads next
+       =================================================================== -->
+  <section id="next" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">A policy is the middle of the job</h2>
+          <p class="section-subtitle">
+            Education makes the rules stick. A named owner keeps them
+            alive.
+          </p>
+        </div>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card d-flex flex-column">
+            <span class="step-index">Educate</span>
+            <h3 class="mb-3">AI Security Workshop</h3>
+            <p class="text-secondary">
+              Hands-on training that turns policy from text into habit
+              &mdash; and keeps the team current as the risks change.
+            </p>
+            <p class="mt-auto mb-0">
+              <a class="btn btn-outline-light rounded-pill px-4" href="/services/workshop">
+                Learn more
+                <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card d-flex flex-column">
+            <span class="step-index">Sustain</span>
+            <h3 class="mb-3">Fractional Security &amp; Compliance Officer</h3>
+            <p class="text-secondary">
+              A named owner who keeps the policy applied, reviews new
+              tools, and answers client security reviews for you.
+            </p>
+            <p class="mt-auto mb-0">
+              <a class="btn btn-outline-light rounded-pill px-4" href="/services/fractional-ciso-cco">
+                Learn more
+                <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card d-flex flex-column">
+            <span class="step-index">Full package</span>
+            <h3 class="mb-3">Enabled Safe AI Development</h3>
+            <p class="text-secondary">
+              The whole path &mdash; educate, govern, sustain &mdash; in one
+              engagement, for teams moving to AI-first delivery.
+            </p>
+            <p class="mt-auto mb-0">
+              <a class="btn btn-outline-light rounded-pill px-4" href="/solutions/ai-first-transition">
+                Learn more
+                <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FAQ
+       =================================================================== -->
+  <section id="faq" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">Questions we get asked</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="faq-list">
+            <details class="faq-item" name="policy-faq">
+              <summary>
+                We already have an information security policy. Do we need
+                a separate AI policy?
+              </summary>
+              <p class="faq-answer">
+                Usually yes &mdash; as a dedicated document or an addendum.
+                AI tools raise questions a generic security policy never
+                answers: which tools are approved, what can go into a
+                prompt, who may ship AI output to a client. We fit the AI
+                policy alongside your existing documents, not instead of
+                them.
+              </p>
+            </details>
+            <details class="faq-item" name="policy-faq">
+              <summary>
+                Will this slow our developers down or block them from
+                using AI?
+              </summary>
+              <p class="faq-answer">
+                The opposite. The rules exist so people can use AI without
+                guessing. A clear approved-tools registry and a fast
+                approval flow mean more AI, safely &mdash; not less.
+              </p>
+            </details>
+            <details class="faq-item" name="policy-faq">
+              <summary>
+                How is this different from downloading a template?
+              </summary>
+              <p class="faq-answer">
+                A template does not know your tools, your contracts, or
+                your clients. Most of the value is in the audit and the
+                implementation, not the text &mdash; which is exactly where
+                a template has nothing to offer.
+              </p>
+            </details>
+            <details class="faq-item" name="policy-faq">
+              <summary>
+                Do we even fall under the EU AI Act?
+              </summary>
+              <p class="faq-answer">
+                Depending on how you build and use AI, parts apply
+                &mdash; for example the AI-literacy obligation and
+                transparency duties. Regardless of strict applicability,
+                your clients and their procurement teams are already
+                asking these questions. A written policy answers them in
+                one place instead of case by case.
+              </p>
+            </details>
+            <details class="faq-item" name="policy-faq">
+              <summary>
+                What if a client has their own AI policy?
+              </summary>
+              <p class="faq-answer">
+                Common in outsourcing. Your policy defines how the team
+                discovers, follows, and escalates conflicts between client
+                rules and your own &mdash; we bake that into the employee
+                responsibilities section, so a clash never gets quietly
+                ignored.
+              </p>
+            </details>
+            <details class="faq-item" name="policy-faq">
+              <summary>How long does an engagement take?</summary>
+              <p class="faq-answer">
+                Typically a few weeks from kickoff to a signed policy,
+                depending on review cycles. The audit runs about one to
+                two weeks; drafting and implementation follow. We agree
+                timing on the intro call so nothing drifts.
+              </p>
+            </details>
+            <details class="faq-item" name="policy-faq">
+              <summary>What language is the policy written in?</summary>
+              <p class="faq-answer">
+                English or Bulgarian &mdash; often both. For Bulgarian
+                companies we align the enforcement clauses with the
+                Labour Code so a breach has teeth, not just words.
+              </p>
+            </details>
+            <details class="faq-item" name="policy-faq">
+              <summary>
+                Does this help with client security questionnaires and
+                tenders?
+              </summary>
+              <p class="faq-answer">
+                Yes. A written policy is the first thing they ask for;
+                together with training records and a named owner, a
+                security review gets answers instead of scrambling. That
+                is where the
+                <a href="/services/fractional-ciso-cco"><u>fractional
+                    officer</u></a>
+                and the
+                <a href="/services/workshop"><u>workshop</u></a>
+                come in.
+              </p>
+            </details>
+            <details class="faq-item" name="policy-faq">
+              <summary>What does it cost?</summary>
+              <p class="faq-answer">
+                Fixed price, scoped after the intro call. It depends on
+                company size, the number of client contracts to map, and
+                how much of the implementation you want us to run. You see
+                the price before you commit to anything.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CTA
+       =================================================================== -->
+  <div class="section-band mt-5">
+    <section id="cta" class="container pt-5 text-center">
+      <div class="container fade-in">
+        <div class="row">
+          <div class="col-sm my-auto p-5">
+            <h2>Ready for rules your team can build with?</h2>
+            <p class="mt-4 mb-5 cta-description">
+              Start with a half-hour call. Tell us which AI tools your team
+              uses and what your clients ask of you &mdash; and we will
+              tell you honestly whether policy work is the right first
+              step.
+            </p>
+            <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
+              <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
+                rel="noopener noreferrer">
+                Book an Intro Call
+              </a>
+              <a class="btn btn-outline-light rounded-pill px-4" href="mailto:info@stihia.ai">
+                info@stihia.ai
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
