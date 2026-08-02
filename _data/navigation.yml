@@ -17,7 +17,7 @@ sections:
     items:
       - title: Enable Safe AI Development
         desc: TODO
-        url: /solutions/ai-first-transition
+        url: /solutions/enable-safe-ai-development
       - title: AI Product Security & Compliance
         desc: TODO
         url: /solutions/ai-product-security
