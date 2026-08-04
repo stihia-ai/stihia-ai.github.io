@@ -1841,6 +1841,29 @@ footer a {
   }
 }
 
+/* --------------------------------------------------------------------------
+   Visual Placeholder — dashed frame for described-but-unproduced imagery
+   -------------------------------------------------------------------------- */
+
+.visual-placeholder {
+  border: 1px dashed color-mix(in srgb, var(--color-border-medium) 60%, transparent);
+  border-radius: 0.5rem;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.visual-placeholder-copy {
+  color: var(--color-text-muted, var(--bs-secondary-color));
+  font-style: italic;
+  max-width: 56ch;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .detection-layer-card,
   .stage-card {

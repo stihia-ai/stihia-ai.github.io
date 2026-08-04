@@ -11,6 +11,9 @@ sections:
       - title: "Fractional Security & Compliance Officer"
         desc: TODO
         url: /services/fractional-ciso-cco
+      - title: AI Red Teaming
+        desc: TODO
+        url: /services/red-teaming
 
   - label: Solutions
     tagline: TODO
