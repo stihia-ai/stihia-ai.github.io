@@ -1,32 +1,32 @@
 sections:
   - label: Services
-    tagline: TODO
+    tagline: Get your team AI-secure and compliant, fast.
     items:
       - title: AI Security Workshop
-        desc: TODO
+        desc: Hands-on training on AI security risks and how to avoid them
         url: /services/workshop
       - title: AI Policy Consulting
-        desc: TODO
+        desc: Internal AI policies written and implemented, aligned to EU law
         url: /services/ai-policy
       - title: "Fractional Security & Compliance Officer"
-        desc: TODO
+        desc: A named owner for your AI security and compliance program
         url: /services/fractional-ciso-cco
       - title: AI Red Teaming
-        desc: TODO
+        desc: Live testing of your AI systems against real attack techniques
         url: /services/red-teaming
 
   - label: Solutions
-    tagline: TODO
+    tagline: Find the path that fits how you use AI.
     items:
       - title: Enable Safe AI Development
-        desc: TODO
+        desc: For dev teams adopting an AI-first SDLC without losing control
         url: /solutions/enable-safe-ai-development
       - title: AI Product Security & Compliance
-        desc: TODO
+        desc: For teams shipping AI-powered products to customers
         url: /solutions/ai-product-security
 
   - label: Products
-    tagline: TODO
+    tagline: Continuous protection once you're ready to automate it.
     items:
       - title: Stihia Sense
         desc: Real-Time Threat Detection API Platform
@@ -36,19 +36,21 @@ sections:
         url: /products/zmey
 
   - label: Company
-    tagline: TODO
+    tagline: Who we are and how to reach us.
     items:
       - title: About
-        desc: TODO
+        desc: The team behind Stihia
         url: /company/about
       - title: Contact
-        desc: TODO
+        desc: Get in touch with us
         url: https://tally.so/r/ODK1XR
 
-links:
-  - label: Log In
-    url: https://app.stihia.ai
-    aria: Log in to the Stihia Console
+#i don't think we need Log In - could only cause confusion
+
+# links:
+#   - label: Log In
+#     url: https://app.stihia.ai
+#     aria: Log in to the Stihia Console
 
 cta:
   label: Contact Us
