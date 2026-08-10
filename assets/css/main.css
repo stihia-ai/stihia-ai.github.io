@@ -607,6 +607,7 @@ main [id] {
 
 .brand-text {
   font-family: var(--font-family-brand);
+  text-transform: uppercase;
 }
 
 /* --------------------------------------------------------------------------
