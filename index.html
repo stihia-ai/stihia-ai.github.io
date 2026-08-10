@@ -1,68 +1,520 @@
 ---
 layout: default
-title: Stihia | Real-Time Threat Detection for AI Systems
+title: Stihia | AI Security Partner for AI-First Software Companies
 description: >-
-  Stihia provides real-time AI threat detection for enterprises. Self-optimizing ML models detect prompt injections, data
-  leakage, and rogue AI agents across your entire AI landscape, including custom-built and well-known tools like ChatGPT, Claude
-  Code, and Copilot. Recursive meta-optimization adapts detection to your unique AI behavior patterns. SIEM integration
-  via OpenTelemetry. ISO 27001, SOC 2, ISO 42001, EU AI Act compliance.
+  Stihia helps software companies in CEE go AI-first safely: workshops, AI policies aligned with the EU AI Act, and
+  fractional security and compliance ownership.
 keywords: >-
-  AI Security, AI Agent Security, Prompt Injection Detection, Data Leakage Prevention, Anomaly Detection, Self-Optimizing
-  AI Security, Recursive Meta-Optimization, Agent Goal Hijacking, Rogue Agents, Real-time Threat Detection, SIEM
-  Integration, OpenTelemetry, ISO 27001, SOC 2, ISO 42001, EU AI Act, Sovereign AI, OWASP Top 10 Agentic AI, AI
-  Compliance, AI Forensics, AI Threat Detection
+  AI Security Partner, Secure AI Adoption, AI Governance, AI Security Workshop, AI Security Training, AI Policy
+  Consulting, Internal AI Policy, Fractional CISO, vCISO, Fractional Compliance Officer, Shadow AI, EU AI Act
+  Compliance, NIS2, DORA, GDPR, ISO 27001, ISO 42001, SOC 2, Client Security Review, AI Red Teaming, Real-Time AI
+  Threat Detection, AI Security Bulgaria, AI Security CEE
 canonical: https://stihia.ai/
 json_ld: full
 canonical_redirect: true
 ---
 <main>
-  <!-- Header: Home -->
-  <header id="home" class="container pt-5 mt-5 text-center">
+  <!-- ===================================================================
+       Hero
+       =================================================================== -->
+  <header class="container pt-5 mt-5 text-center">
     <div class="row mt-5 mb-3">
       <div class="col-sm hero-content">
+        <p class="hero-eyebrow">
+          AI SECURITY
+          <span class="hero-eyebrow-accent">PARTNER</span>
+        </p>
         <h1 class="hero-title">
-          AI Security Partner for Your Business
+          AI-first delivery,<br />with client trust intact
         </h1>
         <p class="hero-subtitle">
-          TODO
+          Your team already uses AI every day. Stihia adds what is missing:
+          training that changes habits, rules people follow, and a named
+          owner for AI security and compliance. More AI, safely.
         </p>
       </div>
     </div>
-    <div class="row mt-4 mb-5">
+    <div class="row mt-4 mb-4">
       <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
         <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
           rel="noopener noreferrer">
-          Contact Us
+          Book an Intro Call
         </a>
-        <a class="btn btn-outline-light rounded-pill px-4" href="TODO" target="_blank"
-          rel="noopener noreferrer">
-          TODO
+        <a class="btn btn-outline-light rounded-pill px-4" href="#workshop">
+          Explore the workshop
         </a>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-sm">
+        <ul class="hero-facts">
+          <li>
+            <i class="fa fa-route" aria-hidden="true"></i>
+            Training, policy, and ownership from one partner
+          </li>
+          <li>
+            <i class="fa fa-scale-balanced" aria-hidden="true"></i>
+            EU AI Act, NIS2, DORA, ISO 27001, ISO 42001
+          </li>
+          <li>
+            <i class="fa fa-terminal" aria-hidden="true"></i>
+            Practitioners who run live attack demos
+          </li>
+          <li>
+            <i class="fa fa-location-dot" aria-hidden="true"></i>
+            On-site or remote, in English or Bulgarian
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-sm">
+        <div class="hero-image-frame">
+          <img src="/assets/img/workshop/workshop-presenter-and-audience.webp"
+            alt="Stihia presenter explaining prompt injection to the audience at an AI security workshop"
+            class="img-fluid img-monochrome" width="1915" height="821" />
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Section: Contact -->
-  <section id="contact" class="container pt-5 text-center">
+  <!-- ===================================================================
+       Why: AI adoption ran ahead of the rules
+       =================================================================== -->
+  <section id="why" class="container pt-5">
     <div class="spacer"></div>
-    <div class="container fade-in mb-4">
-      <div class="row">
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
         <div class="col-sm">
-          <h2>Contact</h2>
-        </div>
-      </div>
-    </div>
-    <div class="container panel rounded">
-      <div class="row">
-        <div class="col-sm my-auto p-5">
-          <h3>Got any questions?</h3>
-          <p class="mt-4">
-            Feel free to <a href="https://tally.so/r/ODK1XR" target="_blank" rel="noopener noreferrer"><u>fill out the
-                form</u></a> or reach out to us at
-            <a href="mailto:info@stihia.ai" target="_blank" rel="noopener noreferrer"><u>info@stihia.ai</u></a>
+          <h2 class="section-title">AI adoption ran ahead of the rules</h2>
+          <p class="section-subtitle">
+            Three things we keep hearing from CEOs of software development
+            companies.
           </p>
         </div>
       </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">AI use is scattered</h3>
+            <p class="text-secondary mb-0">
+              Assistants, coding agents, personal accounts. Usage spread
+              bottom-up, faster than any approval process, and nobody can
+              say exactly where client data travels.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Clients ask for proof</h3>
+            <p class="text-secondary mb-0">
+              Security questionnaires now ask how AI tools are governed. A
+              confident answer takes training records, a written policy, and
+              a named owner.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Regulation needs decoding</h3>
+            <p class="text-secondary mb-0">
+              The EU AI Act, NIS2, and DORA carry real obligations for
+              software companies. Decoding them is nobody's day job, and a
+              full-time security hire rarely makes sense at SME scale.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5 justify-content-center text-center">
+        <div class="col-lg-8">
+          <p class="section-subtitle mb-0">
+            None of this is a reason to slow AI down. It is a reason to give
+            the adoption structure: rules people follow, evidence you can
+            show, and someone accountable for both.
+          </p>
+        </div>
+      </div>
+      <div class="spacer"></div>
     </div>
   </section>
+
+  <!-- ===================================================================
+       The journey: educate, govern, sustain
+       =================================================================== -->
+  <div class="section-band mt-5">
+    <div class="container">
+      <div id="journey" class="fade-in section-divider">
+        <div class="row mb-5 text-center">
+          <div class="col-sm">
+            <h2 class="section-title">
+              One path from AI confusion to AI control
+            </h2>
+            <p class="section-subtitle">
+              Educate, govern, sustain. Three services that build on each
+              other, from one partner, and the workshop is where most
+              companies start.
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-10">
+            <div class="handoff-flow handoff-flow-journey" role="img"
+              aria-label="The Stihia journey: an AI security workshop educates the team, then AI policy consulting sets the rules, then a fractional security and compliance officer keeps them applied and answers client security reviews">
+              <div class="handoff-node">
+                <span class="handoff-kicker">Step 01 / Educate</span>
+                <h3 class="handoff-title">AI Security Workshop</h3>
+                <p class="handoff-copy">
+                  Your team watches real AI attacks live, then learns habits
+                  that keep client data safe.
+                </p>
+              </div>
+              <div class="handoff-connector" aria-hidden="true">
+                <span class="handoff-connector-line"></span>
+                <span class="handoff-connector-label">then</span>
+                <span class="handoff-connector-line"></span>
+              </div>
+              <div class="handoff-node handoff-node-govern">
+                <span class="handoff-kicker">Step 02 / Govern</span>
+                <h3 class="handoff-title">AI Policy Consulting</h3>
+                <p class="handoff-copy">
+                  Internal AI rules written for your tools and clients, then
+                  embedded into daily work.
+                </p>
+              </div>
+              <div class="handoff-connector" aria-hidden="true">
+                <span class="handoff-connector-line"></span>
+                <span class="handoff-connector-label">then</span>
+                <span class="handoff-connector-line"></span>
+              </div>
+              <div class="handoff-node handoff-node-sustain">
+                <span class="handoff-kicker">Step 03 / Sustain</span>
+                <h3 class="handoff-title">
+                  Fractional Security &amp; Compliance Officer
+                </h3>
+                <p class="handoff-copy">
+                  A named owner keeps the policy applied and answers security
+                  reviews for you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8">
+            <p class="section-subtitle mb-0">
+              Each step is scoped and priced on its own. Together they run as
+              one engagement:
+              <a href="/solutions/enable-safe-ai-development"><u>Enable Safe
+                  AI Development</u></a>.
+            </p>
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       Featured: start with the workshop
+       =================================================================== -->
+  <section id="workshop" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">Start in the workshop room</h2>
+          <p class="section-subtitle">
+            One session of the AI Security Workshop changes how your team
+            treats AI tools, and it is the easiest way to see how we work.
+          </p>
+        </div>
+      </div>
+      <div class="row gy-5 gx-lg-5 align-items-center">
+        <div class="col-lg-6">
+          <span class="step-index">Step 01 / Educate</span>
+          <p class="mt-2">
+            Hands-on training for your whole team, engineers and everyone
+            else. We show live attacks on the AI tools your people open
+            every morning, then turn what the room just saw into daily
+            habits: what never goes into a prompt, which tools to trust, and
+            how to get more out of AI, not less.
+          </p>
+          <ul class="hairline-list">
+            <li>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              <span>Real attacks on real tools, live in the room</span>
+            </li>
+            <li>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              <span>
+                A hands-on stage where everyone attacks
+                <span class="brand-text">Stihia</span> Zmey, our AI agent
+                built to be broken safely
+              </span>
+            </li>
+            <li>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              <span>
+                Attendance evidence you can show in client security reviews
+              </span>
+            </li>
+            <li>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              <span>
+                Two hours to multi-day, on-site or remote, in English or
+                Bulgarian
+              </span>
+            </li>
+          </ul>
+          <p class="mt-4 mb-0">
+            <a class="btn btn-outline-light rounded-pill px-4" href="/services/workshop">
+              See formats and agenda
+              <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+            </a>
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="stage-card-frame">
+            <img src="/assets/img/workshop/workshop-hero.webp"
+              alt="Stihia presenter covering the shadow AI problem in front of a workshop audience"
+              class="img-fluid img-monochrome" width="1915" height="821" loading="lazy" />
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center g-4 mt-4">
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Theory, grounded</h3>
+            <p class="text-secondary mb-0">
+              What an AI agent actually is, how agents fail, and what has
+              already gone wrong in the real world. Documented incidents,
+              not hypotheticals.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Demos on real tools</h3>
+            <p class="text-secondary mb-0">
+              We hack current versions of popular AI tools live in the room,
+              step by step, so the failure modes stop being abstract.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel rounded p-4 h-100 feature-card">
+            <h3 class="mb-3">Practice on a live agent</h3>
+            <p class="text-secondary mb-0">
+              Everyone gets a turn attacking
+              <span class="brand-text">Stihia</span> Zmey, a real AI agent
+              with real defenses. Whoever gets furthest takes home a medal.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center g-4 mt-4">
+        <div class="col-lg-8">
+          <figure class="panel rounded p-4 h-100 feature-card testimonial">
+            <i class="fa fa-quote-left testimonial-mark" aria-hidden="true"></i>
+            <blockquote class="testimonial-quote">
+              Exceptionally useful knowledge shared by the Stihia team! Presentation was strict and covered AI dev
+              practices + what devs should look for to detect AI vulnerabilities. What I truly loved about this workshop
+              was not only the interesting content, but the interest of the dev team looking into trendy AI
+              vulnerabilities and security approaches. Everybody's eyes were saying: Wow, I was thinking exactly "how
+              actually this was made to happen" and the lectures clearly answered everything. After those 2 hours we got
+              a networking session and many many people wanted to extend it more. Waiting for the next season after 3-4
+              months.
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <span class="testimonial-name">Stoyan Simov</span>
+              <span class="testimonial-role">CEO, AppStreams</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       For the AI you ship
+       =================================================================== -->
+  <div class="section-band mt-5">
+    <div class="container">
+      <div id="product-security" class="fade-in section-divider">
+        <div class="row mb-5 text-center">
+          <div class="col-sm">
+            <h2 class="section-title">
+              For the AI you ship, not just the AI you use
+            </h2>
+            <p class="section-subtitle">
+              The journey covers how your team uses AI. If you also build AI
+              into your own product, that product has its own attack
+              surface, and its own path.
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center g-4">
+          <div class="col-lg-5 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card d-flex flex-column">
+              <span class="step-index">Find the failures</span>
+              <h3 class="mb-3">AI Red Teaming</h3>
+              <p class="text-secondary">
+                Security experts attack your AI product by hand: prompt
+                injection, jailbreaks, data leakage, agent abuse. You get
+                reproducible findings with severity ratings, mapped to the
+                OWASP Top 10 for Agentic Applications.
+              </p>
+              <p class="mt-auto mb-0">
+                <a class="btn btn-outline-light rounded-pill px-4" href="/services/red-teaming">
+                  Explore red teaming
+                  <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6">
+            <div class="panel rounded p-4 h-100 feature-card d-flex flex-column">
+              <span class="step-index">Watch it in production</span>
+              <h3 class="mb-3"><span class="brand-text">Stihia</span> Sense</h3>
+              <p class="text-secondary">
+                Real-time threat detection for the AI you run. Prompt
+                injections, data leakage, and rogue agent behavior raised as
+                alerts the moment they happen, with SIEM integration over
+                OpenTelemetry.
+              </p>
+              <p class="mt-auto mb-0">
+                <a class="btn btn-outline-light rounded-pill px-4" href="/products/sense">
+                  Explore Stihia Sense
+                  <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4 justify-content-center text-center">
+          <div class="col-lg-9">
+            <p class="text-secondary mb-0">
+              The two combine into one engagement:
+              <a href="/solutions/ai-product-security"><u>AI Product Security
+                  &amp; Compliance</u></a>. And to feel the attacker's side
+              yourself,
+              <a href="https://zmey.stihia.ai" target="_blank" rel="noopener noreferrer"><u>play
+                  Stihia Zmey</u></a>, our educational AI hacking game.
+            </p>
+          </div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       FAQ
+       =================================================================== -->
+  <section id="faq" class="container pt-5">
+    <div class="spacer"></div>
+    <div class="fade-in section-divider">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
+          <h2 class="section-title">Questions we get asked</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="faq-list">
+            <details class="faq-item" name="landing-faq">
+              <summary>Where do we start?</summary>
+              <p class="faq-answer">
+                Most companies start with the
+                <a href="/services/workshop"><u>workshop</u></a>: it needs no
+                preparation, lands in a single session, and shows you
+                exactly how we work. When AI use has already spread far, the
+                <a href="/services/ai-policy"><u>policy audit</u></a> can
+                come first instead. A half-hour intro call settles it.
+              </p>
+            </details>
+            <details class="faq-item" name="landing-faq">
+              <summary>Do we have to buy the whole journey?</summary>
+              <p class="faq-answer">
+                No. Each service is scoped and priced separately, and most
+                clients start with one. The journey is the natural order,
+                not a bundle you commit to upfront.
+              </p>
+            </details>
+            <details class="faq-item" name="landing-faq">
+              <summary>What does it cost?</summary>
+              <p class="faq-answer">
+                The workshop and the policy work are fixed prices, scoped
+                after the intro call. The
+                <a href="/services/fractional-ciso-cco"><u>fractional
+                    officer</u></a> is a monthly retainer sized to your
+                company. In every case you see the price before you commit
+                to anything.
+              </p>
+            </details>
+            <details class="faq-item" name="landing-faq">
+              <summary>Will this slow our AI adoption down?</summary>
+              <p class="faq-answer">
+                The opposite is the goal. Clear rules and an approved way to
+                work remove the hesitation and the quiet workarounds. Teams
+                end up using AI more, with client data protected and
+                evidence to show for it.
+              </p>
+            </details>
+            <details class="faq-item" name="landing-faq">
+              <summary>Does this cover the EU AI Act and NIS2?</summary>
+              <p class="faq-answer">
+                Yes. Policies are aligned with the EU AI Act, NIS2, DORA,
+                GDPR, ISO 27001, SOC 2, and ISO 42001, and the workshop
+                covers the AI-literacy obligation. Mapping which provisions
+                apply to your company is part of the work, not your
+                homework.
+              </p>
+            </details>
+            <details class="faq-item" name="landing-faq">
+              <summary>Where do you work?</summary>
+              <p class="faq-answer">
+                We are based in Bulgaria and work with software companies
+                across CEE. Workshops and consulting run on-site or fully
+                remote, in English or Bulgarian.
+                <a href="/company/about"><u>Meet the team</u></a>.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CTA
+       =================================================================== -->
+  <div class="section-band mt-5">
+    <section id="contact" class="container pt-5 text-center">
+      <div class="container fade-in">
+        <div class="row">
+          <div class="col-sm my-auto p-5">
+            <h2>Find out where you stand</h2>
+            <p class="mt-4 mb-5 cta-description">
+              Start with a half-hour intro call. Tell us how AI is used in
+              your company today and what your clients are asking for, and
+              we will tell you honestly what to do first. No obligation past
+              that.
+            </p>
+            <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
+              <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
+                rel="noopener noreferrer">
+                Book an Intro Call
+              </a>
+              <a class="btn btn-outline-light rounded-pill px-4" href="mailto:info@stihia.ai">
+                info@stihia.ai
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </main>
