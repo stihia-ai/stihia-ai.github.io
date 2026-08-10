@@ -2109,6 +2109,8 @@ pre code {
   transition: var(--transition-fast);
   padding: 0.25rem 0;
   justify-content: flex-start;
+  overflow-wrap: break-word;
+  line-height: var(--lh-snug);
 }
 
 .footer-links a:hover,

@@ -1,6 +1,6 @@
 <footer id="footer" class="container pt-5 pb-4 footer-redesign">
-  <div class="row gy-4 mb-5">
-    <div class="col-lg-5 col-md-12 text-center text-lg-start mb-4 mb-lg-0">
+  <div class="row gy-5 mb-5">
+    <div class="col-lg-3 col-md-12 text-center text-lg-start">
       <a
         class="footer-brand d-inline-flex align-items-center mb-3"
         href="{{ '/' | relative_url }}"
@@ -15,8 +15,9 @@
         <span class="brand-text fs-5">STIHIA</span>
       </a>
       <p class="text-secondary footer-desc mx-auto mx-lg-0">
-        Your AI security partner: workshops, AI policies, a fractional
-        security and compliance officer, and real-time AI threat detection.
+        Your AI security partner. We train your team, set the rules they
+        follow, and stay on as the named owner for AI security and
+        compliance. More AI, safely.
       </p>
       <p class="mt-3 mb-0">
         <a
@@ -30,99 +31,49 @@
       <div
         class="footer-socials mt-4 justify-content-center justify-content-lg-start"
       >
+        {% for social in site.data.footer.social %}
         <a
-          href="https://www.linkedin.com/company/stihia"
+          href="{{ social.url }}"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit Stihia on LinkedIn"
+          aria-label="{{ social.aria }}"
           class="social-link"
         >
-          <i class="fa-brands fa-linkedin"></i>
+          <i class="{{ social.icon }}"></i>
         </a>
-        <a
-          href="https://www.github.com/stihia-ai"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit Stihia on GitHub"
-          class="social-link"
-        >
-          <i class="fa-brands fa-github"></i>
-        </a>
+        {% endfor %}
       </div>
     </div>
 
-    <div class="col-lg-2 col-md-4 col-6">
-      <h5 class="footer-heading">Product</h5>
-      <ul class="list-unstyled footer-links">
-        <li>
-          <a
-            href="https://app.stihia.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Log in to the Stihia Console"
-          >
-            Log In
-          </a>
-        </li>
-        <li><a href="{{ '/products/sense' | relative_url }}">Stihia Sense</a></li>
-        <li><a href="{{ '/products/sense#pricing' | relative_url }}">Pricing</a></li>
-        <li>
-          <a
-            href="https://github.com/stihia-ai/stihia-librechat"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View the Stihia+LibreChat Bundle on GitHub"
-          >
-            Stihia+LibreChat
-          </a>
-        </li>
-        <li><a href="{{ '/products/zmey' | relative_url }}">Zmey</a></li>
-      </ul>
-    </div>
-
-    <div class="col-lg-2 col-md-4 col-6">
-      <h5 class="footer-heading">Company</h5>
-      <ul class="list-unstyled footer-links">
-        <li><a href="{{ '/company/about' | relative_url }}">About</a></li>
-        <li><a href="{{ '/#contact' | relative_url }}">Contact</a></li>
-        <li>
-          <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="col-lg-2 col-md-4 col-6">
-      <h5 class="footer-heading">Developers</h5>
-      <ul class="list-unstyled footer-links">
-        <li>
-          <a
-            href="{{ '/api/reference/' | relative_url }}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            API Reference
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/stihia-ai/stihia-sdk-python"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View the Stihia Python SDK on GitHub"
-          >
-            Python SDK
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://github.com/stihia-ai"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </li>
-      </ul>
+    <div class="col-lg-9 col-md-12">
+      <nav aria-label="Footer">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 gy-4">
+          {% for column in site.data.footer.columns %}
+          <div class="col">
+            <h5 class="footer-heading">{{ column.heading | escape }}</h5>
+            <ul class="list-unstyled footer-links">
+              {% for item in column.items %}
+              <li>
+                <a
+                  {% if item.url contains '://' %}
+                  href="{{ item.url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  {% else %}
+                  href="{{ item.url | relative_url }}"
+                  {% if item.new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+                  {% endif %}
+                  {% if item.aria %}aria-label="{{ item.aria }}"{% endif %}
+                >
+                  {{ item.label | escape }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
+      </nav>
     </div>
   </div>
 

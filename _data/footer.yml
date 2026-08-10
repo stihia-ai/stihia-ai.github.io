@@ -1,0 +1,67 @@
+columns:
+  - heading: Services
+    items:
+      - label: AI Security Workshop
+        url: /services/workshop
+      - label: AI Policy Consulting
+        url: /services/ai-policy
+      - label: "Fractional CISO & CCO"
+        url: /services/fractional-ciso-cco
+      - label: AI Red Teaming
+        url: /services/red-teaming
+
+  - heading: Solutions
+    items:
+      - label: Enable Safe AI Development
+        url: /solutions/enable-safe-ai-development
+      - label: AI Product Security
+        url: /solutions/ai-product-security
+
+  - heading: Products
+    items:
+      - label: Stihia Sense
+        url: /products/sense
+      - label: Pricing
+        url: /products/sense#pricing
+      - label: Stihia Zmey
+        url: /products/zmey
+      - label: Log In
+        url: https://app.stihia.ai
+        aria: Log in to the Stihia Console
+
+  - heading: Company
+    items:
+      - label: About
+        url: /company/about
+      - label: Contact
+        url: https://tally.so/r/ODK1XR
+      - label: Press Kit
+        url: /company/about#press
+      - label: Privacy Policy
+        url: /privacy
+
+  - heading: Developers
+    items:
+      # Standalone Redoc page with no site nav, so it opens in its own tab.
+      - label: API Reference
+        url: /api/reference/
+        new_tab: true
+      - label: Python SDK
+        url: https://github.com/stihia-ai/stihia-sdk-python
+        aria: View the Stihia Python SDK on GitHub
+      - label: LibreChat Bundle
+        url: https://github.com/stihia-ai/stihia-librechat
+        aria: View the Stihia and LibreChat bundle on GitHub
+      - label: GitHub
+        url: https://github.com/stihia-ai
+        aria: View Stihia on GitHub
+
+social:
+  - label: LinkedIn
+    url: https://www.linkedin.com/company/stihia
+    icon: fa-brands fa-linkedin
+    aria: Visit Stihia on LinkedIn
+  - label: GitHub
+    url: https://github.com/stihia-ai
+    icon: fa-brands fa-github
+    aria: Visit Stihia on GitHub
