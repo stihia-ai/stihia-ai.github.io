@@ -19,10 +19,10 @@ sections:
     tagline: Outcome packages combining our services and products
     items:
       - title: Enable Safe AI Development
-        desc: TODO
+        desc: From AI Confusion to AI Control
         url: /solutions/enable-safe-ai-development
       - title: AI Product Security & Compliance
-        desc: Find, fix, and monitor AI product vulnerabilities
+        desc: Harden the AI Products You Ship
         url: /solutions/ai-product-security
 
   - label: Products

@@ -1350,7 +1350,8 @@ pre code {
 }
 
 /* --------------------------------------------------------------------------
-   Handoff flow — red team → Sense continuous cover
+   Handoff flow — connected step diagrams
+   (red team → Sense continuous cover, solution journey)
    -------------------------------------------------------------------------- */
 
 .handoff-flow {
@@ -1358,6 +1359,12 @@ pre code {
   grid-template-columns: 1fr auto 1fr;
   align-items: stretch;
   gap: 0.75rem;
+}
+
+/* Three-node variant for the solution journey. Single-class selector on
+   purpose: the mobile collapse below must keep winning at equal specificity. */
+.handoff-flow-journey {
+  grid-template-columns: 1fr auto 1fr auto 1fr;
 }
 
 .handoff-node {
@@ -1421,6 +1428,24 @@ pre code {
   );
 }
 
+/* Journey node accents — the stage-card colour trio. The first node keeps the
+   default signature accent, so only the second and third are overridden. */
+.handoff-node-govern::before {
+  background: linear-gradient(
+    90deg,
+    var(--accent-semantic) 0%,
+    transparent 70%
+  );
+}
+
+.handoff-node-sustain::before {
+  background: linear-gradient(
+    90deg,
+    var(--accent-anomaly) 0%,
+    transparent 70%
+  );
+}
+
 .handoff-kicker {
   font-size: var(--fs-xs);
   font-weight: var(--fw-medium);
@@ -1435,6 +1460,22 @@ pre code {
 
 .handoff-node-sense .handoff-kicker {
   color: oklch(72% 0.055 246);
+}
+
+.handoff-node-govern .handoff-kicker {
+  color: color-mix(
+    in srgb,
+    var(--accent-semantic) 70%,
+    var(--color-text-soft)
+  );
+}
+
+.handoff-node-sustain .handoff-kicker {
+  color: color-mix(
+    in srgb,
+    var(--accent-anomaly) 70%,
+    var(--color-text-soft)
+  );
 }
 
 .handoff-title {
@@ -1483,6 +1524,34 @@ pre code {
     var(--accent-signature) 75%,
     var(--color-text-soft)
   );
+}
+
+/* The journey runs three nodes wide, so it needs the room a two-node flow does
+   not: below lg the step kickers start wrapping. Collapse it a breakpoint
+   earlier than the two-node flow below. */
+@media (max-width: 991.98px) {
+  .handoff-flow-journey {
+    grid-template-columns: 1fr;
+  }
+
+  .handoff-flow-journey .handoff-connector {
+    flex-direction: row;
+    min-width: 0;
+    padding: 0.15rem 0;
+  }
+
+  .handoff-flow-journey .handoff-connector-line {
+    width: auto;
+    height: 1px;
+    min-height: 0;
+    flex: 1 1 auto;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--accent-signature) 55%, transparent) 50%,
+      transparent 100%
+    );
+  }
 }
 
 @media (max-width: 767.98px) {
