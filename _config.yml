@@ -17,6 +17,7 @@ plugins:
 exclude:
   - .impeccable.md
   - plans/
+  - ui_kit/
   - README.md
   - Gemfile
   - Gemfile.lock

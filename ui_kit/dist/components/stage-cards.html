@@ -1,0 +1,504 @@
+<!-- @dsCard group="Components" -->
+<meta charset="utf-8" />
+<title>Stage cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Goldman&family=JetBrains+Mono&display=swap" />
+<style>
+:root {
+  /* ── Typography — Families ───────────────────────────────────────────── */
+  --font-family-base: "Space Grotesk", sans-serif;
+  --font-family-brand: "Goldman", serif;
+  --font-family-mono: "JetBrains Mono", "Fira Code", "SF Mono", monospace;
+
+  /* ── Typography — Size Scale ─────────────────────────────────────────── */
+  --fs-display: clamp(2.5rem, 5vw, 4rem);
+  --fs-h1: 3rem;
+  --fs-h2: clamp(2rem, 3vw, 2.5rem);
+  --fs-lead: 1.25rem;
+  --fs-body-lg: 1.15rem;
+  --fs-body: 1.1rem;
+  --fs-code: 0.9rem;
+  --fs-card-title: 1.35rem;
+  --fs-card-body: 0.98rem;
+  --fs-sm: 0.76rem;
+  --fs-xs: 0.74rem;
+  --fs-icon: 36px;
+  --fs-icon-sm: 0.85rem;
+
+  /* ── Typography — Weight ─────────────────────────────────────────────── */
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* ── Typography — Line Height ────────────────────────────────────────── */
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.6;
+  --lh-relaxed: 1.75;
+  --lh-double: 2;
+
+  /* ── Typography — Letter Spacing ─────────────────────────────────────── */
+  --ls-tight: 0.04em;
+  --ls-wide: 0.18em;
+  --ls-button: 0.5px;
+
+  /* ── Color — Backgrounds ─────────────────────────────────────────────── */
+  --color-bg: oklch(16% 0.012 76);
+  --color-bg-darker: oklch(20% 0.013 76);
+  --color-panel: oklch(24% 0.014 76);
+  --color-band: oklch(28% 0.015 76);
+  --color-card-surface: oklch(18% 0.012 76 / 0.93);
+  --color-zmey-bg: oklch(16% 0.012 76);
+
+  /* ── Color — Text ────────────────────────────────────────────────────── */
+  --color-text: oklch(86% 0.012 78);
+  --color-text-strong: oklch(94% 0.01 80);
+  --color-text-soft: oklch(78% 0.012 78);
+  --color-text-muted: oklch(72% 0.011 78);
+  --color-text-muted-utility: oklch(64% 0.01 78);
+  --color-text-inverse: oklch(17% 0.012 76);
+  --color-text-gray: oklch(58% 0.011 78);
+  --color-text-dim: oklch(72% 0.012 78);
+
+  /* ── Color — Borders ─────────────────────────────────────────────────── */
+  --color-border-subtle: oklch(74% 0.025 72 / 0.08);
+  --color-border-soft: oklch(74% 0.025 72 / 0.12);
+  --color-border-medium: oklch(74% 0.025 72 / 0.17);
+  --color-border-image: oklch(31% 0.015 76);
+
+  /* ── Color — Card Decorative ─────────────────────────────────────────── */
+  --color-card-sheen: oklch(84% 0.015 78 / 0.05);
+  --color-card-sheen-faint: oklch(84% 0.015 78 / 0.02);
+  --color-card-deep-shadow: oklch(8% 0.01 76 / 0.24);
+  --color-card-deep-shadow-hover: oklch(8% 0.01 76 / 0.3);
+
+  /* ── Color — Accents ─────────────────────────────────────────────────── */
+  --accent-signature: oklch(76% 0.09 70);
+  --accent-semantic: oklch(72% 0.065 48);
+  --accent-anomaly: oklch(80% 0.08 88);
+  --accent-cool: oklch(64% 0.045 246);
+  --accent-cool-soft: oklch(64% 0.045 246 / 0.26);
+
+  /* ── Color — Detection Card Default ────────────────────────────────── */
+  --color-layer-accent-default: oklch(86% 0.02 78 / 0.16);
+
+  /* ── Shadows ─────────────────────────────────────────────────────────── */
+  --shadow-overlay: 0 8px 20px oklch(9% 0.01 76 / 0.55);
+  --shadow-card-hover: 0 12px 36px oklch(9% 0.01 76 / 0.5);
+  --shadow-zmey-inset: inset 0 0 24px oklch(8% 0.01 76 / 0.8);
+  --shadow-nav-collapse: 0 8px 24px oklch(9% 0.01 76 / 0.45);
+
+  /* ── Transitions ─────────────────────────────────────────────────────── */
+  --transition-fast: all 0.2s ease;
+  --transition-fade: opacity 0.6s ease-out, transform 0.6s ease-out;
+  --transition-lift: transform 0.3s ease, box-shadow 0.3s ease;
+  --transition-card-speed: 0.28s ease;
+
+  /* ── Layout ──────────────────────────────────────────────────────────── */
+  --max-w-hero: 1000px;
+  --max-w-text: 600px;
+  --max-w-detection-copy: 31ch;
+
+  /* ── Spacing ─────────────────────────────────────────────────────────── */
+  --space-spacer: 40px;
+  --space-section: 4rem;
+  --space-band: 3rem;
+
+  /* ── Radii ───────────────────────────────────────────────────────────── */
+  --radius-card: 24px;
+  --radius-card-sm: 20px;
+  --radius-pill: 999px;
+
+  /* ── Transforms ──────────────────────────────────────────────────────── */
+  --lift-sm: -5px;
+  --lift-md: -6px;
+  --fade-offset: 20px;
+
+  /* ── Focus ───────────────────────────────────────────────────────────── */
+  --focus-ring-size: 0.25rem;
+
+  /* ── Z-index ─────────────────────────────────────────────────────────── */
+  --z-dropdown: 1000;
+
+  /* ── Bootstrap Theme Overrides ───────────────────────────────────────── */
+  --bs-body-color: var(--color-text);
+  --bs-heading-color: var(--color-text-strong);
+  --bs-secondary-color: var(--color-text-muted);
+  --bs-tertiary-color: var(--color-text-muted-utility);
+  --bs-emphasis-color: var(--color-text-strong);
+  --bs-body-bg: var(--color-bg);
+  --bs-secondary-bg: var(--color-panel);
+  --bs-tertiary-bg: var(--color-band);
+  --bs-border-color: var(--color-border-soft);
+}
+
+/* Reboot. Not optional: .stage-card pairs height:100% with 1.7rem padding and
+   overflows its row by 54px without border-box. */
+*, *::before, *::after { box-sizing: border-box; }
+
+.btn {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+}
+.btn-lg { padding: 0.5rem 1rem; font-size: 1.25rem; border-radius: 0.5rem; }
+.btn-sm { padding: 0.25rem 0.5rem; font-size: 0.875rem; border-radius: 0.25rem; }
+.rounded-pill { border-radius: 50rem !important; }
+.btn-outline-light { color: #f8f9fa; border-color: #f8f9fa; }
+
+
+body {
+  margin: 0;
+  padding: 40px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+}
+.ds-head { margin-bottom: 34px; }
+.ds-title {
+  margin: 0 0 6px;
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-strong);
+}
+.ds-note {
+  margin: 0;
+  font-size: var(--fs-sm);
+  letter-spacing: var(--ls-tight);
+  color: var(--color-text-muted-utility);
+}
+.ds-group { margin-bottom: 40px; }
+.ds-group:last-child { margin-bottom: 0; }
+.ds-label {
+  margin: 0 0 16px;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted-utility);
+}
+.ds-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 18px;
+}
+.ds-mono {
+  font-family: var(--font-family-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+/* Token specimen chrome */
+.tok {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: var(--color-card-surface);
+}
+.tok-swatch {
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-soft);
+  margin-bottom: 12px;
+}
+.tok-name {
+  font-family: var(--font-family-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-strong);
+  word-break: break-all;
+}
+.tok-value {
+  font-family: var(--font-family-mono);
+  font-size: 0.68rem;
+  color: var(--color-text-gray);
+  word-break: break-all;
+  margin-top: 4px;
+}
+.tok-specimen {
+  color: var(--color-text-strong);
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* .stage-card ships height:100%, sized for Bootstrap equal-height columns.
+   The preview supplies that context explicitly so the card is not asked to
+   fill an auto-height block and overflow. */
+.ds-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+.ds-stage-grid-single {
+  grid-template-columns: minmax(0, 420px);
+  justify-content: start;
+}
+@media (max-width: 900px) {
+  .ds-stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.tok-bar {
+  height: 18px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-signature),
+    var(--accent-semantic)
+  );
+  opacity: 0.55;
+  margin-bottom: 10px;
+}
+
+
+
+.stage-card {
+  --stage-accent: var(--color-layer-accent-default);
+
+  --_padding: 1.7rem;
+  --_gap: 1.1rem;
+  --_radius: var(--radius-card);
+  --_numeral-size: 5.5rem;
+
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--_gap);
+  height: 100%;
+  padding: var(--_padding);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--_radius);
+  background-color: var(--color-card-surface);
+  background-image: linear-gradient(
+    180deg,
+    var(--color-card-sheen) 0%,
+    var(--color-card-sheen-faint) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 var(--color-card-sheen),
+    0 18px 40px var(--color-card-deep-shadow);
+  overflow: hidden;
+  transition:
+    transform var(--transition-card-speed),
+    border-color var(--transition-card-speed),
+    box-shadow var(--transition-card-speed);
+}
+
+/* Top hairline in the stage accent */
+.stage-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--stage-accent) 0%,
+    transparent 68%
+  );
+  opacity: 0.9;
+}
+
+/* Oversized ghost numeral marking the position in the sequence */
+.stage-card::after {
+  content: attr(data-stage);
+  position: absolute;
+  top: -0.35em;
+  right: 0.15em;
+  z-index: 0;
+  font-size: var(--_numeral-size);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--stage-accent);
+  opacity: 0.09;
+  pointer-events: none;
+  user-select: none;
+}
+
+.stage-card:hover,
+.stage-card:focus-within {
+  transform: translateY(var(--lift-md));
+  border-color: color-mix(
+    in srgb,
+    var(--stage-accent) 40%,
+    var(--color-border-soft)
+  );
+  box-shadow:
+    inset 0 1px 0 var(--color-border-subtle),
+    0 24px 44px var(--color-card-deep-shadow-hover);
+}
+
+.stage-meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.stage-index {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--stage-accent) 72%, var(--color-text-soft));
+}
+
+.stage-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid
+    color-mix(in srgb, var(--stage-accent) 52%, var(--color-border-medium));
+  border-radius: var(--radius-pill);
+  background: color-mix(
+    in srgb,
+    var(--stage-accent) 12%,
+    var(--color-card-sheen-faint)
+  );
+  color: color-mix(in srgb, var(--stage-accent) 78%, var(--color-text-soft));
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-tight);
+  white-space: nowrap;
+}
+
+.stage-title,
+.stage-copy,
+.stage-card > .hairline-list,
+.stage-card > .media-placeholder {
+  position: relative;
+  z-index: 1;
+}
+
+.stage-title {
+  margin: 0;
+  color: var(--color-text-strong);
+  font-size: var(--fs-card-title);
+  line-height: var(--lh-snug);
+}
+
+.stage-copy {
+  margin: 0;
+  color: var(--color-text-dim);
+  font-size: var(--fs-card-body);
+  line-height: var(--lh-relaxed);
+}
+
+.stage-card-theory {
+  --stage-accent: var(--accent-signature);
+}
+.stage-card-demos {
+  --stage-accent: var(--accent-semantic);
+}
+.stage-card-practice {
+  --stage-accent: var(--accent-anomaly);
+}
+.stage-card-retest {
+  --stage-accent: color-mix(
+    in srgb,
+    var(--accent-signature) 55%,
+    var(--accent-anomaly)
+  );
+}
+</style>
+<div class="ds-head">
+  <h1 class="ds-title">Stage cards</h1>
+  <p class="ds-note">Ordered sequence steps. Four accent variants driven by --stage-accent.</p>
+</div>
+<div class="ds-group">
+  <p class="ds-label">Accent variants</p>
+  <div class="ds-stage-grid">
+    <article class="stage-card stage-card-theory" data-stage="1">
+      <div class="stage-meta">
+        <span class="stage-index">Stage 01</span>
+        <span class="stage-pill">90 min</span>
+      </div>
+      <h3 class="stage-title">Threat model briefing</h3>
+      <p class="stage-copy">
+        Map the AI surface in scope — agents, retrieval paths, tool access — and
+        agree what a successful attack looks like.
+      </p>
+    </article>
+
+    <article class="stage-card stage-card-demos" data-stage="2">
+      <div class="stage-meta">
+        <span class="stage-index">Stage 02</span>
+        <span class="stage-pill">Live</span>
+      </div>
+      <h3 class="stage-title">Guided attack demos</h3>
+      <p class="stage-copy">
+        Prompt injection, tool misuse and data exfiltration run against your own
+        stack rather than a sandbox.
+      </p>
+    </article>
+
+    <article class="stage-card stage-card-practice" data-stage="3">
+      <div class="stage-meta">
+        <span class="stage-index">Stage 03</span>
+        <span class="stage-pill">Hands-on</span>
+      </div>
+      <h3 class="stage-title">Team practice</h3>
+      <p class="stage-copy">
+        Your engineers drive. We supply the payload library and score what lands.
+      </p>
+    </article>
+
+    <article class="stage-card stage-card-retest" data-stage="4">
+      <div class="stage-meta">
+        <span class="stage-index">Stage 04</span>
+        <span class="stage-pill">+30 days</span>
+      </div>
+      <h3 class="stage-title">Retest &amp; handoff</h3>
+      <p class="stage-copy">
+        Fixes verified against the original findings, then continuous cover
+        picks up the surface.
+      </p>
+    </article>
+  </div>
+  <p class="ds-mono" style="margin-top:16px">
+    .stage-card + .stage-card-{theory | demos | practice | retest} — variant sets
+    --stage-accent, which drives the top hairline, ghost numeral, index label,
+    pill and hover border.
+  </p>
+</div>
+
+<div class="ds-group">
+  <p class="ds-label">Anatomy</p>
+  <div class="ds-stage-grid ds-stage-grid-single">
+    <article class="stage-card stage-card-theory" data-stage="1">
+      <div class="stage-meta">
+        <span class="stage-index">.stage-index</span>
+        <span class="stage-pill">.stage-pill</span>
+      </div>
+      <h3 class="stage-title">.stage-title</h3>
+      <p class="stage-copy">
+        .stage-copy — sits at z-index 1 so it clears the oversized ghost numeral
+        rendered by ::after from the data-stage attribute.
+      </p>
+    </article>
+  </div>
+  <p class="ds-mono" style="margin-top:16px">
+    data-stage is required — ::after renders attr(data-stage) as the ghost
+    numeral. Omitting it drops the numeral silently.
+  </p>
+</div>
+

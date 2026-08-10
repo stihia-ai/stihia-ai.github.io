@@ -1,0 +1,77 @@
+<div class="ds-group">
+  <p class="ds-label">Accent variants</p>
+  <div class="ds-stage-grid">
+    <article class="stage-card stage-card-theory" data-stage="1">
+      <div class="stage-meta">
+        <span class="stage-index">Stage 01</span>
+        <span class="stage-pill">90 min</span>
+      </div>
+      <h3 class="stage-title">Threat model briefing</h3>
+      <p class="stage-copy">
+        Map the AI surface in scope — agents, retrieval paths, tool access — and
+        agree what a successful attack looks like.
+      </p>
+    </article>
+
+    <article class="stage-card stage-card-demos" data-stage="2">
+      <div class="stage-meta">
+        <span class="stage-index">Stage 02</span>
+        <span class="stage-pill">Live</span>
+      </div>
+      <h3 class="stage-title">Guided attack demos</h3>
+      <p class="stage-copy">
+        Prompt injection, tool misuse and data exfiltration run against your own
+        stack rather than a sandbox.
+      </p>
+    </article>
+
+    <article class="stage-card stage-card-practice" data-stage="3">
+      <div class="stage-meta">
+        <span class="stage-index">Stage 03</span>
+        <span class="stage-pill">Hands-on</span>
+      </div>
+      <h3 class="stage-title">Team practice</h3>
+      <p class="stage-copy">
+        Your engineers drive. We supply the payload library and score what lands.
+      </p>
+    </article>
+
+    <article class="stage-card stage-card-retest" data-stage="4">
+      <div class="stage-meta">
+        <span class="stage-index">Stage 04</span>
+        <span class="stage-pill">+30 days</span>
+      </div>
+      <h3 class="stage-title">Retest &amp; handoff</h3>
+      <p class="stage-copy">
+        Fixes verified against the original findings, then continuous cover
+        picks up the surface.
+      </p>
+    </article>
+  </div>
+  <p class="ds-mono" style="margin-top:16px">
+    .stage-card + .stage-card-{theory | demos | practice | retest} — variant sets
+    --stage-accent, which drives the top hairline, ghost numeral, index label,
+    pill and hover border.
+  </p>
+</div>
+
+<div class="ds-group">
+  <p class="ds-label">Anatomy</p>
+  <div class="ds-stage-grid ds-stage-grid-single">
+    <article class="stage-card stage-card-theory" data-stage="1">
+      <div class="stage-meta">
+        <span class="stage-index">.stage-index</span>
+        <span class="stage-pill">.stage-pill</span>
+      </div>
+      <h3 class="stage-title">.stage-title</h3>
+      <p class="stage-copy">
+        .stage-copy — sits at z-index 1 so it clears the oversized ghost numeral
+        rendered by ::after from the data-stage attribute.
+      </p>
+    </article>
+  </div>
+  <p class="ds-mono" style="margin-top:16px">
+    data-stage is required — ::after renders attr(data-stage) as the ghost
+    numeral. Omitting it drops the numeral silently.
+  </p>
+</div>
