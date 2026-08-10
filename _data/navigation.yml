@@ -16,13 +16,13 @@ sections:
         url: /services/red-teaming
 
   - label: Solutions
-    tagline: TODO
+    tagline: Outcome packages combining our services and products
     items:
       - title: Enable Safe AI Development
         desc: TODO
         url: /solutions/enable-safe-ai-development
       - title: AI Product Security & Compliance
-        desc: TODO
+        desc: Find, fix, and monitor AI product vulnerabilities
         url: /solutions/ai-product-security
 
   - label: Products
