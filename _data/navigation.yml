@@ -1,18 +1,18 @@
 sections:
   - label: Services
-    tagline: TODO
+    tagline: Expert-led work that makes AI safe to use and safe to ship
     items:
       - title: AI Security Workshop
-        desc: TODO
+        desc: Hands-On AI Security Training for Your Team
         url: /services/workshop
       - title: AI Policy Consulting
-        desc: TODO
+        desc: Internal AI Rules Your Team Actually Follows
         url: /services/ai-policy
       - title: "Fractional Security & Compliance Officer"
-        desc: TODO
+        desc: "Named Security & Compliance Owner, Part-Time"
         url: /services/fractional-ciso-cco
       - title: AI Red Teaming
-        desc: TODO
+        desc: Adversarial Testing of Your AI Product
         url: /services/red-teaming
 
   - label: Solutions
@@ -26,7 +26,7 @@ sections:
         url: /solutions/ai-product-security
 
   - label: Products
-    tagline: TODO
+    tagline: Software we build to detect AI threats and teach AI attacks
     items:
       - title: Stihia Sense
         desc: Real-Time Threat Detection API Platform
@@ -36,13 +36,13 @@ sections:
         url: /products/zmey
 
   - label: Company
-    tagline: TODO
+    tagline: Who we are and how to reach us
     items:
       - title: About
-        desc: TODO
+        desc: Our Team and Mission
         url: /company/about
       - title: Contact
-        desc: TODO
+        desc: Talk to Us About Your AI Security
         url: https://tally.so/r/ODK1XR
 
 links:
