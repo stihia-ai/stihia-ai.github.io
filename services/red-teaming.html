@@ -15,6 +15,7 @@ keywords: >-
 canonical: https://stihia.ai/services/red-teaming
 json_ld: full
 canonical_redirect: true
+og_image: /assets/img/red-teaming/ai-red-teaming-hero.webp
 ---
 <main>
   <!-- ===================================================================
@@ -36,15 +37,33 @@ canonical_redirect: true
         </p>
       </div>
     </div>
-    <div class="row mt-4 mb-5">
+    <div class="row mt-4 mb-4">
       <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
         <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
           rel="noopener noreferrer">
           Book an Assessment
         </a>
         <a class="btn btn-outline-light rounded-pill px-4" href="#attack">
-          Learn more
+          See what we attack
         </a>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-sm">
+        <ul class="hero-facts">
+          <li>
+            <i class="fa fa-file-lines" aria-hidden="true"></i>
+            Reproducible findings report
+          </li>
+          <li>
+            <i class="fa fa-scale-balanced" aria-hidden="true"></i>
+            EU AI Act &amp; ISO 42001 aligned
+          </li>
+          <li>
+            <i class="fa fa-shield-halved" aria-hidden="true"></i>
+            Optional defensive follow-up engagement
+          </li>
+        </ul>
       </div>
     </div>
     <div class="row mt-5">
@@ -62,63 +81,88 @@ canonical_redirect: true
        What we attack
        =================================================================== -->
   <section id="attack" class="container pt-5">
+    <div class="spacer"></div>
     <div class="fade-in section-divider">
-      <div class="row mb-5">
-        <div class="col-lg-8">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
           <h2 class="section-title">What we attack</h2>
           <p class="section-subtitle">
             Six attack surfaces covering how AI products actually get broken.
           </p>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <ul class="hairline-list">
-            <li>
-              <span>
-                <strong>Prompt injection &amp; jailbreaks</strong>
-                - one-shot and multi-turn; direct and indirect injection
-                via retrieved content and tools.
-              </span>
-            </li>
-            <li>
-              <span>
-                <strong>System prompt &amp; sensitive data leakage</strong>
-                - coaxing the model to reveal instructions, PII,
-                credentials, financials, and proprietary data.
-              </span>
-            </li>
-            <li>
-              <span>
-                <strong>Agent abuse</strong>
-                - tool misuse, memory and context poisoning, goal hijack,
-                privilege escalation, unsafe code execution, cross-tenant
-                contamination.
-              </span>
-            </li>
-            <li>
-              <span>
-                <strong>RAG &amp; knowledge poisoning</strong>
-                - malicious documents in the index, retrieval-time
-                injection, source-attribution integrity, confident
-                hallucinations drawing on poisoned grounding.
-              </span>
-            </li>
-            <li>
-              <span>
-                <strong>Evasion &amp; prompt brittleness</strong>
-                - repeat trials, perturbation, stochastic-output
-                variability; prompts that fail once and succeed later.
-              </span>
-            </li>
-            <li>
-              <span>
-                <strong>Resource &amp; cost exhaustion</strong>
-                - DoS, token thrash, quota drain, rate-limit bypass,
-                denial-of-wallet attacks.
-              </span>
-            </li>
-          </ul>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="attack-card rounded p-4 h-100 feature-card">
+            <div class="attack-card-icon" aria-hidden="true">
+              <i class="fa fa-terminal"></i>
+            </div>
+            <h3 class="mb-3">Prompt injection &amp; jailbreaks</h3>
+            <p class="text-secondary mb-0">
+              One-shot and multi-turn; direct and indirect injection via
+              retrieved content and tools.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="attack-card rounded p-4 h-100 feature-card">
+            <div class="attack-card-icon" aria-hidden="true">
+              <i class="fa fa-key"></i>
+            </div>
+            <h3 class="mb-3">System prompt &amp; data leakage</h3>
+            <p class="text-secondary mb-0">
+              Coaxing the model to reveal instructions, PII, credentials,
+              financials, and proprietary data.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="attack-card rounded p-4 h-100 feature-card">
+            <div class="attack-card-icon" aria-hidden="true">
+              <i class="fa fa-robot"></i>
+            </div>
+            <h3 class="mb-3">Agent abuse</h3>
+            <p class="text-secondary mb-0">
+              Tool misuse, memory and context poisoning, goal hijack,
+              privilege escalation, unsafe code execution.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="attack-card rounded p-4 h-100 feature-card">
+            <div class="attack-card-icon" aria-hidden="true">
+              <i class="fa fa-database"></i>
+            </div>
+            <h3 class="mb-3">RAG &amp; knowledge poisoning</h3>
+            <p class="text-secondary mb-0">
+              Malicious documents in the index, retrieval-time injection,
+              source-attribution integrity, poisoned grounding.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="attack-card rounded p-4 h-100 feature-card">
+            <div class="attack-card-icon" aria-hidden="true">
+              <i class="fa fa-shuffle"></i>
+            </div>
+            <h3 class="mb-3">Evasion &amp; prompt brittleness</h3>
+            <p class="text-secondary mb-0">
+              Repeat trials, perturbation, stochastic-output variability;
+              prompts that fail once and succeed later.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="attack-card rounded p-4 h-100 feature-card">
+            <div class="attack-card-icon" aria-hidden="true">
+              <i class="fa fa-gauge-high"></i>
+            </div>
+            <h3 class="mb-3">Resource &amp; cost exhaustion</h3>
+            <p class="text-secondary mb-0">
+              DoS, token thrash, quota drain, rate-limit bypass, and
+              denial-of-wallet attacks.
+            </p>
+          </div>
         </div>
       </div>
       <div class="spacer"></div>
@@ -128,103 +172,94 @@ canonical_redirect: true
   <!-- ===================================================================
        How an engagement runs
        =================================================================== -->
-  <section id="how" class="container pt-5">
-    <div class="fade-in section-divider">
-      <div class="row mb-5">
-        <div class="col-lg-8">
-          <h2 class="section-title">How an engagement runs</h2>
-          <p class="section-subtitle">
-            Four steps from scope to verified fix.
-          </p>
+  <div class="section-band mt-5">
+    <div class="container">
+      <div id="how" class="fade-in section-divider">
+        <div class="row mb-5 text-center">
+          <div class="col-sm">
+            <h2 class="section-title">How an engagement runs</h2>
+            <p class="section-subtitle">
+              Four steps from scope to verified fix.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <div class="row align-items-baseline py-4 section-divider">
-            <div class="col-auto pe-4">
-              <span class="display-1 fw-light text-secondary">01</span>
-            </div>
-            <div class="col">
-              <h3 class="h4 mb-2">Scope</h3>
-              <p class="text-secondary mb-0">
+        <div class="row g-4">
+          <div class="col-lg-6 d-flex">
+            <article class="stage-card stage-card-theory" data-stage="01">
+              <div class="stage-meta">
+                <span class="stage-index">Step 01</span>
+                <span class="stage-pill">Bound</span>
+              </div>
+              <h3 class="stage-title">Scope</h3>
+              <p class="stage-copy">
                 Agree system boundary, threat model, attack goals, scope and
                 out-of-scope, and data-handling rules.
               </p>
-            </div>
+            </article>
           </div>
-          <div class="row align-items-baseline py-4 section-divider">
-            <div class="col-auto pe-4">
-              <span class="display-1 fw-light text-secondary">02</span>
-            </div>
-            <div class="col">
-              <h3 class="h4 mb-2">Attack</h3>
-              <p class="text-secondary mb-0">
+          <div class="col-lg-6 d-flex">
+            <article class="stage-card stage-card-demos" data-stage="02">
+              <div class="stage-meta">
+                <span class="stage-index">Step 02</span>
+                <span class="stage-pill">Probe</span>
+              </div>
+              <h3 class="stage-title">Attack</h3>
+              <p class="stage-copy">
                 Manual and automated probing aligned to the risk taxonomy;
                 multi-turn; realistic attacker scenarios.
               </p>
-            </div>
+            </article>
           </div>
-          <div class="row align-items-baseline py-4 section-divider">
-            <div class="col-auto pe-4">
-              <span class="display-1 fw-light text-secondary">03</span>
-            </div>
-            <div class="col">
-              <h3 class="h4 mb-2">Report</h3>
-              <p class="text-secondary mb-0">
+          <div class="col-lg-6 d-flex">
+            <article class="stage-card stage-card-practice" data-stage="03">
+              <div class="stage-meta">
+                <span class="stage-index">Step 03</span>
+                <span class="stage-pill">Document</span>
+              </div>
+              <h3 class="stage-title">Report</h3>
+              <p class="stage-copy">
                 Every finding documented with reproduction steps, severity
                 rating, impact, and ranked remediation.
               </p>
-            </div>
+            </article>
           </div>
-          <div class="row align-items-baseline py-4 section-divider">
-            <div class="col-auto pe-4">
-              <span class="display-1 fw-light text-secondary">04</span>
-            </div>
-            <div class="col">
-              <h3 class="h4 mb-2">Re-test</h3>
-              <p class="text-secondary mb-0">
+          <div class="col-lg-6 d-flex">
+            <article class="stage-card stage-card-retest" data-stage="04">
+              <div class="stage-meta">
+                <span class="stage-index">Step 04</span>
+                <span class="stage-pill">Verify</span>
+              </div>
+              <h3 class="stage-title">Re-test</h3>
+              <p class="stage-copy">
                 Return after remediation to verify fixes; lightweight
                 follow-up engagement.
               </p>
-            </div>
+            </article>
           </div>
         </div>
+        <div class="spacer"></div>
       </div>
-      <div class="spacer"></div>
     </div>
-  </section>
+  </div>
 
   <!-- ===================================================================
        Deliverable
        =================================================================== -->
   <section id="deliverable" class="container pt-5">
-    <div class="fade-in section-divider">
-      <div class="row mb-4">
-        <div class="col-lg-8">
-          <h2 class="section-title">The findings report</h2>
-          <p class="section-subtitle">
-            Every finding reproducible, severity rated
-            (CRITICAL / HIGH / MEDIUM / LOW), with concrete fixes and an
-            attacker narrative. Maps to what EU AI Act and ISO 42001 expect
-            from red-team exercises and gives clients doing security reviews
-            an evidence trail.
-          </p>
-        </div>
-      </div>
-      <div class="row mb-5">
-        <div class="col-sm">
-          <div class="visual-placeholder" role="img"
-            aria-label="Placeholder for a findings report mockup with severity-tagged entries">
-            <p class="visual-placeholder-copy">
-              Findings report mockup. Document page, hairline layout,
-              three-to-four severity-tagged finding entries (CRITICAL, HIGH
-              tags with red/amber accent), each with a reproduction-steps
-              block. Monochrome with red accents on the severity tags only.
+    <div class="spacer"></div>
+    <div class="container">
+      <div id="how" class="fade-in section-divider">
+        <div class="row mb-5 text-center">
+          <div class="col-sm">
+            <h2 class="section-title">The findings report</h2>
+            <p class="section-subtitle">
+              TODO
             </p>
           </div>
         </div>
+        TODO
+        <div class="spacer"></div>
       </div>
-      <div class="spacer"></div>
     </div>
   </section>
 
@@ -233,8 +268,8 @@ canonical_redirect: true
        =================================================================== -->
   <section id="sense" class="container pt-5">
     <div class="fade-in section-divider">
-      <div class="row mb-4">
-        <div class="col-lg-8">
+      <div class="row mb-5 text-center">
+        <div class="col-sm">
           <h2 class="section-title">Then, if you need continuous cover</h2>
           <p class="section-subtitle">
             Red team surfaces the gaps. If continuous protection is needed,
@@ -244,17 +279,31 @@ canonical_redirect: true
           </p>
         </div>
       </div>
-      <div class="row mb-5">
-        <div class="col-sm">
-          <div class="visual-placeholder" role="img"
-            aria-label="Placeholder for a flow diagram from red team assessment to Stihia Sense">
-            <p class="visual-placeholder-copy">
-              Minimal horizontal flow diagram. Two boxes connected by an
-              arrow: left box &lsquo;Red team assessment&rsquo; (one-time,
-              periodic), right box &lsquo;Stihia Sense real-time
-              detection&rsquo; (continuous). Hairline strokes, monochrome
-              with a red accent on the connection.
-            </p>
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+          <div class="handoff-flow" role="img"
+            aria-label="Flow from red team assessment to Stihia Sense real-time detection">
+            <div class="handoff-node">
+              <span class="handoff-kicker">One-time / periodic</span>
+              <h3 class="handoff-title">Red team assessment</h3>
+              <p class="handoff-copy">
+                Find where the product fails under adversarial pressure.
+              </p>
+            </div>
+            <div class="handoff-connector" aria-hidden="true">
+              <span class="handoff-connector-line"></span>
+              <span class="handoff-connector-label">then</span>
+              <span class="handoff-connector-line"></span>
+            </div>
+            <div class="handoff-node handoff-node-sense">
+              <span class="handoff-kicker">Continuous</span>
+              <h3 class="handoff-title">
+                <span class="brand-text">STIHIA</span> Sense
+              </h3>
+              <p class="handoff-copy">
+                Real-time detection across prompts, tools, and agent actions.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -272,8 +321,7 @@ canonical_redirect: true
           <div class="col-sm my-auto p-5">
             <h2>Find out what an attacker would do to your AI product.</h2>
             <p class="mt-4 mb-5 cta-description">
-              Tell us about your AI product. We&rsquo;ll tell you what we&rsquo;d
-              try first.
+              Tell us about your AI product. We will help you secure it.
             </p>
             <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
               <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
