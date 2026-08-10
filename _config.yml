@@ -1,8 +1,8 @@
 title: Stihia
 description: >-
-  Stihia provides real-time AI threat detection for enterprises. Self-optimizing
-  ML models detect prompt injections, data leakage, and rogue AI agents across
-  your entire AI landscape.
+  Stihia is the AI security partner for software companies in Europe. AI
+  security workshops, internal AI policies, a fractional security and
+  compliance officer, AI red teaming, and real-time AI threat detection.
 url: https://stihia.ai
 baseurl: ""
 lang: en-US
@@ -19,6 +19,8 @@ exclude:
   - plans/
   - ui_kit/
   - README.md
+  - AGENTS.md
+  - CLAUDE.md
   - Gemfile
   - Gemfile.lock
   - vendor/

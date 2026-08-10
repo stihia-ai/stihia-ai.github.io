@@ -1,11 +1,21 @@
-{% if page.json_ld == "full" %}
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
+{% comment %}
+  Structured data. One canonical Organization node is shared by every variant so
+  the company description can never drift between pages.
+
+  Variants, selected with the `json_ld` front-matter key:
+    full         Organization + WebSite + ProfessionalService with an offer
+                 catalog built from _data/navigation.yml
+    organization Organization only
+    product      Organization + SoftwareApplication, driven by the page's
+                 `product_name` and `application_category` front matter
+{% endcomment %}
+
+{% capture organization_node %}
       {
         "@type": "Organization",
+        "@id": "https://stihia.ai/#organization",
         "name": "Stihia",
+        "legalName": "Stihia Ltd.",
         "url": "https://stihia.ai/",
         "logo": {
           "@type": "ImageObject",
@@ -19,22 +29,93 @@
           "width": 1200,
           "height": 630
         },
+        "description": "Stihia is an EU-based AI security and compliance company. It helps software companies adopt AI across their delivery without losing control of client data or falling behind EU regulation, through AI security workshops, AI policy consulting, a fractional security and compliance officer service, AI red teaming, and Stihia Sense, its real-time AI threat detection platform.",
+        "email": "info@stihia.ai",
         "foundingLocation": "Bulgaria",
-        "description": "Stihia is a real-time threat and anomaly detection platform purpose-built for securing the entire AI landscape of modern enterprises, covering both custom AI agents and well-known tools like ChatGPT, Claude Code, and Copilot. Self-optimizing ML models with recursive meta-optimization adapt detection to each customer's unique AI behavior patterns.",
-        "sameAs": ["https://www.linkedin.com/company/stihia"]
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Lajos Kossuth Str. 20, fl. 4",
+          "addressLocality": "Sofia",
+          "postalCode": "1606",
+          "addressCountry": "BG"
+        },
+        "areaServed": ["BG", "EU"],
+        "sameAs": [
+          "https://www.linkedin.com/company/stihia",
+          "https://github.com/stihia-ai"
+        ]
+      }
+{% endcapture %}
+
+{% if page.json_ld == "full" %}
+{% assign offer_items = "" | split: "" %}
+{% for section in site.data.navigation.sections %}
+  {% if section.label == "Services" or section.label == "Solutions" %}
+    {% assign offer_items = offer_items | concat: section.items %}
+  {% endif %}
+{% endfor %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {{ organization_node }},
+      {
+        "@type": "WebSite",
+        "@id": "https://stihia.ai/#website",
+        "name": "Stihia",
+        "url": "https://stihia.ai/",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://stihia.ai/#organization" }
       },
       {
-        "@type": "Service",
-        "name": "Stihia Sense",
-        "serviceType": "Real-Time Threat Detection for AI Systems",
-        "provider": {
-          "@type": "Organization",
-          "name": "Stihia",
-          "url": "https://stihia.ai/"
-        },
-        "areaServed": ["EU", "UK", "US", "Worldwide"],
+        "@type": "ProfessionalService",
+        "@id": "https://stihia.ai/#aisecurityservice",
+        "name": "Stihia AI Security and Compliance",
+        "serviceType": "AI security and compliance",
         "url": "https://stihia.ai/",
-        "description": "Stihia provides real-time AI threat detection for enterprises. Self-optimizing ML models detect prompt injections, data leakage, and rogue AI agents across your entire AI landscape."
+        "provider": { "@id": "https://stihia.ai/#organization" },
+        "areaServed": ["BG", "EU"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services and solutions",
+          "itemListElement": [
+            {% for item in offer_items %}
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": {{ item.title | jsonify }},
+                "description": {{ item.desc | jsonify }},
+                "url": {{ item.url | absolute_url | jsonify }}
+              }
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ]
+        }
+      }
+    ]
+  }
+</script>
+{% elsif page.json_ld == "product" %}
+{% if page.canonical %}
+  {% assign ld_product_url = page.canonical %}
+{% else %}
+  {% assign ld_product_url = page.url | absolute_url %}
+{% endif %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {{ organization_node }},
+      {
+        "@type": "SoftwareApplication",
+        "name": {{ page.product_name | default: page.title | jsonify }},
+        "applicationCategory": {{ page.application_category | default: "BusinessApplication" | jsonify }},
+        "operatingSystem": "Web",
+        "url": {{ ld_product_url | jsonify }},
+        "description": {{ page.description | strip_newlines | strip | jsonify }},
+        "provider": { "@id": "https://stihia.ai/#organization" },
+        "publisher": { "@id": "https://stihia.ai/#organization" }
       }
     ]
   }
@@ -44,26 +125,7 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "name": "Stihia",
-        "url": "https://stihia.ai/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://stihia.ai/assets/logo/stihia-logo-chrome.png",
-          "width": 815,
-          "height": 815
-        },
-        "image": {
-          "@type": "ImageObject",
-          "url": "https://stihia.ai/assets/img/stihia-cover-1200x630.png",
-          "width": 1200,
-          "height": 630
-        },
-        "foundingLocation": "Bulgaria",
-        "description": "Stihia provides security and observability solutions for AI agents, including prompt injection detection, red teaming, and AI security trainings.",
-        "sameAs": ["https://www.linkedin.com/company/stihia"]
-      }
+      {{ organization_node }}
     ]
   }
 </script>
