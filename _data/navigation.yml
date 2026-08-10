@@ -36,10 +36,10 @@ sections:
         url: /products/zmey
 
   - label: Company
-    tagline: TODO
+    tagline: Who we are and how to reach us
     items:
       - title: About
-        desc: TODO
+        desc: The team and how we work
         url: /company/about
       - title: Contact
         desc: TODO
