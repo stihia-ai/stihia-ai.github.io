@@ -1251,6 +1251,9 @@ pre code {
 .finding-entry {
   padding: 1.15rem 1.5rem;
   border-bottom: 1px solid var(--color-border-subtle);
+  /* Severity rail: hairline accent in the entry's severity colour */
+  box-shadow: inset 2px 0 0
+    color-mix(in srgb, var(--_sev, var(--accent-signature)) 45%, transparent);
 }
 
 .finding-entry:last-child {
