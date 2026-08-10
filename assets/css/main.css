@@ -522,6 +522,21 @@ main [id] {
   width: 100%;
 }
 
+/* Portrait source photos would otherwise stretch the frame far taller than the
+   text column beside it. Cap the height instead of the aspect ratio: the photo
+   scales down whole and the frame shrinks to it, staying centred in its column. */
+.hero-image-frame--portrait {
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+.hero-image-frame--portrait img {
+  width: auto;
+  max-width: 100%;
+  max-height: 30rem;
+}
+
 /* Bottom fade into the page background */
 .hero-image-frame::after {
   content: "";
