@@ -16,7 +16,7 @@ sections:
         url: /services/red-teaming
 
   - label: Solutions
-    tagline: Complete journeys to one outcome, built from our services.
+    tagline: Outcome packages combining our services and products
     items:
       - title: Enable Safe AI Development
         desc: From AI Confusion to AI Control
