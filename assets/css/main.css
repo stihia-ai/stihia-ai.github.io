@@ -387,7 +387,7 @@ main [id] {
   box-shadow: var(--shadow-overlay);
 }
 
-/* Amber-gold monochrome — luminance ramp to stage-card / pill gold */
+/* Amber-gold duotone — partial desaturation + luminance ramp toward pill gold */
 .img-monochrome {
   filter: url(#img-monochrome);
 }

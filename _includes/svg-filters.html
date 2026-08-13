@@ -1,23 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" class="svg-filters" aria-hidden="true" focusable="false">
   <defs>
     <!--
-      Amber-gold monochrome: luminance ramp keyed to stage-card surfaces
-      and the muted Grounding-pill gold. Highlights cap at pill gold so the
-      image sits in the dark warm field instead of bleaching to cream.
+      Amber-gold duotone, softened: the image keeps a third of its own colour
+      instead of going fully monochrome, and the luminance ramp is pulled most
+      of the way to neutral. Highlights still sit under pill gold so the image
+      stays in the dark warm field rather than bleaching to cream.
     -->
     <filter id="img-monochrome" color-interpolation-filters="sRGB">
-      <feColorMatrix
-        type="matrix"
-        values="
-          0.2126 0.7152 0.0722 0 0
-          0.2126 0.7152 0.0722 0 0
-          0.2126 0.7152 0.0722 0 0
-          0      0      0      1 0"
-      />
+      <!-- 0 = full grayscale, 1 = untouched. Keeps a hint of the source colour. -->
+      <feColorMatrix type="saturate" values="0.35" />
+      <!-- Channel spread pulled 55% toward neutral gray: same luminance ramp, faint amber cast. -->
       <feComponentTransfer>
-        <feFuncR type="table" tableValues="0.0627 0.28 0.55 0.8157" />
-        <feFuncG type="table" tableValues="0.0510 0.22 0.44 0.6706" />
-        <feFuncB type="table" tableValues="0.0314 0.155 0.32 0.4941" />
+        <feFuncR type="table" tableValues="0.0548 0.2461 0.4877 0.7301" />
+        <feFuncG type="table" tableValues="0.0496 0.2191 0.4382 0.6648" />
+        <feFuncB type="table" tableValues="0.0407 0.1898 0.3842 0.5854" />
       </feComponentTransfer>
     </filter>
   </defs>
