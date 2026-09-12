@@ -1,0 +1,19 @@
+{% assign quiz = site.data.quiz %}
+<aside class="quiz-bar" aria-label="{{ quiz.aria }}">
+  <div class="container quiz-bar-inner">
+    <p class="quiz-bar-text">
+      <i class="fa {{ quiz.icon }}" aria-hidden="true"></i>
+      {{ quiz.bar_text }}
+    </p>
+    <a
+      class="btn btn-outline-light rounded-pill quiz-bar-cta"
+      href="{{ quiz.url }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-attr="quiz-bar"
+    >
+      {{ quiz.bar_cta }}
+      <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+    </a>
+  </div>
+</aside>

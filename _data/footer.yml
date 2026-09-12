@@ -16,6 +16,8 @@ columns:
         url: /solutions/enable-safe-ai-development
       - label: AI Product Security
         url: /solutions/ai-product-security
+      - label: AI Compliance Check
+        url: https://tally.so/r/dWONkr
 
   - heading: Products
     items:

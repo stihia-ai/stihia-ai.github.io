@@ -641,6 +641,50 @@ main [id] {
 }
 
 /* --------------------------------------------------------------------------
+   Quiz Bar
+   -------------------------------------------------------------------------- */
+
+.quiz-bar {
+  background-color: var(--color-band);
+  border-top: 1px solid var(--color-border-soft);
+  border-bottom: 1px solid var(--color-border-soft);
+  margin-top: 5rem;
+}
+
+.quiz-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.75rem;
+}
+
+.quiz-bar-text {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  font-size: var(--fs-card-body);
+  color: var(--color-text);
+}
+
+.quiz-bar-text > i {
+  flex-shrink: 0;
+  color: color-mix(
+    in srgb,
+    var(--accent-signature) 70%,
+    var(--color-text-muted-utility)
+  );
+  font-size: var(--fs-icon-sm);
+}
+
+.quiz-bar-cta {
+  flex-shrink: 0;
+  padding: 0.35rem 1.1rem;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
    Buttons
    -------------------------------------------------------------------------- */
 
@@ -2299,6 +2343,23 @@ footer a {
 }
 
 @media (max-width: 767.98px) {
+  .quiz-bar-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-block: 0.9rem;
+  }
+
+  .quiz-bar-text {
+    justify-content: center;
+  }
+
+  .quiz-bar-cta {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
   .border-end-md {
     border-right: none;
     border-bottom: 1px solid var(--color-border-subtle);
