@@ -1,0 +1,7 @@
+# Shared destinations that are not Tally forms, referenced by key the same way
+# as _data/forms.yml.
+#
+#   Markup:     {% include cta-button.html link="app" label="Get Started" %}
+#   Data files: link: app   (instead of a literal url:)
+email: info@stihia.ai
+app: https://app.stihia.ai

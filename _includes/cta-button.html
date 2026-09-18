@@ -1,0 +1,39 @@
+{%- comment -%}
+Call-to-action button. The destination comes from _data/forms.yml or
+_data/links.yml so form URLs are never repeated in page markup.
+
+  {% include cta-button.html form="contact" label="Book an Intro Call" %}
+  {% include cta-button.html link="app" label="Get Started" class="btn-outline-light rounded-pill w-100 mt-auto" %}
+  {% include cta-button.html email=true %}
+  {% include cta-button.html href="#workshop" label="Start with our Workshop" class="btn-outline-light rounded-pill px-4" %}
+
+Params:
+  form   key in _data/forms.yml
+  link   key in _data/links.yml
+  email  true to link to the address in _data/links.yml
+  href   literal destination, used when none of the above is given
+  label  button text, defaults to the address when email=true
+  class  classes appended to "btn", default "btn-primary rounded-pill px-4"
+{%- endcomment -%}
+{%- if include.form -%}
+  {%- assign cta_href = site.data.forms[include.form] -%}
+{%- elsif include.link -%}
+  {%- assign cta_href = site.data.links[include.link] -%}
+{%- elsif include.email -%}
+  {%- assign cta_href = site.data.links.email | prepend: 'mailto:' -%}
+{%- else -%}
+  {%- assign cta_href = include.href -%}
+{%- endif -%}
+{%- if include.label -%}
+  {%- assign cta_label = include.label -%}
+{%- else -%}
+  {%- assign cta_label = site.data.links.email -%}
+{%- endif -%}
+{%- assign cta_class = include.class | default: 'btn-primary rounded-pill px-4' -%}
+{%- assign cta_scheme = cta_href | slice: 0 -%}
+{%- if cta_scheme == '/' -%}
+  {%- assign cta_href = cta_href | relative_url -%}
+{%- endif -%}
+<a class="btn {{ cta_class }}" href="{{ cta_href }}"{% if cta_href contains '://' %} target="_blank" rel="noopener noreferrer"{% endif %}>
+  {{ cta_label }}
+</a>

@@ -17,7 +17,7 @@ columns:
       - label: AI Product Security
         url: /solutions/ai-product-security
       - label: AI Compliance Check
-        url: https://tally.so/r/dWONkr
+        form: quiz
 
   - heading: Products
     items:
@@ -28,7 +28,7 @@ columns:
       - label: Stihia Zmey
         url: /products/zmey
       - label: Log In
-        url: https://app.stihia.ai
+        link: app
         aria: Log in to the Stihia Console
 
   - heading: Company
@@ -36,7 +36,7 @@ columns:
       - label: About
         url: /company/about
       - label: Contact
-        url: https://tally.so/r/ODK1XR
+        form: contact
       - label: Press Kit
         url: /company/about#press
       - label: Privacy Policy

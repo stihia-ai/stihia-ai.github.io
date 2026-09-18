@@ -44,10 +44,7 @@ og_image: /assets/img/red-teaming/ai-red-teaming-hero.webp
     </div>
     <div class="row mt-4 mb-4">
       <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
-        <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
-          rel="noopener noreferrer">
-          Book an Assessment
-        </a>
+        {% include cta-button.html form="contact" label="Book an Assessment" %}
         <a class="btn btn-outline-light rounded-pill px-4" href="#attack">
           See what we attack
         </a>
@@ -580,13 +577,8 @@ og_image: /assets/img/red-teaming/ai-red-teaming-hero.webp
               on a half-hour call. No obligation past that.
             </p>
             <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
-              <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
-                rel="noopener noreferrer">
-                Book an Assessment
-              </a>
-              <a class="btn btn-outline-light rounded-pill px-4" href="mailto:info@stihia.ai">
-                info@stihia.ai
-              </a>
+              {% include cta-button.html form="contact" label="Book an Assessment" %}
+              {% include cta-button.html email=true class="btn-outline-light rounded-pill px-4" %}
             </div>
           </div>
         </div>

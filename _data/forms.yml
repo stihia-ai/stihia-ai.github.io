@@ -1,0 +1,7 @@
+# Tally form URLs. Every page and data file references these by key, so a form
+# swap only needs an edit here.
+#
+#   Markup:     {% include cta-button.html form="contact" label="Contact Us" %}
+#   Data files: form: contact   (instead of a literal url:)
+contact: https://tally.so/r/ODK1XR
+quiz: https://tally.so/r/dWONkr

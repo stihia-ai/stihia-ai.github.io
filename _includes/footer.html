@@ -21,11 +21,11 @@
       </p>
       <p class="mt-3 mb-0">
         <a
-          href="mailto:info@stihia.ai"
+          href="mailto:{{ site.data.links.email }}"
           class="text-secondary text-decoration-none"
-          aria-label="Email Stihia at info@stihia.ai"
+          aria-label="Email Stihia at {{ site.data.links.email }}"
         >
-          info@stihia.ai
+          {{ site.data.links.email }}
         </a>
       </p>
       <div
@@ -53,14 +53,15 @@
             <h5 class="footer-heading">{{ column.heading | escape }}</h5>
             <ul class="list-unstyled footer-links">
               {% for item in column.items %}
+              {% capture item_url %}{% include link-url.html item=item %}{% endcapture %}
               <li>
                 <a
-                  {% if item.url contains '://' %}
-                  href="{{ item.url }}"
+                  {% if item_url contains '://' %}
+                  href="{{ item_url }}"
                   target="_blank"
                   rel="noopener noreferrer"
                   {% else %}
-                  href="{{ item.url | relative_url }}"
+                  href="{{ item_url | relative_url }}"
                   {% if item.new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
                   {% endif %}
                   {% if item.aria %}aria-label="{{ item.aria }}"{% endif %}

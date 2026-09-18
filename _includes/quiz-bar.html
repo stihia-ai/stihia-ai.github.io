@@ -1,4 +1,5 @@
 {% assign quiz = site.data.quiz %}
+{% capture quiz_url %}{% include link-url.html item=quiz %}{% endcapture %}
 <aside class="quiz-bar" aria-label="{{ quiz.aria }}">
   <div class="container quiz-bar-inner">
     <p class="quiz-bar-text">
@@ -7,7 +8,7 @@
     </p>
     <a
       class="btn btn-outline-light rounded-pill quiz-bar-cta"
-      href="{{ quiz.url }}"
+      href="{{ quiz_url }}"
       target="_blank"
       rel="noopener noreferrer"
       data-attr="quiz-bar"

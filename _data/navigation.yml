@@ -43,13 +43,13 @@ sections:
         url: /company/about
       - title: Contact
         desc: Talk to Us About Your AI Security
-        url: https://tally.so/r/ODK1XR
+        form: contact
 
 links:
   - label: Log In
-    url: https://app.stihia.ai
+    link: app
     aria: Log in to the Stihia Console
 
 cta:
   label: Contact Us
-  url: https://tally.so/r/ODK1XR
+  form: contact

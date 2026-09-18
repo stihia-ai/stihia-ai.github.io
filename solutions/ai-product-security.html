@@ -38,10 +38,7 @@ canonical_redirect: true
     </div>
     <div class="row mt-4 mb-4">
       <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
-        <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
-          rel="noopener noreferrer">
-          Book a Discovery Call
-        </a>
+        {% include cta-button.html form="contact" label="Book a Discovery Call" %}
         <a class="btn btn-outline-light rounded-pill px-4" href="#journey">
           See the journey
         </a>
@@ -182,10 +179,7 @@ canonical_redirect: true
                 </li>
               </ul>
               <p class="mt-auto mb-0">
-                <a class="btn btn-outline-light rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
-                  rel="noopener noreferrer">
-                  Book a Discovery Call
-                </a>
+                {% include cta-button.html form="contact" label="Book a Discovery Call" class="btn-outline-light rounded-pill px-4" %}
               </p>
             </article>
           </div>
@@ -557,13 +551,8 @@ canonical_redirect: true
               past that.
             </p>
             <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
-              <a class="btn btn-primary rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
-                rel="noopener noreferrer">
-                Book a Discovery Call
-              </a>
-              <a class="btn btn-outline-light rounded-pill px-4" href="mailto:info@stihia.ai">
-                info@stihia.ai
-              </a>
+              {% include cta-button.html form="contact" label="Book a Discovery Call" %}
+              {% include cta-button.html email=true class="btn-outline-light rounded-pill px-4" %}
             </div>
           </div>
         </div>

@@ -1,0 +1,13 @@
+{%- comment -%}
+Resolves a data-file entry to a URL. An entry may point at a shared
+destination by key (form: contact, link: app) or carry a literal url.
+
+  {% capture item_url %}{% include link-url.html item=item %}{% endcapture %}
+{%- endcomment -%}
+{%- if include.item.form -%}
+{{- site.data.forms[include.item.form] -}}
+{%- elsif include.item.link -%}
+{{- site.data.links[include.item.link] -}}
+{%- else -%}
+{{- include.item.url -}}
+{%- endif -%}

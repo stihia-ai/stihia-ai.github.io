@@ -37,14 +37,8 @@ canonical_redirect: true
     </div>
     <div class="row mt-4 mb-5">
       <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
-        <a class="btn btn-primary rounded-pill px-4" href="https://app.stihia.ai" target="_blank"
-          rel="noopener noreferrer">
-          Get Started
-        </a>
-        <a class="btn btn-outline-light rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
-          rel="noopener noreferrer">
-          Contact Us
-        </a>
+        {% include cta-button.html link="app" label="Get Started" %}
+        {% include cta-button.html form="contact" label="Contact Us" class="btn-outline-light rounded-pill px-4" %}
       </div>
     </div>
     <div class="row mt-5">
@@ -425,8 +419,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
                 </li>
               </ul>
 
-              <a class="btn btn-outline-light rounded-pill w-100 mt-auto" href="https://app.stihia.ai" target="_blank"
-                rel="noopener noreferrer">Get Started</a>
+              {% include cta-button.html link="app" label="Get Started" class="btn-outline-light rounded-pill w-100 mt-auto" %}
             </div>
           </div>
         </div>
@@ -478,8 +471,7 @@ async for chunk in guard.shield(llm.astream(prompt)):
                 </li>
               </ul>
 
-              <a class="btn btn-primary rounded-pill w-100 mt-auto" href="https://tally.so/r/ODK1XR" target="_blank"
-                rel="noopener noreferrer">Contact Us</a>
+              {% include cta-button.html form="contact" label="Contact Us" class="btn-primary rounded-pill w-100 mt-auto" %}
             </div>
           </div>
         </div>
@@ -500,18 +492,8 @@ async for chunk in guard.shield(llm.astream(prompt)):
                 security requirements.
               </p>
               <div class="col-sm d-flex justify-content-center gap-3 flex-wrap">
-                <a
-                  class="btn btn-primary rounded-pill"
-                  href="https://app.stihia.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Get Started
-                </a>
-                <a class="btn btn-outline-light rounded-pill px-4" href="https://tally.so/r/ODK1XR" target="_blank"
-                  rel="noopener noreferrer">
-                  Contact Us
-                </a>
+                {% include cta-button.html link="app" label="Get Started" class="btn-primary rounded-pill" %}
+                {% include cta-button.html form="contact" label="Contact Us" class="btn-outline-light rounded-pill px-4" %}
               </div>
             </div>
           </div>

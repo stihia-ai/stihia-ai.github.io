@@ -35,15 +35,16 @@
               </div>
               <ul class="mega-menu-list">
                 {% for item in section.items %}
+                {% capture item_url %}{% include link-url.html item=item %}{% endcapture %}
                 <li>
                   <a
                     class="mega-link"
-                    {% if item.url contains '://' %}
-                    href="{{ item.url }}"
+                    {% if item_url contains '://' %}
+                    href="{{ item_url }}"
                     target="_blank"
                     rel="noopener noreferrer"
                     {% else %}
-                    href="{{ item.url | relative_url }}"
+                    href="{{ item_url | relative_url }}"
                     {% endif %}
                   >
                     <span class="mega-link-title">{{ item.title }}</span>
@@ -58,15 +59,16 @@
         {% endfor %}
 
         {% for link in site.data.navigation.links %}
+        {% capture link_url %}{% include link-url.html item=link %}{% endcapture %}
         <li class="nav-item">
           <a
             class="nav-link"
-            {% if link.url contains '://' %}
-            href="{{ link.url }}"
+            {% if link_url contains '://' %}
+            href="{{ link_url }}"
             target="_blank"
             rel="noopener noreferrer"
             {% else %}
-            href="{{ link.url | relative_url }}"
+            href="{{ link_url | relative_url }}"
             {% endif %}
             {% if link.aria %}aria-label="{{ link.aria }}"{% endif %}
           >
@@ -79,14 +81,15 @@
 
     <div class="nav-actions">
       {% assign cta = site.data.navigation.cta %}
+      {% capture cta_url %}{% include link-url.html item=cta %}{% endcapture %}
       <a
         class="btn btn-primary rounded-pill btn-nav-cta"
-        {% if cta.url contains '://' %}
-        href="{{ cta.url }}"
+        {% if cta_url contains '://' %}
+        href="{{ cta_url }}"
         target="_blank"
         rel="noopener noreferrer"
         {% else %}
-        href="{{ cta.url | relative_url }}"
+        href="{{ cta_url | relative_url }}"
         {% endif %}
       >
         {{ cta.label }}
