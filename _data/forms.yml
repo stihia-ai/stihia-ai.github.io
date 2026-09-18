@@ -4,4 +4,4 @@
 #   Markup:     {% include cta-button.html form="contact" label="Contact Us" %}
 #   Data files: form: contact   (instead of a literal url:)
 contact: https://tally.so/r/ODK1XR
-quiz: https://tally.so/r/dWONkr
+quiz: https://tally.so/r/rjXKMo
