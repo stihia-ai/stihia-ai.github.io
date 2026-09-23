@@ -1,0 +1,26 @@
+# Customer logos shown in the "Trusted by" strip. Order here is display order.
+# Logos live in assets/img/clients/ and must read on the dark theme
+# (transparent background, light or coloured ink). width/height are the
+# intrinsic size, used only to reserve space and avoid layout shift.
+# brightness (optional, default 1.6) lifts a logo in its grayscale resting
+# state; raise it for logos whose colours go dark gray, e.g. saturated red.
+#
+#   Markup:     {% include customer-logos.html %}
+title: Trusted by
+items:
+  - name: Dreamix
+    url: https://dreamix.eu
+    logo: /assets/img/clients/dreamix-logo.svg
+    width: 1472
+    height: 276
+  - name: appstreams
+    url: https://www.app-streams.com/
+    logo: /assets/img/clients/app-streams-logo.png
+    width: 587
+    height: 171
+  - name: АвтоИконом
+    url: https://avtoikonom.bg/
+    logo: /assets/img/clients/avtoikonom-logo.png
+    width: 300
+    height: 60
+    brightness: 4

@@ -685,6 +685,56 @@ main [id] {
 }
 
 /* --------------------------------------------------------------------------
+   Customer Logos
+   -------------------------------------------------------------------------- */
+
+.customer-logos {
+  padding-block: 3rem;
+  text-align: center;
+}
+
+.customer-logos-title {
+  margin-bottom: 1.75rem;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.customer-logos-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 3.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Grayscale at rest so mixed brand colours sit quietly; full colour on hover */
+.customer-logo {
+  display: block;
+  border-radius: var(--radius-pill);
+}
+
+.customer-logo img {
+  display: block;
+  width: auto;
+  height: 2.25rem;
+  filter: grayscale(1) brightness(var(--logo-brightness, 1.6));
+  opacity: 0.7;
+  transition: var(--transition-fast);
+}
+
+.customer-logo:hover img,
+.customer-logo:focus-visible img {
+  filter: none;
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
    Buttons
    -------------------------------------------------------------------------- */
 
@@ -2343,6 +2393,14 @@ footer a {
 }
 
 @media (max-width: 767.98px) {
+  .customer-logos-list {
+    gap: 1.5rem 2.25rem;
+  }
+
+  .customer-logo img {
+    height: 1.75rem;
+  }
+
   .quiz-bar-inner {
     flex-direction: column;
     justify-content: center;

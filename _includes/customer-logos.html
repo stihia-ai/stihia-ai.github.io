@@ -1,0 +1,26 @@
+{% assign customers = site.data.customers %}
+<section class="container customer-logos fade-in" aria-label="{{ customers.title }}">
+  <p class="customer-logos-title">{{ customers.title }}</p>
+  <ul class="customer-logos-list">
+    {% for customer in customers.items %}
+    <li>
+      <a
+        class="customer-logo"
+        href="{{ customer.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-attr="customer-logo"
+      >
+        <img
+          src="{{ customer.logo }}"
+          alt="{{ customer.name }}"
+          width="{{ customer.width }}"
+          height="{{ customer.height }}"
+          loading="lazy"
+          {% if customer.brightness %}style="--logo-brightness: {{ customer.brightness }}"{% endif %}
+        />
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
