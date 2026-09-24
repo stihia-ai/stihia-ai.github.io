@@ -1,0 +1,924 @@
+---
+layout: default
+title: "Slay the Zmey: Hack an AI Agent Live | Stihia"
+description: >-
+  A two-hour live online AI security workshop. See in real demos how AI assistants and agents get manipulated and how
+  to defend them, then attack Zmey, an AI agent built to be broken. October 20, 2026, 18:00.
+keywords: >-
+  Slay the Zmey, AI Security Workshop, Hacking Demos, Prompt Injection, AI Agent Security, Stihia Zmey,
+  Agentic AI Security, AI Compliance, Online Workshop, AI Security Bulgaria
+canonical: https://stihia.ai/events/slay-the-zmey
+json_ld: event
+canonical_redirect: true
+og_image: /assets/img/events/slay-the-zmey/slay-the-zmey-og.webp
+og_image_alt: Stihia presenter explaining prompt injection to a workshop audience
+event:
+  name: "Slay the Zmey: Hack an AI Agent Live"
+  start: "2026-10-20T18:00:00+03:00"
+  end: "2026-10-20T20:00:00+03:00"
+  language: bg
+  register_link: luma_slay_the_zmey
+  performers:
+    - Ivan Danielov Ivanov
+    - Peter Kirkov
+  offers:
+    - name: Early bird
+      price: 23
+    - name: Regular
+      price: 32
+---
+{% capture luma_label %}Register on Luma <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>{% endcapture %}
+{% capture register_label %}Register <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>{% endcapture %}
+<main class="event-page">
+  <!-- ===================================================================
+       Announcement bar
+       =================================================================== -->
+  <aside class="event-bar" aria-label="Event announcement">
+    <div class="container event-bar-inner">
+      <p class="event-bar-text">
+        <span class="event-live-dot" aria-hidden="true"></span>
+        <strong>October 20, 18:00 &middot; online</strong>
+        <span class="event-bar-title">Slay the Zmey: hack an AI agent live</span>
+        <span class="event-bar-sep" aria-hidden="true"></span>
+        <span>Early bird <strong>&euro;23</strong> <del>&euro;32</del></span>
+      </p>
+      <a class="event-bar-link" href="#tickets">
+        Reserve a spot <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ===================================================================
+       Hero
+       =================================================================== -->
+  <header class="container event-hero">
+    <div class="row g-4 g-lg-5 align-items-center">
+      <div class="col-lg-6">
+        <p class="event-eyebrow">
+          <span class="event-live-dot" aria-hidden="true"></span>
+          Live online workshop &middot; Stihia AI security
+        </p>
+        <h1 class="event-display">
+          Slay<br />the<br /><span class="event-display-accent">Zmey</span>
+        </h1>
+        <p class="event-tagline">
+          Hack an AI agent live, before someone hacks yours.
+        </p>
+        <p class="event-intro">
+          Two hours of hands-on AI security. Real demos show how AI
+          assistants and agents get manipulated, and what it costs when
+          they do. Then attack Zmey yourself, an AI agent built to be
+          broken.
+        </p>
+        <dl class="event-facts">
+          <div class="event-fact">
+            <dt>Date</dt>
+            <dd>Tuesday, October 20</dd>
+          </div>
+          <div class="event-fact">
+            <dt>Time</dt>
+            <dd>18:00&ndash;20:00 EEST &middot; 2 hours</dd>
+          </div>
+          <div class="event-fact">
+            <dt>Where</dt>
+            <dd>Online &middot; Google Meet</dd>
+          </div>
+          <div class="event-fact">
+            <dt>Format</dt>
+            <dd>90 min + 30 min Q&amp;A</dd>
+          </div>
+        </dl>
+        <div class="event-price">
+          <p class="event-price-amount">
+            &euro;23 <del>&euro;32</del>
+          </p>
+          <p class="event-price-note">
+            Early bird price<br />for the first 30 seats
+          </p>
+        </div>
+        <div class="d-flex gap-3 flex-wrap">
+          {% include cta-button.html link="luma_slay_the_zmey" label=luma_label class="btn-primary rounded-pill event-btn" %}
+          <a class="btn btn-outline-light rounded-pill event-btn" href="#agenda">See the agenda</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <figure class="event-photo event-photo-hero">
+          <img src="/assets/img/events/slay-the-zmey/slay-the-zmey-hero.webp"
+            alt="Stihia presenter explaining prompt injection to a workshop audience around a long table"
+            class="img-monochrome" width="1600" height="1200" />
+          <figcaption class="event-photo-caption">
+            <span class="event-photo-kicker">Workshop snapshot &middot; July 2026</span>
+            Prompt injection: direct and indirect attacks
+          </figcaption>
+          <p class="event-photo-badge">
+            <span class="event-photo-kicker">Seats</span>
+            50
+          </p>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       Why now
+       =================================================================== -->
+  <section id="why-now" class="event-section event-section-alt">
+    <div class="container fade-in">
+      <div class="row g-4 align-items-end mb-5">
+        <div class="col-lg-8">
+          <p class="event-eyebrow">Why now</p>
+          <h2 class="event-title">This is already happening. Not in theory.</h2>
+        </div>
+        <div class="col-lg-4">
+          <p class="event-lede">
+            You don't need to be a hacker to leak data. Using AI is enough.
+          </p>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-3">
+          <article class="event-card event-stat">
+            <p class="event-stat-value">20,000+</p>
+            <p class="event-stat-copy">
+              Instagram accounts stolen through Meta's AI support
+            </p>
+            <p class="event-stat-tag">June 2026</p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <article class="event-card event-stat">
+            <p class="event-stat-value">$150,000</p>
+            <p class="event-stat-copy">
+              stolen with a single prompt injection
+            </p>
+            <p class="event-stat-tag">May 2026</p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <article class="event-card event-stat">
+            <p class="event-stat-value">DROP</p>
+            <p class="event-stat-copy">
+              Replit's AI agent deletes a production database during a
+              code freeze
+            </p>
+            <p class="event-stat-tag">Rogue agent</p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <article class="event-card event-stat">
+            <p class="event-stat-value">3&times;</p>
+            <p class="event-stat-copy">
+              leaks at Samsung: source code and internal data pasted into
+              ChatGPT
+            </p>
+            <p class="event-stat-tag">Data leakage</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Audience
+       =================================================================== -->
+  <section id="audience" class="event-section">
+    <div class="container fade-in">
+      <p class="event-eyebrow">Audience</p>
+      <h2 class="event-title mb-5">Built for people who already work with AI</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="event-fit event-fit-yes">
+            <h3 class="event-fit-head">
+              <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+              This is for you if you are
+            </h3>
+            <dl class="event-fit-list">
+              <dt>Developer, QA, DevOps, or AI engineer</dt>
+              <dd>
+                You work with AI coding assistants and agents and give them
+                access to code, terminals, and secrets.
+              </dd>
+              <dt>CTO, CIO, founder, or tech lead</dt>
+              <dd>
+                You choose and roll out the AI stack (build or buy) and want
+                to see where it breaks before you sign.
+              </dd>
+              <dt>Security, compliance, or DPO</dt>
+              <dd>
+                You are responsible for data protection and regulatory
+                compliance, and Shadow AI is already inside your company.
+              </dd>
+              <dt>Experienced AI user</dt>
+              <dd>
+                A PM, analyst, or marketer who connects AI to email,
+                documents, MCP servers, and customer data.
+              </dd>
+            </dl>
+            <p class="event-fit-note">
+              You don't need to be a security expert. You need to use AI in
+              your work every day.
+            </p>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="event-fit event-fit-no">
+            <h3 class="event-fit-head">
+              <i class="fa-regular fa-circle-xmark" aria-hidden="true"></i>
+              This is not for you if you are looking for
+            </h3>
+            <dl class="event-fit-list">
+              <dt>An introduction to AI</dt>
+              <dd>
+                We won't explain what a chatbot is or how a language model
+                works. We assume you already use AI.
+              </dd>
+              <dt>A prompt engineering or productivity course</dt>
+              <dd>
+                The focus is on risks and protection, not on getting better
+                results out of AI.
+              </dd>
+              <dt>An ethical hacking course</dt>
+              <dd>
+                We show how attacks work so you can defend against them. We
+                don't teach how to attack other people's systems.
+              </dd>
+              <dt>An audit or consultation for your company</dt>
+              <dd>
+                The session is general. We analyze your own systems and
+                policies in a corporate format.
+              </dd>
+              <dt>A passive webinar running in the background</dt>
+              <dd>
+                The value is in taking part live: questions, demos, and the
+                tournament against Zmey.
+              </dd>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       What you take away
+       =================================================================== -->
+  <section id="takeaways" class="event-section event-section-alt">
+    <div class="container fade-in">
+      <div class="row g-4 align-items-end mb-5">
+        <div class="col-lg-8">
+          <p class="event-eyebrow">What you take away</p>
+          <h2 class="event-title">Six skills you apply the very next day</h2>
+        </div>
+        <div class="col-lg-4">
+          <p class="event-lede">
+            Concrete rules, practical checklists, and first-hand experience
+            attacking a real AI agent.
+          </p>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <article class="event-card event-skill">
+            <p class="event-skill-num">01</p>
+            <h3 class="event-card-title">Recognize an attack as it happens</h3>
+            <p class="event-card-copy">
+              You'll know what prompt injection, hijacked goals, and data
+              leakage look like in the kind of AI tools you use every day.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="event-card event-skill">
+            <p class="event-skill-num">02</p>
+            <h3 class="event-card-title">Apply ready-made checklists</h3>
+            <p class="event-card-copy">
+              Practical checklists for everyone who uses AI and for the people
+              who build with it. Concrete rules you put in place the very next
+              morning.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="event-card event-skill">
+            <p class="event-skill-num">03</p>
+            <h3 class="event-card-title">Assess any agent before you trust it</h3>
+            <p class="event-card-copy">
+              A simple mental model for spotting a dangerous combination of
+              capabilities. Use it to assess any agent, MCP server, or skill
+              before you let it run.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="event-card event-skill">
+            <p class="event-skill-num">04</p>
+            <h3 class="event-card-title">Think like the attacker</h3>
+            <p class="event-card-copy">
+              You break Zmey yourself. You understand from the inside how an
+              agent gets manipulated and why defenses hold or fail.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="event-card event-skill">
+            <p class="event-skill-num">05</p>
+            <h3 class="event-card-title">Know what the rules require</h3>
+            <p class="event-card-copy">
+              The EU rules on AI and data, translated into the language of
+              everyday AI use: what is allowed and what you need to
+              document.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <article class="event-card event-skill">
+            <p class="event-skill-num">06</p>
+            <h3 class="event-card-title">Leave with materials and a certificate</h3>
+            <p class="event-card-copy">
+              Slides, checklists, links to the sources, and a certificate of
+              participation (PDF) you can show to a client or employer.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Why this session
+       =================================================================== -->
+  <section id="why-this-session" class="event-section">
+    <div class="container fade-in">
+      <div class="event-why">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-4">
+            <p class="event-eyebrow">Why this session</p>
+            <h2 class="event-title event-title-sm">What makes the evening different</h2>
+            <p class="event-lede mb-4">
+              Two hours in which you see the attacks, try them yourself, and
+              leave with a plan for protection.
+            </p>
+            {% include cta-button.html link="luma_slay_the_zmey" label=register_label class="btn-primary rounded-pill event-btn" %}
+          </div>
+          <div class="col-lg-8">
+            <ul class="event-checks">
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <div>
+                  <h3>Real attacks, real demos</h3>
+                  <p>
+                    See how AI assistants and agents get manipulated, with
+                    every step explained.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <div>
+                  <h3>You are the attacker</h3>
+                  <p>
+                    Every participant attacks Zmey, a real AI agent with
+                    defenses, and sees how an attacker thinks.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <div>
+                  <h3>Led by practitioners</h3>
+                  <p>
+                    The team building AI threat detection in
+                    <span class="brand-text">Stihia</span> Sense, and a CISA /
+                    ISO 27001 auditor with 20+ years in security.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <div>
+                  <h3>Up to date as of October 2026</h3>
+                  <p>
+                    The latest industry guidance on agentic AI and incidents
+                    from recent months. The demos follow the newest
+                    vulnerabilities.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <div>
+                  <h3>In Bulgarian, with local context</h3>
+                  <p>
+                    Data on AI use in Bulgaria and the European rules,
+                    explained clearly and practically.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <div>
+                  <h3>The price of a book</h3>
+                  <p>
+                    &euro;23 for 2 hours with experts, practice, and materials
+                    you use right away.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Agenda
+       =================================================================== -->
+  <section id="agenda" class="event-section">
+    <div class="container fade-in">
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-4">
+          <p class="event-eyebrow">Agenda</p>
+          <h2 class="event-title">From theory to breach in 90 minutes</h2>
+          <p class="event-lede">
+            The agenda follows the path of an attack: what the agent is,
+            where it is weak, what has already happened, how it gets
+            breached, and how you defend. And at the end, you break in.
+          </p>
+          <dl class="event-agenda-summary">
+            <div>
+              <dt>Presentation and demos</dt>
+              <dd>90 min</dd>
+            </div>
+            <div>
+              <dt>Open Q&amp;A</dt>
+              <dd>30 min</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="col-lg-8">
+          <ol class="event-agenda">
+            <li class="event-agenda-item">
+              <span class="event-agenda-num">01</span>
+              <div>
+                <h3 class="event-agenda-title">Kickoff</h3>
+                <p class="event-agenda-copy">
+                  How the evening will run and how we'll compete in Zmey.
+                </p>
+              </div>
+              <span class="event-agenda-who">Moderator</span>
+            </li>
+            <li class="event-agenda-item">
+              <span class="event-agenda-num">02</span>
+              <div>
+                <h3 class="event-agenda-title">How we use AI agents</h3>
+                <p class="event-agenda-copy">
+                  How agents work with code, data, email, and tools in daily
+                  work, and why that changed the risk.
+                </p>
+              </div>
+              <span class="event-agenda-who">Ivan</span>
+            </li>
+            <li class="event-agenda-item">
+              <span class="event-agenda-num">03</span>
+              <div>
+                <h3 class="event-agenda-title">Today's vulnerabilities</h3>
+                <p class="event-agenda-copy">
+                  The main threats to AI agents today, how prompt injection
+                  works, and a simple model for spotting a risky agent.
+                </p>
+              </div>
+              <span class="event-agenda-who">Ivan</span>
+            </li>
+            <li class="event-agenda-item">
+              <span class="event-agenda-num">04</span>
+              <div>
+                <h3 class="event-agenda-title">Real incidents</h3>
+                <p class="event-agenda-copy">
+                  Recent incidents from real companies and the mistake behind
+                  each one. Shadow AI in Bulgarian companies.
+                </p>
+              </div>
+              <span class="event-agenda-who">Peter</span>
+            </li>
+            <li class="event-agenda-item event-agenda-item-live">
+              <span class="event-agenda-num">05</span>
+              <div>
+                <h3 class="event-agenda-title">
+                  Attacks in practice <span class="event-live-tag">Demos</span>
+                </h3>
+                <p class="event-agenda-copy">
+                  Real attacks on AI assistants and agents, shown and explained
+                  step by step.
+                </p>
+              </div>
+              <span class="event-agenda-who">Ivan</span>
+            </li>
+            <li class="event-agenda-item">
+              <span class="event-agenda-num">06</span>
+              <div>
+                <h3 class="event-agenda-title">Defense</h3>
+                <p class="event-agenda-copy">
+                  Practical checklists for AI users and developers, the EU
+                  rules in brief, and the myths that create a false sense of
+                  security.
+                </p>
+              </div>
+              <span class="event-agenda-who">Peter &amp; Ivan</span>
+            </li>
+            <li class="event-agenda-item">
+              <span class="event-agenda-num">07</span>
+              <div>
+                <h3 class="event-agenda-title">Final boss: Zmey</h3>
+                <p class="event-agenda-copy">
+                  Scan the QR code and attack a live AI agent with ever
+                  stronger defenses. The leaderboard is on screen.
+                </p>
+              </div>
+              <span class="event-agenda-who">Everyone</span>
+            </li>
+            <li class="event-agenda-item">
+              <span class="event-agenda-num">08</span>
+              <div>
+                <h3 class="event-agenda-title">Open Q&amp;A</h3>
+                <p class="event-agenda-copy">
+                  Ask about your own tools and your stack while the Zmey
+                  tournament continues.
+                </p>
+              </div>
+              <span class="event-agenda-who">Both hosts</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Demos
+       =================================================================== -->
+  <section id="demos" class="event-section event-section-alt">
+    <div class="container fade-in">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6">
+          <p class="event-eyebrow">What you'll see</p>
+          <h2 class="event-title mb-4">How everyday AI gets turned against you</h2>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <article class="event-card event-demo">
+                <p class="event-demo-index">Threat 01</p>
+                <h3 class="event-demo-title">Data leakage</h3>
+                <p class="event-demo-copy">
+                  How confidential data slips out through an assistant that
+                  was only trying to help.
+                </p>
+              </article>
+            </div>
+            <div class="col-sm-6">
+              <article class="event-card event-demo">
+                <p class="event-demo-index">Threat 02</p>
+                <h3 class="event-demo-title">Hijacked goals</h3>
+                <p class="event-demo-copy">
+                  How hidden instructions in ordinary content quietly change
+                  what an agent does.
+                </p>
+              </article>
+            </div>
+            <div class="col-sm-6">
+              <article class="event-card event-demo">
+                <p class="event-demo-index">Threat 03</p>
+                <h3 class="event-demo-title">Poisoned context</h3>
+                <p class="event-demo-copy">
+                  How something planted once keeps shaping the answers that
+                  follow.
+                </p>
+              </article>
+            </div>
+            <div class="col-sm-6">
+              <article class="event-card event-demo">
+                <p class="event-demo-index">Threat 04</p>
+                <h3 class="event-demo-title">Exposed secrets</h3>
+                <p class="event-demo-copy">
+                  How an assistant reveals the instructions and data it is
+                  supposed to protect.
+                </p>
+              </article>
+            </div>
+          </div>
+          <p class="event-fineprint mt-4 mb-0">
+            The demos follow the newest vulnerabilities. We only attack our
+            own sandbox environments and public tools.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="event-photo event-photo-tall">
+            <img src="/assets/img/events/slay-the-zmey/slay-the-zmey-demo.png"
+              alt="Stihia presenter running a demo at a laptop, with a coding agent projected on the wall"
+              class="img-monochrome" width="1400" height="1050" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Final boss
+       =================================================================== -->
+  <section id="final-boss" class="event-section">
+    <div class="container fade-in">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6 order-2 order-lg-1">
+          <div class="event-photo event-photo-tall">
+            <img src="/assets/img/events/slay-the-zmey/slay-the-zmey-final-boss.webp"
+              alt="Two Stihia hosts in front of the projected Final Boss: Zmey screen with a QR code"
+              class="img-monochrome" width="1400" height="1050" loading="lazy" />
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <p class="event-eyebrow">Final boss</p>
+          <h2 class="event-title">Break Zmey. Claim the prize.</h2>
+          <p class="event-lede mb-4">
+            Zmey is an AI agent with real defenses and a secret it guards.
+            You have a phone or laptop and your words. Every level is harder
+            than the one before.
+          </p>
+          <ol class="event-prizes">
+            <li class="event-prize event-prize-top">
+              <span class="event-prize-rank">1</span>
+              <div>
+                <p class="event-prize-title">&ldquo;Zmey Slayer&rdquo; medal by mail</p>
+                <p class="event-prize-extra">
+                  + a free seat at the next workshop + a LinkedIn shout-out
+                </p>
+              </div>
+              <span class="event-prize-cash">&euro;30</span>
+            </li>
+            <li class="event-prize">
+              <span class="event-prize-rank">2</span>
+              <div>
+                <p class="event-prize-title">Free seat at the next workshop</p>
+                <p class="event-prize-extra">+ digital badge</p>
+              </div>
+              <span class="event-prize-cash">&euro;20</span>
+            </li>
+            <li class="event-prize">
+              <span class="event-prize-rank">3</span>
+              <div>
+                <p class="event-prize-title">50% off the next workshop</p>
+                <p class="event-prize-extra">+ digital badge</p>
+              </div>
+              <span class="event-prize-cash">&euro;10</span>
+            </li>
+          </ol>
+          <p class="event-bonus">
+            <strong>Bonus for the winner's company:</strong> 20% off a
+            corporate workshop for the whole team.
+          </p>
+          <p class="event-fineprint">
+            Played during the session, by registered participants only.
+            Ranked by the level reached; in a tie, the faster player wins.
+            Cash prizes are paid by bank transfer within 7 days.
+          </p>
+          <a class="btn btn-outline-light rounded-pill event-btn" href="https://zmey.stihia.ai" target="_blank"
+            rel="noopener noreferrer">
+            Warm up beforehand: zmey.stihia.ai
+            <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Hosts
+       =================================================================== -->
+  <section id="hosts" class="event-section event-section-alt">
+    <div class="container fade-in">
+      <p class="event-eyebrow">Hosts</p>
+      <h2 class="event-title mb-5">The people building the defense</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="event-card event-host">
+            <img src="/assets/img/team/ivan_danielov_ivanov.webp" alt="Ivan Danielov Ivanov" class="event-host-photo"
+              width="1024" height="1024" loading="lazy" />
+            <div>
+              <h3 class="event-host-name">Ivan Danielov Ivanov</h3>
+              <p class="event-host-role">AI Engineering &amp; Data Science</p>
+              <p class="event-host-bio">
+                Builds threat detection in <span class="brand-text">Stihia</span>
+                Sense and leads the research the demos come from. 10+ years in
+                data science and ML engineering. MSc Computer Science,
+                University of Bonn.
+              </p>
+              <p class="event-host-leads">Leads the theory and the demos</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="event-card event-host">
+            <img src="/assets/img/team/peter_kirkov.webp" alt="Peter Kirkov" class="event-host-photo" width="1024"
+              height="1024" loading="lazy" />
+            <div>
+              <h3 class="event-host-name">Peter Kirkov</h3>
+              <p class="event-host-role">Cybersecurity &amp; Compliance</p>
+              <p class="event-host-bio">
+                20+ years in strategic security. CISA, Lead ISO 27001 Auditor.
+                NIS2, GDPR, DORA, PCI-DSS. National cybersecurity
+                coordinator.
+              </p>
+              <p class="event-host-leads">Leads the incidents and defense</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Tickets
+       =================================================================== -->
+  <section id="tickets" class="event-section">
+    <div class="container fade-in">
+      <p class="event-eyebrow">Tickets</p>
+      <h2 class="event-title mb-5">Reserve your spot</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <article class="event-ticket event-ticket-featured">
+            <div class="event-ticket-head">
+              <h3 class="event-ticket-name">Early bird</h3>
+              <span class="event-ticket-badge">&minus;28%</span>
+            </div>
+            <p class="event-ticket-price">&euro;23 <del>&euro;32</del></p>
+            <p class="event-ticket-copy">
+              The first 30 seats or until October 8. Full agenda, Zmey
+              tournament, materials, and certificate.
+            </p>
+            {% include cta-button.html link="luma_slay_the_zmey" label=luma_label class="btn-primary rounded-pill event-btn w-100 mt-auto" %}
+          </article>
+        </div>
+        <div class="col-lg-6">
+          <article class="event-ticket">
+            <div class="event-ticket-head">
+              <h3 class="event-ticket-name">Regular</h3>
+            </div>
+            <p class="event-ticket-price">&euro;32</p>
+            <p class="event-ticket-copy">
+              Once the early bird seats are gone. Same content and same
+              prizes.
+            </p>
+            {% include cta-button.html link="luma_slay_the_zmey" label=luma_label class="btn-outline-light rounded-pill event-btn w-100 mt-auto" %}
+          </article>
+        </div>
+      </div>
+      <ul class="event-assurances">
+        <li>
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          Card payment through Luma and Stripe
+        </li>
+        <li>
+          <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+          Invoice on request
+        </li>
+        <li>
+          <i class="fa fa-rotate-left" aria-hidden="true"></i>
+          Full refund up to 48 hours before the start
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       FAQ
+       =================================================================== -->
+  <section id="faq" class="event-section event-section-alt">
+    <div class="container fade-in">
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-4">
+          <p class="event-eyebrow">Questions</p>
+          <h2 class="event-title">What people ask us most</h2>
+          <p class="event-lede">
+            Can't find an answer? Write to us at
+            <a class="event-link" href="mailto:{{ site.data.links.email }}">{{ site.data.links.email }}</a>.
+          </p>
+        </div>
+        <div class="col-lg-8">
+          <div class="event-faq">
+            <details class="event-faq-item" open>
+              <summary>Do I need to be a programmer?</summary>
+              <p>
+                No. You need to use AI tools in your work. Every demo is
+                explained step by step, and for Zmey all you need is a
+                browser and words.
+              </p>
+            </details>
+            <details class="event-faq-item" open>
+              <summary>What do I need to take part?</summary>
+              <p>
+                A laptop or phone with a browser and a stable internet
+                connection. No installs and no accounts. Your personal Google
+                Meet link comes from Luma after you register.
+              </p>
+            </details>
+            <details class="event-faq-item" open>
+              <summary>Will there be a recording?</summary>
+              <p>
+                No, the session is live only. All participants receive the
+                slides, checklists, and links after the event.
+              </p>
+            </details>
+            <details class="event-faq-item" open>
+              <summary>How are the prizes won?</summary>
+              <p>
+                The tournament runs during the session and continues while we
+                answer questions. The three players who get furthest in Zmey
+                win; in a tie, the faster one wins. The &euro;30, &euro;20,
+                and &euro;10 prizes are paid by bank transfer within 7 days.
+              </p>
+            </details>
+            <details class="event-faq-item" open>
+              <summary>Do you issue invoices?</summary>
+              <p>
+                Yes. Enter your company name and company ID (EIK) when you
+                register, and you will receive an invoice.
+              </p>
+            </details>
+            <details class="event-faq-item" open>
+              <summary>Can I get a refund?</summary>
+              <p>
+                Yes, a full refund up to 48 hours before the start. After
+                that, you can transfer your ticket to a colleague.
+              </p>
+            </details>
+            <details class="event-faq-item" open>
+              <summary>What language is it in?</summary>
+              <p>
+                Bulgarian. Technical terms and some of the slides are in
+                English.
+              </p>
+            </details>
+            <details class="event-faq-item" open>
+              <summary>I want this for my whole team. Is that possible?</summary>
+              <p>
+                Yes. We run corporate workshops on-site or online, from 2
+                hours to several days, with attacks on the tools your team
+                uses. See the <a class="event-link" href="#companies">For
+                companies</a> section below.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       For companies
+       =================================================================== -->
+  <section id="companies" class="event-section">
+    <div class="container fade-in">
+      <div class="event-company">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-8">
+            <p class="event-eyebrow">For companies</p>
+            <h2 class="event-title event-title-sm">
+              Want this for your whole team, against your own tools?
+            </h2>
+            <p class="event-lede mb-0">
+              A corporate workshop tailored to your stack: on-site or online,
+              from 2 hours to several days, with separate tracks for
+              engineers and non-technical staff. Participants in the open
+              session get a <strong>&euro;100 credit</strong> when they book
+              by November 20.
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <div class="d-grid gap-3">
+              {% capture book_label %}Book a Workshop <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>{% endcapture %}
+              {% include cta-button.html form="contact" label=book_label class="btn-primary rounded-pill event-btn" %}
+              {% include cta-button.html form="quiz" label="5-minute AI Compliance check" class="btn-outline-light rounded-pill event-btn" %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       Final CTA
+       =================================================================== -->
+  <section id="register" class="event-section event-final">
+    <div class="container fade-in text-center">
+      <p class="event-eyebrow justify-content-center">
+        <span class="event-live-dot" aria-hidden="true"></span>
+        Oct 20, 2026 &middot; 18:00 &middot; Online
+      </p>
+      <h2 class="event-final-title">
+        Ready to face <span class="event-display-accent">Zmey</span>?
+      </h2>
+      <p class="event-lede mx-auto mb-4">
+        50 seats. Early bird price &euro;23 for the first 30.
+      </p>
+      {% include cta-button.html link="luma_slay_the_zmey" label=luma_label class="btn-primary rounded-pill event-btn" %}
+    </div>
+  </section>
+</main>

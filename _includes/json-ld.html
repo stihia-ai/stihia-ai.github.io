@@ -8,6 +8,9 @@
     organization Organization only
     product      Organization + SoftwareApplication, driven by the page's
                  `product_name` and `application_category` front matter
+    event        Organization + Event, driven by the page's `event` front
+                 matter (name, start, end, language, performers, offers,
+                 register_link as a key in _data/links.yml)
 {% endcomment %}
 
 {% capture organization_node %}
@@ -116,6 +119,59 @@
         "description": {{ page.description | strip_newlines | strip | jsonify }},
         "provider": { "@id": "https://stihia.ai/#organization" },
         "publisher": { "@id": "https://stihia.ai/#organization" }
+      }
+    ]
+  }
+</script>
+{% elsif page.json_ld == "event" %}
+{% if page.canonical %}
+  {% assign ld_event_url = page.canonical %}
+{% else %}
+  {% assign ld_event_url = page.url | absolute_url %}
+{% endif %}
+{% assign ld_event_offer_url = site.data.links[page.event.register_link] %}
+{% assign ld_event_offer_scheme = ld_event_offer_url | slice: 0 %}
+{% if ld_event_offer_scheme == '#' %}
+  {% assign ld_event_offer_url = ld_event_url | append: ld_event_offer_url %}
+{% endif %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {{ organization_node }},
+      {
+        "@type": "Event",
+        "name": {{ page.event.name | jsonify }},
+        "description": {{ page.description | strip_newlines | strip | jsonify }},
+        "url": {{ ld_event_url | jsonify }},
+        "image": {{ page.og_image | absolute_url | jsonify }},
+        "startDate": {{ page.event.start | jsonify }},
+        "endDate": {{ page.event.end | jsonify }},
+        "inLanguage": {{ page.event.language | jsonify }},
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "location": {
+          "@type": "VirtualLocation",
+          "url": {{ ld_event_url | jsonify }}
+        },
+        "organizer": { "@id": "https://stihia.ai/#organization" },
+        "performer": [
+          {% for name in page.event.performers %}
+          { "@type": "Person", "name": {{ name | jsonify }} }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ],
+        "offers": [
+          {% for offer in page.event.offers %}
+          {
+            "@type": "Offer",
+            "name": {{ offer.name | jsonify }},
+            "price": {{ offer.price | jsonify }},
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock",
+            "url": {{ ld_event_offer_url | jsonify }}
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
       }
     ]
   }
