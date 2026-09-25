@@ -3134,6 +3134,12 @@ a.event-bar-title:hover {
   max-width: 62ch;
 }
 
+.event-company-logos {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+  padding-bottom: 0;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
 /* ── Final CTA ────────────────────────────────────────────────────────── */
 
 .event-final {

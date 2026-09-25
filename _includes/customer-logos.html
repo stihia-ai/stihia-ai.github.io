@@ -1,5 +1,6 @@
 {% assign customers = site.data.customers %}
-<section class="container customer-logos fade-in" aria-label="{{ customers.title }}">
+{%- assign wrapper_class = include.class | default: 'container fade-in' -%}
+<section class="customer-logos {{ wrapper_class }}" aria-label="{{ customers.title }}">
   <p class="customer-logos-title">{{ customers.title }}</p>
   <ul class="customer-logos-list">
     {% for customer in customers.items %}
