@@ -32,20 +32,7 @@ event:
   <!-- ===================================================================
        Announcement bar
        =================================================================== -->
-  <aside class="event-bar" aria-label="Event announcement">
-    <div class="container event-bar-inner">
-      <p class="event-bar-text">
-        <span class="event-live-dot" aria-hidden="true"></span>
-        <strong>October 20, 18:00 &middot; online</strong>
-        <span class="event-bar-title">Slay the Zmey: Hack an AI Agent</span>
-        <span class="event-bar-sep" aria-hidden="true"></span>
-        <span>Early bird <strong>&euro;23</strong> <del>&euro;32</del></span>
-      </p>
-      <a class="event-bar-link" href="#tickets">
-        Reserve a spot <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
-      </a>
-    </div>
-  </aside>
+  {% include event-banner.html %}
 
   <!-- ===================================================================
        Hero

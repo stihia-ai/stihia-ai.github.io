@@ -5,6 +5,6 @@
 #   Data files: link: app   (instead of a literal url:)
 email: info@stihia.ai
 app: https://app.stihia.ai
-# TODO: replace with the Luma event URL once registration is live. Until then
-# the buttons jump to the tickets section of the page.
-luma_slay_the_zmey: "#tickets"
+# Registration for Slay the Zmey: every register button on the event page and
+# the homepage event banner.
+luma_slay_the_zmey: https://luma.com/5194ogoo

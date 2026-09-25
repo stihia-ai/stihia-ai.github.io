@@ -1,0 +1,54 @@
+{%- comment -%}
+Announcement bar for Slay the Zmey, shared by the homepage and
+events/slay-the-zmey.html so both stay identical. On the event page itself
+the cover and title are not linked, since they would point at the same page.
+Once the event is over, swap it back for {% include quiz-bar.html %} in
+index.html.
+
+  {% include event-banner.html %}
+{%- endcomment -%}
+{%- assign event_path = '/events/slay-the-zmey' -%}
+{%- assign event_url = event_path | relative_url -%}
+{%- assign bar_page_path = page.url | remove: '.html' -%}
+{%- capture bar_cover -%}
+<img src="/assets/img/events/slay-the-zmey/slay-the-zmey-cover-thumb.webp" alt="" width="144" height="144" />
+{%- endcapture -%}
+<aside class="event-bar" aria-label="Event announcement">
+  <div class="container event-bar-inner">
+    {% if bar_page_path == event_path -%}
+    <span class="event-bar-thumb">
+      {{ bar_cover }}
+    </span>
+    {%- else -%}
+    <a class="event-bar-thumb" href="{{ event_url }}" tabindex="-1" aria-hidden="true" data-attr="event-banner-cover">
+      {{ bar_cover }}
+    </a>
+    {%- endif %}
+    <div class="event-bar-body">
+      <p class="event-bar-text">
+        <span class="event-bar-when">
+          <span class="event-live-dot" aria-hidden="true"></span>
+          <strong>October 20, 18:00 &middot; online</strong>
+        </span>
+        {% if bar_page_path == event_path -%}
+        <span class="event-bar-title">Slay the Zmey: Hack an AI Agent</span>
+        {%- else -%}
+        <a class="event-bar-title" href="{{ event_url }}" data-attr="event-banner-title">
+          Slay the Zmey: Hack an AI Agent
+        </a>
+        {%- endif %}
+        <span class="event-bar-sep" aria-hidden="true"></span>
+        <span class="event-bar-price">Early bird <strong>&euro;23</strong> <del>&euro;32</del></span>
+      </p>
+      <a
+        class="event-bar-link"
+        href="{{ site.data.links.luma_slay_the_zmey }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-attr="event-banner-register"
+      >
+        Reserve a spot <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</aside>

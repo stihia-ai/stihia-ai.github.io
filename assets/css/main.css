@@ -2170,20 +2170,25 @@ pre code {
    editorial layout; sections alternate between the base and darker surface.
    -------------------------------------------------------------------------- */
 
-.event-page {
+.event-page,
+.event-bar {
   --event-accent: var(--accent-signature);
   --event-live: var(--accent-semantic);
   --event-radius-sm: 14px;
   --event-radius-lg: 28px;
 }
 
-.event-page del {
+.event-page del,
+.event-bar del {
   color: var(--color-text-gray);
   font-weight: 400;
 }
 
 /* ── Announcement bar ─────────────────────────────────────────────────── */
 
+/* Shared by the homepage and the event page (_includes/event-banner.html):
+   event cover on the left, text and register link beside it. The cover is
+   shown whole, square cornered. */
 .event-bar {
   margin-top: 5rem;
   background-color: var(--color-band);
@@ -2192,11 +2197,32 @@ pre code {
 
 .event-bar-inner {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding-block: 0.85rem;
+}
+
+.event-bar-thumb {
+  flex: none;
+  display: block;
+  line-height: 0;
+}
+
+.event-bar-thumb img {
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 0;
+}
+
+.event-bar-body {
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem 1.25rem;
-  padding-block: 0.6rem;
+  gap: 0.25rem 1.5rem;
+  min-width: 0;
 }
 
 .event-bar-text {
@@ -2205,7 +2231,7 @@ pre code {
   align-items: center;
   gap: 0.4rem 0.85rem;
   margin: 0;
-  font-size: var(--fs-card-body);
+  font-size: var(--fs-body);
   color: var(--color-text);
 }
 
@@ -2214,9 +2240,33 @@ pre code {
   font-weight: var(--fw-semibold);
 }
 
+.event-bar-when {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.event-bar-title {
+  text-wrap: balance;
+}
+
+/* Linked only off the event page */
+a.event-bar-title {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-medium);
+  text-underline-offset: 4px;
+}
+
+a.event-bar-title:hover {
+  color: var(--color-text-strong);
+  text-decoration-color: currentColor;
+}
+
 .event-bar-sep {
   width: 1px;
-  height: 1rem;
+  height: 1.15rem;
   background-color: var(--color-border-medium);
 }
 
@@ -2225,7 +2275,7 @@ pre code {
   align-items: center;
   min-height: 44px;
   color: var(--color-text-strong);
-  font-size: var(--fs-card-body);
+  font-size: var(--fs-body);
   text-decoration: underline;
   text-underline-offset: 4px;
   white-space: nowrap;
@@ -3100,7 +3150,38 @@ pre code {
 
 /* ── Responsive ───────────────────────────────────────────────────────── */
 
+/* The announcement bar fits on one line only at xl; below it the text and
+   the link stack, centered next to the cover. */
+@media (max-width: 1199.98px) {
+  .event-bar-body {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .event-bar-text {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .event-bar-sep {
+    display: none;
+  }
+}
+
+/* Wrapped flex text would stretch to the full row and push the cover to the
+   edge. A grid sizes to its content, so cover and text stay centered as one. */
 @media (max-width: 991.98px) {
+  .event-bar-text {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .event-bar-price {
+    grid-column: 1 / -1;
+  }
+
   .event-photo-hero,
   .event-photo-tall {
     aspect-ratio: 4 / 3;
@@ -3108,13 +3189,22 @@ pre code {
 }
 
 @media (max-width: 767.98px) {
-  .event-bar-sep {
-    display: none;
+  .event-bar-inner {
+    gap: 0.9rem;
+  }
+
+  .event-bar-thumb img {
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
   .event-bar-text {
-    justify-content: center;
-    text-align: center;
+    grid-template-columns: auto;
+  }
+
+  .event-bar-text,
+  .event-bar-link {
+    font-size: var(--fs-card-body);
   }
 
   .event-checks {
