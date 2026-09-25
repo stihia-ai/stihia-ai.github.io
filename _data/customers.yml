@@ -24,3 +24,8 @@ items:
     width: 300
     height: 60
     brightness: 4
+  - name: ScaleUSA
+    url: https://www.scale-usa.com/
+    logo: /assets/img/clients/scale-usa-logo.svg
+    width: 171
+    height: 30
