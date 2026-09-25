@@ -1,0 +1,45 @@
+# Press coverage of Stihia. Shown as a "Featured in" logo strip (one logo per
+# outlet, linking to its newest article) and as article cards on the About
+# page. Articles are sorted by date, newest first, so order here is free.
+#
+# Outlet logos live in assets/img/press/ and follow the same rules as the
+# customer logos: transparent background, light or coloured ink so they read
+# on the dark theme. width/height are the intrinsic size. brightness (optional,
+# default 1.6) lifts a logo in its grayscale resting state. scale (optional,
+# default 1) resizes it against the strip height, to even out optical weight
+# between heavy all-caps wordmarks and lighter ones.
+#
+# headline is always English. For an article in another language, set lang
+# (ISO 639-1) and headline_original; the card shows a language tag and keeps
+# the original headline as the link title.
+#
+#   Markup:     {% include press-logos.html %}
+#               {% include press-cards.html %}
+title: Featured in
+outlets:
+  capital:
+    name: Капитал
+    logo: /assets/img/press/capital-logo.svg
+    width: 545
+    height: 72
+    brightness: 0.85
+    scale: 0.68
+  sifted:
+    name: Sifted
+    logo: /assets/img/press/sifted-logo.svg
+    width: 135
+    height: 36
+    brightness: 3
+    scale: 1.1
+items:
+  - outlet: capital
+    headline: "Stihia.ai: the Bulgarian answer to the AI cyber threat"
+    headline_original: "Stihia.ai: българският отговор на AI киберзаплахата"
+    lang: bg
+    language: Bulgarian
+    date: 2026-09-27
+    url: https://www.capital.bg/biznes/predpriemach/2026/09/27/4958440_stihiaai_bulgarskiiat_otgovor_na_ai_kiberzaplahata/
+  - outlet: sifted
+    headline: 9 Bulgarian startups to watch in 2026, according to VCs
+    date: 2026-03-11
+    url: https://sifted.eu/articles/bulgarian-startups-to-watch-2026

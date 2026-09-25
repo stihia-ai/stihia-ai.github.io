@@ -1,0 +1,39 @@
+{% assign press = site.data.press %}
+{%- assign articles = press.items | sort: "date" | reverse -%}
+{%- assign wrapper_class = include.class | default: 'container fade-in' -%}
+{%- comment -%}
+  Shares the logo strip styles of customer-logos.html. One logo per outlet,
+  linking to that outlet's newest article.
+{%- endcomment -%}
+<section class="customer-logos press-logos {{ wrapper_class }}" aria-label="{{ press.title }}">
+  <p class="customer-logos-title">{{ press.title }}</p>
+  <ul class="customer-logos-list">
+    {%- assign seen = "|" -%}
+    {% for article in articles %}
+    {%- assign key = article.outlet | append: "|" | prepend: "|" -%}
+    {%- if seen contains key -%}{%- continue -%}{%- endif -%}
+    {%- assign seen = seen | append: key -%}
+    {%- assign outlet = press.outlets[article.outlet] %}
+    <li>
+      <a
+        class="customer-logo"
+        href="{{ article.url }}"
+        title="{{ article.headline }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        {% if article.lang %}hreflang="{{ article.lang }}"{% endif %}
+        data-attr="press-logo"
+      >
+        <img
+          src="{{ outlet.logo }}"
+          alt="{{ outlet.name }}"
+          width="{{ outlet.width }}"
+          height="{{ outlet.height }}"
+          loading="lazy"
+          {% if outlet.brightness or outlet.scale %}style="{% if outlet.brightness %}--logo-brightness: {{ outlet.brightness }};{% endif %}{% if outlet.scale %} --logo-scale: {{ outlet.scale }};{% endif %}"{% endif %}
+        />
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
