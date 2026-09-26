@@ -2262,6 +2262,8 @@ pre code {
 .event-bar {
   --event-accent: var(--accent-signature);
   --event-live: var(--accent-semantic);
+  --event-yes: oklch(68% 0.15 150);
+  --event-no: oklch(60% 0.19 27);
   --event-radius-sm: 14px;
   --event-radius-lg: 28px;
 }
@@ -2526,6 +2528,13 @@ a.event-bar-title:hover {
   color: var(--color-text-strong);
 }
 
+.event-display-kicker {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  line-height: var(--lh-tight);
+}
+
 .event-display-accent {
   color: var(--event-accent);
 }
@@ -2729,11 +2738,11 @@ a.event-bar-title:hover {
 }
 
 .event-fit-yes .event-fit-head > i {
-  color: var(--event-accent);
+  color: var(--event-yes);
 }
 
 .event-fit-no .event-fit-head > i {
-  color: var(--event-live);
+  color: var(--event-no);
 }
 
 .event-fit-list {
@@ -2741,7 +2750,9 @@ a.event-bar-title:hover {
 }
 
 .event-fit-list dt {
+  position: relative;
   margin-top: 1.15rem;
+  padding-left: 2.25rem;
   font-weight: var(--fw-semibold);
   color: var(--color-text-strong);
 }
@@ -2752,9 +2763,32 @@ a.event-bar-title:hover {
 
 .event-fit-list dd {
   margin: 0.25rem 0 0;
+  padding-left: 2.25rem;
   font-size: var(--fs-card-body);
   line-height: var(--lh-normal);
   color: var(--color-text-muted);
+}
+
+/* Round badge hanging left of each item: white mark on green (yes) or red (no) */
+.event-fit-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+.event-fit-yes .event-fit-mark {
+  background-color: var(--event-yes);
+}
+
+.event-fit-no .event-fit-mark {
+  background-color: var(--event-no);
 }
 
 .event-fit-note {
