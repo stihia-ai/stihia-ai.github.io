@@ -46,6 +46,9 @@
 {% endif %}
 
 <link rel="canonical" href="{{ page_canonical }}" />
+{% for alternate in page.alternates %}
+<link rel="alternate" hreflang="{{ alternate.lang }}" href="{{ alternate.url }}" />
+{% endfor %}
 <meta name="robots" content="{{ page.robots | default: 'index,follow,max-image-preview:large' }}" />
 <meta name="description" content="{{ page_description }}" />
 {% if page.keywords %}

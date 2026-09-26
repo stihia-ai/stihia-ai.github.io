@@ -3276,6 +3276,113 @@ a.event-bar-title:hover {
   color: var(--color-text-strong);
 }
 
+/* ── Terms pages (events/slay-the-zmey/terms*.html) ───────────────────── */
+
+/* Long-form legal text in one centered, readable column. */
+.event-terms {
+  padding-block: 7rem clamp(4rem, 8vw, 6.5rem);
+}
+
+.event-terms-head,
+.event-terms-body {
+  max-width: 50rem;
+  margin-inline: auto;
+}
+
+.event-terms-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.event-terms-back,
+.event-terms-lang {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.95rem;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+}
+
+.event-terms-lang {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.event-terms-back:hover,
+.event-terms-lang:hover {
+  color: var(--color-text-strong);
+}
+
+.event-terms-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
+  margin-top: 1.75rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--event-radius-sm);
+  background-color: var(--color-bg-darker);
+}
+
+.event-terms-toc a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--event-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.event-terms-toc a:hover {
+  color: var(--color-text-strong);
+}
+
+.event-terms-body h2 {
+  margin: 3.5rem 0 0.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border-soft);
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-strong);
+}
+
+.event-terms-body h3 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-strong);
+}
+
+.event-terms-body p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: var(--lh-relaxed);
+  color: var(--color-text);
+}
+
+.event-terms-body p.event-terms-note {
+  font-size: 0.88rem;
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted-utility);
+}
+
+.event-terms-body a {
+  font-weight: inherit;
+  color: var(--event-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.event-terms-body a:hover {
+  color: var(--color-text-strong);
+}
+
 /* ── Responsive ───────────────────────────────────────────────────────── */
 
 /* The announcement bar fits on one line only at xl; below it the text and

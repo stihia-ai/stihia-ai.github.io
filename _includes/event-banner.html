@@ -1,13 +1,13 @@
 {%- comment -%}
 Announcement bar for Slay the Zmey, shared by the homepage and
-events/slay-the-zmey.html so both stay identical. On the event page itself
+events/slay-the-zmey/index.html so both stay identical. On the event page itself
 the cover and title are not linked, since they would point at the same page.
 Once the event is over, swap it back for {% include quiz-bar.html %} in
 index.html.
 
   {% include event-banner.html %}
 {%- endcomment -%}
-{%- assign event_path = '/events/slay-the-zmey' -%}
+{%- assign event_path = '/events/slay-the-zmey/' -%}
 {%- assign event_url = event_path | relative_url -%}
 {%- assign bar_page_path = page.url | remove: '.html' -%}
 {%- capture bar_cover -%}

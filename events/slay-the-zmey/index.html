@@ -7,7 +7,7 @@ description: >-
 keywords: >-
   Slay the Zmey, AI Hacking Workshop, Hack an AI Agent, Hacking Demos, Prompt Injection, AI Agent Security,
   Stihia Zmey, Agentic AI Security, Online Workshop, AI Security Bulgaria
-canonical: https://stihia.ai/events/slay-the-zmey
+canonical: https://stihia.ai/events/slay-the-zmey/
 json_ld: event
 canonical_redirect: true
 og_image: /assets/img/events/slay-the-zmey/slay-the-zmey-og.webp
@@ -28,6 +28,8 @@ event:
 ---
 {% capture luma_label %}Register on Luma <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>{% endcapture %}
 {% capture register_label %}Register <i class="fa fa-arrow-right ms-1 small" aria-hidden="true"></i>{% endcapture %}
+{% capture terms_links %}<span class="text-nowrap"><a class="event-link" href="/events/slay-the-zmey/terms">English</a> &middot;
+  <a class="event-link" href="/events/slay-the-zmey/terms-bg" hreflang="bg" lang="bg">Български</a></span>{% endcapture %}
 <main class="event-page">
   <!-- ===================================================================
        Announcement bar
@@ -659,7 +661,8 @@ event:
             order they finish. If fewer than three finish, the remaining
             prizes are not awarded. We'll explain how to prove you passed
             all 5 levels during the workshop. Cash prizes are paid by bank
-            transfer within 7 days after the tournament closes.
+            transfer within 7 days after the tournament closes. Full rules
+            in the terms of participation ({{ terms_links }}).
           </p>
         </div>
       </div>
@@ -752,6 +755,9 @@ event:
           Full refund up to 48 hours before the start
         </li>
       </ul>
+      <p class="event-fineprint mt-4 mb-0">
+        Terms of participation and privacy: {{ terms_links }}
+      </p>
     </div>
   </section>
 
@@ -829,7 +835,8 @@ event:
               <summary>Can I get a refund?</summary>
               <p>
                 Yes, a full refund up to 48 hours before the start. After
-                that, you can transfer your ticket to a colleague.
+                that, you can transfer your ticket to a colleague. Details
+                are in the terms of participation ({{ terms_links }}).
               </p>
             </details>
             <details class="event-faq-item" open>
@@ -903,6 +910,9 @@ event:
       </p>
       {% include cta-button.html link="luma_slay_the_zmey" label=luma_label class="btn-primary rounded-pill event-btn"
       %}
+      <p class="event-fineprint mt-4 mb-0">
+        Terms of participation and privacy: {{ terms_links }}
+      </p>
     </div>
   </section>
 </main>
