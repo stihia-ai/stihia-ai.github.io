@@ -13,6 +13,9 @@
 # (ISO 639-1) and headline_original; the card shows a language tag and keeps
 # the original headline as the link title.
 #
+# format (optional, default article) set to video makes the card say "Watch
+# video" instead of "Read article".
+#
 #   Markup:     {% include press-logos.html %}
 #               {% include press-cards.html %}
 title: Featured in
@@ -31,7 +34,22 @@ outlets:
     height: 36
     brightness: 3
     scale: 1.1
+  bloombergtv:
+    name: Bloomberg TV Bulgaria
+    logo: /assets/img/press/bloombergtv-bulgaria-logo.svg
+    width: 1456
+    height: 480
+    brightness: 0.85
+    scale: 1.3
 items:
+  - outlet: bloombergtv
+    headline: "Are companies ready for the real cost of AI security?"
+    headline_original: "Готови ли са компаниите за реалната цена на AI сигурността"
+    lang: bg
+    language: Bulgarian
+    format: video
+    date: 2026-10-11
+    url: https://www.bloombergtv.bg/a/28-update/165313-gotovi-li-sa-kompaniite-za-realnata-tsena-na-ai-sigurnostta
   - outlet: capital
     headline: "Stihia.ai: the Bulgarian answer to the AI cyber threat"
     headline_original: "Stihia.ai: българският отговор на AI киберзаплахата"

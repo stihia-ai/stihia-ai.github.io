@@ -30,7 +30,7 @@
       <span class="press-card-meta">
         <time datetime="{{ article.date | date: '%Y-%m-%d' }}">{{ article.date | date: "%-d %b %Y" }}</time>
         <span class="press-card-read">
-          Read article
+          {% if article.format == "video" %}Watch video{% else %}Read article{% endif %}
           <i class="fa fa-arrow-up-right-from-square ms-1 small" aria-hidden="true"></i>
         </span>
       </span>
