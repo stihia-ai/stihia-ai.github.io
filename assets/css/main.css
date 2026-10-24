@@ -3981,7 +3981,7 @@ a.event-bar-title:hover {
   margin-top: 1.75rem;
 }
 
-.cert-print-url {
+.cert-verify {
   display: none;
 }
 
@@ -4144,42 +4144,31 @@ a.event-bar-title:hover {
   }
 }
 
-/* ── Print: a clean, ink-friendly one-page record ─────────────────────── */
+/* ── Print: the certificate as on screen, one A4 landscape sheet ──────── */
 
 @media print {
+  /* Dark paper prints even with the browser's background graphics off. */
   .route-certificate {
-    --color-text: oklch(30% 0.012 76);
-    --color-text-strong: oklch(18% 0.012 76);
-    --color-text-soft: oklch(34% 0.012 76);
-    --color-text-muted: oklch(42% 0.012 76);
-    --color-text-muted-utility: oklch(48% 0.012 76);
-    --color-border-subtle: oklch(40% 0.02 72 / 0.18);
-    --color-border-soft: oklch(40% 0.02 72 / 0.24);
-    --color-border-medium: oklch(40% 0.02 72 / 0.32);
-    --color-card-surface: transparent;
-    --color-card-sheen: transparent;
-    --color-card-sheen-faint: transparent;
-    --accent-signature: oklch(52% 0.1 70);
-  }
-
-  .route-certificate body {
-    background: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
 
   .route-certificate .navbar,
   .route-certificate #footer,
   .cert-eyebrow,
-  .cert-actions {
+  .cert-details,
+  .cert-actions,
+  .cert-issuer {
     display: none !important;
   }
 
+  .cert-page:is([data-state="valid"], [data-state="expired"], [data-state="revoked"])
+    .cert-status {
+    display: none;
+  }
+
   .cert-page {
-    --cert-paper: oklch(100% 0 0);
-    --cert-valid: oklch(46% 0.11 152);
-    --cert-revoked: oklch(50% 0.15 33);
     padding-top: 0;
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
   }
 
   .cert-shell {
@@ -4187,41 +4176,88 @@ a.event-bar-title:hover {
     padding: 0;
   }
 
-  .cert-status {
-    background: none;
-  }
-
   .cert-document {
-    background: var(--cert-paper);
+    display: flex;
+    width: 297mm;
+    height: 210mm;
+    margin: 0;
+    padding: 4mm;
+    border: none;
+    border-radius: 0;
     box-shadow: none;
+    overflow: hidden;
     break-inside: avoid;
   }
 
+  /* Brand on top, signatures at the bottom, the award centered between.
+     The auto margins give long names and descriptions room to grow. */
   .cert-frame {
-    padding-block: 2.25rem 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-block: 2.25rem 3.5rem;
+  }
+
+  .cert-brand {
+    align-self: center;
+    margin-bottom: auto;
+    padding-bottom: 1.5rem;
+  }
+
+  .cert-divider {
+    width: 100%;
+  }
+
+  .cert-description {
+    max-width: 56ch;
+  }
+
+  .cert-foot {
+    width: 100%;
+    max-width: 46rem;
+    margin: auto auto 0;
+    padding-top: 1.5rem;
+  }
+
+  .cert-seal {
+    width: 7rem;
+  }
+
+  .cert-verify {
+    display: block;
+    position: absolute;
+    right: 3.5rem;
+    bottom: 1.1rem;
+    left: 3.5rem;
+    margin: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: var(--color-text-muted-utility);
+  }
+
+  .cert-verify-sep {
+    margin-inline: 0.5em;
+  }
+
+  .cert-verify [data-field],
+  .cert-verify a {
+    font-weight: var(--fw-medium);
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+
+  /* A filter turns the frame into a bitmap in the PDF; gray gold stays vector. */
+  .cert-page:is([data-state="revoked"], [data-state="expired"]) {
+    --accent-signature: oklch(72% 0 0);
+  }
+
+  .cert-page:is([data-state="revoked"], [data-state="expired"]) .cert-frame {
+    filter: none;
   }
 
   .cert-record > *,
   .cert-seal-rosette {
     animation: none !important;
-  }
-
-  .cert-print-url {
-    display: block;
-    margin: 1rem 0 0;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-  }
-
-  .cert-print-url span {
-    color: var(--color-text-strong);
-    overflow-wrap: anywhere;
-  }
-
-  .cert-issuer {
-    margin-top: 1.25rem;
-    padding-top: 1rem;
   }
 }
 

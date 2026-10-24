@@ -42,6 +42,19 @@
 </script>
 {% include posthog.html when="certificateId" options="before_send: scrubCertificateId, disable_session_recording: true," %}
 
+{% comment %}
+  Printed, the certificate fills one A4 landscape sheet edge to edge. Kept
+  here rather than in main.css so other pages keep the browser's print
+  defaults. Zero margins also leave no room for the browser's own header and
+  footer (date, title, URL).
+{% endcomment %}
+<style media="print">
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+</style>
+
 <svg width="0" height="0" class="position-absolute" aria-hidden="true" focusable="false">
   <symbol id="cert-mark" viewBox="116 116 792 792">
     <path d="M 515.5,727.99173 C 469.22717,724.57071 426.39677,707.85006 390.5,679.19272 364.31286,658.28684 345.66753,636.67857 318.71471,596 304.33822,574.30227 296.72697,564.77646 284.5854,553.28571 257.98472,528.11088 230.29035,517.28415 176.5,511.03121 c -41.52116,-4.82669 -61.99743,-7.73492 -58.5,-8.30871 1.925,-0.31581 14.3,-1.08152 27.5,-1.70157 84.42204,-3.96559 115.21276,-11.52942 145.4662,-35.73416 13.92332,-11.13957 25.15729,-25.07632 39.0338,-48.42495 17.14392,-28.84637 29.61488,-45.51775 46.79704,-62.55899 29.48648,-29.24467 65.08071,-47.72992 105.82896,-54.96046 13.24449,-2.35015 17.44852,-2.64122 38.374,-2.65684 24.55711,-0.0183 38.95929,1.33706 57.5,5.41137 24.99191,5.49195 51.86365,15.93807 73.00272,28.37908 8.74641,5.14753 12.01317,7.70343 7.75987,6.07129 -4.90506,-1.88225 -34.62273,-8.793 -47.76259,-11.10705 -18.35892,-3.23317 -53.91781,-4.49853 -70.16567,-2.49683 -46.05512,5.67388 -83.971,24.82298 -104.57876,52.81665 -22.02452,29.91819 -8.81859,63.49564 32.51813,82.68072 39.24429,18.21394 104.54562,26.29179 267.2263,33.05622 79.1723,3.29206 177.17459,9.63463 171.98414,11.13056 -0.54127,0.156 -8.40086,1.2134 -17.46574,2.34977 -54.91098,6.8836 -83.40043,19.30811 -119.55018,52.1369 -19.88611,18.05923 -29.65713,29.73906 -67.6668,80.88579 -30.55597,41.11686 -56.67247,62.46693 -94.7215,77.43423 -25.61385,10.07569 -61.68237,14.91573 -93.57992,12.5575 z m 29.15127,-47.58645 c 27.25679,-3.53743 54.16579,-14.77028 74.84873,-31.24473 26.9897,-21.49792 48.02002,-53.90218 49.28,-75.93235 0.44302,-7.74603 0.27203,-8.68021 -2.6902,-14.69736 C 653.77909,533.52425 603.77498,518.24244 528,516.32907 c -56.84825,-1.43545 -109.87422,6.57704 -138.5,20.92806 -19.2662,9.65876 -28.57188,21.32138 -28.61785,35.86618 -0.0578,18.29918 12.92564,41.8565 34.85808,63.24679 11.81744,11.52533 22.10617,18.80481 37.63376,26.62661 34.03196,17.14311 69.98443,22.76763 111.27728,17.40857 z" />
@@ -118,6 +131,12 @@
               <span class="cert-sign-label">Date of issue</span>
             </div>
           </div>
+
+          <p class="cert-verify">
+            Certificate no. <span data-field="certificate_number"></span>
+            <span class="cert-verify-sep" aria-hidden="true">&middot;</span>
+            Verify at <a data-cert-url></a>
+          </p>
         </div>
         <p class="cert-stamp" data-cert-stamp aria-hidden="true"></p>
       </article>
@@ -153,8 +172,6 @@
         </button>
       </div>
       <p class="visually-hidden" role="status" data-cert-announce></p>
-
-      <p class="cert-print-url">Verify this certificate at <span data-cert-url></span></p>
     </div>
 
     <aside class="cert-issuer" aria-label="About this record">
@@ -190,7 +207,10 @@
     var copyButton = page.querySelector("[data-cert-copy]");
     var copyLabel = page.querySelector("[data-cert-copy-label]");
     var announce = page.querySelector("[data-cert-announce]");
+    var verifyLink = page.querySelector("[data-cert-url]");
     var certificateUrl = location.origin + "/certificates/" + certificateId;
+    var pageTitle = document.title;
+    var printTitle = pageTitle;
 
     var dateFormat = new Intl.DateTimeFormat("en-GB", {
       day: "numeric",
@@ -341,8 +361,11 @@
         stamp.textContent = state === "valid" ? "" : STATUS_LABELS[state];
         linkedinLink.href = linkedinUrl(data);
         linkedinLink.hidden = state !== "valid";
-        page.querySelector("[data-cert-url]").textContent = certificateUrl;
+        verifyLink.href = certificateUrl;
+        verifyLink.textContent = certificateUrl.replace(/^https?:\/\//, "");
       }
+      // Never the holder name: the title can reach analytics.
+      printTitle = data ? "Stihia certificate " + data.certificate_number : pageTitle;
       record.hidden = !data;
       track(state, data);
     }
@@ -406,6 +429,14 @@
 
     page.querySelector("[data-cert-print]").addEventListener("click", function () {
       window.print();
+    });
+
+    // Browsers name the saved PDF after the page title.
+    window.addEventListener("beforeprint", function () {
+      document.title = printTitle;
+    });
+    window.addEventListener("afterprint", function () {
+      document.title = pageTitle;
     });
 
     verify();
