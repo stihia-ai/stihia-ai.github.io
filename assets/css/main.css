@@ -4188,13 +4188,23 @@ a.event-bar-title:hover {
   }
 
   /* Safari drops the transparency of gradients on boxes without a border,
-     so the paper and the divider lines keep a transparent one. */
+     so the paper and the divider lines keep a transparent one. The paper
+     loses its stripes: Firefox writes a repeating gradient as a PostScript
+     function that macOS Preview evaluates pixel by pixel, taking half a
+     minute to draw the page. At 2% they don't show on paper anyway. */
   .cert-document {
     display: flex;
     height: 100%;
     margin: 0;
     padding: 4mm;
     border-color: transparent;
+    background:
+      radial-gradient(
+        110% 60% at 50% 0%,
+        color-mix(in oklch, var(--cert-gold) 8%, transparent) 0%,
+        transparent 70%
+      ),
+      var(--cert-paper);
     border-radius: 0;
     box-shadow: none;
     overflow: hidden;
