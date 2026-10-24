@@ -4144,7 +4144,7 @@ a.event-bar-title:hover {
   }
 }
 
-/* ── Print: the certificate as on screen, one A4 landscape sheet ──────── */
+/* ── Print: the certificate as on screen, filling one sheet ──────────── */
 
 @media print {
   /* Dark paper prints even with the browser's background graphics off. */
@@ -4176,13 +4176,25 @@ a.event-bar-title:hover {
     padding: 0;
   }
 
+  /* The certificate fills the page box, whatever its size. Chrome and
+     Firefox use the A4 landscape page set in certificate.html; Safari
+     ignores it and prints on the paper picked in its print dialog. */
+  .route-certificate,
+  .route-certificate body,
+  .cert-page,
+  .cert-shell,
+  .cert-record {
+    height: 100%;
+  }
+
+  /* Safari drops the transparency of gradients on boxes without a border,
+     so the paper and the divider lines keep a transparent one. */
   .cert-document {
     display: flex;
-    width: 297mm;
-    height: 210mm;
+    height: 100%;
     margin: 0;
     padding: 4mm;
-    border: none;
+    border-color: transparent;
     border-radius: 0;
     box-shadow: none;
     overflow: hidden;
@@ -4206,6 +4218,13 @@ a.event-bar-title:hover {
 
   .cert-divider {
     width: 100%;
+  }
+
+  .cert-divider::before,
+  .cert-divider::after {
+    height: 0;
+    border-top: 1px solid transparent;
+    background-origin: border-box;
   }
 
   .cert-description {

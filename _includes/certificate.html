@@ -210,7 +210,6 @@
     var verifyLink = page.querySelector("[data-cert-url]");
     var certificateUrl = location.origin + "/certificates/" + certificateId;
     var pageTitle = document.title;
-    var printTitle = pageTitle;
 
     var dateFormat = new Intl.DateTimeFormat("en-GB", {
       day: "numeric",
@@ -364,8 +363,9 @@
         verifyLink.href = certificateUrl;
         verifyLink.textContent = certificateUrl.replace(/^https?:\/\//, "");
       }
-      // Never the holder name: the title can reach analytics.
-      printTitle = data ? "Stihia certificate " + data.certificate_number : pageTitle;
+      // Browsers name a saved PDF after the page title. Never the holder
+      // name: the title can reach analytics.
+      document.title = data ? "Stihia certificate " + data.certificate_number : pageTitle;
       record.hidden = !data;
       track(state, data);
     }
@@ -429,14 +429,6 @@
 
     page.querySelector("[data-cert-print]").addEventListener("click", function () {
       window.print();
-    });
-
-    // Browsers name the saved PDF after the page title.
-    window.addEventListener("beforeprint", function () {
-      document.title = printTitle;
-    });
-    window.addEventListener("afterprint", function () {
-      document.title = pageTitle;
     });
 
     verify();
