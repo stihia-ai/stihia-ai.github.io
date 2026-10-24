@@ -3915,9 +3915,11 @@ a.event-bar-title:hover {
 
 /* ── Record details ───────────────────────────────────────────────────── */
 
+/* Values never wrap: columns widen to fit theirs, and the script shrinks
+   all values together when the row still overflows. */
 .cert-details {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(min-content, 1fr));
   margin: 1rem 0 0;
   border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-card-sm);
@@ -3941,12 +3943,21 @@ a.event-bar-title:hover {
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--color-text-muted-utility);
+  white-space: nowrap;
 }
 
 .cert-detail dd {
   margin: 0;
+  font-size: calc(var(--cert-fit, 1) * 1em);
   font-weight: var(--fw-medium);
   color: var(--color-text-strong);
+  white-space: nowrap;
+}
+
+/* Last resort: a value too long even on a row of its own wraps rather
+   than clips. */
+.cert-details[data-fit="wrap"] dd {
+  white-space: normal;
   overflow-wrap: anywhere;
 }
 
@@ -3969,6 +3980,21 @@ a.event-bar-title:hover {
 .cert-detail-number {
   font-variant-numeric: tabular-nums;
   letter-spacing: var(--ls-tight);
+}
+
+/* Certificate number too long for the row even at the smallest size: it
+   takes a full-width row below the others. Phones stack every field. */
+@media (min-width: 768px) {
+  .cert-details[data-fit] {
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  }
+
+  .cert-details[data-fit] .cert-detail:has(.cert-detail-number) {
+    grid-column: 1 / -1;
+    order: 1;
+    border-top: 1px solid var(--color-border-subtle);
+    border-left: none;
+  }
 }
 
 /* ── Actions and issuer ───────────────────────────────────────────────── */
@@ -4057,7 +4083,10 @@ a.event-bar-title:hover {
 
 /* ── Responsive ───────────────────────────────────────────────────────── */
 
-@media (max-width: 767.98px) {
+/* Screen only: Chrome and Firefox match print media queries against the
+   printer's default paper (portrait, with margins), not the A4 landscape
+   sheet from @page, so the narrow layout would land on the printout. */
+@media screen and (max-width: 767.98px) {
   .cert-page {
     padding-top: 6rem;
   }
@@ -4117,14 +4146,14 @@ a.event-bar-title:hover {
   }
 
   .cert-details {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(min-content, 1fr);
   }
 
-  .cert-detail:nth-child(odd) {
+  .cert-detail {
     border-left: none;
   }
 
-  .cert-detail:nth-child(n + 3) {
+  .cert-detail + .cert-detail {
     border-top: 1px solid var(--color-border-subtle);
   }
 
@@ -4211,13 +4240,14 @@ a.event-bar-title:hover {
     break-inside: avoid;
   }
 
-  /* Brand on top, signatures at the bottom, the award centered between.
-     The auto margins give long names and descriptions room to grow. */
+  /* Brand on top, signatures and verification line at the bottom, the award
+     centered between. The auto margins give long names and descriptions
+     room to grow. */
   .cert-frame {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-block: 2.25rem 3.5rem;
+    padding-block: 2.25rem 1.1rem;
   }
 
   .cert-brand {
@@ -4252,16 +4282,18 @@ a.event-bar-title:hover {
     width: 7rem;
   }
 
+  /* On narrow paper the line breaks at the separator, never inside the
+     number or the link. */
   .cert-verify {
     display: block;
-    position: absolute;
-    right: 3.5rem;
-    bottom: 1.1rem;
-    left: 3.5rem;
-    margin: 0;
+    margin: 1.6rem 0 0;
     font-size: 0.72rem;
     letter-spacing: 0.02em;
     color: var(--color-text-muted-utility);
+  }
+
+  .cert-verify-item {
+    white-space: nowrap;
   }
 
   .cert-verify-sep {

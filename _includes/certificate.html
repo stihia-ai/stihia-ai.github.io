@@ -115,7 +115,8 @@
               </defs>
               <circle class="cert-seal-line" cx="60" cy="60" r="58.5" />
               <circle class="cert-seal-hair" cx="60" cy="60" r="56" />
-              <text class="cert-seal-text">
+              {% comment %} textLength twice: Firefox reads it only on <text>, Safari only on <textPath>. {% endcomment %}
+              <text class="cert-seal-text" textLength="306" lengthAdjust="spacing">
                 <textPath href="#cert-seal-ring" textLength="306" lengthAdjust="spacing">STIHIA LTD &#183; AI SECURITY &#183; SOFIA, BULGARIA &#183;</textPath>
               </text>
               <circle class="cert-seal-hair" cx="60" cy="60" r="42.5" />
@@ -133,15 +134,15 @@
           </div>
 
           <p class="cert-verify">
-            Certificate no. <span data-field="certificate_number"></span>
+            <span class="cert-verify-item">Certificate no. <span data-field="certificate_number"></span></span>
             <span class="cert-verify-sep" aria-hidden="true">&middot;</span>
-            Verify at <a data-cert-url></a>
+            <span class="cert-verify-item">Verify at <a data-cert-url></a></span>
           </p>
         </div>
         <p class="cert-stamp" data-cert-stamp aria-hidden="true"></p>
       </article>
 
-      <dl class="cert-details">
+      <dl class="cert-details" data-cert-details>
         <div class="cert-detail">
           <dt>Status</dt>
           <dd><span class="cert-detail-status" data-field="status"></span></dd>
@@ -197,6 +198,8 @@
     // Generous: the API scales to zero, so the first call after idle
     // waits for a cold start.
     var TIMEOUT_MS = 30000;
+    // Smallest record detail value, as a share of its normal size.
+    var FIT_MIN = 0.8;
 
     var page = document.querySelector(".cert-page");
     var record = page.querySelector("[data-cert-record]");
@@ -210,6 +213,7 @@
     var copyLabel = page.querySelector("[data-cert-copy-label]");
     var announce = page.querySelector("[data-cert-announce]");
     var verifyLink = page.querySelector("[data-cert-url]");
+    var details = page.querySelector("[data-cert-details]");
     var certificateUrl = location.origin + "/certificates/" + certificateId;
     var pageTitle = document.title;
 
@@ -312,6 +316,38 @@
       });
     }
 
+    function detailsFit() {
+      return details.scrollWidth <= details.clientWidth;
+    }
+
+    // Largest value size in [FIT_MIN, 1] that keeps every value on one line.
+    function scaleDetails() {
+      var low = FIT_MIN;
+      var high = 1;
+      details.style.setProperty("--cert-fit", high);
+      if (detailsFit()) return true;
+      details.style.setProperty("--cert-fit", low);
+      if (!detailsFit()) return false;
+      while (high - low > 0.01) {
+        var mid = (low + high) / 2;
+        details.style.setProperty("--cert-fit", mid);
+        if (detailsFit()) low = mid;
+        else high = mid;
+      }
+      details.style.setProperty("--cert-fit", low);
+      return true;
+    }
+
+    // Shrink the values together first, then give the certificate number
+    // a row of its own, and only then let it wrap.
+    function fitDetails() {
+      delete details.dataset.fit;
+      if (scaleDetails()) return;
+      details.dataset.fit = "split";
+      if (scaleDetails()) return;
+      details.dataset.fit = "wrap";
+    }
+
     function linkedinUrl(data) {
       var issued = data.issued_on.split("-");
       var params = new URLSearchParams({
@@ -369,6 +405,7 @@
       // name: the title can reach analytics.
       document.title = data ? "Stihia certificate " + data.certificate_number : pageTitle;
       record.hidden = !data;
+      fitDetails();
       track(state, data);
     }
 
@@ -432,6 +469,17 @@
     page.querySelector("[data-cert-print]").addEventListener("click", function () {
       window.print();
     });
+
+    // Refit when the row changes width (viewport, record shown) or the
+    // web font swaps in. Height changes come from fitting itself.
+    var fittedWidth = 0;
+    new ResizeObserver(function (entries) {
+      var width = entries[0].contentRect.width;
+      if (width === fittedWidth) return;
+      fittedWidth = width;
+      fitDetails();
+    }).observe(details);
+    document.fonts.ready.then(fitDetails);
 
     verify();
   })();
