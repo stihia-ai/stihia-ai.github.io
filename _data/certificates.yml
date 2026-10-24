@@ -1,0 +1,14 @@
+# Certificate verification (/certificates/<id>), rendered by 404.html through
+# _includes/certificate.html.
+
+# The certificate id is appended to this URL.
+api_url: https://api.stihia.ai/v1/certificates/
+
+# Stihia's LinkedIn company page, attached to "Add to LinkedIn" so the
+# credential shows the Stihia logo and links to the page.
+linkedin_organization_id: 108815464
+
+# Issuer statement shown under every certificate.
+issuer:
+  name: Stihia Ltd.
+  registration: a company registered in Bulgaria, UIC 208453727

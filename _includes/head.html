@@ -50,6 +50,9 @@
 <link rel="alternate" hreflang="{{ alternate.lang }}" href="{{ alternate.url }}" />
 {% endfor %}
 <meta name="robots" content="{{ page.robots | default: 'index,follow,max-image-preview:large' }}" />
+{% if page.referrer %}
+<meta name="referrer" content="{{ page.referrer }}" />
+{% endif %}
 <meta name="description" content="{{ page_description }}" />
 {% if page.keywords %}
 <meta name="keywords" content="{{ page.keywords }}" />

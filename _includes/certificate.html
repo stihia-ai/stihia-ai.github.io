@@ -1,0 +1,414 @@
+{% comment %}
+  Certificate verification page for /certificates/<id>.
+
+  GitHub Pages has no dynamic routes, so verification links fall through to
+  404.html, which includes this file. On a /certificates/<id> path the page
+  reads the certificate from the API and renders it; on any other path it
+  stays hidden and the regular "Page Not Found" content shows.
+  API: GET <api_url><id> returns the certificate as JSON, or 404 when no
+  certificate matches. Settings: _data/certificates.yml.
+{% endcomment %}
+{% assign cert = site.data.certificates %}
+<script>
+  var certificateId =
+    (location.pathname.match(/^\/certificates\/([A-Za-z0-9-]+)\/?$/) || [])[1] || null;
+
+  if (certificateId) {
+    document.documentElement.classList.add("route-certificate");
+    document.title = "Certificate Verification | Stihia";
+  }
+
+  // The id is the only key to a certificate, so analytics never sees it.
+  // Every event gets "/certificates/<id>", plain or URL-encoded (as inside the
+  // LinkedIn link), rewritten to "/certificates/:id", in values and keys.
+  function scrubCertificateId(value) {
+    if (typeof value === "string") {
+      return value
+        .split("/certificates/" + certificateId)
+        .join("/certificates/:id")
+        .split("%2Fcertificates%2F" + certificateId)
+        .join("%2Fcertificates%2F:id");
+    }
+    if (Array.isArray(value)) return value.map(scrubCertificateId);
+    if (value && Object.getPrototypeOf(value) === Object.prototype) {
+      var clean = {};
+      Object.keys(value).forEach(function (key) {
+        clean[scrubCertificateId(key)] = scrubCertificateId(value[key]);
+      });
+      return clean;
+    }
+    return value;
+  }
+</script>
+{% include posthog.html when="certificateId" options="before_send: scrubCertificateId, disable_session_recording: true," %}
+
+<svg width="0" height="0" class="position-absolute" aria-hidden="true" focusable="false">
+  <symbol id="cert-mark" viewBox="116 116 792 792">
+    <path d="M 515.5,727.99173 C 469.22717,724.57071 426.39677,707.85006 390.5,679.19272 364.31286,658.28684 345.66753,636.67857 318.71471,596 304.33822,574.30227 296.72697,564.77646 284.5854,553.28571 257.98472,528.11088 230.29035,517.28415 176.5,511.03121 c -41.52116,-4.82669 -61.99743,-7.73492 -58.5,-8.30871 1.925,-0.31581 14.3,-1.08152 27.5,-1.70157 84.42204,-3.96559 115.21276,-11.52942 145.4662,-35.73416 13.92332,-11.13957 25.15729,-25.07632 39.0338,-48.42495 17.14392,-28.84637 29.61488,-45.51775 46.79704,-62.55899 29.48648,-29.24467 65.08071,-47.72992 105.82896,-54.96046 13.24449,-2.35015 17.44852,-2.64122 38.374,-2.65684 24.55711,-0.0183 38.95929,1.33706 57.5,5.41137 24.99191,5.49195 51.86365,15.93807 73.00272,28.37908 8.74641,5.14753 12.01317,7.70343 7.75987,6.07129 -4.90506,-1.88225 -34.62273,-8.793 -47.76259,-11.10705 -18.35892,-3.23317 -53.91781,-4.49853 -70.16567,-2.49683 -46.05512,5.67388 -83.971,24.82298 -104.57876,52.81665 -22.02452,29.91819 -8.81859,63.49564 32.51813,82.68072 39.24429,18.21394 104.54562,26.29179 267.2263,33.05622 79.1723,3.29206 177.17459,9.63463 171.98414,11.13056 -0.54127,0.156 -8.40086,1.2134 -17.46574,2.34977 -54.91098,6.8836 -83.40043,19.30811 -119.55018,52.1369 -19.88611,18.05923 -29.65713,29.73906 -67.6668,80.88579 -30.55597,41.11686 -56.67247,62.46693 -94.7215,77.43423 -25.61385,10.07569 -61.68237,14.91573 -93.57992,12.5575 z m 29.15127,-47.58645 c 27.25679,-3.53743 54.16579,-14.77028 74.84873,-31.24473 26.9897,-21.49792 48.02002,-53.90218 49.28,-75.93235 0.44302,-7.74603 0.27203,-8.68021 -2.6902,-14.69736 C 653.77909,533.52425 603.77498,518.24244 528,516.32907 c -56.84825,-1.43545 -109.87422,6.57704 -138.5,20.92806 -19.2662,9.65876 -28.57188,21.32138 -28.61785,35.86618 -0.0578,18.29918 12.92564,41.8565 34.85808,63.24679 11.81744,11.52533 22.10617,18.80481 37.63376,26.62661 34.03196,17.14311 69.98443,22.76763 111.27728,17.40857 z" />
+  </symbol>
+</svg>
+
+<main class="cert-page" data-state="loading">
+  <div class="container cert-shell">
+    <h1 class="cert-eyebrow">Certificate verification</h1>
+
+    <section class="cert-status" aria-live="polite">
+      <span class="cert-status-icon" aria-hidden="true">
+        <span class="cert-spinner"></span>
+        <i class="fa-solid" data-cert-icon></i>
+      </span>
+      <div class="cert-status-copy">
+        <p class="cert-status-title" data-cert-status-title>Verifying certificate</p>
+        <p class="cert-status-text" data-cert-status-text>Checking Stihia&rsquo;s records&hellip;</p>
+        <button type="button" class="btn btn-outline-light rounded-pill px-4 mt-3" data-cert-retry hidden>
+          <i class="fa-solid fa-rotate-right me-2" aria-hidden="true"></i>Try again
+        </button>
+      </div>
+    </section>
+
+    <div class="cert-record" data-cert-record hidden>
+      <article class="cert-document ph-no-capture" aria-label="Certificate">
+        <div class="cert-frame">
+          <span class="cert-corner cert-corner-tl" aria-hidden="true"></span>
+          <span class="cert-corner cert-corner-tr" aria-hidden="true"></span>
+          <span class="cert-corner cert-corner-bl" aria-hidden="true"></span>
+          <span class="cert-corner cert-corner-br" aria-hidden="true"></span>
+
+          <p class="cert-brand">
+            <svg class="cert-brand-mark" aria-hidden="true" focusable="false"><use href="#cert-mark" /></svg>
+            <span class="brand-text">Stihia</span>
+          </p>
+
+          <h2 class="cert-type" data-field="certificate_type"></h2>
+          <p class="cert-lede">awarded to</p>
+          <p class="cert-holder" data-field="holder_name"></p>
+
+          <div class="cert-divider" aria-hidden="true"><span></span></div>
+
+          <p class="cert-lede">for</p>
+          <p class="cert-course" data-field="course"></p>
+          <p class="cert-description" data-field="description"></p>
+
+          <div class="cert-foot">
+            <div class="cert-sign cert-sign-issuer">
+              <span class="cert-sign-value">{{ cert.issuer.name }}</span>
+              <span class="cert-sign-label">Issued by</span>
+            </div>
+
+            <svg class="cert-seal" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <defs>
+                <path id="cert-seal-ring" d="M 60 60 m -49.5 0 a 49.5 49.5 0 1 1 99 0 a 49.5 49.5 0 1 1 -99 0" />
+                <ellipse id="cert-seal-petal" cx="60" cy="60" rx="31" ry="10.5" />
+              </defs>
+              <circle class="cert-seal-line" cx="60" cy="60" r="58.5" />
+              <circle class="cert-seal-hair" cx="60" cy="60" r="56" />
+              <text class="cert-seal-text">
+                <textPath href="#cert-seal-ring" textLength="306" lengthAdjust="spacing">STIHIA LTD &#183; AI SECURITY &#183; SOFIA, BULGARIA &#183;</textPath>
+              </text>
+              <circle class="cert-seal-hair" cx="60" cy="60" r="42.5" />
+              <g class="cert-seal-rosette">
+                {% for i in (0..23) %}<use href="#cert-seal-petal" transform="rotate({{ i | times: 7.5 }} 60 60)" />{% endfor %}
+              </g>
+              <circle class="cert-seal-core" cx="60" cy="60" r="16.5" />
+              <use class="cert-seal-mark" href="#cert-mark" x="49" y="49" width="22" height="22" />
+            </svg>
+
+            <div class="cert-sign cert-sign-date">
+              <span class="cert-sign-value" data-field="issued_on"></span>
+              <span class="cert-sign-label">Date of issue</span>
+            </div>
+          </div>
+        </div>
+        <p class="cert-stamp" data-cert-stamp aria-hidden="true"></p>
+      </article>
+
+      <dl class="cert-details">
+        <div class="cert-detail">
+          <dt>Status</dt>
+          <dd><span class="cert-detail-status" data-field="status"></span></dd>
+        </div>
+        <div class="cert-detail">
+          <dt>Certificate no.</dt>
+          <dd class="cert-detail-number" data-field="certificate_number"></dd>
+        </div>
+        <div class="cert-detail">
+          <dt>Issued</dt>
+          <dd data-field="issued_on"></dd>
+        </div>
+        <div class="cert-detail">
+          <dt>Valid until</dt>
+          <dd data-field="expires_on"></dd>
+        </div>
+      </dl>
+
+      <div class="cert-actions">
+        <a class="btn btn-primary rounded-pill px-4" data-cert-linkedin target="_blank" rel="noopener noreferrer" hidden>
+          <i class="fa-brands fa-linkedin me-2" aria-hidden="true"></i>Add to LinkedIn
+        </a>
+        <button type="button" class="btn btn-outline-light rounded-pill px-4" data-cert-copy>
+          <i class="fa-solid fa-link me-2" aria-hidden="true"></i><span data-cert-copy-label>Copy link</span>
+        </button>
+        <button type="button" class="btn btn-outline-light rounded-pill px-4" data-cert-print>
+          <i class="fa-solid fa-print me-2" aria-hidden="true"></i>Print or save PDF
+        </button>
+      </div>
+      <p class="visually-hidden" role="status" data-cert-announce></p>
+
+      <p class="cert-print-url">Verify this certificate at <span data-cert-url></span></p>
+    </div>
+
+    <aside class="cert-issuer" aria-label="About this record">
+      <p>
+        Certificates are issued by <strong>{{ cert.issuer.name }}</strong>,
+        {{ cert.issuer.registration }}. This page reads the record directly
+        from Stihia&rsquo;s certificate registry each time it opens.
+      </p>
+      <p>
+        Questions about a certificate?
+        <a href="mailto:{{ site.data.links.email }}">{{ site.data.links.email }}</a>
+      </p>
+    </aside>
+  </div>
+</main>
+
+<script>
+  (function () {
+    if (!certificateId) return;
+
+    var API_URL = {{ cert.api_url | jsonify }};
+    var LINKEDIN_ORGANIZATION_ID = {{ cert.linkedin_organization_id | jsonify }};
+    var ISSUER = {{ cert.issuer.name | jsonify }};
+    var TIMEOUT_MS = 10000;
+
+    var page = document.querySelector(".cert-page");
+    var record = page.querySelector("[data-cert-record]");
+    var icon = page.querySelector("[data-cert-icon]");
+    var statusTitle = page.querySelector("[data-cert-status-title]");
+    var statusText = page.querySelector("[data-cert-status-text]");
+    var retryButton = page.querySelector("[data-cert-retry]");
+    var stamp = page.querySelector("[data-cert-stamp]");
+    var linkedinLink = page.querySelector("[data-cert-linkedin]");
+    var copyButton = page.querySelector("[data-cert-copy]");
+    var copyLabel = page.querySelector("[data-cert-copy-label]");
+    var announce = page.querySelector("[data-cert-announce]");
+    var certificateUrl = location.origin + "/certificates/" + certificateId;
+
+    var dateFormat = new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    });
+    var checkedFormat = new Intl.DateTimeFormat("en-GB", {
+      dateStyle: "long",
+      timeStyle: "short",
+    });
+
+    var ICONS = {
+      valid: "fa-check",
+      expired: "fa-hourglass-end",
+      revoked: "fa-ban",
+      not_found: "fa-magnifying-glass",
+      unavailable: "fa-plug-circle-exclamation",
+    };
+    var STATUS_LABELS = { valid: "Valid", expired: "Expired", revoked: "Revoked" };
+
+    function formatDate(iso) {
+      return dateFormat.format(new Date(iso + "T00:00:00Z"));
+    }
+
+    function todayIso() {
+      var now = new Date();
+      return [
+        now.getFullYear(),
+        String(now.getMonth() + 1).padStart(2, "0"),
+        String(now.getDate()).padStart(2, "0"),
+      ].join("-");
+    }
+
+    function isText(value) {
+      return typeof value === "string" && value.trim() !== "";
+    }
+
+    function isDate(value) {
+      return typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value);
+    }
+
+    function isCertificate(data) {
+      return (
+        !!data &&
+        (data.status === "valid" || data.status === "revoked") &&
+        isText(data.certificate_type) &&
+        isText(data.holder_name) &&
+        isText(data.course) &&
+        isText(data.certificate_number) &&
+        isDate(data.issued_on) &&
+        (data.expires_on == null || isDate(data.expires_on)) &&
+        (data.description == null || typeof data.description === "string")
+      );
+    }
+
+    function stateOf(data) {
+      if (data.status === "revoked") return "revoked";
+      if (data.expires_on && data.expires_on < todayIso()) return "expired";
+      return "valid";
+    }
+
+    function statusCopy(state, data) {
+      var checked =
+        "Checked against Stihia’s records on " +
+        checkedFormat.format(new Date()) +
+        ".";
+      switch (state) {
+        case "valid":
+          return ["Valid certificate", "Issued by " + ISSUER + " and in good standing. " + checked];
+        case "expired":
+          return [
+            "Expired certificate",
+            "Issued by " + ISSUER + " and expired on " + formatDate(data.expires_on) + ". " + checked,
+          ];
+        case "revoked":
+          return [
+            "Revoked certificate",
+            "Issued by " + ISSUER + " and later revoked. It is no longer valid. " + checked,
+          ];
+        case "not_found":
+          return [
+            "Certificate not found",
+            "No certificate issued by Stihia matches this link. Check that the link is complete, exactly as printed on the certificate.",
+          ];
+        default:
+          return [
+            "Verification temporarily unavailable",
+            "Stihia’s certificate records could not be reached. Please try again in a few minutes.",
+          ];
+      }
+    }
+
+    function setField(name, text) {
+      page.querySelectorAll('[data-field="' + name + '"]').forEach(function (el) {
+        el.textContent = text;
+        el.hidden = text === "";
+      });
+    }
+
+    function linkedinUrl(data) {
+      var issued = data.issued_on.split("-");
+      var params = new URLSearchParams({
+        startTask: "CERTIFICATION_NAME",
+        name: data.course,
+        organizationId: LINKEDIN_ORGANIZATION_ID,
+        issueYear: issued[0],
+        issueMonth: String(Number(issued[1])),
+        certUrl: certificateUrl,
+        certId: data.certificate_number,
+      });
+      if (data.expires_on) {
+        var expires = data.expires_on.split("-");
+        params.set("expirationYear", expires[0]);
+        params.set("expirationMonth", String(Number(expires[1])));
+      }
+      return "https://www.linkedin.com/profile/add?" + params.toString();
+    }
+
+    function track(state, data) {
+      if (!window.posthog) return;
+      var properties = { status: state };
+      if (data) {
+        properties.certificate_number = data.certificate_number;
+        properties.course = data.course;
+        properties.certificate_type = data.certificate_type;
+      }
+      window.posthog.capture("certificate_verification", properties);
+    }
+
+    function render(state, data) {
+      var copy = statusCopy(state, data);
+      page.dataset.state = state;
+      icon.className = "fa-solid " + ICONS[state];
+      statusTitle.textContent = copy[0];
+      statusText.textContent = copy[1];
+      retryButton.hidden = state !== "unavailable";
+
+      if (data) {
+        setField("certificate_type", data.certificate_type);
+        setField("holder_name", data.holder_name);
+        setField("course", data.course);
+        setField("description", (data.description || "").trim());
+        setField("issued_on", formatDate(data.issued_on));
+        setField("expires_on", data.expires_on ? formatDate(data.expires_on) : "No expiry");
+        setField("certificate_number", data.certificate_number);
+        setField("status", STATUS_LABELS[state]);
+        stamp.textContent = state === "valid" ? "" : STATUS_LABELS[state];
+        linkedinLink.href = linkedinUrl(data);
+        linkedinLink.hidden = state !== "valid";
+        page.querySelector("[data-cert-url]").textContent = certificateUrl;
+      }
+      record.hidden = !data;
+      track(state, data);
+    }
+
+    function verify() {
+      page.dataset.state = "loading";
+      retryButton.hidden = true;
+      statusTitle.textContent = "Verifying certificate";
+      statusText.textContent = "Checking Stihia’s records…";
+
+      var controller = new AbortController();
+      var timer = setTimeout(function () {
+        controller.abort();
+      }, TIMEOUT_MS);
+
+      fetch(API_URL + encodeURIComponent(certificateId), {
+        credentials: "omit",
+        referrerPolicy: "no-referrer",
+        signal: controller.signal,
+      })
+        .then(function (response) {
+          if (response.status === 404) return { state: "not_found" };
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.json().then(function (data) {
+            if (!isCertificate(data)) throw new Error("Unexpected response");
+            return { state: stateOf(data), data: data };
+          });
+        })
+        .catch(function () {
+          return { state: "unavailable" };
+        })
+        .then(function (result) {
+          clearTimeout(timer);
+          render(result.state, result.data);
+        });
+    }
+
+    retryButton.addEventListener("click", verify);
+
+    copyButton.addEventListener("click", function () {
+      var done = function (message, label) {
+        announce.textContent = message;
+        copyLabel.textContent = label;
+        setTimeout(function () {
+          copyLabel.textContent = "Copy link";
+        }, 2000);
+      };
+      if (!navigator.clipboard) {
+        done("Copy the link from the address bar.", "Copy link");
+        return;
+      }
+      navigator.clipboard.writeText(certificateUrl).then(
+        function () {
+          done("Verification link copied.", "Link copied");
+        },
+        function () {
+          done("Copy failed. Copy the link from the address bar.", "Copy link");
+        },
+      );
+    });
+
+    page.querySelector("[data-cert-print]").addEventListener("click", function () {
+      window.print();
+    });
+
+    verify();
+  })();
+</script>

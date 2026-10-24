@@ -3493,6 +3493,739 @@ a.event-bar-title:hover {
 }
 
 /* --------------------------------------------------------------------------
+   Certificate Verification (/certificates/<id>, rendered by 404.html via
+   _includes/certificate.html). Status bar, framed certificate document with
+   a guilloche seal, record details, and issuer statement. The state on
+   .cert-page (loading, valid, expired, revoked, not_found, unavailable)
+   sets the status tone.
+   -------------------------------------------------------------------------- */
+
+.cert-page {
+  --cert-gold: var(--accent-signature);
+  --cert-gold-line: color-mix(in oklch, var(--accent-signature) 34%, transparent);
+  --cert-gold-faint: color-mix(in oklch, var(--accent-signature) 14%, transparent);
+  --cert-paper: oklch(19.5% 0.013 76);
+  --cert-valid: oklch(76% 0.11 152);
+  --cert-revoked: oklch(68% 0.13 33);
+  --cert-tone: var(--color-text-muted);
+  display: none;
+  padding-top: 7rem;
+}
+
+.route-certificate .cert-page {
+  display: block;
+}
+
+.route-certificate .not-found {
+  display: none;
+}
+
+.cert-page[data-state="valid"] {
+  --cert-tone: var(--cert-valid);
+}
+
+.cert-page[data-state="revoked"] {
+  --cert-tone: var(--cert-revoked);
+}
+
+.cert-page[data-state="unavailable"] {
+  --cert-tone: var(--accent-semantic);
+}
+
+.cert-shell {
+  max-width: 58rem;
+}
+
+.cert-eyebrow {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted-utility);
+}
+
+/* ── Status bar ───────────────────────────────────────────────────────── */
+
+.cert-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.35rem;
+  border: 1px solid color-mix(in oklch, var(--cert-tone) 32%, transparent);
+  border-radius: var(--radius-card-sm);
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in oklch, var(--cert-tone) 9%, transparent) 0%,
+      transparent 65%
+    ),
+    var(--color-card-surface);
+  box-shadow: inset 0 1px 0 var(--color-card-sheen);
+}
+
+.cert-status-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  color: var(--cert-tone);
+  background: color-mix(in oklch, var(--cert-tone) 14%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--cert-tone) 42%, transparent);
+  font-size: 1.05rem;
+}
+
+.cert-status-icon > * {
+  grid-area: 1 / 1;
+}
+
+.cert-spinner {
+  display: none;
+  width: 1.35rem;
+  height: 1.35rem;
+  border: 2px solid var(--color-border-medium);
+  border-top-color: var(--cert-gold);
+  border-radius: 50%;
+  animation: cert-spin 0.9s linear infinite;
+}
+
+.cert-page[data-state="loading"] .cert-spinner {
+  display: block;
+}
+
+.cert-page[data-state="loading"] [data-cert-icon] {
+  display: none;
+}
+
+.cert-status-title {
+  margin: 0 0 0.15rem;
+  font-size: 1.08rem;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-snug);
+  color: var(--color-text-strong);
+}
+
+.cert-status-text {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+}
+
+/* Loading and lookup failures: the status is the whole message. */
+.cert-page:is([data-state="loading"], [data-state="not_found"], [data-state="unavailable"])
+  .cert-status {
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 36rem;
+  margin-inline: auto;
+  padding: 3rem clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.cert-page:is([data-state="loading"], [data-state="not_found"], [data-state="unavailable"])
+  .cert-status-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 1.3rem;
+}
+
+.cert-page:is([data-state="loading"], [data-state="not_found"], [data-state="unavailable"])
+  .cert-status-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+/* ── Certificate document ─────────────────────────────────────────────── */
+
+.cert-document {
+  position: relative;
+  margin: 1.25rem 0 0;
+  padding: clamp(0.5rem, 1.2vw, 0.8rem);
+  border: 1px solid var(--color-border-medium);
+  border-radius: var(--radius-card);
+  background:
+    radial-gradient(
+      110% 60% at 50% 0%,
+      color-mix(in oklch, var(--cert-gold) 8%, transparent) 0%,
+      transparent 70%
+    ),
+    repeating-linear-gradient(
+      135deg,
+      var(--color-card-sheen-faint) 0 1px,
+      transparent 1px 6px
+    ),
+    var(--cert-paper);
+  box-shadow:
+    inset 0 1px 0 var(--color-card-sheen),
+    0 28px 60px var(--color-card-deep-shadow-hover);
+}
+
+.cert-frame {
+  position: relative;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 6vw, 5rem) clamp(2rem, 4.5vw, 3rem);
+  border: 1px solid var(--cert-gold-line);
+  border-radius: calc(var(--radius-card) - 10px);
+  text-align: center;
+}
+
+.cert-frame::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--cert-gold-faint);
+  border-radius: calc(var(--radius-card) - 15px);
+  pointer-events: none;
+}
+
+.cert-corner {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0 solid var(--cert-gold);
+  opacity: 0.75;
+}
+
+.cert-corner-tl {
+  top: 1rem;
+  left: 1rem;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+
+.cert-corner-tr {
+  top: 1rem;
+  right: 1rem;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+
+.cert-corner-bl {
+  bottom: 1rem;
+  left: 1rem;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.cert-corner-br {
+  bottom: 1rem;
+  right: 1rem;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+.cert-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--color-text-strong);
+}
+
+.cert-brand-mark {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+}
+
+.cert-brand .brand-text {
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+}
+
+.cert-type {
+  margin: 0 0 1.75rem;
+  font-size: clamp(0.8rem, 1.6vw, 0.92rem);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--cert-gold);
+}
+
+.cert-lede {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.cert-holder {
+  margin: 0;
+  font-size: clamp(2.1rem, 6vw, 3.5rem);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  color: var(--color-text-strong);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.cert-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 20rem;
+  margin: 1.75rem auto;
+}
+
+.cert-divider::before,
+.cert-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cert-gold-line));
+}
+
+.cert-divider::after {
+  background: linear-gradient(270deg, transparent, var(--cert-gold-line));
+}
+
+.cert-divider span {
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--cert-gold);
+  transform: rotate(45deg);
+}
+
+.cert-course {
+  margin: 0;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-snug);
+  color: var(--color-text-strong);
+  text-wrap: balance;
+}
+
+.cert-description {
+  max-width: 48ch;
+  margin: 1rem auto 0;
+  font-size: var(--fs-card-body);
+  line-height: var(--lh-normal);
+  color: var(--color-text-soft);
+  text-wrap: balance;
+}
+
+.cert-foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: end;
+  gap: clamp(1rem, 4vw, 2.5rem);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.cert-sign {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.cert-sign-value {
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--color-border-medium);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-strong);
+}
+
+.cert-sign-label {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted-utility);
+}
+
+/* Seal: engraved rosette inside a ring of microtext */
+.cert-seal {
+  width: clamp(6.25rem, 13vw, 7.75rem);
+  height: auto;
+  color: var(--cert-gold);
+  overflow: visible;
+}
+
+.cert-seal-line,
+.cert-seal-hair,
+.cert-seal-rosette use {
+  fill: none;
+  stroke: currentColor;
+}
+
+.cert-seal-line {
+  stroke-width: 0.9;
+}
+
+.cert-seal-hair {
+  stroke-width: 0.4;
+  opacity: 0.7;
+}
+
+.cert-seal-rosette {
+  stroke-width: 0.35;
+  opacity: 0.6;
+  transform-origin: 60px 60px;
+}
+
+.cert-seal-text {
+  fill: currentColor;
+  font-size: 6.6px;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.08em;
+}
+
+.cert-seal-core {
+  fill: var(--cert-paper);
+  stroke: currentColor;
+  stroke-width: 0.6;
+}
+
+.cert-seal-mark {
+  fill: currentColor;
+}
+
+/* Revoked and expired: the document fades back under a stamp. */
+.cert-stamp {
+  display: none;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  margin: 0;
+  padding: 0.35rem calc(1.5rem - 0.3em) 0.35rem 1.5rem;
+  border: 2px solid var(--cert-tone);
+  border-radius: 12px;
+  background: color-mix(in oklch, var(--cert-paper) 80%, transparent);
+  color: var(--cert-tone);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  pointer-events: none;
+}
+
+.cert-page:is([data-state="revoked"], [data-state="expired"]) .cert-stamp {
+  display: block;
+}
+
+.cert-page:is([data-state="revoked"], [data-state="expired"]) .cert-frame {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+/* ── Record details ───────────────────────────────────────────────────── */
+
+.cert-details {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 1rem 0 0;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-card-sm);
+  background: var(--color-card-surface);
+  overflow: hidden;
+}
+
+.cert-detail {
+  padding: 1rem 1.35rem;
+  border-left: 1px solid var(--color-border-subtle);
+}
+
+.cert-detail:first-child {
+  border-left: none;
+}
+
+.cert-detail dt {
+  margin-bottom: 0.3rem;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted-utility);
+}
+
+.cert-detail dd {
+  margin: 0;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-strong);
+  overflow-wrap: anywhere;
+}
+
+.cert-detail-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--cert-tone);
+}
+
+.cert-detail-status::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 3px color-mix(in oklch, currentColor 22%, transparent);
+}
+
+.cert-detail-number {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--ls-tight);
+}
+
+/* ── Actions and issuer ───────────────────────────────────────────────── */
+
+.cert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.cert-print-url {
+  display: none;
+}
+
+.cert-issuer {
+  max-width: 40rem;
+  margin: 2.75rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: var(--lh-normal);
+  color: var(--color-text-muted);
+}
+
+.cert-issuer p:last-child {
+  margin-bottom: 0;
+}
+
+.cert-issuer strong {
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+}
+
+.cert-issuer a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-medium);
+  text-underline-offset: 3px;
+}
+
+.cert-issuer a:hover {
+  color: var(--color-text-strong);
+  text-decoration-color: currentColor;
+}
+
+/* ── Motion ───────────────────────────────────────────────────────────── */
+
+@keyframes cert-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cert-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes cert-seal-turn {
+  from {
+    opacity: 0;
+    transform: rotate(-60deg) scale(0.85);
+  }
+}
+
+.cert-record > * {
+  animation: cert-rise 0.6s ease-out both;
+}
+
+.cert-record > :nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.cert-record > :nth-child(n + 3) {
+  animation-delay: 0.2s;
+}
+
+.cert-page[data-state="valid"] .cert-seal-rosette {
+  animation: cert-seal-turn 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s both;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+
+@media (max-width: 767.98px) {
+  .cert-page {
+    padding-top: 6rem;
+  }
+
+  .cert-status {
+    align-items: flex-start;
+  }
+
+  .cert-corner {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .cert-corner-tl,
+  .cert-corner-tr {
+    top: 0.7rem;
+  }
+
+  .cert-corner-bl,
+  .cert-corner-br {
+    bottom: 0.7rem;
+  }
+
+  .cert-corner-tl,
+  .cert-corner-bl {
+    left: 0.7rem;
+  }
+
+  .cert-corner-tr,
+  .cert-corner-br {
+    right: 0.7rem;
+  }
+
+  .cert-type {
+    letter-spacing: 0.2em;
+  }
+
+  .cert-foot {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "seal seal"
+      "issuer date";
+    row-gap: 1.75rem;
+  }
+
+  .cert-seal {
+    grid-area: seal;
+    justify-self: center;
+  }
+
+  .cert-sign-issuer {
+    grid-area: issuer;
+  }
+
+  .cert-sign-date {
+    grid-area: date;
+  }
+
+  .cert-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cert-detail:nth-child(odd) {
+    border-left: none;
+  }
+
+  .cert-detail:nth-child(n + 3) {
+    border-top: 1px solid var(--color-border-subtle);
+  }
+
+  .cert-actions .btn {
+    flex: 1 1 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-spinner {
+    animation: none;
+  }
+
+  .cert-record > *,
+  .cert-page[data-state="valid"] .cert-seal-rosette {
+    animation: none;
+  }
+}
+
+/* ── Print: a clean, ink-friendly one-page record ─────────────────────── */
+
+@media print {
+  .route-certificate {
+    --color-text: oklch(30% 0.012 76);
+    --color-text-strong: oklch(18% 0.012 76);
+    --color-text-soft: oklch(34% 0.012 76);
+    --color-text-muted: oklch(42% 0.012 76);
+    --color-text-muted-utility: oklch(48% 0.012 76);
+    --color-border-subtle: oklch(40% 0.02 72 / 0.18);
+    --color-border-soft: oklch(40% 0.02 72 / 0.24);
+    --color-border-medium: oklch(40% 0.02 72 / 0.32);
+    --color-card-surface: transparent;
+    --color-card-sheen: transparent;
+    --color-card-sheen-faint: transparent;
+    --accent-signature: oklch(52% 0.1 70);
+  }
+
+  .route-certificate body {
+    background: none;
+  }
+
+  .route-certificate .navbar,
+  .route-certificate #footer,
+  .cert-eyebrow,
+  .cert-actions {
+    display: none !important;
+  }
+
+  .cert-page {
+    --cert-paper: oklch(100% 0 0);
+    --cert-valid: oklch(46% 0.11 152);
+    --cert-revoked: oklch(50% 0.15 33);
+    padding-top: 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .cert-shell {
+    max-width: none;
+    padding: 0;
+  }
+
+  .cert-status {
+    background: none;
+  }
+
+  .cert-document {
+    background: var(--cert-paper);
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .cert-frame {
+    padding-block: 2.25rem 1.75rem;
+  }
+
+  .cert-record > *,
+  .cert-seal-rosette {
+    animation: none !important;
+  }
+
+  .cert-print-url {
+    display: block;
+    margin: 1rem 0 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .cert-print-url span {
+    color: var(--color-text-strong);
+    overflow-wrap: anywhere;
+  }
+
+  .cert-issuer {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Footer
    -------------------------------------------------------------------------- */
 
