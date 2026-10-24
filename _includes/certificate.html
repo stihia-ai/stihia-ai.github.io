@@ -194,7 +194,9 @@
     var API_URL = {{ cert.api_url | jsonify }};
     var LINKEDIN_ORGANIZATION_ID = {{ cert.linkedin_organization_id | jsonify }};
     var ISSUER = {{ cert.issuer.name | jsonify }};
-    var TIMEOUT_MS = 10000;
+    // Generous: the API scales to zero, so the first call after idle
+    // waits for a cold start.
+    var TIMEOUT_MS = 30000;
 
     var page = document.querySelector(".cert-page");
     var record = page.querySelector("[data-cert-record]");
