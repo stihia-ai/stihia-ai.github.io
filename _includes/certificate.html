@@ -197,7 +197,7 @@
     var ISSUER = {{ cert.issuer.name | jsonify }};
     // Generous: the API scales to zero, so the first call after idle
     // waits for a cold start.
-    var TIMEOUT_MS = 30000;
+    var TIMEOUT_MS = 120000;
     // Smallest record detail value, as a share of its normal size.
     var FIT_MIN = 0.8;
 
