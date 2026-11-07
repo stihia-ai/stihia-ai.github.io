@@ -49,6 +49,13 @@ outlets:
     brightness: 0.85
     scale: 1.1
 items:
+  - outlet: profit
+    headline: "AI's deadly triad: when companies open the door to hackers themselves"
+    headline_original: "Смъртоносната триада на AI: Когато компаниите сами отварят вратата за хакерите"
+    lang: bg
+    language: Bulgarian
+    date: 2026-11-06
+    url: https://profit.bg/article/2026110606480725691
   - outlet: bloombergtv
     headline: "Are companies ready for the real cost of AI security?"
     headline_original: "Готови ли са компаниите за реалната цена на AI сигурността"
@@ -64,13 +71,6 @@ items:
     language: Bulgarian
     date: 2026-09-27
     url: https://www.capital.bg/biznes/predpriemach/2026/09/27/4958440_stihiaai_bulgarskiiat_otgovor_na_ai_kiberzaplahata/
-  - outlet: profit
-    headline: "AI's deadly triad: when companies open the door to hackers themselves"
-    headline_original: "Смъртоносната триада на AI: Когато компаниите сами отварят вратата за хакерите"
-    lang: bg
-    language: Bulgarian
-    date: 2026-11-06
-    url: https://profit.bg/article/2026110606480725691
   - outlet: sifted
     headline: 9 Bulgarian startups to watch in 2026, according to VCs
     date: 2026-03-11
